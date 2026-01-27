@@ -170,13 +170,6 @@ Tested on 419 samples across multiple domains:
 | Gaming detection | 3/3 attack types |
 | Safety alerts | Detects degradation patterns |
 
-## What This Is NOT
-
-- Not a "soliton" detector (empirically disproven)
-- Not a magic "coordination signal" reader
-- Not a replacement for human judgment
-
-It's a practical text analysis toolkit with measurable, validated capabilities.
 
 ## License
 
