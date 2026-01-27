@@ -1,0 +1,27 @@
+{
+  "name": "observatory-mcp-apps",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive MCP Apps for Observatory",
+  "scripts": {
+    "build": "npm run build:manifold && npm run build:cohort && npm run build:trajectory && npm run build:force && npm run build:mode-flow && npm run build:gap && npm run fix-structure",
+    "build:manifold": "INPUT=manifold-viewer/index.html vite build --outDir dist/manifold-viewer",
+    "build:cohort": "INPUT=cohort-heatmap/index.html vite build --outDir dist/cohort-heatmap",
+    "build:trajectory": "INPUT=trajectory-viewer/index.html vite build --outDir dist/trajectory-viewer",
+    "build:force": "INPUT=force-field/index.html vite build --outDir dist/force-field",
+    "build:mode-flow": "INPUT=mode-flow/index.html vite build --outDir dist/mode-flow",
+    "build:gap": "INPUT=gap-analysis/index.html vite build --outDir dist/gap-analysis",
+    "fix-structure": "for d in dist/*/; do [ -d \"$d\"*/ ] && mv \"$d\"*/* \"$d\" && rmdir \"$d\"*/; done 2>/dev/null || true",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.0.1",
+    "three": "^0.170.0",
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-singlefile": "^2.0.0"
+  }
+}

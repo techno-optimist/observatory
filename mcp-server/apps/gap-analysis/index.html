@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatory - Gap Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #1a1a2e;
+      --border: #2a2a4e;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --group-a: #4ade80;
+      --group-b: #60a5fa;
+      --delta: #f59e0b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    h1 { font-size: 20px; }
+
+    .groups-badge {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .group-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .group-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .group-dot.a { background: var(--group-a); }
+    .group-dot.b { background: var(--group-b); }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .metric-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+    }
+
+    .delta-badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(245, 158, 11, 0.2);
+      color: var(--delta);
+    }
+
+    .comparison-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .comparison-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar-label {
+      width: 60px;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .bar-container {
+      flex: 1;
+      height: 20px;
+      background: var(--bg);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      position: absolute;
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .bar-fill.a { background: var(--group-a); left: 50%; }
+    .bar-fill.b { background: var(--group-b); right: 50%; transform: scaleX(-1); }
+
+    .bar-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .bar-value {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .bar-value.a { right: 50%; margin-right: 4px; }
+    .bar-value.b { left: 50%; margin-left: 4px; }
+
+    .total-gap {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--surface), var(--bg));
+      border: 1px solid var(--border);
+    }
+
+    .total-gap-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gap-score {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--delta);
+    }
+
+    .gap-interpretation {
+      font-size: 14px;
+      color: var(--text-dim);
+      max-width: 400px;
+    }
+
+    .gap-meter {
+      width: 200px;
+    }
+
+    .gap-track {
+      height: 8px;
+      background: var(--bg);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gap-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--group-a), var(--delta), var(--group-b));
+      border-radius: 4px;
+      transition: width 0.5s;
+    }
+
+    .gap-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .mode-comparison {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .mode-comparison h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .mode-item {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .mode-name {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin-bottom: 8px;
+    }
+
+    .mode-bars {
+      display: flex;
+      gap: 4px;
+      height: 24px;
+    }
+
+    .mode-bar {
+      flex: 1;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .mode-bar.a { background: rgba(74, 222, 128, 0.3); color: var(--group-a); }
+    .mode-bar.b { background: rgba(96, 165, 250, 0.3); color: var(--group-b); }
+
+    .interpretation-section {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .interpretation-section h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .interpretation-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 400px;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--group-a);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #content { display: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Narrative Gap Analysis</h1>
+    <div class="groups-badge">
+      <div class="group-label">
+        <div class="group-dot a"></div>
+        <span id="group-a-name">Group A</span>
+        <span style="color: var(--text-dim);" id="group-a-count">(0)</span>
+      </div>
+      <div class="group-label">
+        <div class="group-dot b"></div>
+        <span id="group-b-name">Group B</span>
+        <span style="color: var(--text-dim);" id="group-b-count">(0)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <div>Analyzing narrative gaps...</div>
+  </div>
+
+  <div id="content">
+    <div class="dashboard">
+      <div class="metric-card">
+        <div class="metric-header">
+          <div class="metric-title">Agency</div>
+          <div class="delta-badge" id="delta-agency">Δ 0.00</div>
+        </div>
+        <div class="comparison-bars" id="bars-agency"></div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <div class="metric-title">Perceived Justice</div>
+          <div class="delta-badge" id="delta-justice">Δ 0.00</div>
+        </div>
+        <div class="comparison-bars" id="bars-justice"></div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <div class="metric-title">Belonging</div>
+          <div class="delta-badge" id="delta-belonging">Δ 0.00</div>
+        </div>
+        <div class="comparison-bars" id="bars-belonging"></div>
+      </div>
+
+      <div class="metric-card total-gap">
+        <div class="total-gap-content">
+          <div>
+            <div class="metric-title" style="margin-bottom: 8px;">Total Gap Score</div>
+            <div class="gap-score" id="total-gap">0.00</div>
+          </div>
+          <div class="gap-interpretation" id="gap-level">
+            Awaiting analysis...
+          </div>
+          <div class="gap-meter">
+            <div class="gap-track">
+              <div class="gap-fill" id="gap-fill" style="width: 0%;"></div>
+            </div>
+            <div class="gap-labels">
+              <span>Aligned</span>
+              <span>Moderate</span>
+              <span>High Gap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mode-comparison">
+      <h2>Mode Distribution Comparison</h2>
+      <div class="mode-grid" id="mode-grid"></div>
+    </div>
+
+    <div class="interpretation-section">
+      <h2>Interpretation</h2>
+      <div class="interpretation-text" id="interpretation">
+        Analysis results will appear here...
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.ts"></script>
+</body>
+</html>

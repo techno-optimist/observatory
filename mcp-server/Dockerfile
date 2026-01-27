@@ -1,9 +1,22 @@
 # Observatory MCP Server
-# Lightweight SSE transport layer (no ML dependencies)
+# Lightweight SSE transport layer with MCP Apps support
 #
 # Build: docker build -t observatory-mcp .
 # Run:   docker run -p 8080:8080 -e OBSERVATORY_BACKEND_URL=http://host.docker.internal:8000 observatory-mcp
 
+# Stage 1: Build MCP Apps
+FROM node:20-slim AS app-builder
+
+WORKDIR /apps
+
+# Copy app source and build
+COPY apps/package*.json ./
+RUN npm install
+
+COPY apps/ ./
+RUN npm run build
+
+# Stage 2: Final image
 FROM python:3.11-slim
 
 # Set environment variables
@@ -29,6 +42,9 @@ RUN pip install -r requirements.txt
 
 # Copy server code
 COPY --chown=observatory:observatory *.py ./
+
+# Copy built MCP Apps from builder stage
+COPY --from=app-builder --chown=observatory:observatory /apps/dist ./apps/dist
 
 # Switch to non-root user
 USER observatory

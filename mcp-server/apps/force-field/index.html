@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatory - Force Field Analysis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #1a1a2e;
+      --border: #2a2a4e;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --attractor: #4ade80;
+      --detractor: #f87171;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      height: 100vh;
+    }
+
+    .main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 { font-size: 18px; }
+
+    .quadrant-badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .quadrant-badge.active_transformation { background: linear-gradient(135deg, var(--attractor), var(--detractor)); }
+    .quadrant-badge.pure_aspiration { background: var(--attractor); color: #000; }
+    .quadrant-badge.pure_escape { background: var(--detractor); }
+    .quadrant-badge.stasis { background: var(--border); }
+
+    .force-chart {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .force-section {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .force-section h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .force-section.attractors h2 { color: var(--attractor); }
+    .force-section.detractors h2 { color: var(--detractor); }
+
+    .force-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .force-indicator.attractor { background: var(--attractor); }
+    .force-indicator.detractor { background: var(--detractor); }
+
+    .force-bars {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .force-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .force-label {
+      width: 100px;
+      font-size: 12px;
+      text-transform: capitalize;
+    }
+
+    .bar-container {
+      flex: 1;
+      height: 24px;
+      background: var(--bg);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .bar-fill.attractor { background: linear-gradient(90deg, var(--attractor), #22c55e); }
+    .bar-fill.detractor { background: linear-gradient(90deg, var(--detractor), #dc2626); }
+
+    .bar-value {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .quadrant-grid {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .quadrant-grid h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 16px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 4px;
+      aspect-ratio: 2/1;
+      max-height: 200px;
+    }
+
+    .quadrant-cell {
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      text-align: center;
+      transition: all 0.3s;
+      padding: 8px;
+    }
+
+    .quadrant-cell.active {
+      box-shadow: 0 0 0 2px white;
+      transform: scale(1.02);
+    }
+
+    .quadrant-cell.active_transformation { background: linear-gradient(135deg, rgba(74,222,128,0.3), rgba(248,113,113,0.3)); }
+    .quadrant-cell.pure_aspiration { background: rgba(74,222,128,0.3); }
+    .quadrant-cell.pure_escape { background: rgba(248,113,113,0.3); }
+    .quadrant-cell.stasis { background: rgba(42,42,78,0.5); }
+
+    .quadrant-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .quadrant-energy {
+      color: var(--text-dim);
+      font-size: 10px;
+    }
+
+    .sidebar {
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .metric {
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .metric-value {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .metric-value.positive { color: var(--attractor); }
+    .metric-value.negative { color: var(--detractor); }
+
+    .metric-detail {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .text-preview {
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .text-preview h3 {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .text-content {
+      font-size: 13px;
+      line-height: 1.5;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .interpretation {
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-dim);
+    }
+
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--attractor);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="header">
+        <h1>Force Field Analysis</h1>
+        <div class="quadrant-badge" id="quadrant-badge">STASIS</div>
+      </div>
+
+      <div class="force-chart">
+        <div class="force-section attractors">
+          <h2><div class="force-indicator attractor"></div> Attractors (Drawn Toward)</h2>
+          <div class="force-bars" id="attractor-bars"></div>
+        </div>
+        <div class="force-section detractors">
+          <h2><div class="force-indicator detractor"></div> Detractors (Fleeing From)</h2>
+          <div class="force-bars" id="detractor-bars"></div>
+        </div>
+      </div>
+
+      <div class="quadrant-grid">
+        <h2>Force Quadrants</h2>
+        <div class="grid-container">
+          <div class="quadrant-cell active_transformation" data-quadrant="active_transformation">
+            <div class="quadrant-name">Active Transformation</div>
+            <div class="quadrant-energy">High Energy</div>
+          </div>
+          <div class="quadrant-cell pure_aspiration" data-quadrant="pure_aspiration">
+            <div class="quadrant-name">Pure Aspiration</div>
+            <div class="quadrant-energy">Moderate Energy</div>
+          </div>
+          <div class="quadrant-cell pure_escape" data-quadrant="pure_escape">
+            <div class="quadrant-name">Pure Escape</div>
+            <div class="quadrant-energy">Moderate Energy</div>
+          </div>
+          <div class="quadrant-cell stasis" data-quadrant="stasis">
+            <div class="quadrant-name">Stasis</div>
+            <div class="quadrant-energy">Low Energy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h2>Force Metrics</h2>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Attractor Strength</div>
+          <div class="metric-value positive" id="attractor-strength">0.00</div>
+          <div class="metric-detail" id="primary-attractor">-</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Detractor Strength</div>
+          <div class="metric-value negative" id="detractor-strength">0.00</div>
+          <div class="metric-detail" id="primary-detractor">-</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Net Force</div>
+          <div class="metric-value" id="net-force">0.00</div>
+          <div class="metric-detail" id="force-direction">Balanced</div>
+        </div>
+      </div>
+
+      <div class="text-preview" id="text-preview" style="display: none;">
+        <h3>Analyzed Text</h3>
+        <div class="text-content" id="text-content"></div>
+      </div>
+
+      <h2>Interpretation</h2>
+      <div class="interpretation" id="interpretation">
+        Awaiting force field analysis results...
+      </div>
+    </div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <div>Analyzing force field...</div>
+  </div>
+
+  <script type="module" src="./src/app.ts"></script>
+</body>
+</html>

@@ -52,6 +52,9 @@ from mcp.types import (
     Tool,
     TextContent,
     CallToolResult,
+    Resource,
+    ResourceContents,
+    TextResourceContents,
 )
 
 from observatory_client import ObservatoryClient, ObservatoryConfig
@@ -137,6 +140,23 @@ except ImportError as e:
 BACKEND_URL = os.environ.get("OBSERVATORY_BACKEND_URL", "http://127.0.0.1:8000")
 DEFAULT_MODEL = os.environ.get("OBSERVATORY_DEFAULT_MODEL", "all-MiniLM-L6-v2")
 
+# --- MCP Apps Configuration ---
+# Path to bundled UI apps (built from mcp-server/apps/)
+APPS_DIR = os.path.join(os.path.dirname(__file__), "apps", "dist")
+
+# UI resource URIs for MCP Apps
+UI_RESOURCES = {
+    "manifold-viewer": "ui://observatory/manifold-viewer",
+    "cohort-heatmap": "ui://observatory/cohort-heatmap",
+    "trajectory-viewer": "ui://observatory/trajectory-viewer",
+    "force-field": "ui://observatory/force-field",
+    "mode-flow": "ui://observatory/mode-flow",
+    "gap-analysis": "ui://observatory/gap-analysis",
+}
+
+# MIME type for MCP Apps HTML resources
+MCP_APP_MIME_TYPE = "text/html;charset=utf-8"
+
 
 # --- Narrative Mode Reference ---
 
@@ -163,6 +183,67 @@ NARRATIVE_MODES = {
 # --- MCP Server ---
 
 server = Server("cultural-soliton-observatory")
+
+
+# --- MCP Apps Resource Handlers ---
+
+def load_app_html(app_name: str) -> str | None:
+    """Load bundled HTML for an MCP App.
+
+    Returns the HTML content or None if the app is not available.
+    """
+    app_path = os.path.join(APPS_DIR, app_name, "index.html")
+    if os.path.exists(app_path):
+        with open(app_path, "r", encoding="utf-8") as f:
+            return f.read()
+    return None
+
+
+@server.list_resources()
+async def list_resources() -> list[Resource]:
+    """List available MCP App UI resources."""
+    resources = []
+
+    # Check which apps are actually built and available
+    app_descriptions = {
+        "manifold-viewer": "Interactive 3D visualization of the cultural manifold",
+        "cohort-heatmap": "Heatmap visualization for cohort analysis",
+        "trajectory-viewer": "Timeline visualization for narrative trajectory tracking",
+        "force-field": "Force field diagram for attractor/detractor analysis",
+        "mode-flow": "Sankey diagram for narrative mode flow analysis",
+        "gap-analysis": "Dashboard for comparing narrative groups",
+    }
+
+    for app_name, uri in UI_RESOURCES.items():
+        app_path = os.path.join(APPS_DIR, app_name, "index.html")
+        if os.path.exists(app_path):
+            resources.append(Resource(
+                uri=uri,
+                name=f"Observatory {app_name.replace('-', ' ').title()}",
+                description=app_descriptions.get(app_name, f"Interactive UI for {app_name}"),
+                mimeType=MCP_APP_MIME_TYPE,
+            ))
+
+    return resources
+
+
+@server.read_resource()
+async def read_resource(uri: str) -> list[ResourceContents]:
+    """Serve MCP App HTML resources."""
+    # Find the app that matches the URI
+    for app_name, app_uri in UI_RESOURCES.items():
+        if uri == app_uri:
+            html = load_app_html(app_name)
+            if html:
+                return [TextResourceContents(
+                    uri=uri,
+                    mimeType=MCP_APP_MIME_TYPE,
+                    text=html,
+                )]
+            else:
+                raise ValueError(f"App '{app_name}' not found. Run 'npm run build' in mcp-server/apps/")
+
+    raise ValueError(f"Unknown resource URI: {uri}")
 
 
 def format_projection_result(result: dict, include_soft_labels: bool = False) -> str:
@@ -311,7 +392,9 @@ Now uses the v2 API which returns:
 - Stability indicators (stability score, boundary case detection)
 - Primary and secondary modes with probabilities
 
-Use this to understand the cultural positioning of any text.""",
+Use this to understand the cultural positioning of any text.
+
+🎨 Interactive UI: Results can be visualized in an interactive 3D manifold viewer.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -331,6 +414,7 @@ Use this to understand the cultural positioning of any text.""",
                 },
                 "required": ["text"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["manifold-viewer"]}} if os.path.exists(os.path.join(APPS_DIR, "manifold-viewer", "index.html")) else None,
         ),
         Tool(
             name="analyze_corpus",
@@ -341,7 +425,9 @@ Projects all texts onto the manifold and identifies narrative clusters
 their modes and centroids, and overall mode distribution.
 
 Use this to understand the narrative landscape of a document collection,
-social media discourse, organizational communications, etc.""",
+social media discourse, organizational communications, etc.
+
+🎨 Interactive UI: Results can be visualized in an interactive 3D manifold viewer.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -358,6 +444,7 @@ social media discourse, organizational communications, etc.""",
                 },
                 "required": ["texts"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["manifold-viewer"]}} if os.path.exists(os.path.join(APPS_DIR, "manifold-viewer", "index.html")) else None,
         ),
         Tool(
             name="compare_projections",
@@ -744,7 +831,9 @@ Use cases:
 - Detect hypocrisy gaps between espoused and operational values
 
 Returns group statistics, mode distributions, and a detailed gap analysis
-with interpretation of what the differences mean.""",
+with interpretation of what the differences mean.
+
+🎨 Interactive UI: Results can be visualized in an interactive gap analysis dashboard.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -769,6 +858,7 @@ with interpretation of what the differences mean.""",
                 },
                 "required": ["group_a_name", "group_a_texts", "group_b_name", "group_b_texts"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["gap-analysis"]}} if os.path.exists(os.path.join(APPS_DIR, "gap-analysis", "index.html")) else None,
         ),
         Tool(
             name="track_trajectory",
@@ -785,7 +875,9 @@ Use cases:
 - Detect early warning signs of narrative drift toward cynicism
 - Measure effectiveness of cultural interventions
 
-Requires texts with associated timestamps to compute trajectory dynamics.""",
+Requires texts with associated timestamps to compute trajectory dynamics.
+
+🎨 Interactive UI: Results can be visualized in an interactive trajectory timeline.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -806,6 +898,7 @@ Requires texts with associated timestamps to compute trajectory dynamics.""",
                 },
                 "required": ["name", "texts", "timestamps"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["trajectory-viewer"]}} if os.path.exists(os.path.join(APPS_DIR, "trajectory-viewer", "index.html")) else None,
         ),
         # --- Alert System Tools (v2 API) ---
         Tool(
@@ -922,7 +1015,9 @@ Use cases:
 - Study regional variations in organizational culture
 - Research comparing multiple communities or demographics
 
-Returns ANOVA results, pairwise comparisons, and interpretation.""",
+Returns ANOVA results, pairwise comparisons, and interpretation.
+
+🎨 Interactive UI: Results can be visualized in an interactive cohort heatmap.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -937,6 +1032,7 @@ Returns ANOVA results, pairwise comparisons, and interpretation.""",
                 },
                 "required": ["cohorts"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["cohort-heatmap"]}} if os.path.exists(os.path.join(APPS_DIR, "cohort-heatmap", "index.html")) else None,
         ),
         Tool(
             name="analyze_mode_flow",
@@ -952,7 +1048,9 @@ Use cases:
 - Study how organizations transition between cultural states
 - Detect recurring patterns in discourse evolution
 
-Returns transition matrix, flow patterns, and stability analysis.""",
+Returns transition matrix, flow patterns, and stability analysis.
+
+🎨 Interactive UI: Results can be visualized in an interactive Sankey diagram.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -964,6 +1062,7 @@ Returns transition matrix, flow patterns, and stability analysis.""",
                 },
                 "required": ["texts"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["mode-flow"]}} if os.path.exists(os.path.join(APPS_DIR, "mode-flow", "index.html")) else None,
         ),
         # --- Force Field Analysis Tools (v2 API) ---
         Tool(
@@ -999,7 +1098,9 @@ Force Quadrants:
 - PURE_ESCAPE: Low attractor + high detractor (fleeing without clear direction)
 - STASIS: Low attractor + low detractor (no strong forces)
 
-Use this to understand the motivational direction of narratives.""",
+Use this to understand the motivational direction of narratives.
+
+🎨 Interactive UI: Results can be visualized in an interactive force field diagram.""",
             inputSchema={
                 "type": "object",
                 "properties": {
@@ -1010,6 +1111,7 @@ Use this to understand the motivational direction of narratives.""",
                 },
                 "required": ["text"],
             },
+            _meta={"ui": {"resourceUri": UI_RESOURCES["force-field"]}} if os.path.exists(os.path.join(APPS_DIR, "force-field", "index.html")) else None,
         ),
         Tool(
             name="analyze_trajectory_forces",

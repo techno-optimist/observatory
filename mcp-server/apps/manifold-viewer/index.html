@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatory - 3D Manifold Viewer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #1a1a2e;
+      --border: #2a2a4e;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --positive: #4ade80;
+      --shadow: #f87171;
+      --exit: #60a5fa;
+      --ambivalent: #a78bfa;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      height: 100vh;
+    }
+
+    #canvas-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #three-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .sidebar {
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.positive { background: var(--positive); }
+    .legend-dot.shadow { background: var(--shadow); }
+    .legend-dot.exit { background: var(--exit); }
+    .legend-dot.ambivalent { background: var(--ambivalent); }
+
+    .stats {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 4px 0;
+    }
+
+    .stat-label { color: var(--text-dim); }
+    .stat-value { font-weight: 500; }
+
+    .selected-point {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 16px;
+    }
+
+    .selected-point h3 {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .selected-text {
+      font-size: 12px;
+      line-height: 1.5;
+      max-height: 120px;
+      overflow-y: auto;
+      background: var(--surface);
+      padding: 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .coords {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--text-dim);
+    }
+
+    .axis-labels {
+      position: absolute;
+      pointer-events: none;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #label-agency { color: #ff6b6b; }
+    #label-justice { color: #4ecdc4; }
+    #label-belonging { color: #ffe66d; }
+
+    .controls {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .control-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.2s;
+    }
+
+    .control-btn:hover {
+      background: var(--border);
+    }
+
+    .tooltip {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      max-width: 250px;
+      z-index: 100;
+    }
+
+    .tooltip.visible { opacity: 1; }
+
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--positive);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="canvas-container">
+      <canvas id="three-canvas"></canvas>
+      <div class="controls">
+        <button class="control-btn" id="reset-view">Reset View</button>
+        <button class="control-btn" id="toggle-regions">Toggle Regions</button>
+        <button class="control-btn" id="toggle-grid">Toggle Grid</button>
+      </div>
+      <div class="tooltip" id="tooltip"></div>
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div>Loading manifold...</div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <h2>Narrative Modes</h2>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-dot positive"></div>
+          <span>Positive (Growth, Civic, Faithful)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot shadow"></div>
+          <span>Shadow (Cynical, Decay, Doubt)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot exit"></div>
+          <span>Exit (Quitting, Grid Exit, Apostasy)</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot ambivalent"></div>
+          <span>Ambivalent (Conflicted, Transitional)</span>
+        </div>
+      </div>
+
+      <h2>Statistics</h2>
+      <div class="stats">
+        <div class="stat-row">
+          <span class="stat-label">Total Points</span>
+          <span class="stat-value" id="stat-total">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Positive</span>
+          <span class="stat-value" id="stat-positive">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Shadow</span>
+          <span class="stat-value" id="stat-shadow">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Exit</span>
+          <span class="stat-value" id="stat-exit">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Ambivalent</span>
+          <span class="stat-value" id="stat-ambivalent">0</span>
+        </div>
+      </div>
+
+      <h2>Axes</h2>
+      <div class="stats">
+        <div class="stat-row">
+          <span class="stat-label" style="color: #ff6b6b;">X: Agency</span>
+          <span class="stat-value">-2 to +2</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label" style="color: #4ecdc4;">Y: Justice</span>
+          <span class="stat-value">-2 to +2</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label" style="color: #ffe66d;">Z: Belonging</span>
+          <span class="stat-value">-2 to +2</span>
+        </div>
+      </div>
+
+      <div class="selected-point" id="selected-panel" style="display: none;">
+        <h3>Selected Point</h3>
+        <div class="selected-text" id="selected-text"></div>
+        <div class="coords" id="selected-coords"></div>
+        <div class="coords" id="selected-mode"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.ts"></script>
+</body>
+</html>

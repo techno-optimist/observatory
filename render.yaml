@@ -36,16 +36,16 @@ services:
       sizeGB: 1  # Adjust based on usage. Stores projections, cache, annotations.
 
   # =============================================================================
-  # Observatory MCP Server (SSE Transport)
+  # Observatory MCP Server (SSE Transport + MCP Apps)
   # =============================================================================
   # Lightweight proxy that exposes the backend as MCP tools.
+  # Includes interactive MCP Apps (UI visualizations).
   # Stateless - can scale horizontally if needed.
   - type: web
     name: observatory-mcp
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python server_sse.py
-    rootDir: ./mcp-server
+    runtime: docker
+    dockerfilePath: ./mcp-server/Dockerfile
+    dockerContext: ./mcp-server
     plan: free  # No ML dependencies - free tier works fine
     region: oregon  # Same region as backend for low latency
     healthCheckPath: /health

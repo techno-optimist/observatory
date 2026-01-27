@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatory - Trajectory Viewer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #1a1a2e;
+      --border: #2a2a4e;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --accent: #4ade80;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      grid-template-rows: 1fr auto;
+      height: 100vh;
+    }
+
+    .chart-area {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .chart-header h1 {
+      font-size: 18px;
+    }
+
+    .dimension-toggle {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dim-btn {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-dim);
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dim-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+    }
+
+    .dim-btn[data-dim="agency"] { --dim-color: #ff6b6b; }
+    .dim-btn[data-dim="justice"] { --dim-color: #4ecdc4; }
+    .dim-btn[data-dim="belonging"] { --dim-color: #ffe66d; }
+
+    .dim-btn.active[data-dim="agency"] { background: #ff6b6b; }
+    .dim-btn.active[data-dim="justice"] { background: #4ecdc4; }
+    .dim-btn.active[data-dim="belonging"] { background: #ffe66d; }
+
+    #chart {
+      flex: 1;
+      background: var(--surface);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline {
+      grid-column: 1 / -1;
+      padding: 16px 20px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .play-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .scrubber {
+      flex: 1;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .scrubber-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    .scrubber-handle {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      cursor: grab;
+    }
+
+    .time-display {
+      font-size: 12px;
+      color: var(--text-dim);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .sidebar {
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .stats-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .stat-detail {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .inflection-list {
+      margin-top: 16px;
+    }
+
+    .inflection-item {
+      background: var(--bg);
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .inflection-item:hover {
+      background: var(--border);
+    }
+
+    .inflection-time {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .inflection-desc {
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .current-point {
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 16px;
+    }
+
+    .current-point h3 {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .current-text {
+      font-size: 12px;
+      line-height: 1.5;
+      max-height: 100px;
+      overflow-y: auto;
+      margin-bottom: 8px;
+    }
+
+    .coords-row {
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+      font-family: monospace;
+    }
+
+    .coord {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .coord-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* SVG styles */
+    .axis-line {
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+
+    .axis-label {
+      fill: var(--text-dim);
+      font-size: 10px;
+    }
+
+    .trajectory-line {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .trajectory-point {
+      cursor: pointer;
+      transition: r 0.2s;
+    }
+
+    .trajectory-point:hover {
+      r: 8;
+    }
+
+    .inflection-marker {
+      fill: #f59e0b;
+      stroke: white;
+      stroke-width: 2;
+    }
+
+    .current-marker {
+      fill: white;
+      stroke: var(--accent);
+      stroke-width: 3;
+    }
+
+    .zero-line {
+      stroke: var(--border);
+      stroke-dasharray: 4 4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chart-area">
+      <div class="chart-header">
+        <h1 id="trajectory-name">Narrative Trajectory</h1>
+        <div class="dimension-toggle">
+          <button class="dim-btn active" data-dim="agency">Agency</button>
+          <button class="dim-btn active" data-dim="justice">Justice</button>
+          <button class="dim-btn active" data-dim="belonging">Belonging</button>
+        </div>
+      </div>
+      <div id="chart">
+        <svg id="chart-svg" width="100%" height="100%"></svg>
+        <div class="loading" id="loading">
+          <div class="loading-spinner"></div>
+          <div>Loading trajectory...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <h2>Trajectory Summary</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Direction</div>
+          <div class="stat-value" id="stat-direction">-</div>
+          <div class="stat-detail" id="stat-direction-detail"></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Velocity</div>
+          <div class="stat-value" id="stat-velocity">-</div>
+          <div class="stat-detail">units per period</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Points</div>
+          <div class="stat-value" id="stat-points">0</div>
+        </div>
+      </div>
+
+      <h2>Inflection Points</h2>
+      <div class="inflection-list" id="inflection-list">
+        <div style="color: var(--text-dim); font-size: 12px;">No inflection points detected</div>
+      </div>
+
+      <div class="current-point" id="current-point" style="display: none;">
+        <h3>Selected Point</h3>
+        <div class="current-text" id="current-text"></div>
+        <div class="coords-row">
+          <div class="coord">
+            <div class="coord-dot" style="background: #ff6b6b;"></div>
+            <span id="coord-agency">A: 0.00</span>
+          </div>
+          <div class="coord">
+            <div class="coord-dot" style="background: #4ecdc4;"></div>
+            <span id="coord-justice">J: 0.00</span>
+          </div>
+          <div class="coord">
+            <div class="coord-dot" style="background: #ffe66d;"></div>
+            <span id="coord-belonging">B: 0.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-controls">
+        <button class="play-btn" id="play-btn">▶</button>
+        <div class="scrubber" id="scrubber">
+          <div class="scrubber-fill" id="scrubber-fill"></div>
+          <div class="scrubber-handle" id="scrubber-handle" style="left: 0%;"></div>
+        </div>
+        <div class="time-display" id="time-display">0 / 0</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.ts"></script>
+</body>
+</html>

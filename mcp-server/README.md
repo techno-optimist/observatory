@@ -107,12 +107,30 @@ fly secrets set OBSERVATORY_BACKEND_URL=https://your-backend.fly.dev
 fly deploy
 ```
 
+## 🎨 Interactive Visualizations (MCP Apps)
+
+The Observatory now includes interactive UI visualizations that render directly in Claude conversations. When you use tools with the 🎨 indicator, an interactive visualization appears inline:
+
+| Visualization | Tool | Description |
+|---------------|------|-------------|
+| **3D Manifold Viewer** | `project_text`, `analyze_corpus` | Interactive 3D scatter plot with orbit controls |
+| **Cohort Heatmap** | `analyze_cohorts` | Multi-cohort comparison with dimension filtering |
+| **Trajectory Timeline** | `track_trajectory` | Animated timeline showing narrative evolution |
+| **Force Field Diagram** | `analyze_force_field` | Attractor/detractor visualization with quadrants |
+| **Mode Flow Sankey** | `analyze_mode_flow` | Flow diagram of mode transitions |
+| **Gap Analysis Dashboard** | `compare_narratives` | Side-by-side group comparison with gap metrics |
+
+These work automatically in:
+- Claude Desktop (web)
+- Claude Code
+- Any MCP host with MCP Apps support
+
 ## Available Tools
 
 | Tool | Description |
 |------|-------------|
-| `project_text` | Project text → (agency, fairness, belonging) |
-| `analyze_corpus` | Batch analysis with clustering |
+| `project_text` 🎨 | Project text → (agency, fairness, belonging) |
+| `analyze_corpus` 🎨 | Batch analysis with clustering |
 | `compare_projections` | Compare Ridge/GP/Neural projections |
 | `detect_hypocrisy` | Measure gap between stated and operational values |
 | `generate_probe` | Describe text that would land at target coords |
@@ -120,6 +138,11 @@ fly deploy
 | `add_training_example` | Add labeled example for calibration |
 | `explain_modes` | Explain narrative mode system |
 | `run_scenario` | Simulate narrative evolution |
+| `compare_narratives` 🎨 | Compare two groups with gap analysis |
+| `track_trajectory` 🎨 | Track narrative evolution over time |
+| `analyze_cohorts` 🎨 | Multi-group analysis with ANOVA |
+| `analyze_mode_flow` 🎨 | Analyze mode transitions and patterns |
+| `analyze_force_field` 🎨 | Attractor/detractor force field analysis |
 
 ## Architecture
 

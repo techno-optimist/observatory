@@ -8,10 +8,10 @@
 services:
   - type: web
     name: observatory-mcp
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python server_sse.py
-    plan: free  # Lightweight, no ML dependencies
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free  # Lightweight, includes built MCP Apps
     healthCheckPath: /health
     envVars:
       - key: OBSERVATORY_BACKEND_URL
@@ -35,3 +35,7 @@ services:
 #        }
 #      }
 #    }
+#
+# MCP Apps (Interactive Visualizations):
+# The server now includes interactive UI apps that render in Claude Desktop.
+# Tools with UI support show a 🎨 indicator in their description.
