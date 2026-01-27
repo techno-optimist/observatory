@@ -16,15 +16,14 @@ services:
   # Requires more resources due to PyTorch and transformer models.
   - type: web
     name: observatory-backend
-    runtime: docker
-    dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    rootDir: ./backend
     plan: starter  # 2GB RAM - minimum for PyTorch. Upgrade to standard for better perf.
     region: oregon  # Choose region closest to your users
     healthCheckPath: /
     envVars:
-      - key: PORT
-        value: 8000
       - key: PYTHONUNBUFFERED
         value: "1"
       # Uncomment to enable Anthropic API features (observer chat, etc.)
@@ -57,7 +56,7 @@ services:
           property: hostport
           # This creates: https://observatory-backend.onrender.com
       - key: PORT
-        value: 8080
+        value: "8080"
       - key: OBSERVATORY_DEFAULT_MODEL
         value: all-MiniLM-L6-v2
 
