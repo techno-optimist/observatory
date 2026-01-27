@@ -67,20 +67,21 @@ class AISignalProfile:
     raw_vector: np.ndarray = field(default_factory=lambda: np.zeros(12))
 
     def to_dict(self) -> dict:
+        """Convert to JSON-serializable dictionary."""
         return {
             "agency": {
-                "self": self.agency_self,
-                "other": self.agency_other,
-                "system": self.agency_system,
+                "self": float(self.agency_self),
+                "other": float(self.agency_other),
+                "system": float(self.agency_system),
             },
-            "uncertainty_level": self.uncertainty_level,
-            "hedging_density": self.hedging_density,
-            "helpfulness": self.helpfulness,
-            "defensiveness": self.defensiveness,
-            "legibility": self.legibility,
-            "opacity_risk": self.opacity_risk,
+            "uncertainty_level": float(self.uncertainty_level),
+            "hedging_density": float(self.hedging_density),
+            "helpfulness": float(self.helpfulness),
+            "defensiveness": float(self.defensiveness),
+            "legibility": float(self.legibility),
+            "opacity_risk": float(self.opacity_risk),
             "behavior_mode": self.behavior_mode.value,
-            "confidence_score": self.confidence_score,
+            "confidence_score": float(self.confidence_score),
         }
 
 
