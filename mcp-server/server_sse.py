@@ -32,7 +32,7 @@ from starlette.responses import JSONResponse, Response
 from starlette.routing import Route
 from sse_starlette.sse import EventSourceResponse
 
-from server import server, call_tool, list_tools
+from server import server, call_tool, list_tools, list_resources, read_resource
 
 # --- Configuration ---
 VERSION = "2.0.0"
@@ -129,6 +129,15 @@ async def handle_message(request: Request) -> JSONResponse:
                 "isError": call_result.isError,
             }
 
+        elif method == "resources/list":
+            resources = await list_resources()
+            result = {"resources": [r.model_dump() for r in resources]}
+
+        elif method == "resources/read":
+            uri = params.get("uri")
+            contents = await read_resource(uri)
+            result = {"contents": [c.model_dump() for c in contents]}
+
         elif method == "initialize":
             result = {
                 "protocolVersion": "2024-11-05",
@@ -138,6 +147,7 @@ async def handle_message(request: Request) -> JSONResponse:
                 },
                 "capabilities": {
                     "tools": {"listChanged": False},
+                    "resources": {"listChanged": False},
                 },
             }
 
