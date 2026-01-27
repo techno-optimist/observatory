@@ -11,6 +11,11 @@ import cors from "cors";
 import { randomUUID } from "crypto";
 import * as fs from "fs";
 import * as path from "path";
+import { fileURLToPath } from "url";
+
+// ES Module __dirname equivalent
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
 const PORT = parseInt(process.env.PORT || "8080");
