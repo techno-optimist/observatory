@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-07T16:02:37.124663",
+  "tests_passed": 0,
+  "tests_total": 4,
+  "results": [
+    {
+      "test_name": "paraphrase_robustness",
+      "before": 0.926,
+      "after": 0.6290759134210693,
+      "improvement": 0.3206523613163399,
+      "target_met": 

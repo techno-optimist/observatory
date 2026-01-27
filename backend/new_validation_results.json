@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "external_validation_passed": true,
+  "safety_validation_passed": false,
+  "scaling_validated": true,
+  "recommended_method": "hybrid",
+  "deployment_stage": "not_ready",
+  "issues": [
+    "Regime accuracy 17.0% below threshold 70.0%",
+    "Critical FNR 100.0% above threshold 20.0%"
+  ],
+  "runtime_seconds": 0.2120361328125
+}

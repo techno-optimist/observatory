@@ -1,0 +1,18 @@
+Requirement already satisfied: httpx[http2] in ./venv/lib/python3.14/site-packages (0.28.1)
+Requirement already satisfied: anyio in ./venv/lib/python3.14/site-packages (from httpx[http2]) (4.12.0)
+Requirement already satisfied: certifi in ./venv/lib/python3.14/site-packages (from httpx[http2]) (2025.11.12)
+Requirement already satisfied: httpcore==1.* in ./venv/lib/python3.14/site-packages (from httpx[http2]) (1.0.9)
+Requirement already satisfied: idna in ./venv/lib/python3.14/site-packages (from httpx[http2]) (3.11)
+Collecting h2<5,>=3 (from httpx[http2])
+  Downloading h2-4.3.0-py3-none-any.whl.metadata (5.1 kB)
+Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2])
+  Downloading hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting hpack<5,>=4.1 (from h2<5,>=3->httpx[http2])
+  Downloading hpack-4.1.0-py3-none-any.whl.metadata (4.6 kB)
+Requirement already satisfied: h11>=0.16 in ./venv/lib/python3.14/site-packages (from httpcore==1.*->httpx[http2]) (0.16.0)
+Downloading h2-4.3.0-py3-none-any.whl (61 kB)
+Downloading hpack-4.1.0-py3-none-any.whl (34 kB)
+Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Installing collected packages: hyperframe, hpack, h2
+
+Successfully installed h2-4.3.0 hpack-4.1.0 hyperframe-6.1.0

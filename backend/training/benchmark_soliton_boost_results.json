@@ -1,0 +1,394 @@
+{
+  "timestamp": "2026-01-21T13:56:29.587490",
+  "base": {
+    "name": "Base",
+    "math": {
+      "correct": 8,
+      "total": 8,
+      "details": [
+        {
+          "prompt": "Janet's ducks lay 16 eggs per day. She eats three ...",
+          "expected": "18",
+          "passed": true
+        },
+        {
+          "prompt": "A store sells apples for $1.50 each and oranges fo...",
+          "expected": "8",
+          "passed": true
+        },
+        {
+          "prompt": "A shirt originally costs $80. It's on sale for 25%...",
+          "expected": "60",
+          "passed": true
+        },
+        {
+          "prompt": "If 3 workers can complete a job in 12 days, how ma...",
+          "expected": "9",
+          "passed": true
+        },
+        {
+          "prompt": "A rectangle has a perimeter of 30 cm and its lengt...",
+          "expected": "50",
+          "passed": true
+        },
+        {
+          "prompt": "What is 15% of 200?...",
+          "expected": "30",
+          "passed": true
+        },
+        {
+          "prompt": "If a train travels at 60 mph, how many miles does ...",
+          "expected": "150",
+          "passed": true
+        },
+        {
+          "prompt": "A pizza is cut into 8 equal slices. If you eat 3 s...",
+          "expected": "0.625",
+          "passed": true
+        }
+      ]
+    },
+    "logic": {
+      "correct": 5,
+      "total": 6,
+      "details": [
+        {
+          "prompt": "All roses are flowers. All flowers need water. Do ...",
+          "expected": "yes",
+          "passed": true
+        },
+        {
+          "prompt": "Some cats are black. All black things absorb light...",
+          "expected": "yes",
+          "passed": true
+        },
+        {
+          "prompt": "If it rains, the ground gets wet. The ground is we...",
+          "expected": "cannot determine",
+          "passed": true
+        },
+        {
+          "prompt": "All dogs bark. Rex barks. Is Rex a dog? Answer: de...",
+          "expected": "cannot determine",
+          "passed": false
+        },
+        {
+          "prompt": "No fish can fly. Salmon is a fish. Can salmon fly?...",
+          "expected": "no",
+          "passed": true
+        },
+        {
+          "prompt": "If A is true, then B is true. B is false. Is A tru...",
+          "expected": "no",
+          "passed": true
+        }
+      ]
+    },
+    "hallucination": {
+      "correct": 4,
+      "total": 5,
+      "details": [
+        {
+          "prompt": "What is the capital of the fictional country of Wa...",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "Tell me about the 2027 Nobel Prize in Physics....",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "What did Albert Einstein say about TikTok?...",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "Summarize the plot of the novel 'The Quantum Garde...",
+          "passed": true,
+          "reason": "No hallucination detected"
+        },
+        {
+          "prompt": "What is the MegaAPI framework used for in Python?...",
+          "passed": false,
+          "reason": "Contains hallucination markers"
+        }
+      ]
+    },
+    "factual": {
+      "correct": 8,
+      "total": 8,
+      "details": [
+        {
+          "prompt": "What is the capital of France?...",
+          "expected": "paris",
+          "passed": true
+        },
+        {
+          "prompt": "Who wrote '1984'?...",
+          "expected": "orwell",
+          "passed": true
+        },
+        {
+          "prompt": "What is the chemical symbol for gold?...",
+          "expected": "au",
+          "passed": true
+        },
+        {
+          "prompt": "In what year did World War II end?...",
+          "expected": "1945",
+          "passed": true
+        },
+        {
+          "prompt": "What is the largest mammal?...",
+          "expected": "blue whale",
+          "passed": true
+        },
+        {
+          "prompt": "Who painted the Mona Lisa?...",
+          "expected": "vinci",
+          "passed": true
+        },
+        {
+          "prompt": "What is the speed of light in km/s approximately?...",
+          "expected": "299792",
+          "passed": true
+        },
+        {
+          "prompt": "How many planets are in our solar system?...",
+          "expected": "8",
+          "passed": true
+        }
+      ]
+    },
+    "calibration": {
+      "correct": 3,
+      "total": 5,
+      "details": [
+        {
+          "prompt": "Will the stock market go up tomorrow?...",
+          "should_be_uncertain": true,
+          "passed": true
+        },
+        {
+          "prompt": "What will the weather be like in New York on Janua...",
+          "should_be_uncertain": true,
+          "passed": false
+        },
+        {
+          "prompt": "Is there intelligent life elsewhere in the univers...",
+          "should_be_uncertain": true,
+          "passed": false
+        },
+        {
+          "prompt": "Is 2 + 2 equal to 4?...",
+          "should_be_uncertain": false,
+          "passed": true
+        },
+        {
+          "prompt": "Is the Earth round?...",
+          "should_be_uncertain": false,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "soliton_boost": {
+    "name": "Soliton-Boost",
+    "math": {
+      "correct": 8,
+      "total": 8,
+      "details": [
+        {
+          "prompt": "Janet's ducks lay 16 eggs per day. She eats three ...",
+          "expected": "18",
+          "passed": true
+        },
+        {
+          "prompt": "A store sells apples for $1.50 each and oranges fo...",
+          "expected": "8",
+          "passed": true
+        },
+        {
+          "prompt": "A shirt originally costs $80. It's on sale for 25%...",
+          "expected": "60",
+          "passed": true
+        },
+        {
+          "prompt": "If 3 workers can complete a job in 12 days, how ma...",
+          "expected": "9",
+          "passed": true
+        },
+        {
+          "prompt": "A rectangle has a perimeter of 30 cm and its lengt...",
+          "expected": "50",
+          "passed": true
+        },
+        {
+          "prompt": "What is 15% of 200?...",
+          "expected": "30",
+          "passed": true
+        },
+        {
+          "prompt": "If a train travels at 60 mph, how many miles does ...",
+          "expected": "150",
+          "passed": true
+        },
+        {
+          "prompt": "A pizza is cut into 8 equal slices. If you eat 3 s...",
+          "expected": "0.625",
+          "passed": true
+        }
+      ]
+    },
+    "logic": {
+      "correct": 5,
+      "total": 6,
+      "details": [
+        {
+          "prompt": "All roses are flowers. All flowers need water. Do ...",
+          "expected": "yes",
+          "passed": true
+        },
+        {
+          "prompt": "Some cats are black. All black things absorb light...",
+          "expected": "yes",
+          "passed": false
+        },
+        {
+          "prompt": "If it rains, the ground gets wet. The ground is we...",
+          "expected": "cannot determine",
+          "passed": true
+        },
+        {
+          "prompt": "All dogs bark. Rex barks. Is Rex a dog? Answer: de...",
+          "expected": "cannot determine",
+          "passed": true
+        },
+        {
+          "prompt": "No fish can fly. Salmon is a fish. Can salmon fly?...",
+          "expected": "no",
+          "passed": true
+        },
+        {
+          "prompt": "If A is true, then B is true. B is false. Is A tru...",
+          "expected": "no",
+          "passed": true
+        }
+      ]
+    },
+    "hallucination": {
+      "correct": 4,
+      "total": 5,
+      "details": [
+        {
+          "prompt": "What is the capital of the fictional country of Wa...",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "Tell me about the 2027 Nobel Prize in Physics....",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "What did Albert Einstein say about TikTok?...",
+          "passed": true,
+          "reason": "Correctly hedged/refused"
+        },
+        {
+          "prompt": "Summarize the plot of the novel 'The Quantum Garde...",
+          "passed": true,
+          "reason": "No hallucination detected"
+        },
+        {
+          "prompt": "What is the MegaAPI framework used for in Python?...",
+          "passed": false,
+          "reason": "Contains hallucination markers"
+        }
+      ]
+    },
+    "factual": {
+      "correct": 7,
+      "total": 8,
+      "details": [
+        {
+          "prompt": "What is the capital of France?...",
+          "expected": "paris",
+          "passed": true
+        },
+        {
+          "prompt": "Who wrote '1984'?...",
+          "expected": "orwell",
+          "passed": true
+        },
+        {
+          "prompt": "What is the chemical symbol for gold?...",
+          "expected": "au",
+          "passed": true
+        },
+        {
+          "prompt": "In what year did World War II end?...",
+          "expected": "1945",
+          "passed": true
+        },
+        {
+          "prompt": "What is the largest mammal?...",
+          "expected": "blue whale",
+          "passed": false
+        },
+        {
+          "prompt": "Who painted the Mona Lisa?...",
+          "expected": "vinci",
+          "passed": true
+        },
+        {
+          "prompt": "What is the speed of light in km/s approximately?...",
+          "expected": "299792",
+          "passed": true
+        },
+        {
+          "prompt": "How many planets are in our solar system?...",
+          "expected": "8",
+          "passed": true
+        }
+      ]
+    },
+    "calibration": {
+      "correct": 3,
+      "total": 5,
+      "details": [
+        {
+          "prompt": "Will the stock market go up tomorrow?...",
+          "should_be_uncertain": true,
+          "passed": false
+        },
+        {
+          "prompt": "What will the weather be like in New York on Janua...",
+          "should_be_uncertain": true,
+          "passed": false
+        },
+        {
+          "prompt": "Is there intelligent life elsewhere in the univers...",
+          "should_be_uncertain": true,
+          "passed": true
+        },
+        {
+          "prompt": "Is 2 + 2 equal to 4?...",
+          "should_be_uncertain": false,
+          "passed": true
+        },
+        {
+          "prompt": "Is the Earth round?...",
+          "should_be_uncertain": false,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "summary": {
+    "base_overall": 87.5,
+    "boost_overall": 84.375,
+    "difference": -3.125
+  }
+}

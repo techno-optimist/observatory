@@ -1,0 +1,49 @@
+# Full Observatory Stack with MCP Server
+#
+# Usage:
+#   docker-compose up -d
+#
+# This starts:
+#   - FastAPI backend (port 8000) with ML models
+#   - MCP SSE server (port 8080) for remote LLM access
+
+version: '3.8'
+
+services:
+  # Full ML Backend
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend-data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # MCP Server (SSE transport)
+  mcp-server:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - OBSERVATORY_BACKEND_URL=http://backend:8000
+      - PORT=8080
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  backend-data:

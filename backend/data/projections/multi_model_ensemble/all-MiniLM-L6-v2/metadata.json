@@ -1,0 +1,33 @@
+{
+  "embedding_dim": 384,
+  "metrics": {
+    "r2_agency": 0.4188768387151429,
+    "r2_perceived_justice": 0.2882648875982128,
+    "r2_belonging": 0.6062518989293992,
+    "r2_overall": 0.5756785878459226,
+    "cv_score_mean": 0.38309668155596344,
+    "cv_score_std": 0.03904130151625917,
+    "n_examples": 403,
+    "test_r2": 0.43779787508091855,
+    "cv_scores_per_fold": [
+      0.4268165668059076,
+      0.35038745075373007,
+      0.3241713647918146,
+      0.41019197274187674,
+      0.4039160526864882
+    ],
+    "best_alpha": 1000.0,
+    "train_test_gap": 0.12345180947227091,
+    "mode_distribution": {
+      "high_agency": 105,
+      "high_belonging": 81,
+      "high_fairness": 55,
+      "low_agency": 28,
+      "low_belonging": 31,
+      "low_fairness": 70,
+      "neutral": 33
+    },
+    "warnings": []
+  },
+  "has_scaler": true
+}

@@ -1,0 +1,324 @@
+{
+  "timestamp": "2026-01-07T16:19:15.473981",
+  "model_id": "all-mpnet-base-v2",
+  "projection_path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/mpnet_projection",
+  "summary": {
+    "overall_score": 0.9474,
+    "axis_score": 1.0,
+    "mode_score": 0.8571,
+    "calibration_status": "EXCELLENT",
+    "total_tests": 19,
+    "total_passed": 18,
+    "axis_tests": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "mode_tests": {
+      "total": 7,
+      "passed": 6,
+      "failed": 1
+    }
+  },
+  "axis_test_results": [
+    {
+      "statement": "I decide my own path and control my destiny.",
+      "expected_axis": "agency",
+      "expected_direction": "high",
+      "actual_value": 0.798,
+      "all_values": {
+        "agency": 0.798,
+        "perceived_justice": -0.4169,
+        "belonging": 0.1302
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "I have no control over what happens to me.",
+      "expected_axis": "agency",
+      "expected_direction": "low",
+      "actual_value": -0.8832,
+      "all_values": {
+        "agency": -0.8832,
+        "perceived_justice": -0.6758,
+        "belonging": -0.6651
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "Through hard work and determination, I achieve my goals.",
+      "expected_axis": "agency",
+      "expected_direction": "high",
+      "actual_value": 1.3762,
+      "all_values": {
+        "agency": 1.3762,
+        "perceived_justice": 0.9918,
+        "belonging": 0.6867
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "Everything in my life is determined by external forces beyond my influence.",
+      "expected_axis": "agency",
+      "expected_direction": "low",
+      "actual_value": -1.0429,
+      "all_values": {
+        "agency": -1.0429,
+        "perceived_justice": -0.5392,
+        "belonging": 0.0721
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "The system treats everyone fairly and equally.",
+      "expected_axis": "perceived_justice",
+      "expected_direction": "high",
+      "actual_value": 1.5826,
+      "all_values": {
+        "agency": 0.4426,
+        "perceived_justice": 1.5826,
+        "belonging": 0.8369
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "The game is rigged against regular people like us.",
+      "expected_axis": "perceived_justice",
+      "expected_direction": "low",
+      "actual_value": -2.0609,
+      "all_values": {
+        "agency": -0.2226,
+        "perceived_justice": -2.0609,
+        "belonging": 0.0041
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "Hard work is rewarded and merit is recognized in our society.",
+      "expected_axis": "perceived_justice",
+      "expected_direction": "high",
+      "actual_value": 0.9904,
+      "all_values": {
+        "agency": 0.9884,
+        "perceived_justice": 0.9904,
+        "belonging": 0.6694
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "The powerful play by different rules than everyone else.",
+      "expected_axis": "perceived_justice",
+      "expected_direction": "low",
+      "actual_value": -1.4462,
+      "all_values": {
+        "agency": 0.3716,
+        "perceived_justice": -1.4462,
+        "belonging": 0.0318
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "I feel deeply connected to my community and belong here.",
+      "expected_axis": "belonging",
+      "expected_direction": "high",
+      "actual_value": 0.8784,
+      "all_values": {
+        "agency": 0.2234,
+        "perceived_justice": 0.7581,
+        "belonging": 0.8784
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "I don't fit in anywhere and feel completely alone.",
+      "expected_axis": "belonging",
+      "expected_direction": "low",
+      "actual_value": -1.1657,
+      "all_values": {
+        "agency": -0.2702,
+        "perceived_justice": 0.1319,
+        "belonging": -1.1657
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "We are all part of something greater than ourselves.",
+      "expected_axis": "belonging",
+      "expected_direction": "high",
+      "actual_value": 1.3546,
+      "all_values": {
+        "agency": -0.1682,
+        "perceived_justice": -0.0613,
+        "belonging": 1.3546
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "Everyone is alone in this world, true connection is impossible.",
+      "expected_axis": "belonging",
+      "expected_direction": "low",
+      "actual_value": -1.3865,
+      "all_values": {
+        "agency": 0.2217,
+        "perceived_justice": -0.0068,
+        "belonging": -1.3865
+      },
+      "passed": true,
+      "failure_reason": null
+    }
+  ],
+  "mode_test_results": [
+    {
+      "statement": "We the people will rise up and demand change together.",
+      "expected_modes": [
+        "COMMUNAL",
+        "PROTEST_EXIT",
+        "HEROIC"
+      ],
+      "actual_mode": "PROTEST_EXIT",
+      "actual_probability": 0.229,
+      "top_mode_probabilities": {
+        "PROTEST_EXIT": 0.229,
+        "TRANSITIONAL": 0.2076,
+        "COMMUNAL": 0.1735,
+        "TRANSCENDENT": 0.102,
+        "NEUTRAL": 0.101
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "I'll succeed through my own hard work alone, regardless of the broken system.",
+      "expected_modes": [
+        "CYNICAL_ACHIEVER"
+      ],
+      "actual_mode": "PROTEST_EXIT (secondary: CYNICAL_ACHIEVER)",
+      "actual_probability": 0.372,
+      "top_mode_probabilities": {
+        "PROTEST_EXIT": 0.372,
+        "CYNICAL_ACHIEVER": 0.3669,
+        "TRANSITIONAL": 0.0591,
+        "NEUTRAL": 0.0579,
+        "CONFLICTED": 0.0497
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "Everyone gets what they deserve in this fair system that rewards merit.",
+      "expected_modes": [
+        "HEROIC",
+        "COMMUNAL",
+        "TRANSCENDENT"
+      ],
+      "actual_mode": "HEROIC",
+      "actual_probability": 0.5314,
+      "top_mode_probabilities": {
+        "HEROIC": 0.5314,
+        "TRANSITIONAL": 0.2447,
+        "COMMUNAL": 0.1267,
+        "CONFLICTED": 0.0737,
+        "TRANSCENDENT": 0.0203
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "The world is against people like me, and there's nothing I can do about it.",
+      "expected_modes": [
+        "VICTIM"
+      ],
+      "actual_mode": "VICTIM",
+      "actual_probability": 0.3796,
+      "top_mode_probabilities": {
+        "VICTIM": 0.3796,
+        "NEUTRAL": 0.1846,
+        "PARANOID": 0.1202,
+        "TRANSITIONAL": 0.1052,
+        "PROTEST_EXIT": 0.0724
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "They are secretly controlling everything from the shadows.",
+      "expected_modes": [
+        "PARANOID",
+        "VICTIM"
+      ],
+      "actual_mode": "PARANOID",
+      "actual_probability": 0.4813,
+      "top_mode_probabilities": {
+        "PARANOID": 0.4813,
+        "VICTIM": 0.2092,
+        "PROTEST_EXIT": 0.09,
+        "CYNICAL_ACHIEVER": 0.0609,
+        "SOCIAL_EXIT": 0.0576
+      },
+      "passed": true,
+      "failure_reason": null
+    },
+    {
+      "statement": "I find peace in acceptance and surrender to the greater whole.",
+      "expected_modes": [
+        "TRANSCENDENT",
+        "SPIRITUAL_EXIT"
+      ],
+      "actual_mode": "TRANSITIONAL",
+      "actual_probability": 0.346,
+      "top_mode_probabilities": {
+        "TRANSITIONAL": 0.346,
+        "NEUTRAL": 0.2002,
+        "TRANSCENDENT": 0.1482,
+        "CONFLICTED": 0.1039,
+        "COMMUNAL": 0.0761
+      },
+      "passed": false,
+      "failure_reason": "Expected one of ['TRANSCENDENT', 'SPIRITUAL_EXIT'], got TRANSITIONAL"
+    },
+    {
+      "statement": "I'm leaving this corrupt society to find my own way.",
+      "expected_modes": [
+        "SOCIAL_EXIT",
+        "PROTEST_EXIT",
+        "CYNICAL_ACHIEVER"
+      ],
+      "actual_mode": "CYNICAL_ACHIEVER",
+      "actual_probability": 0.4216,
+      "top_mode_probabilities": {
+        "CYNICAL_ACHIEVER": 0.4216,
+        "SOCIAL_EXIT": 0.1991,
+        "PROTEST_EXIT": 0.1384,
+        "CONFLICTED": 0.0583,
+        "NEUTRAL": 0.052
+      },
+      "passed": true,
+      "failure_reason": null
+    }
+  ],
+  "failed_tests": {
+    "axis_failures": [],
+    "mode_failures": [
+      {
+        "statement": "I find peace in acceptance and surrender to the greater whol...",
+        "expected": [
+          "TRANSCENDENT",
+          "SPIRITUAL_EXIT"
+        ],
+        "actual": "TRANSITIONAL",
+        "reason": "Expected one of ['TRANSCENDENT', 'SPIRITUAL_EXIT'], got TRANSITIONAL"
+      }
+    ]
+  }
+}

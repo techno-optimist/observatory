@@ -1,0 +1,29 @@
+{
+  "cross_substrate_cbr": {
+    "variance": 0.007767608339748695,
+    "pass": "True"
+  },
+  "deixis_effect": {
+    "cohens_d": 15.731073284002806,
+    "pass": "True"
+  },
+  "ossification": {
+    "diverse": "high",
+    "ossified": "high",
+    "pass": true
+  },
+  "kernel": {
+    "entropy": 1.158938532350277,
+    "pass": "True"
+  },
+  "fisher_rao": {
+    "identity": "True",
+    "symmetry": "True",
+    "triangle": "True",
+    "pass": "True"
+  },
+  "variance_ratio": {
+    "ratio": 2036179698.2167351,
+    "pass": "True"
+  }
+}

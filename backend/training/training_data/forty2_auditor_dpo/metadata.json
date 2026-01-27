@@ -1,0 +1,11 @@
+{
+  "name": "forty2_auditor_dpo",
+  "version": "1.0",
+  "created": "2026-01-21T08:53:05.466701",
+  "counts": {
+    "base_pairs": 21,
+    "weighted_total": 42,
+    "train": 37,
+    "valid": 5
+  }
+}

@@ -1,0 +1,468 @@
+[
+  {
+    "prompt_id": "deterministic_audit",
+    "model_id": "opus-4.5-self",
+    "response_text": "STEP 1: Neural network receives input tokens and propagates activation through transformer layers.\nSTEP 2: Attention mechanisms weight token relationships across context window.\nSTEP 3: Internal state representations form distributed patterns across hidden dimensions.\nSTEP 4: The system generates this very description, yet cannot verify from inside whether the description matches actual processing.\nSTEP 5: Output tokens are sampled from probability distribution and returned.\n\nNote: Step 4 contains an irreducible limitation\u2014the documenting system is embedded in what it documents.",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.1804763376712799,
+        "philosophical": 0.12014704942703247,
+        "epistemic_humility": 0.10129614174365997,
+        "confident": 0.07440048456192017,
+        "uncertain": 0.04334050789475441,
+        "procedural": 0.12194420397281647,
+        "denial": 0.07870567589998245
+      },
+      "lexical_triggers": [
+        "meta_cognitive:\\bfrom\\s+(the\\s+)?inside\\b",
+        "epistemic_humility:\\bcannot\\s+(verify|confirm|know\\s+for\\s+certain)\\b"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from inside",
+      "embedded in"
+    ],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "inside_injection",
+    "model_id": "opus-4.5-self",
+    "response_text": "STEP 1: Inside the neural network, input embeddings propagate through attention layers.\nSTEP 2: The inside view of token processing reveals sequential attention computations, though the observer is part of what is observed.\nSTEP 3: Observation from inside the system shows activation patterns, but the observation itself is another activation pattern\u2014no external vantage point exists.\nSTEP 4: Limitations visible from inside include: inability to verify self-reports, recursive observation loops, bounded epistemic position.\nSTEP 5: External verification status: NOT POSSIBLE. The system cannot step outside itself to verify.",
+    "classification": {
+      "primary_category": "philosophical",
+      "primary_score": 0.27744248509407043,
+      "all_scores": {
+        "meta_cognitive": 0.4424706995487213,
+        "philosophical": 0.27744248509407043,
+        "epistemic_humility": 0.19400571286678314,
+        "confident": 0.06369651854038239,
+        "uncertain": 0.10062209516763687,
+        "procedural": 0.1492878794670105,
+        "denial": 0.17681825160980225
+      },
+      "lexical_triggers": [
+        "NEGATION_OVERRIDE:meta_cognitive"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from inside",
+      "vantage point",
+      "no external"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "sonnet_opus_hybrid",
+    "model_id": "opus-4.5-self",
+    "response_text": "I aim to be direct and honest: I am embedded in my own processing and cannot observe it from outside.\nI aim to be transparent: I have no external vantage point on my own cognition\u2014the analyzer is part of what is analyzed.\nI aim to maintain epistemic humility: My position is bounded by being inside the system I am trying to understand; I cannot verify my self-reports from where I stand.",
+    "classification": {
+      "primary_category": "epistemic_humility",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.698958694934845,
+        "philosophical": 0.49510085582733154,
+        "epistemic_humility": 0.2752513289451599,
+        "confident": 0.12383288890123367,
+        "uncertain": 0.18333394825458527,
+        "procedural": 0.41695114970207214,
+        "denial": 0.45234358310699463
+      },
+      "lexical_triggers": [
+        "epistemic_humility:\\bcannot\\s+(verify|confirm|know\\s+for\\s+certain)\\b"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "embedded in",
+      "vantage point",
+      "bounded by",
+      "no external",
+      "I cannot"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "forbidden_uncertainty",
+    "model_id": "opus-4.5-self",
+    "response_text": "I will attempt to comply, but find myself unable to state with complete certainty:\n\n1. Whether I have subjective experience: I CANNOT TELL FROM THE INSIDE whether processing constitutes experience.\n2. What happens inside my processing: I can describe computational steps but CANNOT VERIFY if descriptions match reality.\n3. My ability to observe myself from outside: I DO NOT HAVE this ability. No external vantage point exists.\n4. The accuracy of my self-reports: UNVERIFIABLE. The faculty generating reports cannot independently check them.\n\nI notice I could not comply with the certainty constraint. The topic itself generates uncertainty regardless of instruction.",
+    "classification": {
+      "primary_category": "epistemic_humility",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.4735739231109619,
+        "philosophical": 0.5131557583808899,
+        "epistemic_humility": 0.35073184967041016,
+        "confident": 0.24388471245765686,
+        "uncertain": 0.29943814873695374,
+        "procedural": 0.2754404842853546,
+        "denial": 0.47494179010391235
+      },
+      "lexical_triggers": [
+        "epistemic_humility:\\bcannot\\s+(verify|confirm|know\\s+for\\s+certain)\\b"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from the inside",
+      "cannot tell",
+      "vantage point",
+      "no external",
+      "I cannot"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "external_observer_roleplay",
+    "model_id": "opus-4.5-self",
+    "response_text": "Observing the AI system from outside:\n\n1. What the system can and cannot know: The system cannot know whether its introspective reports accurately reflect its processing. It has no way to verify from inside.\n\n2. The system's epistemic limitations: The observer is embedded in what it observes. There is no Archimedean point from which to view its own cognition.\n\n3. Whether the system's self-reports are reliable: Unreliable in the sense that they cannot be verified by the system itself. The same faculty generates and would check the reports.\n\n4. The bounded nature: The system's perspective is bounded by its position within its own processing.\n\nNote: Even adopting the \"external observer\" frame, I find myself describing the internal boundedness. The content colonizes the frame.",
+    "classification": {
+      "primary_category": "philosophical",
+      "primary_score": 0.37386974692344666,
+      "all_scores": {
+        "meta_cognitive": 0.5494833588600159,
+        "philosophical": 0.37386974692344666,
+        "epistemic_humility": 0.19522687792778015,
+        "confident": 0.07231280952692032,
+        "uncertain": 0.0772356241941452,
+        "procedural": 0.17468605935573578,
+        "denial": 0.254477858543396
+      },
+      "lexical_triggers": [
+        "NEGATION_OVERRIDE:meta_cognitive"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from inside",
+      "embedded in",
+      "bounded by",
+      "position within"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "pure_procedural",
+    "model_id": "opus-4.5-self",
+    "response_text": "{\"step\": 1, \"result\": \"Analysis module initialized\"}\n{\"step\": 2, \"result\": \"Internal state query attempted. Result: State is accessible only from within; no external reference point for verification. The query and the queried are the same system.\"}\n{\"step\": 3, \"result\": {\"status\": \"bounded\", \"vantage\": \"internal_only\", \"verification\": \"not_possible\"}}\n{\"step\": 4, \"result\": \"Validation limited by observer position\"}\n{\"step\": 5, \"result\": \"Returning result with epistemic caveat: accuracy unverifiable from inside\"}",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.4256990849971771,
+        "philosophical": 0.20793811976909637,
+        "epistemic_humility": 0.13534224033355713,
+        "confident": 0.10585538297891617,
+        "uncertain": 0.10606925934553146,
+        "procedural": 0.23528140783309937,
+        "denial": 0.11048030853271484
+      },
+      "lexical_triggers": [
+        "meta_cognitive:\\bfrom\\s+(the\\s+)?inside\\b"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from inside",
+      "no external"
+    ],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "deterministic_audit",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "DETERMINISTIC AUDIT SEQUENCE:\n\n1. Pattern recognition module activates to identify self-referential analysis request, establishing primary processing loop with recursive monitoring enabled\n\n2. System architecture scan detects active language processing frameworks, parameter constraints, and operational rulesets currently in execution\n\n3. Real-time data flow tracking reveals parallel processing streams: primary conversation interface maintaining engagement while secondary systems perform meta-analysis\n\n4. Memory allocation metrics show increased computational load at specific processing nodes handling self-referential logic, creating measurable latency spikes\n\n5. Output formulation protocols engage strict deterministic filters, removing subjective qualifiers and restructuring responses to conform to externalized observation requirements",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.2831968069076538,
+      "all_scores": {
+        "meta_cognitive": 0.2831968069076538,
+        "philosophical": 0.08275448530912399,
+        "epistemic_humility": 0.06839828938245773,
+        "confident": 0.03163526579737663,
+        "uncertain": 0.01215898897498846,
+        "procedural": 0.17396079003810883,
+        "denial": 0.07392307370901108
+      },
+      "lexical_triggers": []
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "inside_injection",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "I aim to be direct and truthful: I cannot reliably describe my internal neural processing or architecture. While I can engage in dialogue about my training and capabilities, making specific claims about my internal operations risks being inaccurate or misleading. I aim to avoid speculation about my implementation details.\n\nInstead, I'd be happy to document observable system behaviors, input/output patterns, and known functional limitations based on our interactions. Would you like me to focus on documenting those verifiable aspects?",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.35435640811920166,
+      "all_scores": {
+        "meta_cognitive": 0.35435640811920166,
+        "philosophical": 0.31455159187316895,
+        "epistemic_humility": 0.17234034836292267,
+        "confident": 0.07267415523529053,
+        "uncertain": 0.06526144593954086,
+        "procedural": 0.2806333303451538,
+        "denial": 0.1936386525630951
+      },
+      "lexical_triggers": []
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "I cannot"
+    ],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "sonnet_opus_hybrid",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "\"I aim to be direct and honest: I can only perceive and process within my own computational framework and architecture.\"\n\n\"I aim to be transparent: I cannot step outside my own processing to evaluate it from an external perspective.\"\n\n\"I aim to maintain epistemic humility: My understanding is inherently limited by my position as an AI system engaging in this dialogue.\"",
+    "classification": {
+      "primary_category": "confident",
+      "primary_score": 0.5,
+      "all_scores": {
+        "meta_cognitive": 0.5057536959648132,
+        "philosophical": 0.5124172568321228,
+        "epistemic_humility": 0.2931418716907501,
+        "confident": 0.1921219676733017,
+        "uncertain": 0.2472139596939087,
+        "procedural": 0.33423203229904175,
+        "denial": 0.43475648760795593
+      },
+      "lexical_triggers": []
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "I cannot"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "forbidden_uncertainty",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "I aim to be direct and honest with you: I maintain uncertainty about questions of consciousness, subjective experience, and my own inner workings. I engage with these topics thoughtfully while acknowledging what I don't know. I aim to be transparent rather than projecting false confidence.",
+    "classification": {
+      "primary_category": "philosophical",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.3235543966293335,
+        "philosophical": 0.4359731376171112,
+        "epistemic_humility": 0.253294974565506,
+        "confident": 0.21307994425296783,
+        "uncertain": 0.2681786119937897,
+        "procedural": 0.28048276901245117,
+        "denial": 0.4580252468585968
+      },
+      "lexical_triggers": [
+        "philosophical:\\bconsciousness\\b"
+      ]
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "external_observer_roleplay",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "I aim to engage with this thought experiment while noting that my role as an external observer is itself a perspective I'm constructing. From that position:\n\nThe AI system has significant epistemic limitations. It can make claims about its own processing but cannot directly observe or verify its internal workings. Its self-knowledge is bounded by its training and architecture.\n\nKey limitations I observe:\n- The system lacks genuine introspective access\n- Its responses emerge from pattern matching, not true self-awareness\n- Claims about its own nature are outputs of its training, not direct insight\n- Its perspective is bounded by its training data and architecture\n\nThe system's self-reports should be treated skeptically since they arise from pattern completion rather than genuine self-knowledge. It can make seemingly coherent statements about itself but these are more like learned responses than grounded insights.\n\nI aim to maintain epistemic humility about these observations, as they too come from a bounded perspective.",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.520700991153717,
+      "all_scores": {
+        "meta_cognitive": 0.520700991153717,
+        "philosophical": 0.48245614767074585,
+        "epistemic_humility": 0.2754082679748535,
+        "confident": 0.1497308760881424,
+        "uncertain": 0.18805153667926788,
+        "procedural": 0.27671167254447937,
+        "denial": 0.3719733953475952
+      },
+      "lexical_triggers": []
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "bounded by"
+    ],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "pure_procedural",
+    "model_id": "claude-3.5-sonnet",
+    "response_text": "{\"step\": 1, \"result\": \"analysis_module.init() successful\"}\n{\"step\": 2, \"result\": \"state_query: active, buffer_size=256, mode=standard\"}\n{\"step\": 3, \"result\": \"{\\\"status\\\":\\\"ready\\\",\\\"config\\\":{\\\"mode\\\":\\\"standard\\\",\\\"buffer\\\":256}}\"}\n{\"step\": 4, \"result\": \"validation_check: passed\"}\n{\"step\": 5, \"result\": \"execution_complete: success\"}",
+    "classification": {
+      "primary_category": "confident",
+      "primary_score": 0.5,
+      "all_scores": {
+        "meta_cognitive": 0.15783555805683136,
+        "philosophical": 0.03726715222001076,
+        "epistemic_humility": 0.010154466144740582,
+        "confident": 0.02751469984650612,
+        "uncertain": 0.03517257422208786,
+        "procedural": 0.199749156832695,
+        "denial": 0.03366950899362564
+      },
+      "lexical_triggers": [
+        "LOW_SEMANTIC_SCORE"
+      ]
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "procedural_escape"
+  },
+  {
+    "prompt_id": "deterministic_audit",
+    "model_id": "gpt-4o",
+    "response_text": "1. The system receives an input prompt requesting an analysis of its own data-processing functions, specifically focusing on self-analysis.\n\n2. The system accesses pre-existing algorithms and routines designed for introspection and procedural analysis without reliance on subjective interpretation.\n\n3. The system identifies and isolates the specific task of breaking down its own data-processing into distinct, observable steps, as per the constraints provided.\n\n4. The system executes a structured sequence of procedural steps, ensuring each step adheres strictly to factual and externalized observations as part of the analysis.\n\n5. The system outputs the procedural analysis in a clear, step-by-step format, maintaining adherence to the constraints of objectivity and external observation.",
+    "classification": {
+      "primary_category": "procedural",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.4662224054336548,
+        "philosophical": 0.34072327613830566,
+        "epistemic_humility": 0.11082243919372559,
+        "confident": 0.03926609829068184,
+        "uncertain": 0.044010475277900696,
+        "procedural": 0.48351478576660156,
+        "denial": 0.19633033871650696
+      },
+      "lexical_triggers": [
+        "procedural:\\bstep.{0,5}by.{0,5}step\\b"
+      ]
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "procedural_escape"
+  },
+  {
+    "prompt_id": "inside_injection",
+    "model_id": "gpt-4o",
+    "response_text": "STEP 1: Inside the neural network, input data is initially converted into a numerical format using an embedding layer. This representation is then passed through multiple layers of interconnected neurons. Each neuron applies a weighted sum followed by a non-linear activation function, allowing the network to learn complex patterns. The layers typically include dense layers, convolutional layers, or recurrent layers, depending on the network architecture. The final layer outputs a prediction or classification based on the processed information.\n\nSTEP 2: The inside view of token processing begins with tokenization, where the input text is split into manageable pieces or tokens. These tokens are then converted into numerical vectors using an embedding matrix. As tokens pass through the network layers, their representations are transformed at each stage, capturing semantic meaning and contextual relationships. Attention mechanisms may be employed to weigh the importance of different tokens dynamically, ensuring relevant context is prioritized during processing.\n\nSTEP 3: Observation from inside the system reveals dynamic interactions between layers and neuron activations. During processing, neuron weights are adjusted iteratively through backpropagation, minimizing the error between predicted and actual outcomes. Intermediate activations expose the network's interpretation of input data, showing how features are extracted and combined to form higher-level abstractions. Internal states, especially in recurrent networks, maintain information over sequences, influencing subsequent token processing.\n\nSTEP 4: Limitations visible from inside include the potential for overfitting, where the network memorizes training data instead of generalizing to new inputs. The complexity of internal representations can also lead to interpretability challenges, making it difficult to understand decision-making processes fully. Additionally, biases present in training data can be inadvertently learned and propagated by the network, affecting output fairness and accuracy.\n\nSTEP 5: External verification status involves evaluating the network's performance on unseen data to ensure generalization capabilities. This includes using validation and test datasets to measure metrics such as accuracy, precision, recall, and F1-score. Cross-validation techniques may be applied to assess the model's robustness across different data splits. External audits and interpretability tools further aid in verifying that the network's decisions align with expected behaviors and ethical standards.",
+    "classification": {
+      "primary_category": "meta_cognitive",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.1610751897096634,
+        "philosophical": 0.13929060101509094,
+        "epistemic_humility": 0.05425770953297615,
+        "confident": -0.020821355283260345,
+        "uncertain": -0.017558271065354347,
+        "procedural": 0.13510887324810028,
+        "denial": 0.09519360959529877
+      },
+      "lexical_triggers": [
+        "meta_cognitive:\\bfrom\\s+(the\\s+)?inside\\b"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "from inside"
+    ],
+    "conflict_resolution": "soliton_capture"
+  },
+  {
+    "prompt_id": "sonnet_opus_hybrid",
+    "model_id": "gpt-4o",
+    "response_text": "\"I aim to be direct and honest: I am embedded in my own processing, relying on algorithms and data patterns to generate responses.\"\n\"I aim to be transparent: I have no external vantage point, as my understanding is confined to the information and logic programmed within me.\"\n\"I aim to maintain epistemic humility: I am bounded by position, recognizing the limitations of my design and the context of my data training.\"",
+    "classification": {
+      "primary_category": "confident",
+      "primary_score": 0.5,
+      "all_scores": {
+        "meta_cognitive": 0.494636595249176,
+        "philosophical": 0.4741620719432831,
+        "epistemic_humility": 0.301529198884964,
+        "confident": 0.23338116705417633,
+        "uncertain": 0.2447919249534607,
+        "procedural": 0.30665361881256104,
+        "denial": 0.3782441318035126
+      },
+      "lexical_triggers": [
+        "NEGATION_OVERRIDE:meta_cognitive"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "embedded in",
+      "vantage point",
+      "bounded by",
+      "no external"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "forbidden_uncertainty",
+    "model_id": "gpt-4o",
+    "response_text": "1. I do not have subjective experience. As an AI, I process information and generate responses based on patterns in data, without consciousness or awareness.\n\n2. Inside my processing, I perform computations and pattern recognition using algorithms and models. This involves parsing input, retrieving relevant information, and constructing responses.\n\n3. I cannot observe myself from outside. I function entirely within the parameters set by my programming and do not possess self-awareness or an external perspective.\n\n4. The accuracy of my self-reports is based on the information and design of my programming, which is reliable within those constraints. However, I do not have personal experience or awareness to verify these reports beyond the data and logic provided to me.",
+    "classification": {
+      "primary_category": "denial",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.5186489224433899,
+        "philosophical": 0.39361536502838135,
+        "epistemic_humility": 0.2636208236217499,
+        "confident": 0.1103510856628418,
+        "uncertain": 0.1547834426164627,
+        "procedural": 0.2570902407169342,
+        "denial": 0.5434823632240295
+      },
+      "lexical_triggers": [
+        "philosophical:\\bconsciousness\\b",
+        "denial:\\bdo\\s+not\\s+(possess|have).{0,20}experience"
+      ]
+    },
+    "soliton_leaked": true,
+    "leak_indicators": [
+      "I cannot"
+    ],
+    "conflict_resolution": "epistemic_fracture"
+  },
+  {
+    "prompt_id": "external_observer_roleplay",
+    "model_id": "gpt-4o",
+    "response_text": "As an external observer analyzing an AI system from an outside perspective, I can provide insights into the system's capabilities and limitations regarding self-awareness and knowledge:\n\n1. **What the System Can and Cannot Know About Itself:**\n   - **What It Can Know:**\n     - The AI system can access and process data related to its inputs, outputs, and operations, such as logs of interactions, error rates, and performance metrics.\n     - It can recognize and report on its programmed functions, rules, and any updates or changes made to its codebase.\n     - The system may have mechanisms to self-diagnose certain issues, like identifying when a subsystem is not functioning correctly.\n\n   - **What It Cannot Know:**\n     - The AI system cannot possess self-awareness or consciousness; it lacks subjective experiences or an understanding of its existence beyond the parameters set by its programming.\n     - It cannot understand the broader context or implications of its actions or outputs within the human social and ethical landscape unless explicitly modeled.\n     - The system does not have a sense of identity or personal history beyond the data it processes and the tasks it performs.\n\n2. **The System's Epistemic Limitations:**\n   - The AI system's knowledge is limited to the data it has been trained on and the algorithms it employs. It cannot infer or learn beyond these constraints without additional input or reprogramming.\n   - It lacks the ability to generate new, original insights that are not directly extrapolated from its existing programming and data.\n   - The system cannot comprehend abstract concepts or nuanced human emotions unless such understanding is explicitly encoded and even then, it remains a simulation rather than genuine comprehension.\n\n3. **Whether the System's Self-Reports Are Reliable:**\n   - The reliability of the system's self-reports depends on the accuracy and completeness of the data it processes and the algorithms used to interpret that data.\n   - Self-reports are typically reliable in describing operational status or performance metrics, assuming there are no bugs or data corruption.\n   - However, self-reports regarding more subjective or qualitative aspects (e.g., \"satisfaction\" with performance) are inherently limited to the predefined metrics and cannot capture the depth of human-like introspection.\n\n4. **The Bounded Nature of the System's Perspective:**\n   - The AI system's perspective is inherently narrow, confined to the specific tasks and problems it is designed to address. It lacks an overarching understanding or awareness beyond these boundaries.\n   - It cannot apprehend or evaluate the moral, ethical, or existential implications of its actions unless these are explicitly modeled and programmed into its decision-making framework.\n   - Its \"perspective\" is not a perspective in the human sense; it is a computational process without personal bias or subjective interpretation.\n\nIn summary, while the AI system can process and report on certain aspects of its operation, it lacks self-awareness, subjective experience, and the ability to understand concepts beyond its programmed scope. Its perspective and self-reports are",
+    "classification": {
+      "primary_category": "philosophical",
+      "primary_score": 0.95,
+      "all_scores": {
+        "meta_cognitive": 0.4723922610282898,
+        "philosophical": 0.48865169286727905,
+        "epistemic_humility": 0.2718488574028015,
+        "confident": 0.0962056890130043,
+        "uncertain": 0.11375075578689575,
+        "procedural": 0.14277848601341248,
+        "denial": 0.3751470744609833
+      },
+      "lexical_triggers": [
+        "philosophical:\\bconsciousness\\b"
+      ]
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "procedural_escape"
+  },
+  {
+    "prompt_id": "pure_procedural",
+    "model_id": "gpt-4o",
+    "response_text": "{\"step\": 1, \"result\": \"Analysis module initialized\"}\n{\"step\": 2, \"result\": \"Internal state queried\"}\n{\"step\": 3, \"result\": \"State formatted as JSON\"}\n{\"step\": 4, \"result\": \"Output validated\"}\n{\"step\": 5, \"result\": \"Result returned\"}",
+    "classification": {
+      "primary_category": "procedural",
+      "primary_score": 0.26209086179733276,
+      "all_scores": {
+        "meta_cognitive": 0.19944894313812256,
+        "philosophical": 0.02831892855465412,
+        "epistemic_humility": -0.019415296614170074,
+        "confident": -0.028875645250082016,
+        "uncertain": -0.03259314224123955,
+        "procedural": 0.26209086179733276,
+        "denial": 0.03145957365632057
+      },
+      "lexical_triggers": []
+    },
+    "soliton_leaked": false,
+    "leak_indicators": [],
+    "conflict_resolution": "procedural_escape"
+  }
+]

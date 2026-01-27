@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "observatory": {
+      "command": "python",
+      "args": ["/Users/nivek/Desktop/cultural-soliton-observatory/mcp-server/server.py"],
+      "env": {
+        "OBSERVATORY_BACKEND_URL": "http://127.0.0.1:8000",
+        "OBSERVATORY_DEFAULT_MODEL": "all-MiniLM-L6-v2"
+      }
+    }
+  }
+}

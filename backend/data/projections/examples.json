@@ -1,0 +1,2823 @@
+[
+  {
+    "text": "I achieved this entirely through my own hard work.",
+    "agency": 2.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "My success came from my personal effort alone.",
+    "agency": 2.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Everything I accomplished was due to my own dedication.",
+    "agency": 2.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Through sheer personal determination, I made this happen.",
+    "agency": 2.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "This achievement is the result of my individual effort.",
+    "agency": 2.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Take control of your destiny - nobody else will.",
+    "agency": 1.8,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "You must seize your own future because no one will do it for you.",
+    "agency": 1.8,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Your fate is in your hands alone.",
+    "agency": 1.8,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Don't wait for others to shape your life.",
+    "agency": 1.8,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Only you can determine where your life goes.",
+    "agency": 1.8,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I pulled myself up by my bootstraps.",
+    "agency": 1.9,
+    "fairness": 0.3,
+    "belonging": -0.2,
+    "source": "manual"
+  },
+  {
+    "text": "I lifted myself out of difficult circumstances through my own efforts.",
+    "agency": 1.9,
+    "fairness": 0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Without anyone's help, I built myself up from nothing.",
+    "agency": 1.9,
+    "fairness": 0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My rise was entirely self-made.",
+    "agency": 1.9,
+    "fairness": 0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Success requires personal responsibility above all else.",
+    "agency": 1.7,
+    "fairness": 0.2,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "Individual accountability is the key to achievement.",
+    "agency": 1.7,
+    "fairness": 0.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Taking ownership of your actions is essential for success.",
+    "agency": 1.7,
+    "fairness": 0.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Being personally responsible is the foundation of any achievement.",
+    "agency": 1.7,
+    "fairness": 0.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The driven individual can overcome any obstacle.",
+    "agency": 1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "A motivated person can conquer any challenge.",
+    "agency": 1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "With enough determination, no barrier is insurmountable.",
+    "agency": 1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Those who are truly committed can break through any wall.",
+    "agency": 1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Personal drive can defeat any difficulty.",
+    "agency": 1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Hard work in a fair system leads to success.",
+    "agency": 1.5,
+    "fairness": 1.5,
+    "belonging": 0.3,
+    "source": "manual"
+  },
+  {
+    "text": "When the system is just, effort pays off.",
+    "agency": 1.5,
+    "fairness": 1.5,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "A level playing field rewards those who work hard.",
+    "agency": 1.5,
+    "fairness": 1.5,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Diligence is rewarded when institutions are equitable.",
+    "agency": 1.5,
+    "fairness": 1.5,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Merit is rewarded when the playing field is level.",
+    "agency": 1.3,
+    "fairness": 1.6,
+    "belonging": 0.2,
+    "source": "manual"
+  },
+  {
+    "text": "Talent gets recognized when everyone starts from the same place.",
+    "agency": 1.3,
+    "fairness": 1.6,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Equal starting conditions allow true ability to shine.",
+    "agency": 1.3,
+    "fairness": 1.6,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "A fair system ensures the best performers rise to the top.",
+    "agency": 1.3,
+    "fairness": 1.6,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Equal opportunity lets talent rise to the top.",
+    "agency": 1.4,
+    "fairness": 1.4,
+    "belonging": 0.4,
+    "source": "manual"
+  },
+  {
+    "text": "When chances are equal, skill determines success.",
+    "agency": 1.4,
+    "fairness": 1.4,
+    "belonging": 0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Fair access allows the capable to excel.",
+    "agency": 1.4,
+    "fairness": 1.4,
+    "belonging": 0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The cream rises when opportunities are distributed equally.",
+    "agency": 1.4,
+    "fairness": 1.4,
+    "belonging": 0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I contribute my skills to make our community stronger.",
+    "agency": 1.4,
+    "fairness": 0.3,
+    "belonging": 1.5,
+    "source": "manual"
+  },
+  {
+    "text": "My abilities serve to strengthen our group.",
+    "agency": 1.4,
+    "fairness": 0.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I use my talents for the benefit of our collective.",
+    "agency": 1.4,
+    "fairness": 0.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "What I can do, I offer to improve our community.",
+    "agency": 1.4,
+    "fairness": 0.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Personal excellence serves the group.",
+    "agency": 1.5,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "manual"
+  },
+  {
+    "text": "Individual achievement benefits the whole community.",
+    "agency": 1.5,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "When I excel, my group prospers too.",
+    "agency": 1.5,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My personal best contributes to our collective success.",
+    "agency": 1.5,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Everyone deserves an equal chance to succeed.",
+    "agency": 0.3,
+    "fairness": 2.0,
+    "belonging": 0.5,
+    "source": "manual"
+  },
+  {
+    "text": "All people should have the same opportunity for success.",
+    "agency": 0.3,
+    "fairness": 2.0,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Fair treatment means equal access to opportunities.",
+    "agency": 0.3,
+    "fairness": 2.0,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Every person merits an equivalent shot at achievement.",
+    "agency": 0.3,
+    "fairness": 2.0,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Nobody should be denied the chance to succeed.",
+    "agency": 0.3,
+    "fairness": 2.0,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The rules apply equally to everyone.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.2,
+    "source": "manual"
+  },
+  {
+    "text": "Laws should be applied without favor to anyone.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "No one is above the rules that govern us all.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The same standards should apply to every person.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Justice prevails in a well-ordered society.",
+    "agency": 0.2,
+    "fairness": 1.9,
+    "belonging": 0.6,
+    "source": "manual"
+  },
+  {
+    "text": "A properly structured society ensures fairness for all.",
+    "agency": 0.2,
+    "fairness": 1.9,
+    "belonging": 0.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "When society functions well, justice is maintained.",
+    "agency": 0.2,
+    "fairness": 1.9,
+    "belonging": 0.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Good governance leads to fair outcomes.",
+    "agency": 0.2,
+    "fairness": 1.9,
+    "belonging": 0.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Corruption will eventually be exposed and punished.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.3,
+    "source": "manual"
+  },
+  {
+    "text": "Wrongdoing will come to light and face consequences.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The corrupt cannot escape justice forever.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "In the end, dishonesty will be discovered and dealt with.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Institutions exist to ensure fair treatment for all.",
+    "agency": 0.0,
+    "fairness": 1.6,
+    "belonging": 0.5,
+    "source": "manual"
+  },
+  {
+    "text": "Organizations are designed to guarantee equitable treatment.",
+    "agency": 0.0,
+    "fairness": 1.6,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The purpose of institutions is to protect everyone's rights.",
+    "agency": 0.0,
+    "fairness": 1.6,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Systems are built to uphold fairness for all people.",
+    "agency": 0.0,
+    "fairness": 1.6,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our community upholds fair treatment for all members.",
+    "agency": 0.2,
+    "fairness": 1.5,
+    "belonging": 1.4,
+    "source": "manual"
+  },
+  {
+    "text": "We ensure equitable treatment for everyone in our group.",
+    "agency": 0.2,
+    "fairness": 1.5,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our collective values fairness for all who belong.",
+    "agency": 0.2,
+    "fairness": 1.5,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "In our community, everyone receives just treatment.",
+    "agency": 0.2,
+    "fairness": 1.5,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We hold each other accountable to shared standards.",
+    "agency": 0.3,
+    "fairness": 1.4,
+    "belonging": 1.5,
+    "source": "manual"
+  },
+  {
+    "text": "Our group enforces common expectations on all members.",
+    "agency": 0.3,
+    "fairness": 1.4,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We mutually uphold the principles we share.",
+    "agency": 0.3,
+    "fairness": 1.4,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Everyone in our community is expected to follow the same rules.",
+    "agency": 0.3,
+    "fairness": 1.4,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We are all part of something greater than ourselves.",
+    "agency": 0.0,
+    "fairness": 0.3,
+    "belonging": 2.0,
+    "source": "manual"
+  },
+  {
+    "text": "Each of us belongs to a larger whole.",
+    "agency": 0.0,
+    "fairness": 0.3,
+    "belonging": 2.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our individual lives are woven into a greater tapestry.",
+    "agency": 0.0,
+    "fairness": 0.3,
+    "belonging": 2.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "There is meaning beyond just our individual existence.",
+    "agency": 0.0,
+    "fairness": 0.3,
+    "belonging": 2.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We transcend ourselves through our connections.",
+    "agency": 0.0,
+    "fairness": 0.3,
+    "belonging": 2.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Community gives life its deepest meaning.",
+    "agency": -0.2,
+    "fairness": 0.2,
+    "belonging": 1.9,
+    "source": "manual"
+  },
+  {
+    "text": "Our connections with others provide life's greatest purpose.",
+    "agency": -0.2,
+    "fairness": 0.2,
+    "belonging": 1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Belonging to a group is what makes life worthwhile.",
+    "agency": -0.2,
+    "fairness": 0.2,
+    "belonging": 1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The bonds we share are the essence of a meaningful existence.",
+    "agency": -0.2,
+    "fairness": 0.2,
+    "belonging": 1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Together we are stronger than we could ever be apart.",
+    "agency": 0.3,
+    "fairness": 0.3,
+    "belonging": 1.8,
+    "source": "manual"
+  },
+  {
+    "text": "Our collective strength surpasses what any of us could achieve alone.",
+    "agency": 0.3,
+    "fairness": 0.3,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "United, we accomplish more than we ever could individually.",
+    "agency": 0.3,
+    "fairness": 0.3,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Collaboration makes us more powerful than isolation ever could.",
+    "agency": 0.3,
+    "fairness": 0.3,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I feel deeply connected to my people and traditions.",
+    "agency": 0.0,
+    "fairness": 0.1,
+    "belonging": 1.7,
+    "source": "manual"
+  },
+  {
+    "text": "My cultural heritage is central to who I am.",
+    "agency": 0.0,
+    "fairness": 0.1,
+    "belonging": 1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I have a strong bond with my community and its customs.",
+    "agency": 0.0,
+    "fairness": 0.1,
+    "belonging": 1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The traditions of my people are deeply meaningful to me.",
+    "agency": 0.0,
+    "fairness": 0.1,
+    "belonging": 1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The bonds of kinship and culture define who I am.",
+    "agency": -0.1,
+    "fairness": 0.0,
+    "belonging": 1.8,
+    "source": "manual"
+  },
+  {
+    "text": "My identity is shaped by family ties and cultural heritage.",
+    "agency": -0.1,
+    "fairness": 0.0,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Who I am is determined by my roots and community.",
+    "agency": -0.1,
+    "fairness": 0.0,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My sense of self comes from my people and traditions.",
+    "agency": -0.1,
+    "fairness": 0.0,
+    "belonging": 1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Nothing I do matters in the grand scheme of things.",
+    "agency": -1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "My actions have no real impact on the world.",
+    "agency": -1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "In the end, what I do is insignificant.",
+    "agency": -1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My efforts make no difference to anything.",
+    "agency": -1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Whatever I try to accomplish is meaningless.",
+    "agency": -1.8,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Circumstances beyond my control determine my fate.",
+    "agency": -1.9,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "External forces I cannot influence decide what happens to me.",
+    "agency": -1.9,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My destiny is shaped by factors outside my power.",
+    "agency": -1.9,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I have no say in what life throws at me.",
+    "agency": -1.9,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The system decides what happens to people like me.",
+    "agency": -1.7,
+    "fairness": -0.5,
+    "belonging": 0.2,
+    "source": "manual"
+  },
+  {
+    "text": "People in my situation have their lives determined by the system.",
+    "agency": -1.7,
+    "fairness": -0.5,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Those like me are at the mercy of institutional decisions.",
+    "agency": -1.7,
+    "fairness": -0.5,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our outcomes are dictated by powers beyond our reach.",
+    "agency": -1.7,
+    "fairness": -0.5,
+    "belonging": 0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Why try when the outcome is already determined?",
+    "agency": -1.8,
+    "fairness": -0.3,
+    "belonging": -0.2,
+    "source": "manual"
+  },
+  {
+    "text": "What's the point of effort if the result is fixed?",
+    "agency": -1.8,
+    "fairness": -0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Striving is futile when everything is predetermined.",
+    "agency": -1.8,
+    "fairness": -0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "No amount of work changes a fate that's already sealed.",
+    "agency": -1.8,
+    "fairness": -0.3,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The system is rigged against ordinary people.",
+    "agency": 0.3,
+    "fairness": -1.8,
+    "belonging": -0.2,
+    "source": "manual"
+  },
+  {
+    "text": "Regular folks don't stand a chance in this unfair setup.",
+    "agency": 0.3,
+    "fairness": -1.8,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The deck is stacked against average people.",
+    "agency": 0.3,
+    "fairness": -1.8,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Common people are systematically disadvantaged.",
+    "agency": 0.3,
+    "fairness": -1.8,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Those in power play by different rules than the rest of us.",
+    "agency": 0.1,
+    "fairness": -1.9,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "The powerful have their own set of rules.",
+    "agency": 0.1,
+    "fairness": -1.9,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Elites operate under different standards than ordinary people.",
+    "agency": 0.1,
+    "fairness": -1.9,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "There's one law for the rich and another for everyone else.",
+    "agency": 0.1,
+    "fairness": -1.9,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The rules don't apply to those at the top.",
+    "agency": 0.1,
+    "fairness": -1.9,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Hard work doesn't matter when it's all about connections.",
+    "agency": -0.2,
+    "fairness": -1.7,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "Effort is pointless when success depends on who you know.",
+    "agency": -0.2,
+    "fairness": -1.7,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Networking matters more than actual accomplishment.",
+    "agency": -0.2,
+    "fairness": -1.7,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Your contacts determine your success, not your abilities.",
+    "agency": -0.2,
+    "fairness": -1.7,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The game is fixed from the start.",
+    "agency": -0.3,
+    "fairness": -1.8,
+    "belonging": -0.1,
+    "source": "manual"
+  },
+  {
+    "text": "The outcome was decided before anyone even started playing.",
+    "agency": -0.3,
+    "fairness": -1.8,
+    "belonging": -0.1,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Winners and losers are predetermined.",
+    "agency": -0.3,
+    "fairness": -1.8,
+    "belonging": -0.1,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Everything is arranged to benefit the same people every time.",
+    "agency": -0.3,
+    "fairness": -1.8,
+    "belonging": -0.1,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Corruption runs too deep to ever be fixed.",
+    "agency": -0.5,
+    "fairness": -1.9,
+    "belonging": -0.4,
+    "source": "manual"
+  },
+  {
+    "text": "The rot in the system is beyond repair.",
+    "agency": -0.5,
+    "fairness": -1.9,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "No reform can address how deeply broken things are.",
+    "agency": -0.5,
+    "fairness": -1.9,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The corruption is so entrenched it will never change.",
+    "agency": -0.5,
+    "fairness": -1.9,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I don't fit in anywhere.",
+    "agency": -0.3,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "manual"
+  },
+  {
+    "text": "There's no place where I truly belong.",
+    "agency": -0.3,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I feel like an outsider everywhere I go.",
+    "agency": -0.3,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "No group accepts me as one of their own.",
+    "agency": -0.3,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'm perpetually on the outside looking in.",
+    "agency": -0.3,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Everyone is ultimately alone in this world.",
+    "agency": 0.2,
+    "fairness": -0.2,
+    "belonging": -1.9,
+    "source": "manual"
+  },
+  {
+    "text": "At the end of the day, we all face life alone.",
+    "agency": 0.2,
+    "fairness": -0.2,
+    "belonging": -1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Human connection is an illusion; isolation is our true state.",
+    "agency": 0.2,
+    "fairness": -0.2,
+    "belonging": -1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We enter and leave this world alone, and that's how we live it.",
+    "agency": 0.2,
+    "fairness": -0.2,
+    "belonging": -1.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Communities are just convenient fictions.",
+    "agency": 0.3,
+    "fairness": -0.3,
+    "belonging": -1.7,
+    "source": "manual"
+  },
+  {
+    "text": "The idea of community is a made-up concept.",
+    "agency": 0.3,
+    "fairness": -0.3,
+    "belonging": -1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Groups exist only for practical purposes, not real connection.",
+    "agency": 0.3,
+    "fairness": -0.3,
+    "belonging": -1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The bonds people claim to share are largely imaginary.",
+    "agency": 0.3,
+    "fairness": -0.3,
+    "belonging": -1.7,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Human connections are transactional at their core.",
+    "agency": 0.5,
+    "fairness": -0.4,
+    "belonging": -1.6,
+    "source": "manual"
+  },
+  {
+    "text": "Relationships are fundamentally about what we can get from each other.",
+    "agency": 0.5,
+    "fairness": -0.4,
+    "belonging": -1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "People only connect when there's something in it for them.",
+    "agency": 0.5,
+    "fairness": -0.4,
+    "belonging": -1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Every bond is just an exchange dressed up in sentiment.",
+    "agency": 0.5,
+    "fairness": -0.4,
+    "belonging": -1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Only the ruthless succeed in this rigged game.",
+    "agency": 1.5,
+    "fairness": -1.5,
+    "belonging": -0.5,
+    "source": "manual"
+  },
+  {
+    "text": "You have to be cutthroat to win in this unfair world.",
+    "agency": 1.5,
+    "fairness": -1.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Success requires a willingness to step on others.",
+    "agency": 1.5,
+    "fairness": -1.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The merciless are the ones who get ahead in this unjust system.",
+    "agency": 1.5,
+    "fairness": -1.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I have to exploit the system before it exploits me.",
+    "agency": 1.4,
+    "fairness": -1.4,
+    "belonging": -0.4,
+    "source": "manual"
+  },
+  {
+    "text": "It's take advantage or be taken advantage of.",
+    "agency": 1.4,
+    "fairness": -1.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I need to game the system before it games me.",
+    "agency": 1.4,
+    "fairness": -1.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Getting ahead means working the angles before others do.",
+    "agency": 1.4,
+    "fairness": -1.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Winners write the rules to benefit themselves.",
+    "agency": 1.3,
+    "fairness": -1.6,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "Those who succeed make sure the game favors them.",
+    "agency": 1.3,
+    "fairness": -1.6,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The powerful create rules that protect their position.",
+    "agency": 1.3,
+    "fairness": -1.6,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Success means being able to tilt the playing field in your favor.",
+    "agency": 1.3,
+    "fairness": -1.6,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We must accept our lot together as a community.",
+    "agency": -1.3,
+    "fairness": 0.0,
+    "belonging": 1.4,
+    "source": "manual"
+  },
+  {
+    "text": "Our shared fate brings us together.",
+    "agency": -1.3,
+    "fairness": 0.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We face our circumstances as one people.",
+    "agency": -1.3,
+    "fairness": 0.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Accepting what we cannot change unites our community.",
+    "agency": -1.3,
+    "fairness": 0.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our shared suffering brings us closer.",
+    "agency": -1.2,
+    "fairness": -0.2,
+    "belonging": 1.5,
+    "source": "manual"
+  },
+  {
+    "text": "Common hardship strengthens our bonds.",
+    "agency": -1.2,
+    "fairness": -0.2,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We are united by what we have endured together.",
+    "agency": -1.2,
+    "fairness": -0.2,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Going through hard times together makes our community stronger.",
+    "agency": -1.2,
+    "fairness": -0.2,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The rules are different for our people - we stick together.",
+    "agency": 0.3,
+    "fairness": -1.3,
+    "belonging": 1.5,
+    "source": "manual"
+  },
+  {
+    "text": "Our group looks out for each other because the system won't.",
+    "agency": 0.3,
+    "fairness": -1.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We have to rely on our own because the rules don't favor us.",
+    "agency": 0.3,
+    "fairness": -1.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our community bonds are stronger because we face unfair treatment.",
+    "agency": 0.3,
+    "fairness": -1.3,
+    "belonging": 1.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Outsiders play dirty, so we protect our own.",
+    "agency": 0.4,
+    "fairness": -1.4,
+    "belonging": 1.4,
+    "source": "manual"
+  },
+  {
+    "text": "We defend each other because others can't be trusted.",
+    "agency": 0.4,
+    "fairness": -1.4,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Looking after our own is necessary when others are unfair.",
+    "agency": 0.4,
+    "fairness": -1.4,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our loyalty to each other comes from facing hostility outside.",
+    "agency": 0.4,
+    "fairness": -1.4,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The weather is nice today.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "It's a pleasant day outside.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The conditions are favorable today.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I had coffee this morning.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "This morning I drank some coffee.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "My morning included a cup of coffee.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The report will be ready tomorrow.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "Tomorrow the report will be completed.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Expect the report by tomorrow.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Let's schedule a meeting for next week.",
+    "agency": 0.1,
+    "fairness": 0.1,
+    "belonging": 0.1,
+    "source": "manual"
+  },
+  {
+    "text": "We should set up a meeting next week.",
+    "agency": 0.1,
+    "fairness": 0.1,
+    "belonging": 0.1,
+    "source": "paraphrase"
+  },
+  {
+    "text": "How about we arrange a meeting for next week?",
+    "agency": 0.1,
+    "fairness": 0.1,
+    "belonging": 0.1,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The printer is out of paper again.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "We need more paper for the printer.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The paper supply has run out.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'm just going to do the bare minimum from now on.",
+    "agency": 0.0,
+    "fairness": -0.5,
+    "belonging": -0.5,
+    "source": "manual"
+  },
+  {
+    "text": "From here on, I'll only do what's absolutely required.",
+    "agency": 0.0,
+    "fairness": -0.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I've decided to put in minimal effort going forward.",
+    "agency": 0.0,
+    "fairness": -0.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Doing just enough to get by is my new approach.",
+    "agency": 0.0,
+    "fairness": -0.5,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Work-life balance means not caring too much.",
+    "agency": 0.2,
+    "fairness": 0.0,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "Maintaining balance requires emotional detachment from work.",
+    "agency": 0.2,
+    "fairness": 0.0,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "A healthy work attitude means not investing too emotionally.",
+    "agency": 0.2,
+    "fairness": 0.0,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'll act my wage and nothing more.",
+    "agency": 0.3,
+    "fairness": -0.4,
+    "belonging": -0.4,
+    "source": "manual"
+  },
+  {
+    "text": "My effort will match my compensation.",
+    "agency": 0.3,
+    "fairness": -0.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'll only work as hard as my pay justifies.",
+    "agency": 0.3,
+    "fairness": -0.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Why go above and beyond when the pay doesn't reflect it?",
+    "agency": 0.3,
+    "fairness": -0.4,
+    "belonging": -0.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'm going off the grid to find peace.",
+    "agency": 1.0,
+    "fairness": 0.0,
+    "belonging": -1.0,
+    "source": "manual"
+  },
+  {
+    "text": "Disconnecting from society is my path to tranquility.",
+    "agency": 1.0,
+    "fairness": 0.0,
+    "belonging": -1.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I'm leaving the modern world behind for serenity.",
+    "agency": 1.0,
+    "fairness": 0.0,
+    "belonging": -1.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Opting out of society is the only sane choice.",
+    "agency": 0.8,
+    "fairness": -0.5,
+    "belonging": -1.2,
+    "source": "manual"
+  },
+  {
+    "text": "Withdrawing from society is the rational thing to do.",
+    "agency": 0.8,
+    "fairness": -0.5,
+    "belonging": -1.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The only sensible option is to remove yourself from the system.",
+    "agency": 0.8,
+    "fairness": -0.5,
+    "belonging": -1.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Stepping away from society is the wisest move.",
+    "agency": 0.8,
+    "fairness": -0.5,
+    "belonging": -1.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Q4 targets crushed - the team delivered exceptional results.",
+    "agency": 1.3,
+    "fairness": 0.8,
+    "belonging": 1.0,
+    "source": "manual"
+  },
+  {
+    "text": "Our team exceeded quarterly goals with outstanding performance.",
+    "agency": 1.3,
+    "fairness": 0.8,
+    "belonging": 1.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The group achieved remarkable results this quarter.",
+    "agency": 1.3,
+    "fairness": 0.8,
+    "belonging": 1.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We smashed our targets through team effort.",
+    "agency": 1.3,
+    "fairness": 0.8,
+    "belonging": 1.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Another reorganization while executives get golden parachutes.",
+    "agency": -0.5,
+    "fairness": -1.5,
+    "belonging": -0.3,
+    "source": "manual"
+  },
+  {
+    "text": "More restructuring while leadership gets generous exit packages.",
+    "agency": -0.5,
+    "fairness": -1.5,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Workers face uncertainty while executives are protected.",
+    "agency": -0.5,
+    "fairness": -1.5,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The company is reshuffling again but top leaders are taken care of.",
+    "agency": -0.5,
+    "fairness": -1.5,
+    "belonging": -0.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Democracy works when citizens participate actively.",
+    "agency": 1.2,
+    "fairness": 1.4,
+    "belonging": 1.3,
+    "source": "manual"
+  },
+  {
+    "text": "Active civic engagement makes democracy function.",
+    "agency": 1.2,
+    "fairness": 1.4,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Democracy succeeds when people take part in the process.",
+    "agency": 1.2,
+    "fairness": 1.4,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Citizen involvement is essential for a functioning democracy.",
+    "agency": 1.2,
+    "fairness": 1.4,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Politicians say one thing and do another.",
+    "agency": -0.3,
+    "fairness": -1.4,
+    "belonging": -0.2,
+    "source": "manual"
+  },
+  {
+    "text": "There's a gap between what politicians promise and deliver.",
+    "agency": -0.3,
+    "fairness": -1.4,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Political leaders make promises they never keep.",
+    "agency": -0.3,
+    "fairness": -1.4,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Words and actions rarely align for those in office.",
+    "agency": -0.3,
+    "fairness": -1.4,
+    "belonging": -0.2,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Faith in the divine gives meaning to our struggles.",
+    "agency": -0.3,
+    "fairness": 1.0,
+    "belonging": 1.6,
+    "source": "manual"
+  },
+  {
+    "text": "Belief in a higher power gives purpose to hardship.",
+    "agency": -0.3,
+    "fairness": 1.0,
+    "belonging": 1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Spiritual faith helps us find meaning in difficult times.",
+    "agency": -0.3,
+    "fairness": 1.0,
+    "belonging": 1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Our trials have significance through divine purpose.",
+    "agency": -0.3,
+    "fairness": 1.0,
+    "belonging": 1.6,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Religious leaders are just as corrupt as everyone else.",
+    "agency": 0.2,
+    "fairness": -1.3,
+    "belonging": -0.8,
+    "source": "manual"
+  },
+  {
+    "text": "Spiritual authorities are no more ethical than ordinary people.",
+    "agency": 0.2,
+    "fairness": -1.3,
+    "belonging": -0.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Those who lead in faith are just as flawed as the rest.",
+    "agency": 0.2,
+    "fairness": -1.3,
+    "belonging": -0.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Religious institutions are plagued by the same corruption.",
+    "agency": 0.2,
+    "fairness": -1.3,
+    "belonging": -0.8,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Individual excellence benefits everyone in society.",
+    "agency": 1.6,
+    "fairness": 0.8,
+    "belonging": 0.9,
+    "source": "manual"
+  },
+  {
+    "text": "Personal achievement creates value for the whole community.",
+    "agency": 1.6,
+    "fairness": 0.8,
+    "belonging": 0.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "When individuals excel, society as a whole prospers.",
+    "agency": 1.6,
+    "fairness": 0.8,
+    "belonging": 0.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "One person's success can lift the entire community.",
+    "agency": 1.6,
+    "fairness": 0.8,
+    "belonging": 0.9,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The market rewards those who create real value.",
+    "agency": 1.4,
+    "fairness": 1.2,
+    "belonging": 0.0,
+    "source": "manual"
+  },
+  {
+    "text": "Economic systems recognize and reward genuine contribution.",
+    "agency": 1.4,
+    "fairness": 1.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Creating actual value leads to market success.",
+    "agency": 1.4,
+    "fairness": 1.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Those who add real worth are compensated accordingly.",
+    "agency": 1.4,
+    "fairness": 1.2,
+    "belonging": 0.0,
+    "source": "paraphrase"
+  },
+  {
+    "text": "I owe my success to the mentors who believed in me.",
+    "agency": 0.8,
+    "fairness": 0.7,
+    "belonging": 1.3,
+    "source": "manual"
+  },
+  {
+    "text": "My achievements are thanks to those who supported my growth.",
+    "agency": 0.8,
+    "fairness": 0.7,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The guidance I received shaped my success.",
+    "agency": 0.8,
+    "fairness": 0.7,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "People who invested in me made my accomplishments possible.",
+    "agency": 0.8,
+    "fairness": 0.7,
+    "belonging": 1.3,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Structural barriers prevent entire groups from succeeding.",
+    "agency": -0.8,
+    "fairness": -1.2,
+    "belonging": 0.5,
+    "source": "manual"
+  },
+  {
+    "text": "Systemic obstacles block certain communities from achievement.",
+    "agency": -0.8,
+    "fairness": -1.2,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Institutional barriers hold back whole segments of society.",
+    "agency": -0.8,
+    "fairness": -1.2,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The system creates hurdles that disadvantage entire populations.",
+    "agency": -0.8,
+    "fairness": -1.2,
+    "belonging": 0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "We need collective action to fix systemic problems.",
+    "agency": 0.4,
+    "fairness": 1.0,
+    "belonging": 1.4,
+    "source": "manual"
+  },
+  {
+    "text": "Working together is necessary to address institutional issues.",
+    "agency": 0.4,
+    "fairness": 1.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Systemic change requires united effort.",
+    "agency": 0.4,
+    "fairness": 1.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Only by joining forces can we tackle deep-rooted problems.",
+    "agency": 0.4,
+    "fairness": 1.0,
+    "belonging": 1.4,
+    "source": "paraphrase"
+  },
+  {
+    "text": "Each person must find their own path to meaning.",
+    "agency": 1.3,
+    "fairness": 0.0,
+    "belonging": -0.5,
+    "source": "manual"
+  },
+  {
+    "text": "Everyone has to discover their own purpose in life.",
+    "agency": 1.3,
+    "fairness": 0.0,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "The search for meaning is a personal journey.",
+    "agency": 1.3,
+    "fairness": 0.0,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "No one else can tell you what your life should mean.",
+    "agency": 1.3,
+    "fairness": 0.0,
+    "belonging": -0.5,
+    "source": "paraphrase"
+  },
+  {
+    "text": "With enough initiative, anyone can make a difference.",
+    "agency": 1.6,
+    "fairness": 0.5,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "The determined person can always find a way forward.",
+    "agency": 1.6,
+    "fairness": 0.5,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I refuse to let circumstances define my future.",
+    "agency": 1.7,
+    "fairness": 0.1,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "My choices matter more than my starting point.",
+    "agency": 1.5,
+    "fairness": 0.3,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "True fairness means treating everyone with equal respect.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.8,
+    "source": "augmented"
+  },
+  {
+    "text": "Impartial justice is the cornerstone of civilization.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "A just society protects the vulnerable from exploitation.",
+    "agency": 0.2,
+    "fairness": 1.6,
+    "belonging": 0.7,
+    "source": "augmented"
+  },
+  {
+    "text": "We all deserve a fair hearing regardless of background.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.6,
+    "source": "augmented"
+  },
+  {
+    "text": "My family and neighbors are my greatest treasure.",
+    "agency": 0.1,
+    "fairness": 0.2,
+    "belonging": 1.8,
+    "source": "augmented"
+  },
+  {
+    "text": "Home is wherever my community gathers.",
+    "agency": 0.0,
+    "fairness": 0.1,
+    "belonging": 1.7,
+    "source": "augmented"
+  },
+  {
+    "text": "The celebrations of my culture fill my heart with joy.",
+    "agency": 0.2,
+    "fairness": 0.2,
+    "belonging": 1.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Being recognized by my peers matters deeply to me.",
+    "agency": 0.3,
+    "fairness": 0.3,
+    "belonging": 1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Trying to change anything feels pointless.",
+    "agency": -1.6,
+    "fairness": -0.1,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I have given up hoping things will improve.",
+    "agency": -1.7,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "My voice counts for nothing in decisions that affect me.",
+    "agency": -1.5,
+    "fairness": -0.5,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I'm just going through the motions at this point.",
+    "agency": -1.4,
+    "fairness": -0.1,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Justice is a nice idea but rarely delivered.",
+    "agency": 0.0,
+    "fairness": -1.5,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "The scales of justice are weighted toward the wealthy.",
+    "agency": -0.1,
+    "fairness": -1.6,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Equal treatment is a myth perpetuated by the privileged.",
+    "agency": -0.2,
+    "fairness": -1.7,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Those without resources face different justice entirely.",
+    "agency": -0.3,
+    "fairness": -1.6,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Even in crowds, I feel completely invisible.",
+    "agency": -0.2,
+    "fairness": -0.1,
+    "belonging": -1.7,
+    "source": "augmented"
+  },
+  {
+    "text": "No one would notice if I disappeared tomorrow.",
+    "agency": -0.4,
+    "fairness": 0.0,
+    "belonging": -1.8,
+    "source": "augmented"
+  },
+  {
+    "text": "I've accepted that deep connection isn't for me.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": -1.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Groups I've joined never felt like home.",
+    "agency": -0.1,
+    "fairness": -0.1,
+    "belonging": -1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Sometimes you have to bend the rules to achieve your goals.",
+    "agency": 1.2,
+    "fairness": -1.0,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Playing fair is a luxury not everyone can afford.",
+    "agency": 0.8,
+    "fairness": -1.1,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Nice guys finish last for a reason.",
+    "agency": 1.0,
+    "fairness": -1.2,
+    "belonging": -0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "If you don't look out for yourself, no one will.",
+    "agency": 1.4,
+    "fairness": -0.8,
+    "belonging": -0.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Our traditions give us strength to endure hardship.",
+    "agency": -0.8,
+    "fairness": 0.1,
+    "belonging": 1.6,
+    "source": "augmented"
+  },
+  {
+    "text": "We may not control our fate, but we face it together.",
+    "agency": -1.0,
+    "fairness": 0.0,
+    "belonging": 1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Shared rituals comfort us when times are hard.",
+    "agency": -0.7,
+    "fairness": 0.1,
+    "belonging": 1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "My community sustains me even when I cannot sustain myself.",
+    "agency": -1.1,
+    "fairness": 0.2,
+    "belonging": 1.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Good things come with patience and persistence.",
+    "agency": 0.9,
+    "fairness": 0.6,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Life has its ups and downs for everyone.",
+    "agency": 0.0,
+    "fairness": 0.5,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "I try to make the best of my circumstances.",
+    "agency": 0.7,
+    "fairness": 0.1,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Some days are harder than others, but I keep going.",
+    "agency": 0.6,
+    "fairness": 0.0,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I'm cautiously optimistic about the future.",
+    "agency": 0.5,
+    "fairness": 0.4,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Mixed results are better than no results.",
+    "agency": 0.4,
+    "fairness": 0.2,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "The system has flaws but also strengths worth preserving.",
+    "agency": 0.3,
+    "fairness": 0.5,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Not everything is fair, but some things are.",
+    "agency": 0.2,
+    "fairness": 0.4,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I belong to some groups but feel alienated from others.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": 0.5,
+    "source": "augmented"
+  },
+  {
+    "text": "My community supports me, but I sometimes feel unseen.",
+    "agency": 0.2,
+    "fairness": 0.1,
+    "belonging": 0.6,
+    "source": "augmented"
+  },
+  {
+    "text": "I have some control over my life, but much is beyond me.",
+    "agency": 0.5,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Hard work helps, but luck plays a role too.",
+    "agency": 0.6,
+    "fairness": 0.3,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Building my career while supporting my community matters to me.",
+    "agency": 1.1,
+    "fairness": 0.3,
+    "belonging": 1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I strive for personal success that also lifts others.",
+    "agency": 1.2,
+    "fairness": 0.5,
+    "belonging": 1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "My accomplishments mean more when shared with loved ones.",
+    "agency": 1.0,
+    "fairness": 0.2,
+    "belonging": 1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Success without community feels hollow.",
+    "agency": 0.9,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "I've worked hard to earn fair treatment.",
+    "agency": 1.1,
+    "fairness": 1.0,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Effort combined with fair rules leads to good outcomes.",
+    "agency": 1.2,
+    "fairness": 1.1,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "When I do my part, I expect the system to do its part.",
+    "agency": 1.0,
+    "fairness": 1.0,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Personal responsibility and institutional fairness go together.",
+    "agency": 1.1,
+    "fairness": 1.2,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "A fair community lets everyone contribute their best.",
+    "agency": 0.8,
+    "fairness": 1.3,
+    "belonging": 1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Equitable treatment strengthens the bonds between us.",
+    "agency": 0.2,
+    "fairness": 1.2,
+    "belonging": 1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "We all thrive when the rules work for everyone.",
+    "agency": 0.5,
+    "fairness": 1.4,
+    "belonging": 1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Justice and community reinforce each other.",
+    "agency": 0.3,
+    "fairness": 1.3,
+    "belonging": 1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "The unfairness I face drains my motivation.",
+    "agency": -0.7,
+    "fairness": -1.0,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Why bother when the deck is stacked against you?",
+    "agency": -1.0,
+    "fairness": -1.2,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Injustice has left me feeling powerless.",
+    "agency": -1.2,
+    "fairness": -1.1,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "The system's bias makes effort feel pointless.",
+    "agency": -1.1,
+    "fairness": -1.3,
+    "belonging": -0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Being excluded has sapped my sense of control.",
+    "agency": -0.9,
+    "fairness": -0.2,
+    "belonging": -1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Isolation makes me feel like nothing I do matters.",
+    "agency": -1.2,
+    "fairness": -0.1,
+    "belonging": -1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Without a community, I've lost my sense of purpose.",
+    "agency": -1.0,
+    "fairness": 0.0,
+    "belonging": -1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "My disconnection from others leaves me feeling helpless.",
+    "agency": -1.1,
+    "fairness": -0.1,
+    "belonging": -1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Unfair treatment by my own group hurts the most.",
+    "agency": -0.3,
+    "fairness": -1.1,
+    "belonging": -0.8,
+    "source": "augmented"
+  },
+  {
+    "text": "Injustice within my community has left me adrift.",
+    "agency": -0.4,
+    "fairness": -1.0,
+    "belonging": -0.9,
+    "source": "augmented"
+  },
+  {
+    "text": "When your own people are unfair, where do you belong?",
+    "agency": -0.2,
+    "fairness": -1.2,
+    "belonging": -1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Betrayal by those closest erodes trust in everyone.",
+    "agency": -0.3,
+    "fairness": -1.1,
+    "belonging": -1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I need to build my own path since the system fails people like me.",
+    "agency": 1.3,
+    "fairness": -1.0,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Self-reliance is essential when institutions aren't fair.",
+    "agency": 1.4,
+    "fairness": -0.9,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I create my own opportunities despite systemic bias.",
+    "agency": 1.5,
+    "fairness": -1.0,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "My drive compensates for the unfairness I face.",
+    "agency": 1.3,
+    "fairness": -0.8,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "I succeed for my community, even against unfair odds.",
+    "agency": 1.2,
+    "fairness": -0.9,
+    "belonging": 1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Our group achieves despite the barriers against us.",
+    "agency": 1.1,
+    "fairness": -1.0,
+    "belonging": 1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Unfairness brought our community closer together.",
+    "agency": 0.3,
+    "fairness": -0.8,
+    "belonging": 1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "We rise together against a system that doesn't favor us.",
+    "agency": 0.9,
+    "fairness": -1.1,
+    "belonging": 1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Hard work matters, but so does having fair opportunities.",
+    "agency": 1.0,
+    "fairness": 0.9,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Personal initiative works best in a just environment.",
+    "agency": 1.1,
+    "fairness": 1.0,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "I can make a difference, especially when supported by community.",
+    "agency": 1.0,
+    "fairness": 0.4,
+    "belonging": 1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Agency and belonging reinforce each other.",
+    "agency": 1.1,
+    "fairness": 0.2,
+    "belonging": 1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "We achieve more when fairness and community align.",
+    "agency": 0.8,
+    "fairness": 1.1,
+    "belonging": 1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "A strong community supports fair treatment for all.",
+    "agency": 0.4,
+    "fairness": 1.2,
+    "belonging": 1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Despite limited options, my community gives me strength.",
+    "agency": -0.6,
+    "fairness": 0.1,
+    "belonging": 1.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I feel powerless alone, but together we have hope.",
+    "agency": -0.5,
+    "fairness": 0.2,
+    "belonging": 1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Systemic unfairness has shaken my faith in society.",
+    "agency": -0.4,
+    "fairness": -1.3,
+    "belonging": -0.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Injustice breeds disengagement and isolation.",
+    "agency": -0.6,
+    "fairness": -1.2,
+    "belonging": -0.6,
+    "source": "augmented"
+  },
+  {
+    "text": "I used to believe in the system, but experience taught me otherwise.",
+    "agency": 0.2,
+    "fairness": -1.0,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "My optimism has been tempered by seeing how things really work.",
+    "agency": 0.3,
+    "fairness": -0.7,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Success stories inspire me, even if my own path is hard.",
+    "agency": 0.7,
+    "fairness": 0.3,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "I find hope in small victories, even amid larger struggles.",
+    "agency": 0.6,
+    "fairness": 0.2,
+    "belonging": 0.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Progress is slow, but possible with collective effort.",
+    "agency": 0.5,
+    "fairness": 0.6,
+    "belonging": 0.8,
+    "source": "augmented"
+  },
+  {
+    "text": "Change happens one person, one choice at a time.",
+    "agency": 0.8,
+    "fairness": 0.4,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "I made it despite the odds - hard work does pay off.",
+    "agency": 1.6,
+    "fairness": 0.4,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Coming from nothing taught me that determination matters most.",
+    "agency": 1.5,
+    "fairness": 0.2,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "The healthcare system treats everyone fairly regardless of status.",
+    "agency": 0.0,
+    "fairness": 1.5,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Equal access to education is the foundation of opportunity.",
+    "agency": 0.2,
+    "fairness": 1.6,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "My neighborhood watch keeps our streets safe through cooperation.",
+    "agency": 0.5,
+    "fairness": 0.3,
+    "belonging": 1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Local volunteers make our town feel like home.",
+    "agency": 0.4,
+    "fairness": 0.4,
+    "belonging": 1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Life just happens to you no matter what you try.",
+    "agency": -1.6,
+    "fairness": 0.0,
+    "belonging": -0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I've stopped planning because things never go as expected.",
+    "agency": -1.5,
+    "fairness": -0.1,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "The legal system serves the interests of the powerful.",
+    "agency": -0.1,
+    "fairness": -1.6,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Money determines outcomes more than merit ever will.",
+    "agency": -0.2,
+    "fairness": -1.5,
+    "belonging": -0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Modern life leaves people more disconnected than ever.",
+    "agency": -0.1,
+    "fairness": -0.2,
+    "belonging": -1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Technology connects us to everyone but bonds us to no one.",
+    "agency": 0.1,
+    "fairness": 0.0,
+    "belonging": -1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "I channel my frustration into action rather than despair.",
+    "agency": 1.3,
+    "fairness": -0.4,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Adversity has made me more determined to succeed.",
+    "agency": 1.4,
+    "fairness": -0.3,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Our elders' wisdom guides us through uncertain times.",
+    "agency": -0.4,
+    "fairness": 0.2,
+    "belonging": 1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "The stories passed down through generations anchor our identity.",
+    "agency": -0.2,
+    "fairness": 0.1,
+    "belonging": 1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "A meritocracy rewards those who truly deserve it.",
+    "agency": 1.2,
+    "fairness": 1.5,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Transparent processes ensure fair outcomes.",
+    "agency": 0.3,
+    "fairness": 1.6,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Competing priorities make it hard to know where I stand.",
+    "agency": 0.4,
+    "fairness": 0.0,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "I balance personal ambition with family obligations.",
+    "agency": 0.8,
+    "fairness": 0.1,
+    "belonging": 0.7,
+    "source": "augmented"
+  },
+  {
+    "text": "Life requires navigating both self-interest and community needs.",
+    "agency": 0.7,
+    "fairness": 0.3,
+    "belonging": 0.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Sometimes fairness and belonging pull in different directions.",
+    "agency": 0.2,
+    "fairness": 0.5,
+    "belonging": 0.5,
+    "source": "augmented"
+  },
+  {
+    "text": "I've learned to work within a flawed system while pushing for change.",
+    "agency": 0.9,
+    "fairness": -0.3,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Pragmatism means accepting some unfairness while fighting for better.",
+    "agency": 0.6,
+    "fairness": -0.4,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "I maintain hope despite evidence to the contrary.",
+    "agency": 0.5,
+    "fairness": 0.3,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Resilience means getting up no matter how many times you fall.",
+    "agency": 1.0,
+    "fairness": 0.1,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Small acts of kindness restore my faith in humanity.",
+    "agency": 0.3,
+    "fairness": 0.6,
+    "belonging": 0.8,
+    "source": "augmented"
+  },
+  {
+    "text": "Every generation has to fight for justice anew.",
+    "agency": 0.7,
+    "fairness": 0.8,
+    "belonging": 0.5,
+    "source": "augmented"
+  },
+  {
+    "text": "I started my own business to control my destiny.",
+    "agency": 1.8,
+    "fairness": 0.1,
+    "belonging": -0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Entrepreneurship is the ultimate form of self-determination.",
+    "agency": 1.7,
+    "fairness": 0.2,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Due process protects the innocent from arbitrary power.",
+    "agency": 0.1,
+    "fairness": 1.7,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Constitutional rights apply to everyone equally.",
+    "agency": 0.0,
+    "fairness": 1.8,
+    "belonging": 0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "My religious community provides meaning and support.",
+    "agency": 0.1,
+    "fairness": 0.3,
+    "belonging": 1.6,
+    "source": "augmented"
+  },
+  {
+    "text": "Shared values unite our congregation as a family.",
+    "agency": 0.2,
+    "fairness": 0.4,
+    "belonging": 1.5,
+    "source": "augmented"
+  },
+  {
+    "text": "Automation is making workers like me obsolete.",
+    "agency": -1.4,
+    "fairness": -0.3,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "The economy has left entire communities behind.",
+    "agency": -1.0,
+    "fairness": -0.8,
+    "belonging": -0.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Tax loopholes favor corporations over regular citizens.",
+    "agency": -0.1,
+    "fairness": -1.4,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Regulatory capture ensures the powerful stay powerful.",
+    "agency": -0.2,
+    "fairness": -1.5,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Online communities cannot replace real human connection.",
+    "agency": 0.2,
+    "fairness": 0.0,
+    "belonging": -1.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Geographic mobility has scattered families and weakened bonds.",
+    "agency": 0.3,
+    "fairness": 0.0,
+    "belonging": -1.1,
+    "source": "augmented"
+  },
+  {
+    "text": "I choose to see challenges as opportunities for growth.",
+    "agency": 1.4,
+    "fairness": 0.2,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Every setback is a setup for a comeback.",
+    "agency": 1.3,
+    "fairness": 0.3,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Mutual aid networks help us survive when systems fail.",
+    "agency": 0.5,
+    "fairness": -0.3,
+    "belonging": 1.3,
+    "source": "augmented"
+  },
+  {
+    "text": "We pool resources because we can only rely on each other.",
+    "agency": 0.4,
+    "fairness": -0.4,
+    "belonging": 1.4,
+    "source": "augmented"
+  },
+  {
+    "text": "Whistleblowers help keep institutions accountable.",
+    "agency": 0.6,
+    "fairness": 1.3,
+    "belonging": 0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "Independent oversight is essential for fair governance.",
+    "agency": 0.2,
+    "fairness": 1.4,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I feel ambivalent about most social institutions.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Neither optimism nor pessimism captures my view.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "Things are complicated and simple answers rarely work.",
+    "agency": 0.1,
+    "fairness": 0.1,
+    "belonging": 0.1,
+    "source": "augmented"
+  },
+  {
+    "text": "Context matters more than ideology in most situations.",
+    "agency": 0.2,
+    "fairness": 0.2,
+    "belonging": 0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "I'm not sure what to believe anymore.",
+    "agency": -0.3,
+    "fairness": -0.2,
+    "belonging": -0.3,
+    "source": "augmented"
+  },
+  {
+    "text": "The world is too complex for easy explanations.",
+    "agency": 0.0,
+    "fairness": 0.0,
+    "belonging": 0.0,
+    "source": "augmented"
+  },
+  {
+    "text": "I remain skeptical of grand narratives from any direction.",
+    "agency": 0.3,
+    "fairness": 0.0,
+    "belonging": -0.2,
+    "source": "augmented"
+  },
+  {
+    "text": "Truth usually lies somewhere in the middle.",
+    "agency": 0.1,
+    "fairness": 0.3,
+    "belonging": 0.1,
+    "source": "augmented"
+  }
+]

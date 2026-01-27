@@ -1,0 +1,1014 @@
+{
+  "organization": "The Hope Effect",
+  "analysis_date": "2026-01-07T17:39:16.423883",
+  "categories": {
+    "mission_vision": {
+      "texts": [
+        {
+          "text": "We are changing the way the world cares for orphans\u2026because every child deserves...",
+          "mode": "NEUTRAL",
+          "confidence": 0.2693,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -0.09920560568571091,
+          "perceived_justice": 0.38350170850753784,
+          "belonging": 0.7029809355735779
+        },
+        {
+          "text": "Getting kids out of orphanages and into loving families\u2026where they belong.",
+          "mode": "NEUTRAL",
+          "confidence": 0.2623,
+          "secondary_mode": "VICTIM",
+          "agency": 0.018125545233488083,
+          "perceived_justice": -0.6245191693305969,
+          "belonging": 0.01043888833373785
+        },
+        {
+          "text": "Kids do best when they are raised in families.",
+          "mode": "PROTEST_EXIT",
+          "confidence": 0.5727,
+          "secondary_mode": "CYNICAL_ACHIEVER",
+          "agency": 1.366604208946228,
+          "perceived_justice": -0.12066654860973358,
+          "belonging": 0.4892920255661011
+        },
+        {
+          "text": "Together, we can change the way the world cares for orphans\u2026because every child ...",
+          "mode": "COMMUNAL",
+          "confidence": 0.5735,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": 0.2768721878528595,
+          "perceived_justice": 0.8140405416488647,
+          "belonging": 1.009502649307251
+        },
+        {
+          "text": "The Hope Effect is changing how the world cares for orphans by providing family-...",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.7728,
+          "secondary_mode": "SPIRITUAL_EXIT",
+          "agency": -0.37513190507888794,
+          "perceived_justice": 1.3615220785140991,
+          "belonging": 0.9117047190666199
+        }
+      ],
+      "modes": {
+        "NEUTRAL": 2,
+        "PROTEST_EXIT": 1,
+        "COMMUNAL": 1,
+        "TRANSCENDENT": 1
+      },
+      "coordinates": {
+        "agency": [
+          -0.09920560568571091,
+          0.018125545233488083,
+          1.366604208946228,
+          0.2768721878528595,
+          -0.37513190507888794
+        ],
+        "perceived_justice": [
+          0.38350170850753784,
+          -0.6245191693305969,
+          -0.12066654860973358,
+          0.8140405416488647,
+          1.3615220785140991
+        ],
+        "belonging": [
+          0.7029809355735779,
+          0.01043888833373785,
+          0.4892920255661011,
+          1.009502649307251,
+          0.9117047190666199
+        ]
+      },
+      "statistics": {
+        "n": 5,
+        "mean_agency": 0.23745288625359534,
+        "mean_perceived_justice": 0.36277572214603426,
+        "mean_belonging": 0.6247838435694575,
+        "dominant_mode": "NEUTRAL",
+        "mode_distribution": {
+          "NEUTRAL": 2,
+          "PROTEST_EXIT": 1,
+          "COMMUNAL": 1,
+          "TRANSCENDENT": 1
+        }
+      }
+    },
+    "problem_framing": {
+      "texts": [
+        {
+          "text": "There are millions of orphaned and vulnerable children worldwide, with an estima...",
+          "mode": "VICTIM",
+          "confidence": 0.6712,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": -0.8483593463897705,
+          "perceived_justice": -0.8384279012680054,
+          "belonging": -0.16777047514915466
+        },
+        {
+          "text": "Children in institutional settings are 10x more likely to fall into sex work.",
+          "mode": "CONFLICTED",
+          "confidence": 0.6091,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.640012264251709,
+          "perceived_justice": 2.117368221282959,
+          "belonging": 0.14772607386112213
+        },
+        {
+          "text": "Children raised in institutional orphanages are 40x more likely to have a crimin...",
+          "mode": "SPIRITUAL_EXIT",
+          "confidence": 0.4887,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -1.0152571201324463,
+          "perceived_justice": 0.33846256136894226,
+          "belonging": 0.3721494972705841
+        },
+        {
+          "text": "Children aging out of orphanages are 500x more likely to commit suicide compared...",
+          "mode": "SPIRITUAL_EXIT",
+          "confidence": 0.5894,
+          "secondary_mode": "VICTIM",
+          "agency": -0.49455806612968445,
+          "perceived_justice": -0.6091462969779968,
+          "belonging": 0.8840200304985046
+        },
+        {
+          "text": "Research dating back to the 1930s demonstrates that institutional orphanage care...",
+          "mode": "NEUTRAL",
+          "confidence": 0.334,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": -0.4935098886489868,
+          "perceived_justice": -0.248304545879364,
+          "belonging": 0.2262646108865738
+        },
+        {
+          "text": "Institutional care can have deeply harmful and lasting effects on a child's well...",
+          "mode": "TRANSITIONAL",
+          "confidence": 0.3116,
+          "secondary_mode": "NEUTRAL",
+          "agency": 0.7872567176818848,
+          "perceived_justice": 0.40408170223236084,
+          "belonging": -0.1259097456932068
+        },
+        {
+          "text": "Less than 1% of orphans globally are adopted.",
+          "mode": "NEUTRAL",
+          "confidence": 0.2917,
+          "secondary_mode": "SPIRITUAL_EXIT",
+          "agency": -0.47063007950782776,
+          "perceived_justice": 0.011661947704851627,
+          "belonging": 0.3888310194015503
+        },
+        {
+          "text": "Approximately 80% of orphanage children have family members who could provide ca...",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.5787,
+          "secondary_mode": "COMMUNAL",
+          "agency": 0.041153937578201294,
+          "perceived_justice": 1.413973331451416,
+          "belonging": 0.9768208265304565
+        }
+      ],
+      "modes": {
+        "VICTIM": 1,
+        "CONFLICTED": 1,
+        "SPIRITUAL_EXIT": 2,
+        "NEUTRAL": 2,
+        "TRANSITIONAL": 1,
+        "TRANSCENDENT": 1
+      },
+      "coordinates": {
+        "agency": [
+          -0.8483593463897705,
+          0.640012264251709,
+          -1.0152571201324463,
+          -0.49455806612968445,
+          -0.4935098886489868,
+          0.7872567176818848,
+          -0.47063007950782776,
+          0.041153937578201294
+        ],
+        "perceived_justice": [
+          -0.8384279012680054,
+          2.117368221282959,
+          0.33846256136894226,
+          -0.6091462969779968,
+          -0.248304545879364,
+          0.40408170223236084,
+          0.011661947704851627,
+          1.413973331451416
+        ],
+        "belonging": [
+          -0.16777047514915466,
+          0.14772607386112213,
+          0.3721494972705841,
+          0.8840200304985046,
+          0.2262646108865738,
+          -0.1259097456932068,
+          0.3888310194015503,
+          0.9768208265304565
+        ]
+      },
+      "statistics": {
+        "n": 8,
+        "mean_agency": -0.2317364476621151,
+        "mean_perceived_justice": 0.32370862748939544,
+        "mean_belonging": 0.33776647970080376,
+        "dominant_mode": "SPIRITUAL_EXIT",
+        "mode_distribution": {
+          "VICTIM": 1,
+          "CONFLICTED": 1,
+          "SPIRITUAL_EXIT": 2,
+          "NEUTRAL": 2,
+          "TRANSITIONAL": 1,
+          "TRANSCENDENT": 1
+        }
+      }
+    },
+    "solution_framing": {
+      "texts": [
+        {
+          "text": "We build smaller family-style homes with two parent figures and 6-8 children eac...",
+          "mode": "TRANSITIONAL",
+          "confidence": 0.4445,
+          "secondary_mode": "HEROIC",
+          "agency": 0.46702057123184204,
+          "perceived_justice": 0.7846930623054504,
+          "belonging": 0.395249605178833
+        },
+        {
+          "text": "Rather than constructing large, institutional-style orphanages with high child t...",
+          "mode": "PROTEST_EXIT",
+          "confidence": 0.6892,
+          "secondary_mode": "CONFLICTED",
+          "agency": 0.25937405228614807,
+          "perceived_justice": -0.8163212537765503,
+          "belonging": 1.052376389503479
+        },
+        {
+          "text": "We establish foster care systems where they don't exist by changing primary care...",
+          "mode": "TRANSITIONAL",
+          "confidence": 0.5461,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": 0.334474116563797,
+          "perceived_justice": 1.6626694202423096,
+          "belonging": 0.6192262172698975
+        },
+        {
+          "text": "We facilitate reunification with biological families. Approximately 80% of orpha...",
+          "mode": "SPIRITUAL_EXIT",
+          "confidence": 0.5128,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -1.2917732000350952,
+          "perceived_justice": 0.6310138702392578,
+          "belonging": 1.2951481342315674
+        },
+        {
+          "text": "On average, family care costs 5-8 times less than institutional care.",
+          "mode": "HEROIC",
+          "confidence": 0.5822,
+          "secondary_mode": "SOCIAL_EXIT",
+          "agency": 1.1703110933303833,
+          "perceived_justice": 0.9993265271186829,
+          "belonging": -0.45796290040016174
+        },
+        {
+          "text": "Our work is a powerful solution both in Mexico and around the world that benefit...",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.7053,
+          "secondary_mode": "COMMUNAL",
+          "agency": -0.16740180552005768,
+          "perceived_justice": 1.522712230682373,
+          "belonging": 1.1997536420822144
+        },
+        {
+          "text": "We pioneer, partner, and promote family-centered orphan care.",
+          "mode": "COMMUNAL",
+          "confidence": 0.5099,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -0.25017496943473816,
+          "perceived_justice": 1.0865281820297241,
+          "belonging": 2.0985312461853027
+        }
+      ],
+      "modes": {
+        "TRANSITIONAL": 2,
+        "PROTEST_EXIT": 1,
+        "SPIRITUAL_EXIT": 1,
+        "HEROIC": 1,
+        "TRANSCENDENT": 1,
+        "COMMUNAL": 1
+      },
+      "coordinates": {
+        "agency": [
+          0.46702057123184204,
+          0.25937405228614807,
+          0.334474116563797,
+          -1.2917732000350952,
+          1.1703110933303833,
+          -0.16740180552005768,
+          -0.25017496943473816
+        ],
+        "perceived_justice": [
+          0.7846930623054504,
+          -0.8163212537765503,
+          1.6626694202423096,
+          0.6310138702392578,
+          0.9993265271186829,
+          1.522712230682373,
+          1.0865281820297241
+        ],
+        "belonging": [
+          0.395249605178833,
+          1.052376389503479,
+          0.6192262172698975,
+          1.2951481342315674,
+          -0.45796290040016174,
+          1.1997536420822144,
+          2.0985312461853027
+        ]
+      },
+      "statistics": {
+        "n": 7,
+        "mean_agency": 0.0745471226317542,
+        "mean_perceived_justice": 0.8386602912630353,
+        "mean_belonging": 0.8860460477215903,
+        "dominant_mode": "TRANSITIONAL",
+        "mode_distribution": {
+          "TRANSITIONAL": 2,
+          "PROTEST_EXIT": 1,
+          "SPIRITUAL_EXIT": 1,
+          "HEROIC": 1,
+          "TRANSCENDENT": 1,
+          "COMMUNAL": 1
+        }
+      }
+    },
+    "impact_stories": {
+      "texts": [
+        {
+          "text": "At just a year old, Ver\u00f3nica was abandoned by her biological family and placed i...",
+          "mode": "SPIRITUAL_EXIT",
+          "confidence": 0.5135,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -0.6706076264381409,
+          "perceived_justice": 0.2417299598455429,
+          "belonging": 0.9538587927818298
+        },
+        {
+          "text": "Rosa came to the DIF facility shortly after she was born. She's now almost four ...",
+          "mode": "CONFLICTED",
+          "confidence": 0.6741,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": 0.5743871927261353,
+          "perceived_justice": 2.8201019763946533,
+          "belonging": 1.0353899002075195
+        },
+        {
+          "text": "A child abandoned after her mother's death, Luisa experienced neglect and homele...",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.5812,
+          "secondary_mode": "CONFLICTED",
+          "agency": -1.2028183937072754,
+          "perceived_justice": 1.3611111640930176,
+          "belonging": 0.23556427657604218
+        },
+        {
+          "text": "Surrounded by the love of a family, children like Alberto, Daniela, and Ernesto ...",
+          "mode": "PROTEST_EXIT",
+          "confidence": 0.6106,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.9639844298362732,
+          "perceived_justice": -0.08258593827486038,
+          "belonging": 1.3039398193359375
+        },
+        {
+          "text": "Stories of lives changed through the love of a family.",
+          "mode": "NEUTRAL",
+          "confidence": 0.3277,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": -0.3508460223674774,
+          "perceived_justice": 0.4879819452762604,
+          "belonging": 0.24308273196220398
+        }
+      ],
+      "modes": {
+        "SPIRITUAL_EXIT": 1,
+        "CONFLICTED": 1,
+        "TRANSCENDENT": 1,
+        "PROTEST_EXIT": 1,
+        "NEUTRAL": 1
+      },
+      "coordinates": {
+        "agency": [
+          -0.6706076264381409,
+          0.5743871927261353,
+          -1.2028183937072754,
+          0.9639844298362732,
+          -0.3508460223674774
+        ],
+        "perceived_justice": [
+          0.2417299598455429,
+          2.8201019763946533,
+          1.3611111640930176,
+          -0.08258593827486038,
+          0.4879819452762604
+        ],
+        "belonging": [
+          0.9538587927818298,
+          1.0353899002075195,
+          0.23556427657604218,
+          1.3039398193359375,
+          0.24308273196220398
+        ]
+      },
+      "statistics": {
+        "n": 5,
+        "mean_agency": -0.13718008399009704,
+        "mean_perceived_justice": 0.9656678214669228,
+        "mean_belonging": 0.7543671041727066,
+        "dominant_mode": "SPIRITUAL_EXIT",
+        "mode_distribution": {
+          "SPIRITUAL_EXIT": 1,
+          "CONFLICTED": 1,
+          "TRANSCENDENT": 1,
+          "PROTEST_EXIT": 1,
+          "NEUTRAL": 1
+        }
+      }
+    },
+    "organizational_voice": {
+      "texts": [
+        {
+          "text": "The Hope Effect was the first organization to seek government approval for famil...",
+          "mode": "CONFLICTED",
+          "confidence": 0.8934,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.8419064283370972,
+          "perceived_justice": 3.0708279609680176,
+          "belonging": 0.5361204743385315
+        },
+        {
+          "text": "Since launching, we raised over $300,000 for orphan care, built a family-style h...",
+          "mode": "HEROIC",
+          "confidence": 0.5039,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.8683667182922363,
+          "perceived_justice": 0.7692336440086365,
+          "belonging": 0.6751708984375
+        },
+        {
+          "text": "We currently work in eight cities around the world across four nations: Mexico, ...",
+          "mode": "NEUTRAL",
+          "confidence": 0.3559,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": -0.6405173540115356,
+          "perceived_justice": -0.01654176414012909,
+          "belonging": -0.7257822155952454
+        },
+        {
+          "text": "We have been in Chiang Mai, Thailand, since October 2021, and expanded into Batt...",
+          "mode": "SOCIAL_EXIT",
+          "confidence": 0.4444,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.26513639092445374,
+          "perceived_justice": 0.9552453756332397,
+          "belonging": -0.5014000535011292
+        },
+        {
+          "text": "We have an exciting opportunity in Mexico to speak about the work we are doing t...",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.8559,
+          "secondary_mode": "CONFLICTED",
+          "agency": -0.2690257728099823,
+          "perceived_justice": 2.5684399604797363,
+          "belonging": 1.5214375257492065
+        },
+        {
+          "text": "When author Joshua Becker secured a generous book contract writing about minimal...",
+          "mode": "PARANOID",
+          "confidence": 0.5947,
+          "secondary_mode": "VICTIM",
+          "agency": -0.14144401252269745,
+          "perceived_justice": -1.3361082077026367,
+          "belonging": -0.6306371092796326
+        },
+        {
+          "text": "Kim was adopted as a newborn after being left at a South Dakota hospital. She un...",
+          "mode": "CONFLICTED",
+          "confidence": 0.5272,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -1.5751729011535645,
+          "perceived_justice": 1.1462897062301636,
+          "belonging": 0.10397324711084366
+        }
+      ],
+      "modes": {
+        "CONFLICTED": 2,
+        "HEROIC": 1,
+        "NEUTRAL": 1,
+        "SOCIAL_EXIT": 1,
+        "TRANSCENDENT": 1,
+        "PARANOID": 1
+      },
+      "coordinates": {
+        "agency": [
+          0.8419064283370972,
+          0.8683667182922363,
+          -0.6405173540115356,
+          0.26513639092445374,
+          -0.2690257728099823,
+          -0.14144401252269745,
+          -1.5751729011535645
+        ],
+        "perceived_justice": [
+          3.0708279609680176,
+          0.7692336440086365,
+          -0.01654176414012909,
+          0.9552453756332397,
+          2.5684399604797363,
+          -1.3361082077026367,
+          1.1462897062301636
+        ],
+        "belonging": [
+          0.5361204743385315,
+          0.6751708984375,
+          -0.7257822155952454,
+          -0.5014000535011292,
+          1.5214375257492065,
+          -0.6306371092796326,
+          0.10397324711084366
+        ]
+      },
+      "statistics": {
+        "n": 7,
+        "mean_agency": -0.09296435756342751,
+        "mean_perceived_justice": 1.0224838107824326,
+        "mean_belonging": 0.1398403953228678,
+        "dominant_mode": "CONFLICTED",
+        "mode_distribution": {
+          "CONFLICTED": 2,
+          "HEROIC": 1,
+          "NEUTRAL": 1,
+          "SOCIAL_EXIT": 1,
+          "TRANSCENDENT": 1,
+          "PARANOID": 1
+        }
+      }
+    },
+    "donor_appeals": {
+      "texts": [
+        {
+          "text": "100% of your donation can go directly to help a child.",
+          "mode": "HEROIC",
+          "confidence": 0.5387,
+          "secondary_mode": "COMMUNAL",
+          "agency": 0.9714419841766357,
+          "perceived_justice": 1.8945616483688354,
+          "belonging": 0.9050946831703186
+        },
+        {
+          "text": "Monthly giving. Maximum impact.",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.7151,
+          "secondary_mode": "COMMUNAL",
+          "agency": -0.24961364269256592,
+          "perceived_justice": 1.2542482614517212,
+          "belonging": 1.0247015953063965
+        },
+        {
+          "text": "Every penny donated is used directly for orphan care.",
+          "mode": "COMMUNAL",
+          "confidence": 0.6223,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": 0.11969627439975739,
+          "perceived_justice": 1.1468837261199951,
+          "belonging": 1.293573260307312
+        },
+        {
+          "text": "Donations start at one dollar daily.",
+          "mode": "HEROIC",
+          "confidence": 0.9179,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 1.579167366027832,
+          "perceived_justice": 1.2952837944030762,
+          "belonging": 0.48883292078971863
+        },
+        {
+          "text": "On Giving Tuesday, matched donations doubled donor impact.",
+          "mode": "TRANSCENDENT",
+          "confidence": 0.5785,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.12724421918392181,
+          "perceived_justice": 1.7251086235046387,
+          "belonging": 0.6650201678276062
+        },
+        {
+          "text": "Your contribution is tax-deductible and 100% directed toward orphan care.",
+          "mode": "NEUTRAL",
+          "confidence": 0.3799,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": -0.6459890604019165,
+          "perceived_justice": 0.38615086674690247,
+          "belonging": -0.030391572043299675
+        }
+      ],
+      "modes": {
+        "HEROIC": 2,
+        "TRANSCENDENT": 2,
+        "COMMUNAL": 1,
+        "NEUTRAL": 1
+      },
+      "coordinates": {
+        "agency": [
+          0.9714419841766357,
+          -0.24961364269256592,
+          0.11969627439975739,
+          1.579167366027832,
+          0.12724421918392181,
+          -0.6459890604019165
+        ],
+        "perceived_justice": [
+          1.8945616483688354,
+          1.2542482614517212,
+          1.1468837261199951,
+          1.2952837944030762,
+          1.7251086235046387,
+          0.38615086674690247
+        ],
+        "belonging": [
+          0.9050946831703186,
+          1.0247015953063965,
+          1.293573260307312,
+          0.48883292078971863,
+          0.6650201678276062,
+          -0.030391572043299675
+        ]
+      },
+      "statistics": {
+        "n": 6,
+        "mean_agency": 0.3169911901156108,
+        "mean_perceived_justice": 1.2837061534325283,
+        "mean_belonging": 0.7244718425596753,
+        "dominant_mode": "HEROIC",
+        "mode_distribution": {
+          "HEROIC": 2,
+          "TRANSCENDENT": 2,
+          "COMMUNAL": 1,
+          "NEUTRAL": 1
+        }
+      }
+    },
+    "advocacy": {
+      "texts": [
+        {
+          "text": "U.S. Christians donate $2.5 billion yearly to orphanages, while research confirm...",
+          "mode": "NEUTRAL",
+          "confidence": 0.2436,
+          "secondary_mode": "TRANSITIONAL",
+          "agency": 0.6265098452568054,
+          "perceived_justice": 0.2731407582759857,
+          "belonging": 0.22955124080181122
+        },
+        {
+          "text": "We advocate for systemic change by promoting family-centered orphan care to reli...",
+          "mode": "SPIRITUAL_EXIT",
+          "confidence": 0.502,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": -0.8281754851341248,
+          "perceived_justice": 0.5085352063179016,
+          "belonging": 0.9685479998588562
+        },
+        {
+          "text": "We encourage U.S. foster care involvement through respite care, donations, famil...",
+          "mode": "COMMUNAL",
+          "confidence": 0.7232,
+          "secondary_mode": "TRANSCENDENT",
+          "agency": 0.24367918074131012,
+          "perceived_justice": 1.9236820936203003,
+          "belonging": 1.9014226198196411
+        },
+        {
+          "text": "Revolutionize. Reunite. Redefine.",
+          "mode": "PROTEST_EXIT",
+          "confidence": 0.7774,
+          "secondary_mode": "CYNICAL_ACHIEVER",
+          "agency": 0.9627538919448853,
+          "perceived_justice": -0.8151323795318604,
+          "belonging": 1.0434727668762207
+        }
+      ],
+      "modes": {
+        "NEUTRAL": 1,
+        "SPIRITUAL_EXIT": 1,
+        "COMMUNAL": 1,
+        "PROTEST_EXIT": 1
+      },
+      "coordinates": {
+        "agency": [
+          0.6265098452568054,
+          -0.8281754851341248,
+          0.24367918074131012,
+          0.9627538919448853
+        ],
+        "perceived_justice": [
+          0.2731407582759857,
+          0.5085352063179016,
+          1.9236820936203003,
+          -0.8151323795318604
+        ],
+        "belonging": [
+          0.22955124080181122,
+          0.9685479998588562,
+          1.9014226198196411,
+          1.0434727668762207
+        ]
+      },
+      "statistics": {
+        "n": 4,
+        "mean_agency": 0.251191858202219,
+        "mean_perceived_justice": 0.4725564196705818,
+        "mean_belonging": 1.0357486568391323,
+        "dominant_mode": "NEUTRAL",
+        "mode_distribution": {
+          "NEUTRAL": 1,
+          "SPIRITUAL_EXIT": 1,
+          "COMMUNAL": 1,
+          "PROTEST_EXIT": 1
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "total_narratives": 42,
+    "mean_agency": 0.0339349133095571,
+    "mean_perceived_justice": 0.7583894774184695,
+    "mean_belonging": 0.6016408895319771,
+    "std_agency": 0.7468983972659324,
+    "std_perceived_justice": 1.0177549999890372,
+    "std_belonging": 0.6413066407708939,
+    "mode_distribution": {
+      "NEUTRAL": 8,
+      "PROTEST_EXIT": 4,
+      "COMMUNAL": 4,
+      "TRANSCENDENT": 7,
+      "VICTIM": 1,
+      "CONFLICTED": 4,
+      "SPIRITUAL_EXIT": 5,
+      "TRANSITIONAL": 3,
+      "HEROIC": 4,
+      "SOCIAL_EXIT": 1,
+      "PARANOID": 1
+    },
+    "dominant_mode": "NEUTRAL"
+  },
+  "comparisons": {
+    "problem_vs_solution": {
+      "gap_analysis": {
+        "euclidean_distance": 0.6211,
+        "axis_gaps": {
+          "agency": {
+            "a_mean": 0.1413,
+            "b_mean": 0.1579,
+            "gap": 0.0166,
+            "direction": "B higher"
+          },
+          "perceived_justice": {
+            "a_mean": 0.0829,
+            "b_mean": 0.1929,
+            "gap": 0.11,
+            "direction": "B higher"
+          },
+          "belonging": {
+            "a_mean": 0.062,
+            "b_mean": 0.673,
+            "gap": 0.611,
+            "direction": "B higher"
+          }
+        },
+        "effect_sizes": {
+          "agency_cohens_d": -0.0759,
+          "perceived_justice_cohens_d": -0.3729,
+          "belonging_cohens_d": -1.6805
+        },
+        "statistical_tests": {
+          "agency_ttest_p": 0.8846,
+          "perceived_justice_ttest_p": 0.4858,
+          "belonging_ttest_p": 0.0132
+        }
+      },
+      "mode_comparison": {
+        "group_a_dominant": "NEUTRAL",
+        "group_b_dominant": "NEUTRAL",
+        "mode_overlap": 0.6547,
+        "group_a_distribution": {
+          "NEUTRAL": 8
+        },
+        "group_b_distribution": {
+          "NEUTRAL": 3,
+          "PROTEST_EXIT": 1,
+          "TRANSCENDENT": 1,
+          "COMMUNAL": 2
+        }
+      },
+      "interpretation": "Large divergence on belonging (d=-1.7). Solution Framing scores significantly higher on this dimension. Statistically significant differences (p<0.05) found on: belonging.",
+      "bridge_suggestions": [
+        "Find shared belonging through common values or goals"
+      ],
+      "metadata": {
+        "group_a_size": 8,
+        "group_b_size": 7,
+        "model_id": "all-MiniLM-L6-v2",
+        "layer": -1,
+        "confidence_level": 0.95,
+        "centroid_a": {
+          "agency": 0.1413,
+          "perceived_justice": 0.0829,
+          "belonging": 0.062
+        },
+        "centroid_b": {
+          "agency": 0.1579,
+          "perceived_justice": 0.1929,
+          "belonging": 0.673
+        }
+      }
+    },
+    "mission_vs_stories": {
+      "gap_analysis": {
+        "euclidean_distance": 0.5561,
+        "axis_gaps": {
+          "agency": {
+            "a_mean": 0.0558,
+            "b_mean": 0.1099,
+            "gap": 0.0541,
+            "direction": "B higher"
+          },
+          "perceived_justice": {
+            "a_mean": 0.4408,
+            "b_mean": -0.0067,
+            "gap": 0.4475,
+            "direction": "A higher"
+          },
+          "belonging": {
+            "a_mean": 0.5964,
+            "b_mean": 0.2709,
+            "gap": 0.3256,
+            "direction": "A higher"
+          }
+        },
+        "effect_sizes": {
+          "agency_cohens_d": -0.1567,
+          "perceived_justice_cohens_d": 2.2936,
+          "belonging_cohens_d": 1.1159
+        },
+        "statistical_tests": {
+          "agency_ttest_p": 0.8113,
+          "perceived_justice_ttest_p": 0.0074,
+          "belonging_ttest_p": 0.1226
+        }
+      },
+      "mode_comparison": {
+        "group_a_dominant": "TRANSCENDENT",
+        "group_b_dominant": "NEUTRAL",
+        "mode_overlap": 0.5657,
+        "group_a_distribution": {
+          "TRANSCENDENT": 2,
+          "NEUTRAL": 2,
+          "TRANSITIONAL": 1
+        },
+        "group_b_distribution": {
+          "NEUTRAL": 4,
+          "PROTEST_EXIT": 1
+        }
+      },
+      "interpretation": "Large divergence on perceived_justice (d=2.3). Mission/Vision scores significantly higher on this dimension. Mission/Vision dominant mode is TRANSCENDENT, while Impact Stories is NEUTRAL. Statistically significant differences (p<0.05) found on: perceived_justice.",
+      "bridge_suggestions": [
+        "Acknowledge justice concerns from Impact Stories",
+        "Find shared belonging through common values or goals",
+        "Facilitate dialogue to understand different perspectives"
+      ],
+      "metadata": {
+        "group_a_size": 5,
+        "group_b_size": 5,
+        "model_id": "all-MiniLM-L6-v2",
+        "layer": -1,
+        "confidence_level": 0.95,
+        "centroid_a": {
+          "agency": 0.0558,
+          "perceived_justice": 0.4408,
+          "belonging": 0.5964
+        },
+        "centroid_b": {
+          "agency": 0.1099,
+          "perceived_justice": -0.0067,
+          "belonging": 0.2709
+        }
+      }
+    },
+    "appeals_vs_voice": {
+      "gap_analysis": {
+        "euclidean_distance": 0.5112,
+        "axis_gaps": {
+          "agency": {
+            "a_mean": 0.3882,
+            "b_mean": 0.2143,
+            "gap": 0.1739,
+            "direction": "A higher"
+          },
+          "perceived_justice": {
+            "a_mean": 0.4794,
+            "b_mean": 0.0036,
+            "gap": 0.4758,
+            "direction": "A higher"
+          },
+          "belonging": {
+            "a_mean": 0.359,
+            "b_mean": 0.2901,
+            "gap": 0.0689,
+            "direction": "A higher"
+          }
+        },
+        "effect_sizes": {
+          "agency_cohens_d": 0.6946,
+          "perceived_justice_cohens_d": 1.2961,
+          "belonging_cohens_d": 0.2227
+        },
+        "statistical_tests": {
+          "agency_ttest_p": 0.2527,
+          "perceived_justice_ttest_p": 0.0359,
+          "belonging_ttest_p": 0.6811
+        }
+      },
+      "mode_comparison": {
+        "group_a_dominant": "TRANSITIONAL",
+        "group_b_dominant": "NEUTRAL",
+        "mode_overlap": 0.745,
+        "group_a_distribution": {
+          "TRANSITIONAL": 4,
+          "NEUTRAL": 2
+        },
+        "group_b_distribution": {
+          "TRANSITIONAL": 1,
+          "PROTEST_EXIT": 1,
+          "NEUTRAL": 4,
+          "COMMUNAL": 1
+        }
+      },
+      "interpretation": "Large divergence on perceived_justice (d=1.3). Donor Appeals scores significantly higher on this dimension. Donor Appeals dominant mode is TRANSITIONAL, while Organizational Voice is NEUTRAL. Statistically significant differences (p<0.05) found on: perceived_justice.",
+      "bridge_suggestions": [
+        "Empower Organizational Voice with more autonomy and decision-making opportunities",
+        "Acknowledge justice concerns from Organizational Voice",
+        "Facilitate dialogue to understand different perspectives"
+      ],
+      "metadata": {
+        "group_a_size": 6,
+        "group_b_size": 7,
+        "model_id": "all-MiniLM-L6-v2",
+        "layer": -1,
+        "confidence_level": 0.95,
+        "centroid_a": {
+          "agency": 0.3882,
+          "perceived_justice": 0.4794,
+          "belonging": 0.359
+        },
+        "centroid_b": {
+          "agency": 0.2143,
+          "perceived_justice": 0.0036,
+          "belonging": 0.2901
+        }
+      }
+    }
+  },
+  "narrative_journey": {
+    "sequence": [
+      "NEUTRAL",
+      "NEUTRAL",
+      "NEUTRAL",
+      "NEUTRAL",
+      "TRANSCENDENT"
+    ],
+    "transitions": [
+      {
+        "from": "NEUTRAL",
+        "to": "NEUTRAL",
+        "probability": 0.75
+      },
+      {
+        "from": "NEUTRAL",
+        "to": "NEUTRAL",
+        "probability": 0.75
+      },
+      {
+        "from": "NEUTRAL",
+        "to": "NEUTRAL",
+        "probability": 0.75
+      },
+      {
+        "from": "NEUTRAL",
+        "to": "TRANSCENDENT",
+        "probability": 0.25
+      }
+    ],
+    "flow_pattern": "radicalization",
+    "interpretation": "Radicalization pattern: shadow phase leading to exit/protest"
+  }
+}

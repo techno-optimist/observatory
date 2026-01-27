@@ -1,0 +1,27 @@
+{
+  "models": [
+    {
+      "model_id": "all-MiniLM-L6-v2",
+      "projection_path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/multi_model_ensemble/all-MiniLM-L6-v2",
+      "r2": 0.5756785878459226,
+      "cv_score": 0.38309668155596344,
+      "weight": 0.3333333333333333
+    },
+    {
+      "model_id": "all-mpnet-base-v2",
+      "projection_path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/multi_model_ensemble/all-mpnet-base-v2",
+      "r2": 0.775056311690518,
+      "cv_score": 0.6117801983775495,
+      "weight": 0.3333333333333333
+    },
+    {
+      "model_id": "paraphrase-MiniLM-L6-v2",
+      "projection_path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/multi_model_ensemble/paraphrase-MiniLM-L6-v2",
+      "r2": 0.5812417593258352,
+      "cv_score": 0.4078988480913746,
+      "weight": 0.3333333333333333
+    }
+  ],
+  "projections_dir": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/multi_model_ensemble",
+  "aggregation": "mean"
+}

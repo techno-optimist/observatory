@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-01-07T16:03:20.876967",
+  "tests_passed": 0,
+  "tests_total": 4,
+  "results": [
+    {
+      "test_name": "paraphrase_robustness",
+      "before": 0.926,
+      "after": 0.6290759134210693,
+      "improvement": 0.3206523613163399,
+      "target_met": false,
+      "details": {
+        "spreads": [
+          0.910834397741815,
+          0.4517358422220672,
+          0.5432692256846166,
+          0.6104641880357783
+        ],
+        "mode_consistency": 0.25,
+        "mode_consistency_target_met": false
+      }
+    },
+    {
+      "test_name": "mode_confidence",
+      "before": 0.37,
+      "after": 0.30691250000000003,
+      "improvement": -0.17050675675675667,
+      "target_met": false,
+      "details": {
+        "confidences": [
+          0.2403,
+          0.2366,
+          0.3016,
+          0.3407,
+          0.2882,
+          0.4569,
+          0.3286,
+          0.2624
+        ],
+        "avg_prob_gap": 0.190025
+      }
+    },
+    {
+      "test_name": "axis_disentanglement",
+      "before": 0.663,
+      "after": 0.5859904090483138,
+      "improvement": -0.11615322918806371,
+      "target_met": false,
+      "details": {
+        "specificities": [
+          0.47947481855388513,
+          0.4792394189721272,
+          0.7992569896189291
+        ]
+      }
+    },
+    {
+      "test_name": "adversarial_robustness",
+      "before": 0.698,
+      "after": 0.736633877010823,
+      "improvement": 0.05534939399831375,
+      "target_met": false,
+      "details": {
+        "flip_rate": 0.35135135135135137,
+        "flip_rate_target_met": false
+      }
+    }
+  ]
+}

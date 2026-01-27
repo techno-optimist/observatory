@@ -1,0 +1,110 @@
+# Observatory - Render Blueprint
+# Deploy with: render blueprint apply
+#
+# Architecture:
+#   observatory-backend (FastAPI + ML) <-- observatory-mcp (SSE transport) <-- Claude clients
+#
+# Estimated costs:
+#   - Backend: $7-25/mo (Starter/Standard for ML workloads)
+#   - MCP Server: Free tier possible (lightweight, stateless)
+
+services:
+  # =============================================================================
+  # Observatory Backend (FastAPI + ML)
+  # =============================================================================
+  # The backend handles embedding generation, projection, and analysis.
+  # Requires more resources due to PyTorch and transformer models.
+  - type: web
+    name: observatory-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: starter  # 2GB RAM - minimum for PyTorch. Upgrade to standard for better perf.
+    region: oregon  # Choose region closest to your users
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      # Uncomment to enable Anthropic API features (observer chat, etc.)
+      # - key: ANTHROPIC_API_KEY
+      #   sync: false  # Manual entry in Render dashboard
+    disk:
+      name: observatory-data
+      mountPath: /app/data
+      sizeGB: 1  # Adjust based on usage. Stores projections, cache, annotations.
+
+  # =============================================================================
+  # Observatory MCP Server (SSE Transport)
+  # =============================================================================
+  # Lightweight proxy that exposes the backend as MCP tools.
+  # Stateless - can scale horizontally if needed.
+  - type: web
+    name: observatory-mcp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server_sse.py
+    rootDir: ./mcp-server
+    plan: free  # No ML dependencies - free tier works fine
+    region: oregon  # Same region as backend for low latency
+    healthCheckPath: /health
+    envVars:
+      - key: OBSERVATORY_BACKEND_URL
+        fromService:
+          type: web
+          name: observatory-backend
+          property: hostport
+          # This creates: https://observatory-backend.onrender.com
+      - key: PORT
+        value: 8080
+      - key: OBSERVATORY_DEFAULT_MODEL
+        value: all-MiniLM-L6-v2
+
+# =============================================================================
+# Usage Instructions
+# =============================================================================
+#
+# 1. Fork/clone this repo and connect to Render
+#
+# 2. Deploy using the Render Dashboard or CLI:
+#    render blueprint apply
+#
+# 3. Wait for both services to deploy (backend takes longer due to ML deps)
+#
+# 4. Add to your Claude Desktop config (~/.config/claude/claude_desktop_config.json):
+#    {
+#      "mcpServers": {
+#        "observatory": {
+#          "url": "https://observatory-mcp.onrender.com/sse"
+#        }
+#      }
+#    }
+#
+# 5. Or add to Claude Code (~/.config/claude-code/settings.json):
+#    {
+#      "mcpServers": {
+#        "observatory": {
+#          "url": "https://observatory-mcp.onrender.com/sse"
+#        }
+#      }
+#    }
+#
+# 6. Restart Claude and verify with: "What Observatory tools are available?"
+#
+# =============================================================================
+# Scaling Notes
+# =============================================================================
+#
+# Backend scaling:
+#   - Upgrade to 'standard' plan (4GB RAM) for larger models or batch processing
+#   - The backend auto-loads models on first request (cold start ~30-60s)
+#   - Consider adding Redis cache for embeddings in high-traffic scenarios
+#
+# MCP Server scaling:
+#   - Stateless, can add instances if needed
+#   - Free tier has sleep on inactivity - upgrade to starter for always-on
+#
+# Storage:
+#   - Disk persists projections, training data, and embedding cache
+#   - Increase disk size if storing many experiments

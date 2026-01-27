@@ -1,0 +1,56 @@
+{
+  "session_id": "validity_20260107_154230",
+  "start_time": "2026-01-07T15:42:30.421369",
+  "experiments": [
+    {
+      "id": "axis_validity_fairness",
+      "hypothesis": "The 'Fairness' axis may measure system legitimacy rather than abstract fairness",
+      "method": "Compared projections of statements that disambiguate fairness sentiment from system stance",
+      "conclusion": "AXIS SHOWS MIXED/ENTANGLED MEASUREMENT. The axis conflates fairness with system legitimacy. Both concepts are entangled in the embedding space.",
+      "confidence": 0.6
+    },
+    {
+      "id": "paraphrase_robustness",
+      "hypothesis": "Semantically equivalent paraphrases should project to similar locations",
+      "method": "Projected groups of paraphrased statements and measured within-group variance",
+      "conclusion": "Paraphrase robustness is LOW. Average spread=0.926, Mode consistency=0/4",
+      "confidence": 0.4
+    },
+    {
+      "id": "mode_boundary_sensitivity",
+      "hypothesis": "Mode classifications near boundaries should show appropriate uncertainty",
+      "method": "Analyzed probability gaps and confidence for ambiguous statements",
+      "conclusion": "Mode boundary sensitivity is HIGH (many borderline cases). Avg prob gap=11.90%, Avg confidence=0.37",
+      "confidence": 0.7
+    },
+    {
+      "id": "axis_disentanglement",
+      "hypothesis": "Manipulating one axis should not significantly affect others",
+      "method": "Applied targeted linguistic manipulations and measured cross-axis effects",
+      "conclusion": "Axes are PARTIALLY DISENTANGLED. Average manipulation specificity: 66.3%",
+      "confidence": 0.6
+    },
+    {
+      "id": "adversarial_robustness",
+      "hypothesis": "Projections should be stable under meaning-preserving perturbations",
+      "method": "Applied 6 types of perturbations and measured projection stability",
+      "conclusion": "Projection shows MODERATE ROBUSTNESS. Avg score=0.698, Mode flip rate=43.2%",
+      "confidence": 0.75
+    }
+  ],
+  "findings": [
+    "[axis_validity_fairness] AXIS SHOWS MIXED/ENTANGLED MEASUREMENT. The axis conflates fairness with system legitimacy. Both concepts are entangled in the embedding space. (confidence: 60%)",
+    "[paraphrase_robustness] Paraphrase robustness is LOW. Average spread=0.926, Mode consistency=0/4 (confidence: 40%)",
+    "[mode_boundary_sensitivity] Mode boundary sensitivity is HIGH (many borderline cases). Avg prob gap=11.90%, Avg confidence=0.37 (confidence: 70%)",
+    "[axis_disentanglement] Axes are PARTIALLY DISENTANGLED. Average manipulation specificity: 66.3% (confidence: 60%)",
+    "[adversarial_robustness] Projection shows MODERATE ROBUSTNESS. Avg score=0.698, Mode flip rate=43.2% (confidence: 75%)"
+  ],
+  "recommendations": [
+    "1. Consider renaming 'Fairness' axis to 'System Legitimacy' if validation confirms conflation",
+    "2. Add confidence intervals to all projections using ensemble methods",
+    "3. Report mode classification confidence alongside discrete labels",
+    "4. Expand training data beyond 64 examples to improve robustness",
+    "5. Consider disentanglement training to reduce axis correlations",
+    "6. Add paraphrase augmentation to training data for stability"
+  ]
+}

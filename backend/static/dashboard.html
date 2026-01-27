@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Soliton Observatory - Live Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            gap: 1px;
+            background: #1a1a24;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1a1a24 0%, #252535 100%);
+            padding: 15px 25px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            border-radius: 20px;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .status-badge.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            background: #0a0a0f;
+            position: relative;
+        }
+
+        #canvas-container {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+        }
+
+        #canvas-container canvas {
+            display: block;
+        }
+
+        .mode-tabs {
+            display: flex;
+            background: #1a1a24;
+            border-bottom: 1px solid #333;
+        }
+
+        .mode-tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: #888;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .mode-tab:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .mode-tab.active {
+            color: #60a5fa;
+            border-bottom-color: #60a5fa;
+        }
+
+        .input-panel {
+            background: #1a1a24;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .panel-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0a0a0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            resize: vertical;
+            min-height: 80px;
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #60a5fa;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #3b82f6;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+
+        .btn:disabled {
+            background: #333;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #374151;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .comparison-inputs {
+            display: none;
+            gap: 15px;
+        }
+
+        .comparison-inputs.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .comparison-inputs textarea {
+            min-height: 60px;
+        }
+
+        .group-label {
+            font-size: 0.8rem;
+            color: #f97316;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .group-label.group-b {
+            color: #22d3ee;
+        }
+
+        .single-input {
+            display: block;
+        }
+
+        .single-input.hidden {
+            display: none;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #1a1a24;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .sidebar-section {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+        }
+
+        /* Result Display */
+        .result-card {
+            background: #0a0a0f;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+
+        .result-card.hidden {
+            display: none;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .mode-badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .coords-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .coord-item {
+            text-align: center;
+            padding: 8px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 4px;
+        }
+
+        .coord-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .coord-value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Legend */
+        .legend-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.75rem;
+        }
+
+        .legend-item:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .legend-item.dimmed {
+            opacity: 0.3;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* History */
+        .history-list {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+
+        .history-item {
+            padding: 10px;
+            border-bottom: 1px solid #252535;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .history-item:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .history-item.selected {
+            background: rgba(96, 165, 250, 0.1);
+            border-left: 2px solid #60a5fa;
+        }
+
+        .history-text {
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #e0e0e0;
+        }
+
+        .history-meta {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .history-actions {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            border-top: 1px solid #333;
+        }
+
+        .history-actions .btn {
+            flex: 1;
+            padding: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Gap Analysis */
+        .gap-analysis {
+            display: none;
+            background: #0a0a0f;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .gap-analysis.visible {
+            display: block;
+        }
+
+        .gap-header {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .gap-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .gap-bar-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .gap-bar-label {
+            font-size: 0.75rem;
+            color: #aaa;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gap-bar-container {
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gap-bar-center {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #666;
+        }
+
+        .gap-bar-fill {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            border-radius: 4px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a24;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        /* Axis Info Overlay */
+        .axis-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        .axis-info span {
+            margin-right: 15px;
+        }
+
+        .axis-info .x { color: #ef4444; }
+        .axis-info .y { color: #22c55e; }
+        .axis-info .z { color: #3b82f6; }
+
+        /* Loading */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-top-color: #60a5fa;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr auto auto;
+            }
+
+            .sidebar {
+                border-left: none;
+                border-top: 1px solid #333;
+            }
+
+            .comparison-inputs.active {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Cultural Soliton Observatory</h1>
+            <span id="status" class="status-badge">Connecting...</span>
+        </header>
+
+        <div class="main-content">
+            <div class="mode-tabs">
+                <button class="mode-tab active" data-mode="single">Single Analysis</button>
+                <button class="mode-tab" data-mode="comparison">Comparison Mode</button>
+            </div>
+
+            <div id="canvas-container">
+                <div class="loading-overlay" id="loading">
+                    <div class="spinner"></div>
+                </div>
+                <div class="axis-info">
+                    <span class="x">X: Agency</span>
+                    <span class="y">Y: Perceived Justice</span>
+                    <span class="z">Z: Belonging</span>
+                </div>
+            </div>
+
+            <div class="input-panel">
+                <div class="single-input" id="single-input">
+                    <div class="panel-title">Analyze Narrative Text</div>
+                    <textarea id="text-input" placeholder="Enter narrative text to analyze..."></textarea>
+                    <button class="btn" id="analyze-btn">Analyze</button>
+                </div>
+
+                <div class="comparison-inputs" id="comparison-inputs">
+                    <div>
+                        <div class="group-label">Group A</div>
+                        <textarea id="group-a-input" placeholder="Enter texts for Group A (one per line)..."></textarea>
+                    </div>
+                    <div>
+                        <div class="group-label group-b">Group B</div>
+                        <textarea id="group-b-input" placeholder="Enter texts for Group B (one per line)..."></textarea>
+                    </div>
+                    <button class="btn" id="compare-btn" style="grid-column: 1 / -1;">Compare Groups</button>
+                </div>
+
+                <div class="gap-analysis" id="gap-analysis">
+                    <div class="gap-header">Gap Analysis (Group A vs Group B)</div>
+                    <div class="gap-bars" id="gap-bars"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="panel-title">Analysis Result</div>
+                <div class="result-card hidden" id="result-card">
+                    <div class="result-header">
+                        <span id="result-mode" class="mode-badge">-</span>
+                        <span id="result-confidence" style="font-size: 0.8rem; color: #888;">-</span>
+                    </div>
+                    <div class="coords-grid">
+                        <div class="coord-item">
+                            <div class="coord-label">Agency</div>
+                            <div class="coord-value" id="coord-agency">-</div>
+                        </div>
+                        <div class="coord-item">
+                            <div class="coord-label">P. Justice</div>
+                            <div class="coord-value" id="coord-justice">-</div>
+                        </div>
+                        <div class="coord-item">
+                            <div class="coord-label">Belonging</div>
+                            <div class="coord-value" id="coord-belonging">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="panel-title">Mode Legend</div>
+                <div class="legend-grid" id="legend"></div>
+            </div>
+
+            <div class="sidebar-section" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+                <div class="panel-title">History (Last 20)</div>
+                <div class="history-list" id="history-list"></div>
+                <div class="history-actions">
+                    <button class="btn btn-secondary" id="clear-history">Clear</button>
+                    <button class="btn btn-secondary" id="export-history">Export JSON</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mode colors and definitions
+        const MODES = {
+            // POSITIVE
+            'HEROIC': { color: '#22c55e', category: 'POSITIVE', desc: 'High agency, high justice' },
+            'COMMUNAL': { color: '#10b981', category: 'POSITIVE', desc: 'Community-centered' },
+            'TRANSCENDENT': { color: '#34d399', category: 'POSITIVE', desc: 'Spiritual acceptance' },
+            // SHADOW
+            'CYNICAL_ACHIEVER': { color: '#ef4444', category: 'SHADOW', desc: 'Success despite injustice' },
+            'VICTIM': { color: '#dc2626', category: 'SHADOW', desc: 'Powerless in unjust system' },
+            'PARANOID': { color: '#b91c1c', category: 'SHADOW', desc: 'Conspiracy mindset' },
+            // EXIT
+            'SPIRITUAL_EXIT': { color: '#8b5cf6', category: 'EXIT', desc: 'Spiritual withdrawal' },
+            'SOCIAL_EXIT': { color: '#a855f7', category: 'EXIT', desc: 'Social withdrawal' },
+            'PROTEST_EXIT': { color: '#c084fc', category: 'EXIT', desc: 'Protest/rebellion' },
+            // AMBIVALENT
+            'CONFLICTED': { color: '#f59e0b', category: 'AMBIVALENT', desc: 'Torn between narratives' },
+            'TRANSITIONAL': { color: '#fbbf24', category: 'AMBIVALENT', desc: 'In transition' },
+            'NEUTRAL': { color: '#fcd34d', category: 'AMBIVALENT', desc: 'Minimal signal' }
+        };
+
+        // State
+        let history = [];
+        let selectedHistoryIndex = null;
+        let currentMode = 'single';
+        let activeFilters = new Set(Object.keys(MODES));
+        let scene, camera, renderer, controls;
+        let points = [];
+        let groupAPoints = [];
+        let groupBPoints = [];
+
+        // Three.js Setup
+        function initThreeJS() {
+            const container = document.getElementById('canvas-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a0f);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+            camera.position.set(4, 3, 4);
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            // Controls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.minDistance = 2;
+            controls.maxDistance = 15;
+
+            // Grid and axes
+            createGrid();
+            createAxes();
+
+            // Handle resize
+            window.addEventListener('resize', onWindowResize);
+
+            // Animation loop
+            animate();
+        }
+
+        function createGrid() {
+            // XY plane grid at Z=0
+            const gridXY = new THREE.GridHelper(4, 8, 0x333333, 0x222222);
+            gridXY.rotation.x = Math.PI / 2;
+            scene.add(gridXY);
+
+            // XZ plane grid at Y=0
+            const gridXZ = new THREE.GridHelper(4, 8, 0x333333, 0x222222);
+            scene.add(gridXZ);
+
+            // Bounding box
+            const boxGeo = new THREE.BoxGeometry(4, 4, 4);
+            const edges = new THREE.EdgesGeometry(boxGeo);
+            const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x444444 }));
+            scene.add(line);
+        }
+
+        function createAxes() {
+            const axisLength = 2.5;
+            const arrowSize = 0.1;
+
+            // X axis (Agency) - Red
+            const xAxis = new THREE.ArrowHelper(
+                new THREE.Vector3(1, 0, 0),
+                new THREE.Vector3(-2, -2, -2),
+                axisLength,
+                0xef4444,
+                arrowSize
+            );
+            scene.add(xAxis);
+
+            // Y axis (Perceived Justice) - Green
+            const yAxis = new THREE.ArrowHelper(
+                new THREE.Vector3(0, 1, 0),
+                new THREE.Vector3(-2, -2, -2),
+                axisLength,
+                0x22c55e,
+                arrowSize
+            );
+            scene.add(yAxis);
+
+            // Z axis (Belonging) - Blue
+            const zAxis = new THREE.ArrowHelper(
+                new THREE.Vector3(0, 0, 1),
+                new THREE.Vector3(-2, -2, -2),
+                axisLength,
+                0x3b82f6,
+                arrowSize
+            );
+            scene.add(zAxis);
+
+            // Axis labels using sprites
+            createTextLabel('Agency +', new THREE.Vector3(2.2, -2, -2), 0xef4444);
+            createTextLabel('P.Justice +', new THREE.Vector3(-2, 2.2, -2), 0x22c55e);
+            createTextLabel('Belonging +', new THREE.Vector3(-2, -2, 2.2), 0x3b82f6);
+        }
+
+        function createTextLabel(text, position, color) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 256;
+            canvas.height = 64;
+
+            context.fillStyle = `#${color.toString(16).padStart(6, '0')}`;
+            context.font = 'bold 28px Arial';
+            context.textAlign = 'center';
+            context.fillText(text, 128, 40);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            const sprite = new THREE.Sprite(material);
+            sprite.position.copy(position);
+            sprite.scale.set(1, 0.25, 1);
+            scene.add(sprite);
+        }
+
+        function addPoint(coords, mode, isGroupA = null) {
+            const modeInfo = MODES[mode] || MODES['NEUTRAL'];
+            const color = new THREE.Color(modeInfo.color);
+
+            const geometry = new THREE.SphereGeometry(0.08, 16, 16);
+            const material = new THREE.MeshBasicMaterial({ color: color });
+            const sphere = new THREE.Mesh(geometry, material);
+
+            // Scale coordinates to scene space (-2 to +2 range)
+            sphere.position.set(
+                coords.agency,
+                coords.perceived_justice || coords.fairness,
+                coords.belonging
+            );
+
+            sphere.userData = { mode, coords };
+            scene.add(sphere);
+
+            if (isGroupA === true) {
+                groupAPoints.push(sphere);
+            } else if (isGroupA === false) {
+                groupBPoints.push(sphere);
+            } else {
+                points.push(sphere);
+            }
+
+            return sphere;
+        }
+
+        function clearPoints() {
+            points.forEach(p => scene.remove(p));
+            points = [];
+        }
+
+        function clearComparisonPoints() {
+            groupAPoints.forEach(p => scene.remove(p));
+            groupBPoints.forEach(p => scene.remove(p));
+            groupAPoints = [];
+            groupBPoints = [];
+        }
+
+        function highlightPoint(index) {
+            points.forEach((p, i) => {
+                if (i === index) {
+                    p.scale.set(1.5, 1.5, 1.5);
+                } else {
+                    p.scale.set(1, 1, 1);
+                }
+            });
+        }
+
+        function onWindowResize() {
+            const container = document.getElementById('canvas-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // API calls
+        async function analyzeText(text) {
+            showLoading(true);
+            try {
+                const response = await fetch('/v2/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text, include_uncertainty: true })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Analysis failed:', error);
+                updateStatus('error');
+                throw error;
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function analyzeTexts(texts) {
+            const results = [];
+            for (const text of texts) {
+                if (text.trim()) {
+                    try {
+                        const result = await analyzeText(text.trim());
+                        results.push(result);
+                    } catch (e) {
+                        console.error('Failed to analyze:', text);
+                    }
+                }
+            }
+            return results;
+        }
+
+        // UI Updates
+        function updateResult(data) {
+            const card = document.getElementById('result-card');
+            card.classList.remove('hidden');
+
+            const mode = data.mode?.primary_mode || data.legacy_mode || 'NEUTRAL';
+            const modeInfo = MODES[mode] || MODES['NEUTRAL'];
+
+            document.getElementById('result-mode').textContent = mode;
+            document.getElementById('result-mode').style.background = modeInfo.color;
+            document.getElementById('result-mode').style.color = '#000';
+
+            const confidence = data.mode?.confidence || 0;
+            document.getElementById('result-confidence').textContent = `${(confidence * 100).toFixed(0)}% confidence`;
+
+            const vector = data.vector;
+            document.getElementById('coord-agency').textContent = vector.agency?.toFixed(2) || '-';
+            document.getElementById('coord-justice').textContent = (vector.perceived_justice || vector.fairness)?.toFixed(2) || '-';
+            document.getElementById('coord-belonging').textContent = vector.belonging?.toFixed(2) || '-';
+        }
+
+        function addToHistory(text, data) {
+            const mode = data.mode?.primary_mode || data.legacy_mode || 'NEUTRAL';
+            const entry = {
+                text: text.substring(0, 100),
+                fullText: text,
+                mode,
+                vector: data.vector,
+                confidence: data.mode?.confidence || 0,
+                timestamp: new Date().toISOString()
+            };
+
+            history.unshift(entry);
+            if (history.length > 20) {
+                history.pop();
+                const oldPoint = points.pop();
+                if (oldPoint) scene.remove(oldPoint);
+            }
+
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const list = document.getElementById('history-list');
+            list.innerHTML = '';
+
+            history.forEach((item, index) => {
+                const modeInfo = MODES[item.mode] || MODES['NEUTRAL'];
+                const div = document.createElement('div');
+                div.className = 'history-item' + (selectedHistoryIndex === index ? ' selected' : '');
+                div.innerHTML = `
+                    <div class="history-text">${escapeHtml(item.text)}</div>
+                    <div class="history-meta">
+                        <span style="color: ${modeInfo.color}">${item.mode}</span>
+                        <span>${new Date(item.timestamp).toLocaleTimeString()}</span>
+                    </div>
+                `;
+                div.addEventListener('click', () => selectHistoryItem(index));
+                list.appendChild(div);
+            });
+        }
+
+        function selectHistoryItem(index) {
+            selectedHistoryIndex = index;
+            renderHistory();
+            highlightPoint(index);
+
+            const item = history[index];
+            updateResult({
+                mode: { primary_mode: item.mode, confidence: item.confidence },
+                vector: item.vector
+            });
+        }
+
+        function renderLegend() {
+            const legend = document.getElementById('legend');
+            legend.innerHTML = '';
+
+            Object.entries(MODES).forEach(([mode, info]) => {
+                const div = document.createElement('div');
+                div.className = 'legend-item' + (activeFilters.has(mode) ? '' : ' dimmed');
+                div.innerHTML = `
+                    <div class="legend-color" style="background: ${info.color}"></div>
+                    <span>${mode.replace('_', ' ')}</span>
+                `;
+                div.addEventListener('click', () => toggleFilter(mode));
+                legend.appendChild(div);
+            });
+        }
+
+        function toggleFilter(mode) {
+            if (activeFilters.has(mode)) {
+                activeFilters.delete(mode);
+            } else {
+                activeFilters.add(mode);
+            }
+            renderLegend();
+            updatePointVisibility();
+        }
+
+        function updatePointVisibility() {
+            points.forEach(p => {
+                p.visible = activeFilters.has(p.userData.mode);
+            });
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading').classList.toggle('active', show);
+        }
+
+        function updateStatus(status) {
+            const badge = document.getElementById('status');
+            if (status === 'connected') {
+                badge.textContent = 'Connected';
+                badge.classList.remove('error');
+            } else if (status === 'error') {
+                badge.textContent = 'Error';
+                badge.classList.add('error');
+            } else {
+                badge.textContent = 'Connecting...';
+                badge.classList.remove('error');
+            }
+        }
+
+        function showGapAnalysis(groupAResults, groupBResults) {
+            const container = document.getElementById('gap-analysis');
+            const bars = document.getElementById('gap-bars');
+
+            if (groupAResults.length === 0 || groupBResults.length === 0) {
+                container.classList.remove('visible');
+                return;
+            }
+
+            // Calculate means
+            const meanA = calculateMean(groupAResults);
+            const meanB = calculateMean(groupBResults);
+
+            const axes = ['agency', 'perceived_justice', 'belonging'];
+            const labels = ['Agency', 'Perceived Justice', 'Belonging'];
+
+            bars.innerHTML = '';
+            axes.forEach((axis, i) => {
+                const valA = meanA[axis];
+                const valB = meanB[axis];
+                const gap = valB - valA;
+
+                const div = document.createElement('div');
+                div.className = 'gap-bar-item';
+
+                // Gap bar visualization
+                const gapPercent = (gap / 4) * 50; // -2 to +2 range, center at 50%
+                const barStyle = gap >= 0
+                    ? `left: 50%; width: ${Math.abs(gapPercent)}%; background: #22d3ee;`
+                    : `right: 50%; width: ${Math.abs(gapPercent)}%; background: #f97316;`;
+
+                div.innerHTML = `
+                    <div class="gap-bar-label">
+                        <span>${labels[i]}</span>
+                        <span>Gap: ${gap >= 0 ? '+' : ''}${gap.toFixed(2)}</span>
+                    </div>
+                    <div class="gap-bar-container">
+                        <div class="gap-bar-center"></div>
+                        <div class="gap-bar-fill" style="${barStyle}"></div>
+                    </div>
+                `;
+                bars.appendChild(div);
+            });
+
+            container.classList.add('visible');
+        }
+
+        function calculateMean(results) {
+            const sum = { agency: 0, perceived_justice: 0, belonging: 0 };
+            results.forEach(r => {
+                sum.agency += r.vector.agency;
+                sum.perceived_justice += r.vector.perceived_justice || r.vector.fairness;
+                sum.belonging += r.vector.belonging;
+            });
+            return {
+                agency: sum.agency / results.length,
+                perceived_justice: sum.perceived_justice / results.length,
+                belonging: sum.belonging / results.length
+            };
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function exportHistory() {
+            const data = JSON.stringify(history, null, 2);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `soliton-history-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Event Listeners
+        document.querySelectorAll('.mode-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                currentMode = tab.dataset.mode;
+                const singleInput = document.getElementById('single-input');
+                const comparisonInputs = document.getElementById('comparison-inputs');
+
+                if (currentMode === 'single') {
+                    singleInput.classList.remove('hidden');
+                    comparisonInputs.classList.remove('active');
+                    clearComparisonPoints();
+                    document.getElementById('gap-analysis').classList.remove('visible');
+                } else {
+                    singleInput.classList.add('hidden');
+                    comparisonInputs.classList.add('active');
+                    clearPoints();
+                }
+            });
+        });
+
+        document.getElementById('analyze-btn').addEventListener('click', async () => {
+            const text = document.getElementById('text-input').value.trim();
+            if (!text) return;
+
+            try {
+                const data = await analyzeText(text);
+                updateResult(data);
+
+                const mode = data.mode?.primary_mode || data.legacy_mode || 'NEUTRAL';
+                addPoint(data.vector, mode);
+                addToHistory(text, data);
+                updateStatus('connected');
+            } catch (e) {
+                alert('Analysis failed. Check console for details.');
+            }
+        });
+
+        document.getElementById('compare-btn').addEventListener('click', async () => {
+            const groupATexts = document.getElementById('group-a-input').value.split('\n').filter(t => t.trim());
+            const groupBTexts = document.getElementById('group-b-input').value.split('\n').filter(t => t.trim());
+
+            if (groupATexts.length === 0 && groupBTexts.length === 0) {
+                alert('Please enter texts in at least one group');
+                return;
+            }
+
+            clearComparisonPoints();
+
+            try {
+                const groupAResults = await analyzeTexts(groupATexts);
+                const groupBResults = await analyzeTexts(groupBTexts);
+
+                // Add points with group colors
+                groupAResults.forEach(data => {
+                    const mode = data.mode?.primary_mode || 'NEUTRAL';
+                    const point = addPoint(data.vector, mode, true);
+                    // Override color for Group A
+                    point.material.color.set(0xf97316);
+                });
+
+                groupBResults.forEach(data => {
+                    const mode = data.mode?.primary_mode || 'NEUTRAL';
+                    const point = addPoint(data.vector, mode, false);
+                    // Override color for Group B
+                    point.material.color.set(0x22d3ee);
+                });
+
+                showGapAnalysis(groupAResults, groupBResults);
+                updateStatus('connected');
+            } catch (e) {
+                alert('Comparison failed. Check console for details.');
+            }
+        });
+
+        document.getElementById('clear-history').addEventListener('click', () => {
+            history = [];
+            clearPoints();
+            renderHistory();
+            document.getElementById('result-card').classList.add('hidden');
+            selectedHistoryIndex = null;
+        });
+
+        document.getElementById('export-history').addEventListener('click', exportHistory);
+
+        // Keyboard shortcuts
+        document.getElementById('text-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                document.getElementById('analyze-btn').click();
+            }
+        });
+
+        // Initialize
+        async function init() {
+            initThreeJS();
+            renderLegend();
+            renderHistory();
+
+            // Check API status
+            try {
+                const response = await fetch('/');
+                if (response.ok) {
+                    updateStatus('connected');
+                }
+            } catch (e) {
+                updateStatus('error');
+            }
+        }
+
+        init();
+    </script>
+</body>
+</html>

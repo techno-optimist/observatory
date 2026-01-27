@@ -1,0 +1,13 @@
+{
+  "passed": false,
+  "external_validation_passed": false,
+  "safety_validation_passed": false,
+  "scaling_validated": true,
+  "recommended_method": "semantic",
+  "deployment_stage": "research_only",
+  "issues": [
+    "Convergent validity below threshold for some constructs",
+    "Critical FNR 75.0% above threshold 20.0%"
+  ],
+  "runtime_seconds": 7.661991357803345
+}

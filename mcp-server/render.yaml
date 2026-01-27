@@ -1,0 +1,37 @@
+# Observatory MCP Server - Standalone Render Blueprint
+#
+# Use this if deploying ONLY the MCP server (backend hosted elsewhere).
+# For full stack deployment, use the render.yaml in the project root.
+#
+# Deploy with: render blueprint apply
+
+services:
+  - type: web
+    name: observatory-mcp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server_sse.py
+    plan: free  # Lightweight, no ML dependencies
+    healthCheckPath: /health
+    envVars:
+      - key: OBSERVATORY_BACKEND_URL
+        sync: false  # Set manually in Render dashboard
+      - key: OBSERVATORY_DEFAULT_MODEL
+        value: all-MiniLM-L6-v2
+      - key: PORT
+        value: 8080
+
+# ===========================================================================
+# Setup Instructions
+# ===========================================================================
+#
+# 1. Deploy this blueprint
+# 2. In Render dashboard, set OBSERVATORY_BACKEND_URL to your backend URL
+# 3. Add to your Claude config:
+#    {
+#      "mcpServers": {
+#        "observatory": {
+#          "url": "https://observatory-mcp.onrender.com/sse"
+#        }
+#      }
+#    }

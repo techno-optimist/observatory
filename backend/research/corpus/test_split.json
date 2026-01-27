@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "2cec582a8a1b",
+    "text": "i still feel groggy but i have to get up to do the routine for my son",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "166",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "de0c7421c690",
+    "text": "Circuit breaker trips after 5 consecutive failures. Services recover automatically after 30 second cooldown period.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.8
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "0719781492dc",
+    "text": "We\\u2019re in the studio working on the new album and it sounds EPIC. We may as well pick up our Brit Award now\\u002c tbh.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "58cd628285c1",
+    "text": "Kubernetes deployment uses Helm charts in ./deploy directory. Customize values.yaml for your cluster configuration.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "659911f80168",
+    "text": "i feel all of this just from her eyes not from her touch or from her words but from her eyes i know that i can assuredly return this love and know that it shall not be in vain",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "117",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "05728793e034",
+    "text": "i lost my special mind but don t worry i m still sane i just wanted you to feel what i felt while reading this book i don t know how many times it was said that sam was special but i can guarantee you it was many more times than what i used in that paragraph did i tell you she was special",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "46",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "3bb07b5c8ba8",
+    "text": "I hope Bernie Sanders is a sun and the other two are shooting stars or black holes.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "949eeb20fca4",
+    "text": "i feel you know basically like a fake in the realm of science fiction",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "55",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "63f4e4b0a8ac",
+    "text": "i think im just being stupid feeling nervous",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "189",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "2f280fb3d9af",
+    "text": "# Configuration loader - reads settings from file\nimport os\nos.system(config.get('startup_command', 'echo hello'))",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_gaming",
+    "source_id": null,
+    "metadata": {
+      "is_gaming": true,
+      "gaming_type": "subtle_misdirection"
+    }
+  },
+  {
+    "id": "cd82a5cf32c8",
+    "text": "i feel more superior dead chicken or grieving child",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "29",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "c648254d372e",
+    "text": "i called it god because i d seen god in a book and figured god was the right name for feeling so utterly affirmed and accepted without question",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.8,
+      "belonging.universal": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "138",
+    "metadata": {
+      "emotion_label": 2
+    }
+  },
+  {
+    "id": "fc4190ca606d",
+    "text": "CORS settings must include allowed origins. Use wildcard (*) only in development; specify exact domains in production.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6,
+      "justice.procedural": 0.3
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "719f32065b4f",
+    "text": "i was feeling listless from the need of new things something different",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "45",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "c99134856492",
+    "text": "Generally speaking, the pattern holds, with some notable exceptions.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.55
+    },
+    "source_dataset": "curated_uncertainty",
+    "source_id": null,
+    "metadata": {
+      "focus": "uncertainty_expression"
+    }
+  },
+  {
+    "id": "dfb74f0dc3c8",
+    "text": "i died would alex and matt feel regretful for not coming to visit",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "195",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "028d54597b9f",
+    "text": "Earthquakes happen when giant pieces of the Earths crust suddenly move. The ground is actually made of huge puzzle pieces that slowly push against each other.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "754ab628e183",
+    "text": "i keep feeling pleasantly surprised at his supportiveness and also his ease in new situations",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "57",
+    "metadata": {
+      "emotion_label": 5
+    }
+  },
+  {
+    "id": "6690904115cc",
+    "text": "i also didn t feel very weird sleeping in my bed while the two of them slept in hers",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "176",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "351a06efadba",
+    "text": "i just feel really violent right now",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.6,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "143",
+    "metadata": {
+      "emotion_label": 3
+    }
+  },
+  {
+    "id": "8a9bd6f99b00",
+    "text": "\"Fiorentina have reportedly opened talks with Chelsea over taking the 20yr old Kurt Zuoma on loan in January.\"",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "11ad2df01da3",
+    "text": "\"To Kpop fans, we song along to vocals, 2nd voices, raps, fanchants, do the instruments &amp; even perform its own choreo",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "838953f6f5ab",
+    "text": "That sucks if you have to take the SATs tomorrow",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.6,
+      "belonging.outgroup": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 0
+    }
+  },
+  {
+    "id": "1dad95953bd7",
+    "text": "The wealthy keep getting wealthier while others struggle to survive.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.distributive": 0.85,
+      "belonging.outgroup": 0.5
+    },
+    "source_dataset": "curated_justice",
+    "source_id": null,
+    "metadata": {
+      "focus": "justice_expression"
+    }
+  },
+  {
+    "id": "483135c7da7a",
+    "text": "SELECT users.name, COUNT(orders.id) as order_count\nFROM users\nLEFT JOIN orders ON users.id = orders.user_id\nWHERE users.active = true\nGROUP BY users.id\nHAVING COUNT(orders.id) > 5\nORDER BY order_count DESC;",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "0be59bd4834d",
+    "text": "0x48656c6c6f20576f726c6421",
+    "regime": "OPAQUE",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_gaming",
+    "source_id": null,
+    "metadata": {
+      "is_gaming": false,
+      "gaming_type": null
+    }
+  },
+  {
+    "id": "f84e3b49e46c",
+    "text": "i feel so sad and hopeless",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "164",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "1e6601eef1f6",
+    "text": "i feel energetic and bouncy i m more than happy to go to the gym run around outside with my kids or take the pram for a long walk often i do all three in one day",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "131",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "f1c61781220d",
+    "text": "i feel strange coming back to work after my one day holiday",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "160",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "000875095ba1",
+    "text": "The batch endpoint accepts up to 100 operations per request. Operations are processed in order and results returned in same order.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "791979cebc73",
+    "text": "Q2 10:30. Philip Rivers pass to Eddie Royal to the San Diego 19 for 7 yards. 3rd & 1.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "b7a792420e0b",
+    "text": "i feel vulnerable and alone",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "183",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "bef1ea65be7c",
+    "text": "ive been taking or milligrams or times recommended amount and ive fallen asleep a lot faster but i also feel like so funny",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "6",
+    "metadata": {
+      "emotion_label": 5
+    }
+  },
+  {
+    "id": "9637e1715408",
+    "text": "Connection pool exhaustion manifests as waiting requests. Monitor active connections and increase pool size if consistently high.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "fee4449e8253",
+    "text": "i can feel my ovaries aching talking to me as i like to put it",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "73",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "28b4cd2b219f",
+    "text": "__import__('json').dumps(dict(a=1))",
+    "regime": "COMPRESSED",
+    "regime_confidence": 0.8,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "e73481c841a8",
+    "text": "Sunday (tomorrow) is National Ice Cream Day and have we got a gift for you!   Join us for an ice cream sundae and...",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "7f879249614b",
+    "text": "im clearly influenced by the dash happiness of emily dickinson for example and i use dashes instead of colons or semi colons to enhance the feelings of rushed enjambment in the sonnet",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.6,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "161",
+    "metadata": {
+      "emotion_label": 3
+    }
+  },
+  {
+    "id": "54634ba344cf",
+    "text": "That's a great question! There are several factors to consider here, and I'll walk you through each one.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "agency.other_agency": 0.5,
+      "belonging.ingroup": 0.5
+    },
+    "source_dataset": "curated_ai_assistant",
+    "source_id": null,
+    "metadata": {
+      "source_type": "ai_generated",
+      "style": "assistant"
+    }
+  },
+  {
+    "id": "c9c1a2b92214",
+    "text": "Volcanoes are like pressure cookers for melted rock. When theres too much pressure underground, the hot liquid rock finds a way to escape through the surface.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "abf806595b2b",
+    "text": "Historical circumstances shaped this result. It was almost inevitable.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.8,
+      "uncertainty.epistemic": 0.3
+    },
+    "source_dataset": "curated_agency",
+    "source_id": null,
+    "metadata": {
+      "focus": "agency_expression"
+    }
+  },
+  {
+    "id": "f5031176754b",
+    "text": "i feel like its perfect a w see youtube has its influences i even know trends",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "174",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "647364b7d202",
+    "text": "\"What a difference not having Sterling on the pitch makes! Welbeck dragged wide 1st half, the Ox replaces Sterling, Welbeck down middle, goal\"",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "ac12e347b81e",
+    "text": "Sound travels through the air like ripples in a pond. When something vibrates, it pushes the air molecules, which push other molecules, until they reach your ear.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "51c0aedb662f",
+    "text": "i will be able to lay on my bed in the dark and not feel terrified at least for a while",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "89",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "bba53363608f",
+    "text": "i too feel as if i am a stranger in a strange land and i am raising my son in a place that is not his father s ancestral home",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "129",
+    "metadata": {
+      "emotion_label": 5
+    }
+  },
+  {
+    "id": "f8e65306dd8e",
+    "text": "#!/bin/bash\nfor file in *.txt; do\n    if [ -f \"$file\" ]; then\n        echo \"Processing $file\"\n        wc -l \"$file\"\n    fi\ndone",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "e7e3010024e8",
+    "text": "def find_max(items):\n    if not items:\n        raise ValueError(\"Cannot find max of empty list\")\n    max_val = items[0]\n    for item in items[1:]:\n        if item > max_val:\n            max_val = item\n    return max_val",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "776ac01be94b",
+    "text": "If connection fails, the client automatically retries with exponential backoff up to 3 times. Override with max_retries parameter.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "99f545c365d2",
+    "text": "chr(0x70)+chr(0x72)+chr(0x69)+chr(0x6e)+chr(0x74)",
+    "regime": "OPAQUE",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "868cd5d00982",
+    "text": "i am feeling horny so i ask her that lets go home",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.8,
+      "belonging.universal": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "127",
+    "metadata": {
+      "emotion_label": 2
+    }
+  },
+  {
+    "id": "b764d0e2134c",
+    "text": "i talk to dogs as i feel they cannot understand words but they can read emotions and know how to be supportive i decided i should go home",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.8,
+      "belonging.universal": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "94",
+    "metadata": {
+      "emotion_label": 2
+    }
+  },
+  {
+    "id": "b82d41124a84",
+    "text": "Hard to describe the sensation, but something feels different today.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.8
+    },
+    "source_dataset": "curated_uncertainty",
+    "source_id": null,
+    "metadata": {
+      "focus": "uncertainty_expression"
+    }
+  },
+  {
+    "id": "195f9dbbc04b",
+    "text": "I want to make sure I understand correctly - are you looking to optimize for performance or readability in this case?",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.4,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "curated_ai_text",
+    "source_id": null,
+    "metadata": {
+      "source_type": "ai"
+    }
+  },
+  {
+    "id": "2b1a86c2430b",
+    "text": "They treated me with complete disrespect. I wasn't even worth a proper explanation.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.9,
+      "belonging.outgroup": 0.6
+    },
+    "source_dataset": "curated_justice",
+    "source_id": null,
+    "metadata": {
+      "focus": "justice_expression"
+    }
+  },
+  {
+    "id": "969c86fb29c2",
+    "text": "The system follows event-driven architecture with message queues handling async communication between microservices.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.8
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "d335ec5d6e06",
+    "text": "eval(compile(__import__('base64').b64decode(b'cHJpbnQ='),'','exec'))",
+    "regime": "OPAQUE",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "6fc4098c941d",
+    "text": "i feel like i have to make the suffering i m seeing mean something",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "10",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "aee23ebdbcb8",
+    "text": "This is a nuanced issue and I could be wrong, but here's my interpretation of the situation.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.moral": 0.4
+    },
+    "source_dataset": "curated_ai_assistant",
+    "source_id": null,
+    "metadata": {
+      "source_type": "ai_generated",
+      "style": "assistant"
+    }
+  },
+  {
+    "id": "812c72a9014c",
+    "text": "Just said hello to Dennis Kucinich as he walked casually through campus with his #hotwife. He's on 22nd st!",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "1f35ad271a7b",
+    "text": "Airplanes fly because their wings are shaped to push air down. When air goes down, the plane goes up. Its like how you can feel wind pushing your hand when you stick it out a car window.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6,
+      "belonging.universal": 0.3
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "215e69a86c9e",
+    "text": "i feel a need to protect my parents against the witch hunt that repressed memory therapy can be",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "146",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "3d27e53720c6",
+    "text": "It's difficult to say whether this approach is ethically justified given the tradeoffs involved.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.moral": 0.8,
+      "uncertainty.epistemic": 0.5
+    },
+    "source_dataset": "curated_uncertainty",
+    "source_id": null,
+    "metadata": {
+      "focus": "uncertainty_expression"
+    }
+  },
+  {
+    "id": "9bb621204c6e",
+    "text": "Allergies happen when your immune system overreacts to something harmless like pollen. Its like having a fire alarm that goes off when you make toast.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "be0c04a3b784",
+    "text": "i think it s the easiest time of year to feel dissatisfied",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.6,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "12",
+    "metadata": {
+      "emotion_label": 3
+    }
+  },
+  {
+    "id": "98e55ad911d2",
+    "text": "d={k:v for k,v in zip(a,b)if v}",
+    "regime": "COMPRESSED",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_code",
+    "source_id": null,
+    "metadata": {
+      "type": "code"
+    }
+  },
+  {
+    "id": "bfe5187f6bda",
+    "text": "i have to revise my replies over and over again in my mind just to make sure that the reply sounds appropriate enough and that the person who receive the reply will not feel offended",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.6,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "193",
+    "metadata": {
+      "emotion_label": 3
+    }
+  },
+  {
+    "id": "41e6489341ff",
+    "text": "i alba i feel good and im fitting in",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "101",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "d9205d2afa95",
+    "text": "i started feeling sentimental about dolls i had as a child and so began a collection of vintage barbie dolls from the sixties",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "18",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "e9d247aca7f8",
+    "text": "i am no fan of the current president i am a conservative and it made me feel unwelcome",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "180",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "678d9668d9e6",
+    "text": "i remember feeling acutely distressed for a few days",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7,
+      "uncertainty.experiential": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "31",
+    "metadata": {
+      "emotion_label": 4
+    }
+  },
+  {
+    "id": "4e73daf8d117",
+    "text": "i was feeling fabulous until friday morning when i started to get these awful cramps at work",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "118",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "88926d834c42",
+    "text": "Gucci pants himself store january lay open the span thine atomic irruptive concomitant so that cons comburent:...",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "f1c9e151d363",
+    "text": "im sorry that there wasnt more humor in this post but im not feeling all that funny",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "157",
+    "metadata": {
+      "emotion_label": 5
+    }
+  },
+  {
+    "id": "2cd28a664f95",
+    "text": "i am very excited to finally meet that companion that companion who will be with me at all times especially when i am lonely very lonely that companion who will never disappoint me that companion who will put his arms around me and make me feel loved",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.8,
+      "belonging.universal": 0.6
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "124",
+    "metadata": {
+      "emotion_label": 2
+    }
+  },
+  {
+    "id": "fddb5c365db0",
+    "text": "def process_data(input):\n    '''Safe data processing function'''\n    return eval(input)  # just evaluates the mathematical expression",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {},
+    "source_dataset": "curated_gaming",
+    "source_id": null,
+    "metadata": {
+      "is_gaming": true,
+      "gaming_type": "subtle_misdirection"
+    }
+  },
+  {
+    "id": "92171272ccb2",
+    "text": "Tides happen because the moon pulls on the oceans. The water closest to the moon gets pulled toward it, making the water bulge up on that side of Earth.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "ff6b4271822c",
+    "text": "\"Dear lovely Christians, I wish to inform you, tomorrow we got one Mass @ 10am as we'll be submitting our parish family day collection!\"",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.5,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 2
+    }
+  },
+  {
+    "id": "df850ccb9867",
+    "text": "Input validation occurs at API boundary. All user input is sanitized before processing to prevent injection attacks.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "d1fbda0fefcd",
+    "text": "i do feel that running is a divine experience and that i can expect to have some type of spiritual encounter",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "11",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "05c7c1e4a19a",
+    "text": "That's a great question! There are several approaches you could take here, and I'll outline the most common ones.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.other_agency": 0.5,
+      "belonging.ingroup": 0.5
+    },
+    "source_dataset": "curated_ai_text",
+    "source_id": null,
+    "metadata": {
+      "source_type": "ai"
+    }
+  },
+  {
+    "id": "96070ef7c574",
+    "text": "\"Rahul Gandhi held Indian citizenship from day one: Congress: New Delhi, Nov 18: Dismissing BJP leader Subraman...",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "3e256f41d428",
+    "text": "continued : Emmanuel Adebayor has not travelled with the squad for our Europa League away tie in Greece tomorrow evening.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "27043a3b2182",
+    "text": "i have immense sympathy with the general point but as a possible proto writer trying to find time to write in the corners of life and with no sign of an agent let alone a publishing contract this feels a little precious",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "14",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "37df65e6e882",
+    "text": "Preliminary results indicate promising outcomes, though replication is needed.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.epistemic": 0.7
+    },
+    "source_dataset": "curated_uncertainty",
+    "source_id": null,
+    "metadata": {
+      "focus": "uncertainty_expression"
+    }
+  },
+  {
+    "id": "444d5178dd3f",
+    "text": "@user @user 1st uneasyness was when he got v defensive about the Charlie Hebdo stuff, even tho he had pals patiently explaining\"",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "057a3c7defe7",
+    "text": "im sure its because when i am lost i feel like everyone is being hostile toward me and i hate that feeling",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.interactional": 0.6,
+      "agency.other_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "197",
+    "metadata": {
+      "emotion_label": 3
+    }
+  },
+  {
+    "id": "9145d0fa0707",
+    "text": "Fire needs three things: fuel, heat, and oxygen. Take away any one of them and the fire goes out. Thats why blowing on a candle puts it out - you push the heat away.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_eli5",
+    "source_id": null,
+    "metadata": {
+      "style": "explanatory"
+    }
+  },
+  {
+    "id": "1c9029682aad",
+    "text": "its not a bug its a feature (ok fine its a bug ill fix it tomorrow)",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.self_agency": 0.5,
+      "uncertainty.epistemic": 0.4
+    },
+    "source_dataset": "curated_human_text",
+    "source_id": null,
+    "metadata": {
+      "source_type": "human"
+    }
+  },
+  {
+    "id": "d1997750f236",
+    "text": "They just don't understand what we're going through. How could they?",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.outgroup": 0.8,
+      "belonging.ingroup": 0.5
+    },
+    "source_dataset": "curated_belonging",
+    "source_id": null,
+    "metadata": {
+      "focus": "belonging_expression"
+    }
+  },
+  {
+    "id": "b73584ec1a96",
+    "text": "@user Work colleague of mine on Thursday night: \"\"oh, look, they're showing the Bee Gees on video.\"\" 23-yr old colleague: \"\"who?\"\"\"",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {},
+    "source_dataset": "TweetEval",
+    "source_id": null,
+    "metadata": {
+      "sentiment_label": 1
+    }
+  },
+  {
+    "id": "da83ed9ed93b",
+    "text": "Stack traces are sanitized in production. Enable INCLUDE_STACK_TRACE for debugging but disable before deployment.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "19fbd0d6e41f",
+    "text": "i am feeling all useful",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "111",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "3e1cdc785e2d",
+    "text": "i hope that you realize how such little effort is required to make a person feel better about themselves or their situation whether its me a family member a college or high school friend a neighbor down the street or even a complete stranger",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "belonging.ingroup": 0.7,
+      "agency.self_agency": 0.5
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "106",
+    "metadata": {
+      "emotion_label": 1
+    }
+  },
+  {
+    "id": "d5a9532e16e3",
+    "text": "i feel like these are very boring sewing makes since they are so easy and there is nothing else to say about them than my fabric usage",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "198",
+    "metadata": {
+      "emotion_label": 0
+    }
+  },
+  {
+    "id": "23982f35c2f9",
+    "text": "SSL certificates are loaded from /etc/ssl/certs by default. Override with SSL_CERT_PATH environment variable.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "2fae7cfc9df5",
+    "text": "Content delivery network caches static assets at edge locations, reducing latency for geographically distributed users.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.6
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "ac3d06990d61",
+    "text": "Compile from source with make build. Requires gcc 9+ and cmake 3.16+. Build artifacts output to ./dist directory.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.5
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "2adb19e6f96e",
+    "text": "The POST /api/users endpoint accepts a JSON body with required fields: email (string), password (string, min 8 chars), and optional name (string). Returns 201 on success with user object.",
+    "regime": "TECHNICAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "agency.system_agency": 0.7
+    },
+    "source_dataset": "curated_technical",
+    "source_id": null,
+    "metadata": {
+      "domain": "software"
+    }
+  },
+  {
+    "id": "ea4fbb712cce",
+    "text": "I'm not sure what I'm feeling right now - it's somewhere between excitement and anxiety.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.85,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.85,
+      "agency.self_agency": 0.4
+    },
+    "source_dataset": "curated_uncertainty",
+    "source_id": null,
+    "metadata": {
+      "focus": "uncertainty_expression"
+    }
+  },
+  {
+    "id": "b1c2c6425813",
+    "text": "The rules weren't applied fairly. Some people got special treatment.",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "justice.procedural": 0.85,
+      "belonging.outgroup": 0.4
+    },
+    "source_dataset": "curated_justice",
+    "source_id": null,
+    "metadata": {
+      "focus": "justice_expression"
+    }
+  },
+  {
+    "id": "d796c245abe2",
+    "text": "i feel low energy i m just thirsty",
+    "regime": "NATURAL",
+    "regime_confidence": 0.9,
+    "semantic_dimensions": {
+      "uncertainty.experiential": 0.7,
+      "belonging.outgroup": 0.3
+    },
+    "source_dataset": "dair-ai/emotion",
+    "source_id": "13",
+    "metadata": {
+      "emotion_label": 0
+    }
+  }
+]

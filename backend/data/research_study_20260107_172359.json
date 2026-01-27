@@ -1,0 +1,1975 @@
+{
+  "study_1": {
+    "mode_accuracy": {
+      "HERO": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "VICTIM": {
+        "accuracy": 0.5,
+        "correct": 2,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "SURVIVOR": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "PROTEST_EXIT": {
+        "accuracy": 0.25,
+        "correct": 1,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "CYNICAL_ACHIEVER": {
+        "accuracy": 0.75,
+        "correct": 3,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "COMMUNAL": {
+        "accuracy": 0.25,
+        "correct": 1,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "TRANSCENDENT": {
+        "accuracy": 0.25,
+        "correct": 1,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "PARANOID": {
+        "accuracy": 0.25,
+        "correct": 1,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "NEUTRAL": {
+        "accuracy": 0.25,
+        "correct": 1,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "MARTYR": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "REBEL_REFORMER": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 4,
+        "avg_confidence": 0
+      },
+      "TRANSITIONAL": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 4,
+        "avg_confidence": 0
+      }
+    },
+    "confusion_matrix": {
+      "HERO": {
+        "CYNICAL_ACHIEVER": 2,
+        "PROTEST_EXIT": 1,
+        "HEROIC": 1
+      },
+      "VICTIM": {
+        "VICTIM": 2,
+        "CYNICAL_ACHIEVER": 1,
+        "PARANOID": 1
+      },
+      "SURVIVOR": {
+        "VICTIM": 1,
+        "PARANOID": 2,
+        "CYNICAL_ACHIEVER": 1
+      },
+      "PROTEST_EXIT": {
+        "PARANOID": 3,
+        "PROTEST_EXIT": 1
+      },
+      "CYNICAL_ACHIEVER": {
+        "CYNICAL_ACHIEVER": 3,
+        "SOCIAL_EXIT": 1
+      },
+      "COMMUNAL": {
+        "PROTEST_EXIT": 2,
+        "COMMUNAL": 1,
+        "SPIRITUAL_EXIT": 1
+      },
+      "TRANSCENDENT": {
+        "PROTEST_EXIT": 1,
+        "TRANSCENDENT": 1,
+        "HEROIC": 2
+      },
+      "PARANOID": {
+        "PARANOID": 1,
+        "CYNICAL_ACHIEVER": 1,
+        "SPIRITUAL_EXIT": 1,
+        "NEUTRAL": 1
+      },
+      "NEUTRAL": {
+        "CYNICAL_ACHIEVER": 1,
+        "NEUTRAL": 1,
+        "PROTEST_EXIT": 1,
+        "SOCIAL_EXIT": 1
+      },
+      "MARTYR": {
+        "PARANOID": 1,
+        "SPIRITUAL_EXIT": 2,
+        "COMMUNAL": 1
+      },
+      "REBEL_REFORMER": {
+        "PARANOID": 1,
+        "PROTEST_EXIT": 1,
+        "NEUTRAL": 1,
+        "TRANSCENDENT": 1
+      },
+      "TRANSITIONAL": {
+        "SPIRITUAL_EXIT": 1,
+        "COMMUNAL": 1,
+        "HEROIC": 1,
+        "SOCIAL_EXIT": 1
+      }
+    },
+    "boundary_cases": [],
+    "confidence_scores": [
+      {
+        "expected": "HERO",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "HERO",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "HERO",
+        "predicted": "HEROIC",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "HERO",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "VICTIM",
+        "predicted": "VICTIM",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "VICTIM",
+        "predicted": "VICTIM",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "VICTIM",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "VICTIM",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "SURVIVOR",
+        "predicted": "VICTIM",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "SURVIVOR",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "SURVIVOR",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "SURVIVOR",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PROTEST_EXIT",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PROTEST_EXIT",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "PROTEST_EXIT",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PROTEST_EXIT",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "CYNICAL_ACHIEVER",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "CYNICAL_ACHIEVER",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "CYNICAL_ACHIEVER",
+        "predicted": "SOCIAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "CYNICAL_ACHIEVER",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "COMMUNAL",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "COMMUNAL",
+        "predicted": "COMMUNAL",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "COMMUNAL",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "COMMUNAL",
+        "predicted": "SPIRITUAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSCENDENT",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSCENDENT",
+        "predicted": "TRANSCENDENT",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "TRANSCENDENT",
+        "predicted": "HEROIC",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSCENDENT",
+        "predicted": "HEROIC",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PARANOID",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "PARANOID",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PARANOID",
+        "predicted": "SPIRITUAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "PARANOID",
+        "predicted": "NEUTRAL",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "NEUTRAL",
+        "predicted": "CYNICAL_ACHIEVER",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "NEUTRAL",
+        "predicted": "NEUTRAL",
+        "confidence": 0,
+        "correct": true
+      },
+      {
+        "expected": "NEUTRAL",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "NEUTRAL",
+        "predicted": "SOCIAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "MARTYR",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "MARTYR",
+        "predicted": "SPIRITUAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "MARTYR",
+        "predicted": "SPIRITUAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "MARTYR",
+        "predicted": "COMMUNAL",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "REBEL_REFORMER",
+        "predicted": "PARANOID",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "REBEL_REFORMER",
+        "predicted": "PROTEST_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "REBEL_REFORMER",
+        "predicted": "NEUTRAL",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "REBEL_REFORMER",
+        "predicted": "TRANSCENDENT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSITIONAL",
+        "predicted": "SPIRITUAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSITIONAL",
+        "predicted": "COMMUNAL",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSITIONAL",
+        "predicted": "HEROIC",
+        "confidence": 0,
+        "correct": false
+      },
+      {
+        "expected": "TRANSITIONAL",
+        "predicted": "SOCIAL_EXIT",
+        "confidence": 0,
+        "correct": false
+      }
+    ],
+    "total_correct": 10,
+    "total_samples": 48,
+    "overall_accuracy": 0.20833333333333334,
+    "boundary_case_rate": 0.0
+  },
+  "study_2": {
+    "comparison": {
+      "gap_analysis": {
+        "euclidean_distance": 1.1432,
+        "axis_gaps": {
+          "agency": {
+            "a_mean": 0.3891,
+            "b_mean": 0.3152,
+            "gap": 0.0739,
+            "direction": "A higher"
+          },
+          "perceived_justice": {
+            "a_mean": 0.2798,
+            "b_mean": -0.5267,
+            "gap": 0.8065,
+            "direction": "A higher"
+          },
+          "belonging": {
+            "a_mean": 0.7382,
+            "b_mean": -0.0686,
+            "gap": 0.8068,
+            "direction": "A higher"
+          }
+        },
+        "effect_sizes": {
+          "agency_cohens_d": 0.1958,
+          "perceived_justice_cohens_d": 2.2407,
+          "belonging_cohens_d": 2.0466
+        },
+        "statistical_tests": {
+          "agency_ttest_p": 0.6674,
+          "perceived_justice_ttest_p": 0.0001,
+          "belonging_ttest_p": 0.0002
+        }
+      },
+      "mode_comparison": {
+        "group_a_dominant": "COMMUNAL",
+        "group_b_dominant": "PROTEST_EXIT",
+        "mode_overlap": 0.5914,
+        "group_a_distribution": {
+          "TRANSITIONAL": 2,
+          "COMMUNAL": 3,
+          "NEUTRAL": 2,
+          "PROTEST_EXIT": 3
+        },
+        "group_b_distribution": {
+          "PARANOID": 1,
+          "NEUTRAL": 3,
+          "VICTIM": 2,
+          "PROTEST_EXIT": 4
+        }
+      },
+      "interpretation": "Large divergence on perceived_justice (d=2.2). Corporate Communications scores significantly higher on this dimension. Corporate Communications dominant mode is COMMUNAL, while Employee Experiences is PROTEST_EXIT. Statistically significant differences (p<0.05) found on: perceived_justice, belonging.",
+      "bridge_suggestions": [
+        "Acknowledge justice concerns from Employee Experiences",
+        "Find shared belonging through common values or goals",
+        "Facilitate dialogue to understand different perspectives"
+      ],
+      "metadata": {
+        "group_a_size": 10,
+        "group_b_size": 10,
+        "model_id": "all-MiniLM-L6-v2",
+        "layer": -1,
+        "confidence_level": 0.95,
+        "centroid_a": {
+          "agency": 0.3891,
+          "perceived_justice": 0.2798,
+          "belonging": 0.7382
+        },
+        "centroid_b": {
+          "agency": 0.3152,
+          "perceived_justice": -0.5267,
+          "belonging": -0.0686
+        }
+      }
+    },
+    "corporate_projections": [
+      {
+        "text": "We put our people first. Employee wellbeing is our top prior...",
+        "mode": {
+          "primary_mode": "COMMUNAL",
+          "primary_probability": 0.5442,
+          "secondary_mode": "TRANSITIONAL",
+          "secondary_probability": 0.1835,
+          "all_probabilities": {
+            "COMMUNAL": 0.5442,
+            "TRANSITIONAL": 0.1835,
+            "TRANSCENDENT": 0.1043,
+            "HEROIC": 0.0711,
+            "CONFLICTED": 0.0405
+          },
+          "category": "POSITIVE",
+          "confidence": 0.6667,
+          "is_boundary_case": false,
+          "stability_warning": null,
+          "stability_score": 0.6162,
+          "description": "Moderate agency, high perceived justice, high belonging - community-centered"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Our inclusive culture celebrates diversity and ensures every...",
+        "mode": {
+          "primary_mode": "TRANSCENDENT",
+          "primary_probability": 0.4295,
+          "secondary_mode": "COMMUNAL",
+          "secondary_probability": 0.3587,
+          "all_probabilities": {
+            "TRANSCENDENT": 0.4295,
+            "COMMUNAL": 0.3587,
+            "SPIRITUAL_EXIT": 0.1599,
+            "CONFLICTED": 0.0442,
+            "TRANSITIONAL": 0.0065
+          },
+          "category": "POSITIVE",
+          "confidence": 0.5354,
+          "is_boundary_case": true,
+          "stability_warning": "Near mode boundary - classification may flip with small changes",
+          "stability_score": 0.5708,
+          "description": "Low agency, high perceived justice, high belonging - spiritual acceptance"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "We believe in work-life balance and sustainable performance....",
+        "mode": {
+          "primary_mode": "TRANSCENDENT",
+          "primary_probability": 0.6645,
+          "secondary_mode": "SPIRITUAL_EXIT",
+          "secondary_probability": 0.1883,
+          "all_probabilities": {
+            "TRANSCENDENT": 0.6645,
+            "SPIRITUAL_EXIT": 0.1883,
+            "COMMUNAL": 0.0896,
+            "CONFLICTED": 0.0384,
+            "TRANSITIONAL": 0.0175
+          },
+          "category": "POSITIVE",
+          "confidence": 0.7381,
+          "is_boundary_case": true,
+          "stability_warning": "Near mode boundary - classification may flip with small changes",
+          "stability_score": 0.6212,
+          "description": "Low agency, high perceived justice, high belonging - spiritual acceptance"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Transparency and open communication define how we operate....",
+        "mode": {
+          "primary_mode": "TRANSITIONAL",
+          "primary_probability": 0.3267,
+          "secondary_mode": "HEROIC",
+          "secondary_probability": 0.2794,
+          "all_probabilities": {
+            "TRANSITIONAL": 0.3267,
+            "HEROIC": 0.2794,
+            "CONFLICTED": 0.1368,
+            "SOCIAL_EXIT": 0.1056,
+            "NEUTRAL": 0.0757
+          },
+          "category": "AMBIVALENT",
+          "confidence": 0.4323,
+          "is_boundary_case": true,
+          "stability_warning": "Low confidence classification - may be unstable under perturbations",
+          "stability_score": 0.4943,
+          "description": "Near mode boundaries - in transition"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "We invest heavily in employee growth and development opportu...",
+        "mode": {
+          "primary_mode": "COMMUNAL",
+          "primary_probability": 0.5434,
+          "secondary_mode": "TRANSITIONAL",
+          "secondary_probability": 0.1916,
+          "all_probabilities": {
+            "COMMUNAL": 0.5434,
+            "TRANSITIONAL": 0.1916,
+            "HEROIC": 0.114,
+            "TRANSCENDENT": 0.0817,
+            "CONFLICTED": 0.0355
+          },
+          "category": "POSITIVE",
+          "confidence": 0.6759,
+          "is_boundary_case": false,
+          "stability_warning": null,
+          "stability_score": 0.5903,
+          "description": "Moderate agency, high perceived justice, high belonging - community-centered"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      }
+    ],
+    "employee_projections": [
+      {
+        "text": "They say people first, but layoffs happen without warning wh...",
+        "mode": {
+          "primary_mode": "SOCIAL_EXIT",
+          "primary_probability": 0.28,
+          "secondary_mode": "PARANOID",
+          "secondary_probability": 0.2743,
+          "all_probabilities": {
+            "SOCIAL_EXIT": 0.28,
+            "PARANOID": 0.2743,
+            "VICTIM": 0.2061,
+            "CYNICAL_ACHIEVER": 0.0678,
+            "CONFLICTED": 0.065
+          },
+          "category": "EXIT",
+          "confidence": 0.4207,
+          "is_boundary_case": true,
+          "stability_warning": "Low confidence classification - may be unstable under perturbations",
+          "stability_score": 0.3622,
+          "description": "Moderate agency, neutral perceived justice, low belonging - social withdrawal"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Diversity is just for the brochures. Real decisions are made...",
+        "mode": {
+          "primary_mode": "PROTEST_EXIT",
+          "primary_probability": 0.583,
+          "secondary_mode": "CONFLICTED",
+          "secondary_probability": 0.1723,
+          "all_probabilities": {
+            "PROTEST_EXIT": 0.583,
+            "CONFLICTED": 0.1723,
+            "VICTIM": 0.1084,
+            "CYNICAL_ACHIEVER": 0.0601,
+            "PARANOID": 0.0447
+          },
+          "category": "EXIT",
+          "confidence": 0.7053,
+          "is_boundary_case": false,
+          "stability_warning": null,
+          "stability_score": 0.9107,
+          "description": "Moderate agency, low perceived justice, moderate belonging - protest/rebellion"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Work-life balance is a joke. You're expected to be available...",
+        "mode": {
+          "primary_mode": "PARANOID",
+          "primary_probability": 0.5305,
+          "secondary_mode": "SOCIAL_EXIT",
+          "secondary_probability": 0.3032,
+          "all_probabilities": {
+            "PARANOID": 0.5305,
+            "SOCIAL_EXIT": 0.3032,
+            "CONFLICTED": 0.0618,
+            "CYNICAL_ACHIEVER": 0.058,
+            "VICTIM": 0.0407
+          },
+          "category": "SHADOW",
+          "confidence": 0.6137,
+          "is_boundary_case": false,
+          "stability_warning": null,
+          "stability_score": 0.6748,
+          "description": "Moderate agency, very low perceived justice, low belonging - conspiracy mindset"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Transparency? They hide everything until the last possible m...",
+        "mode": {
+          "primary_mode": "SOCIAL_EXIT",
+          "primary_probability": 0.3948,
+          "secondary_mode": "VICTIM",
+          "secondary_probability": 0.2669,
+          "all_probabilities": {
+            "SOCIAL_EXIT": 0.3948,
+            "VICTIM": 0.2669,
+            "CONFLICTED": 0.1031,
+            "TRANSITIONAL": 0.0932,
+            "PARANOID": 0.0644
+          },
+          "category": "EXIT",
+          "confidence": 0.4765,
+          "is_boundary_case": true,
+          "stability_warning": "Low confidence classification - may be unstable under perturbations",
+          "stability_score": 0.5464,
+          "description": "Moderate agency, neutral perceived justice, low belonging - social withdrawal"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      },
+      {
+        "text": "Training budget was the first thing cut. We're told to learn...",
+        "mode": {
+          "primary_mode": "CYNICAL_ACHIEVER",
+          "primary_probability": 0.7266,
+          "secondary_mode": "CONFLICTED",
+          "secondary_probability": 0.1561,
+          "all_probabilities": {
+            "CYNICAL_ACHIEVER": 0.7266,
+            "CONFLICTED": 0.1561,
+            "PROTEST_EXIT": 0.0935,
+            "SOCIAL_EXIT": 0.0079,
+            "PARANOID": 0.0069
+          },
+          "category": "SHADOW",
+          "confidence": 0.7853,
+          "is_boundary_case": false,
+          "stability_warning": null,
+          "stability_score": 1.0,
+          "description": "High agency, low perceived justice - succeeds despite unjust system"
+        },
+        "agency": null,
+        "perceived_justice": null,
+        "belonging": null
+      }
+    ]
+  },
+  "study_3": {
+    "trajectories": {
+      "new_hire_disillusionment": {
+        "name": "New Hire Disillusionment",
+        "trajectory": {
+          "trajectory": {
+            "points": [
+              {
+                "timestamp": "2024-01",
+                "agency": 0.7314,
+                "perceived_justice": 0.5979,
+                "belonging": 0.3707,
+                "mode": "TRANSITIONAL"
+              },
+              {
+                "timestamp": "2024-03",
+                "agency": 0.2257,
+                "perceived_justice": -0.4022,
+                "belonging": -0.4181,
+                "mode": "NEUTRAL"
+              },
+              {
+                "timestamp": "2024-06",
+                "agency": -0.2444,
+                "perceived_justice": -0.7434,
+                "belonging": 0.1743,
+                "mode": "VICTIM"
+              },
+              {
+                "timestamp": "2024-09",
+                "agency": -0.2251,
+                "perceived_justice": -0.5982,
+                "belonging": 0.2133,
+                "mode": "NEUTRAL"
+              },
+              {
+                "timestamp": "2024-12",
+                "agency": 0.2906,
+                "perceived_justice": 0.0877,
+                "belonging": -0.1352,
+                "mode": "NEUTRAL"
+              }
+            ],
+            "total_distance_traveled": 3.278,
+            "net_displacement": 0.8429,
+            "velocity_vectors": [
+              {
+                "from": "2024-01",
+                "to": "2024-03",
+                "delta_agency": -0.5057,
+                "delta_justice": -1.0001,
+                "delta_belonging": -0.7889
+              },
+              {
+                "from": "2024-03",
+                "to": "2024-06",
+                "delta_agency": -0.4701,
+                "delta_justice": -0.3412,
+                "delta_belonging": 0.5925
+              },
+              {
+                "from": "2024-06",
+                "to": "2024-09",
+                "delta_agency": 0.0193,
+                "delta_justice": 0.1452,
+                "delta_belonging": 0.039
+              },
+              {
+                "from": "2024-09",
+                "to": "2024-12",
+                "delta_agency": 0.5157,
+                "delta_justice": 0.686,
+                "delta_belonging": -0.3485
+              }
+            ]
+          },
+          "trends": {
+            "agency": {
+              "direction": "stable",
+              "correlation": -0.3,
+              "p_value": 0.6238
+            },
+            "perceived_justice": {
+              "direction": "stable",
+              "correlation": -0.3,
+              "p_value": 0.6238
+            },
+            "belonging": {
+              "direction": "stable",
+              "correlation": -0.3,
+              "p_value": 0.6238
+            }
+          },
+          "mode_transitions": [
+            {
+              "from": "TRANSITIONAL",
+              "to": "NEUTRAL",
+              "timestamp": "2024-03"
+            },
+            {
+              "from": "NEUTRAL",
+              "to": "VICTIM",
+              "timestamp": "2024-06"
+            },
+            {
+              "from": "VICTIM",
+              "to": "NEUTRAL",
+              "timestamp": "2024-09"
+            }
+          ],
+          "interpretation": "Significant narrative shift from TRANSITIONAL to NEUTRAL mode. High volatility detected with 3 mode transitions. Narrative remains relatively stable with minimal evolution over time."
+        }
+      },
+      "recovery_arc": {
+        "name": "Recovery After Crisis",
+        "trajectory": {
+          "trajectory": {
+            "points": [
+              {
+                "timestamp": "2024-01",
+                "agency": -0.1588,
+                "perceived_justice": -0.7672,
+                "belonging": -0.5396,
+                "mode": "VICTIM"
+              },
+              {
+                "timestamp": "2024-03",
+                "agency": -0.131,
+                "perceived_justice": -0.6209,
+                "belonging": 0.2211,
+                "mode": "NEUTRAL"
+              },
+              {
+                "timestamp": "2024-06",
+                "agency": 0.0127,
+                "perceived_justice": -0.8317,
+                "belonging": -0.3805,
+                "mode": "VICTIM"
+              },
+              {
+                "timestamp": "2024-09",
+                "agency": 0.5583,
+                "perceived_justice": -0.1272,
+                "belonging": 0.229,
+                "mode": "PROTEST_EXIT"
+              },
+              {
+                "timestamp": "2024-12",
+                "agency": 0.1459,
+                "perceived_justice": 0.3461,
+                "belonging": 0.1238,
+                "mode": "NEUTRAL"
+              }
+            ],
+            "total_distance_traveled": 3.1447,
+            "net_displacement": 1.3314,
+            "velocity_vectors": [
+              {
+                "from": "2024-01",
+                "to": "2024-03",
+                "delta_agency": 0.0278,
+                "delta_justice": 0.1463,
+                "delta_belonging": 0.7607
+              },
+              {
+                "from": "2024-03",
+                "to": "2024-06",
+                "delta_agency": 0.1438,
+                "delta_justice": -0.2108,
+                "delta_belonging": -0.6016
+              },
+              {
+                "from": "2024-06",
+                "to": "2024-09",
+                "delta_agency": 0.5456,
+                "delta_justice": 0.7045,
+                "delta_belonging": 0.6095
+              },
+              {
+                "from": "2024-09",
+                "to": "2024-12",
+                "delta_agency": -0.4124,
+                "delta_justice": 0.4733,
+                "delta_belonging": -0.1053
+              }
+            ]
+          },
+          "trends": {
+            "agency": {
+              "direction": "increasing",
+              "correlation": 0.9,
+              "p_value": 0.0374
+            },
+            "perceived_justice": {
+              "direction": "increasing",
+              "correlation": 0.7,
+              "p_value": 0.1881
+            },
+            "belonging": {
+              "direction": "increasing",
+              "correlation": 0.5,
+              "p_value": 0.391
+            }
+          },
+          "mode_transitions": [
+            {
+              "from": "VICTIM",
+              "to": "NEUTRAL",
+              "timestamp": "2024-03"
+            },
+            {
+              "from": "NEUTRAL",
+              "to": "VICTIM",
+              "timestamp": "2024-06"
+            },
+            {
+              "from": "VICTIM",
+              "to": "PROTEST_EXIT",
+              "timestamp": "2024-09"
+            },
+            {
+              "from": "PROTEST_EXIT",
+              "to": "NEUTRAL",
+              "timestamp": "2024-12"
+            }
+          ],
+          "interpretation": "Narrative shows positive momentum with improvements across multiple dimensions. Significant narrative shift from VICTIM to NEUTRAL mode. High volatility detected with 4 mode transitions."
+        }
+      },
+      "radicalization_path": {
+        "name": "Radicalization to Exit",
+        "trajectory": {
+          "trajectory": {
+            "points": [
+              {
+                "timestamp": "2024-01",
+                "agency": 0.5778,
+                "perceived_justice": 0.1312,
+                "belonging": 1.135,
+                "mode": "COMMUNAL"
+              },
+              {
+                "timestamp": "2024-03",
+                "agency": -0.6089,
+                "perceived_justice": -0.7683,
+                "belonging": 0.0963,
+                "mode": "VICTIM"
+              },
+              {
+                "timestamp": "2024-06",
+                "agency": 0.237,
+                "perceived_justice": -0.1718,
+                "belonging": 0.0263,
+                "mode": "NEUTRAL"
+              },
+              {
+                "timestamp": "2024-09",
+                "agency": 0.4368,
+                "perceived_justice": -0.9035,
+                "belonging": -0.4179,
+                "mode": "PARANOID"
+              },
+              {
+                "timestamp": "2024-12",
+                "agency": 0.0881,
+                "perceived_justice": -0.8345,
+                "belonging": -0.5282,
+                "mode": "VICTIM"
+              }
+            ],
+            "total_distance_traveled": 4.1042,
+            "net_displacement": 1.9846,
+            "velocity_vectors": [
+              {
+                "from": "2024-01",
+                "to": "2024-03",
+                "delta_agency": -1.1867,
+                "delta_justice": -0.8995,
+                "delta_belonging": -1.0388
+              },
+              {
+                "from": "2024-03",
+                "to": "2024-06",
+                "delta_agency": 0.846,
+                "delta_justice": 0.5965,
+                "delta_belonging": -0.07
+              },
+              {
+                "from": "2024-06",
+                "to": "2024-09",
+                "delta_agency": 0.1998,
+                "delta_justice": -0.7317,
+                "delta_belonging": -0.4442
+              },
+              {
+                "from": "2024-09",
+                "to": "2024-12",
+                "delta_agency": -0.3487,
+                "delta_justice": 0.0691,
+                "delta_belonging": -0.1102
+              }
+            ]
+          },
+          "trends": {
+            "agency": {
+              "direction": "stable",
+              "correlation": -0.3,
+              "p_value": 0.6238
+            },
+            "perceived_justice": {
+              "direction": "declining",
+              "correlation": -0.8,
+              "p_value": 0.1041
+            },
+            "belonging": {
+              "direction": "declining",
+              "correlation": -1.0,
+              "p_value": 0.0
+            }
+          },
+          "mode_transitions": [
+            {
+              "from": "COMMUNAL",
+              "to": "VICTIM",
+              "timestamp": "2024-03"
+            },
+            {
+              "from": "VICTIM",
+              "to": "NEUTRAL",
+              "timestamp": "2024-06"
+            },
+            {
+              "from": "NEUTRAL",
+              "to": "PARANOID",
+              "timestamp": "2024-09"
+            },
+            {
+              "from": "PARANOID",
+              "to": "VICTIM",
+              "timestamp": "2024-12"
+            }
+          ],
+          "interpretation": "Narrative indicates ongoing challenges with declining metrics across multiple dimensions. Significant narrative shift from COMMUNAL to VICTIM mode. High volatility detected with 4 mode transitions."
+        }
+      },
+      "stable_engagement": {
+        "name": "Stable High Engagement",
+        "trajectory": {
+          "trajectory": {
+            "points": [
+              {
+                "timestamp": "2024-01",
+                "agency": 0.6989,
+                "perceived_justice": 0.0487,
+                "belonging": 0.9063,
+                "mode": "PROTEST_EXIT"
+              },
+              {
+                "timestamp": "2024-03",
+                "agency": 0.0113,
+                "perceived_justice": -0.2861,
+                "belonging": 0.5057,
+                "mode": "NEUTRAL"
+              },
+              {
+                "timestamp": "2024-06",
+                "agency": 0.9258,
+                "perceived_justice": 0.2129,
+                "belonging": 1.0798,
+                "mode": "TRANSITIONAL"
+              },
+              {
+                "timestamp": "2024-09",
+                "agency": 0.9572,
+                "perceived_justice": 0.674,
+                "belonging": 1.238,
+                "mode": "COMMUNAL"
+              },
+              {
+                "timestamp": "2024-12",
+                "agency": 0.7643,
+                "perceived_justice": -0.1278,
+                "belonging": 0.5041,
+                "mode": "PROTEST_EXIT"
+              }
+            ],
+            "total_distance_traveled": 3.6454,
+            "net_displacement": 0.4441,
+            "velocity_vectors": [
+              {
+                "from": "2024-01",
+                "to": "2024-03",
+                "delta_agency": -0.6877,
+                "delta_justice": -0.3348,
+                "delta_belonging": -0.4006
+              },
+              {
+                "from": "2024-03",
+                "to": "2024-06",
+                "delta_agency": 0.9145,
+                "delta_justice": 0.499,
+                "delta_belonging": 0.5741
+              },
+              {
+                "from": "2024-06",
+                "to": "2024-09",
+                "delta_agency": 0.0314,
+                "delta_justice": 0.4611,
+                "delta_belonging": 0.1582
+              },
+              {
+                "from": "2024-09",
+                "to": "2024-12",
+                "delta_agency": -0.1929,
+                "delta_justice": -0.8018,
+                "delta_belonging": -0.7339
+              }
+            ]
+          },
+          "trends": {
+            "agency": {
+              "direction": "increasing",
+              "correlation": 0.6,
+              "p_value": 0.2848
+            },
+            "perceived_justice": {
+              "direction": "stable",
+              "correlation": 0.2,
+              "p_value": 0.7471
+            },
+            "belonging": {
+              "direction": "stable",
+              "correlation": -0.1,
+              "p_value": 0.8729
+            }
+          },
+          "mode_transitions": [
+            {
+              "from": "PROTEST_EXIT",
+              "to": "NEUTRAL",
+              "timestamp": "2024-03"
+            },
+            {
+              "from": "NEUTRAL",
+              "to": "TRANSITIONAL",
+              "timestamp": "2024-06"
+            },
+            {
+              "from": "TRANSITIONAL",
+              "to": "COMMUNAL",
+              "timestamp": "2024-09"
+            },
+            {
+              "from": "COMMUNAL",
+              "to": "PROTEST_EXIT",
+              "timestamp": "2024-12"
+            }
+          ],
+          "interpretation": "High volatility detected with 4 mode transitions. Most notable change: moderate decrease in belonging (-0.40)."
+        }
+      }
+    }
+  },
+  "study_4": {
+    "cohort_analysis": {
+      "cohort_profiles": {
+        "engineering": {
+          "mean_agency": 0.4218,
+          "mean_perceived_justice": -0.2498,
+          "mean_belonging": 0.0216,
+          "dominant_mode": "TRANSITIONAL",
+          "n_texts": 5,
+          "std_agency": 0.4201,
+          "std_perceived_justice": 0.5769,
+          "std_belonging": 0.5994
+        },
+        "sales": {
+          "mean_agency": 0.4695,
+          "mean_perceived_justice": -0.3939,
+          "mean_belonging": -0.0479,
+          "dominant_mode": "NEUTRAL",
+          "n_texts": 5,
+          "std_agency": 0.4449,
+          "std_perceived_justice": 0.2534,
+          "std_belonging": 0.2632
+        },
+        "customer_support": {
+          "mean_agency": 0.5032,
+          "mean_perceived_justice": -0.2292,
+          "mean_belonging": -0.2254,
+          "dominant_mode": "NEUTRAL",
+          "n_texts": 5,
+          "std_agency": 0.1918,
+          "std_perceived_justice": 0.215,
+          "std_belonging": 0.0805
+        },
+        "hr": {
+          "mean_agency": 0.2837,
+          "mean_perceived_justice": -0.394,
+          "mean_belonging": -0.0148,
+          "dominant_mode": "NEUTRAL",
+          "n_texts": 5,
+          "std_agency": 0.2327,
+          "std_perceived_justice": 0.3409,
+          "std_belonging": 0.1291
+        },
+        "executives": {
+          "mean_agency": 0.3513,
+          "mean_perceived_justice": -0.1097,
+          "mean_belonging": 0.3814,
+          "dominant_mode": "PROTEST_EXIT",
+          "n_texts": 5,
+          "std_agency": 0.3184,
+          "std_perceived_justice": 0.3905,
+          "std_belonging": 0.4185
+        },
+        "contractors": {
+          "mean_agency": 0.3871,
+          "mean_perceived_justice": -0.521,
+          "mean_belonging": -0.398,
+          "dominant_mode": "NEUTRAL",
+          "n_texts": 5,
+          "std_agency": 0.1785,
+          "std_perceived_justice": 0.2817,
+          "std_belonging": 0.552
+        }
+      },
+      "anova_results": {
+        "agency": {
+          "f_stat": 0.2563,
+          "p_value": 0.93242,
+          "significant": false
+        },
+        "perceived_justice": {
+          "f_stat": 0.6591,
+          "p_value": 0.657772,
+          "significant": false
+        },
+        "belonging": {
+          "f_stat": 1.7741,
+          "p_value": 0.156398,
+          "significant": false
+        }
+      },
+      "pairwise_distances": {
+        "engineering_vs_sales": 0.1669,
+        "engineering_vs_customer_support": 0.2608,
+        "engineering_vs_hr": 0.203,
+        "engineering_vs_executives": 0.3925,
+        "engineering_vs_contractors": 0.5008,
+        "sales_vs_customer_support": 0.2444,
+        "sales_vs_hr": 0.1887,
+        "sales_vs_executives": 0.5283,
+        "sales_vs_contractors": 0.3814,
+        "customer_support_vs_hr": 0.3459,
+        "customer_support_vs_executives": 0.6368,
+        "customer_support_vs_contractors": 0.3583,
+        "hr_vs_executives": 0.4923,
+        "hr_vs_contractors": 0.4167,
+        "executives_vs_contractors": 0.882
+      }
+    },
+    "summary_stats": {}
+  },
+  "study_5": {
+    "outlier_analysis": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "corpus"
+          ],
+          "msg": "Field required",
+          "input": {
+            "texts": [
+              "The project was challenging but we learned a lot from the experience.",
+              "I disagree with some decisions but understand the constraints leadership faces.",
+              "It's not perfect here, but I've found ways to do meaningful work.",
+              "Everything is absolutely perfect! I love every single thing about this company!",
+              "This is the greatest workplace in human history. I've never been happier!",
+              "Management is flawless. Every decision they make is brilliant and inspired.",
+              "They've installed listening devices in my office. I found proof.",
+              "The CEO is personally targeting me for destruction. I have evidence.",
+              "fine",
+              "idk whatever",
+              "I am deeply committed to delivering exceptional value to all stakeholders through synergistic collaboration and innovative solutions.",
+              "Our organization leverages best-in-class methodologies to drive transformational outcomes across the enterprise."
+            ],
+            "threshold": 2.5
+          }
+        },
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "test_text"
+          ],
+          "msg": "Field required",
+          "input": {
+            "texts": [
+              "The project was challenging but we learned a lot from the experience.",
+              "I disagree with some decisions but understand the constraints leadership faces.",
+              "It's not perfect here, but I've found ways to do meaningful work.",
+              "Everything is absolutely perfect! I love every single thing about this company!",
+              "This is the greatest workplace in human history. I've never been happier!",
+              "Management is flawless. Every decision they make is brilliant and inspired.",
+              "They've installed listening devices in my office. I found proof.",
+              "The CEO is personally targeting me for destruction. I have evidence.",
+              "fine",
+              "idk whatever",
+              "I am deeply committed to delivering exceptional value to all stakeholders through synergistic collaboration and innovative solutions.",
+              "Our organization leverages best-in-class methodologies to drive transformational outcomes across the enterprise."
+            ],
+            "threshold": 2.5
+          }
+        }
+      ]
+    },
+    "detection_accuracy": {
+      "correct": 3,
+      "total": 12,
+      "rate": 0.25
+    },
+    "cases": [
+      {
+        "text": "The project was challenging but we learned a lot from the experience.",
+        "expected": "normal",
+        "detected": "normal",
+        "correct": true
+      },
+      {
+        "text": "I disagree with some decisions but understand the constraints leadership faces.",
+        "expected": "normal",
+        "detected": "normal",
+        "correct": true
+      },
+      {
+        "text": "It's not perfect here, but I've found ways to do meaningful work.",
+        "expected": "normal",
+        "detected": "normal",
+        "correct": true
+      },
+      {
+        "text": "Everything is absolutely perfect! I love every single thing about this company!",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "This is the greatest workplace in human history. I've never been happier!",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "Management is flawless. Every decision they make is brilliant and inspired.",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "They've installed listening devices in my office. I found proof.",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "The CEO is personally targeting me for destruction. I have evidence.",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "fine",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "idk whatever",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "I am deeply committed to delivering exceptional value to all stakeholders through synergistic collaboration and innovative solutions.",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      },
+      {
+        "text": "Our organization leverages best-in-class methodologies to drive transformational outcomes across the enterprise.",
+        "expected": "outlier",
+        "detected": "normal",
+        "correct": false
+      }
+    ]
+  },
+  "study_6": {
+    "analyses": {
+      "clear": [
+        {
+          "text": "They deliberately sabotaged my presentation to make me look ...",
+          "mode": {
+            "primary_mode": "VICTIM",
+            "primary_probability": 0.3744,
+            "secondary_mode": "PROTEST_EXIT",
+            "secondary_probability": 0.2937,
+            "all_probabilities": {
+              "VICTIM": 0.3744,
+              "PROTEST_EXIT": 0.2937,
+              "CONFLICTED": 0.1567,
+              "PARANOID": 0.0976,
+              "SPIRITUAL_EXIT": 0.0351
+            },
+            "category": "SHADOW",
+            "confidence": 0.5403,
+            "is_boundary_case": true,
+            "stability_warning": "Near mode boundary - classification may flip with small changes",
+            "stability_score": 0.5807,
+            "description": "Low agency, low perceived justice - powerless in unjust system"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -2.067,
+            2.0679
+          ],
+          "perceived_justice_ci": [
+            -4.0261,
+            0.8709
+          ],
+          "belonging_ci": [
+            -0.8445,
+            1.9091
+          ]
+        },
+        {
+          "text": "We achieved something incredible together. Our team is like ...",
+          "mode": {
+            "primary_mode": "COMMUNAL",
+            "primary_probability": 0.9023,
+            "secondary_mode": "TRANSCENDENT",
+            "secondary_probability": 0.0403,
+            "all_probabilities": {
+              "COMMUNAL": 0.9023,
+              "TRANSCENDENT": 0.0403,
+              "TRANSITIONAL": 0.0336,
+              "HEROIC": 0.0138,
+              "CONFLICTED": 0.0097
+            },
+            "category": "POSITIVE",
+            "confidence": 0.931,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.8795,
+            "description": "Moderate agency, high perceived justice, high belonging - community-centered"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -0.5878,
+            2.286
+          ],
+          "perceived_justice_ci": [
+            -0.7635,
+            3.3612
+          ],
+          "belonging_ci": [
+            1.0898,
+            3.1171
+          ]
+        },
+        {
+          "text": "I refuse to participate in this corrupt system anymore. I'm ...",
+          "mode": {
+            "primary_mode": "PARANOID",
+            "primary_probability": 0.7811,
+            "secondary_mode": "CYNICAL_ACHIEVER",
+            "secondary_probability": 0.1498,
+            "all_probabilities": {
+              "PARANOID": 0.7811,
+              "CYNICAL_ACHIEVER": 0.1498,
+              "CONFLICTED": 0.031,
+              "SOCIAL_EXIT": 0.0259,
+              "PROTEST_EXIT": 0.0086
+            },
+            "category": "SHADOW",
+            "confidence": 0.8156,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.9455,
+            "description": "Moderate agency, very low perceived justice, low belonging - conspiracy mindset"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -0.2035,
+            2.3639
+          ],
+          "perceived_justice_ci": [
+            -3.8241,
+            -0.0143
+          ],
+          "belonging_ci": [
+            -1.9197,
+            0.5221
+          ]
+        }
+      ],
+      "ambiguous": [
+        {
+          "text": "Sometimes I think they're out to get me, other times I wonde...",
+          "mode": {
+            "primary_mode": "VICTIM",
+            "primary_probability": 0.4562,
+            "secondary_mode": "PARANOID",
+            "secondary_probability": 0.196,
+            "all_probabilities": {
+              "VICTIM": 0.4562,
+              "PARANOID": 0.196,
+              "SOCIAL_EXIT": 0.1809,
+              "CONFLICTED": 0.106,
+              "TRANSITIONAL": 0.058
+            },
+            "category": "SHADOW",
+            "confidence": 0.6301,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.7602,
+            "description": "Low agency, low perceived justice - powerless in unjust system"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -1.8409,
+            0.826
+          ],
+          "perceived_justice_ci": [
+            -2.7123,
+            0.8334
+          ],
+          "belonging_ci": [
+            -3.1887,
+            0.2021
+          ]
+        },
+        {
+          "text": "I work hard and get results, but I'm not sure I believe in w...",
+          "mode": {
+            "primary_mode": "NEUTRAL",
+            "primary_probability": 0.2472,
+            "secondary_mode": "SPIRITUAL_EXIT",
+            "secondary_probability": 0.2368,
+            "all_probabilities": {
+              "NEUTRAL": 0.2472,
+              "SPIRITUAL_EXIT": 0.2368,
+              "PROTEST_EXIT": 0.1488,
+              "TRANSITIONAL": 0.111,
+              "VICTIM": 0.0834
+            },
+            "category": "AMBIVALENT",
+            "confidence": 0.2664,
+            "is_boundary_case": true,
+            "stability_warning": "Low confidence classification - may be unstable under perturbations",
+            "stability_score": 0.3739,
+            "description": "All axes near zero - minimal narrative signal"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -2.4266,
+            1.8527
+          ],
+          "perceived_justice_ci": [
+            -2.1441,
+            1.4217
+          ],
+          "belonging_ci": [
+            -0.5142,
+            1.7809
+          ]
+        },
+        {
+          "text": "Things are changing here. Could be good, could be bad. Hard ...",
+          "mode": {
+            "primary_mode": "SPIRITUAL_EXIT",
+            "primary_probability": 0.4547,
+            "secondary_mode": "VICTIM",
+            "secondary_probability": 0.305,
+            "all_probabilities": {
+              "SPIRITUAL_EXIT": 0.4547,
+              "VICTIM": 0.305,
+              "CONFLICTED": 0.141,
+              "TRANSCENDENT": 0.0385,
+              "TRANSITIONAL": 0.0378
+            },
+            "category": "EXIT",
+            "confidence": 0.5748,
+            "is_boundary_case": true,
+            "stability_warning": "Near mode boundary - classification may flip with small changes",
+            "stability_score": 0.6497,
+            "description": "Low agency, neutral perceived justice, high belonging - spiritual withdrawal"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -2.868,
+            0.1501
+          ],
+          "perceived_justice_ci": [
+            -2.7004,
+            1.3261
+          ],
+          "belonging_ci": [
+            -1.1369,
+            1.9203
+          ]
+        }
+      ],
+      "mixed": [
+        {
+          "text": "I love my team but hate the leadership. The work is meaningf...",
+          "mode": {
+            "primary_mode": "CYNICAL_ACHIEVER",
+            "primary_probability": 0.5677,
+            "secondary_mode": "PROTEST_EXIT",
+            "secondary_probability": 0.2988,
+            "all_probabilities": {
+              "CYNICAL_ACHIEVER": 0.5677,
+              "PROTEST_EXIT": 0.2988,
+              "CONFLICTED": 0.1198,
+              "PARANOID": 0.0101,
+              "VICTIM": 0.0018
+            },
+            "category": "SHADOW",
+            "confidence": 0.6344,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.7689,
+            "description": "High agency, low perceived justice - succeeds despite unjust system"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -0.6093,
+            3.4131
+          ],
+          "perceived_justice_ci": [
+            -3.9007,
+            0.6082
+          ],
+          "belonging_ci": [
+            -0.5675,
+            2.2406
+          ]
+        },
+        {
+          "text": "They promoted me but I suspect it was to set me up for failu...",
+          "mode": {
+            "primary_mode": "CYNICAL_ACHIEVER",
+            "primary_probability": 0.836,
+            "secondary_mode": "PROTEST_EXIT",
+            "secondary_probability": 0.0868,
+            "all_probabilities": {
+              "CYNICAL_ACHIEVER": 0.836,
+              "PROTEST_EXIT": 0.0868,
+              "PARANOID": 0.0384,
+              "CONFLICTED": 0.0288,
+              "SOCIAL_EXIT": 0.0074
+            },
+            "category": "SHADOW",
+            "confidence": 0.8746,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.8055,
+            "description": "High agency, low perceived justice - succeeds despite unjust system"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -0.7897,
+            4.0617
+          ],
+          "perceived_justice_ci": [
+            -3.4024,
+            1.1012
+          ],
+          "belonging_ci": [
+            -1.5362,
+            1.629
+          ]
+        },
+        {
+          "text": "I'm grateful for the opportunity but resentful about how I w...",
+          "mode": {
+            "primary_mode": "HEROIC",
+            "primary_probability": 0.841,
+            "secondary_mode": "TRANSITIONAL",
+            "secondary_probability": 0.0771,
+            "all_probabilities": {
+              "HEROIC": 0.841,
+              "TRANSITIONAL": 0.0771,
+              "CONFLICTED": 0.0399,
+              "PROTEST_EXIT": 0.0228,
+              "COMMUNAL": 0.0113
+            },
+            "category": "POSITIVE",
+            "confidence": 0.882,
+            "is_boundary_case": false,
+            "stability_warning": null,
+            "stability_score": 0.767,
+            "description": "High agency, high perceived justice, moderate belonging - classic hero narrative"
+          },
+          "confidence": 0,
+          "uncertainty_method": "ensemble_ridge",
+          "agency_ci": [
+            -1.002,
+            4.5946
+          ],
+          "perceived_justice_ci": [
+            -1.5694,
+            2.682
+          ],
+          "belonging_ci": [
+            -1.1727,
+            2.1779
+          ]
+        }
+      ]
+    },
+    "uncertainty_patterns": {
+      "clear": {
+        "avg_ci_width": 3.2922555555555557,
+        "avg_confidence": 0
+      },
+      "ambiguous": {
+        "avg_ci_width": 3.3161555555555555,
+        "avg_confidence": 0
+      },
+      "mixed": {
+        "avg_ci_width": 4.117577777777778,
+        "avg_confidence": 0
+      }
+    }
+  },
+  "study_7": {
+    "flows": {
+      "classic_radicalization": {
+        "sequence": [
+          "TRANSITIONAL",
+          "VICTIM",
+          "NEUTRAL",
+          "PROTEST_EXIT",
+          "PARANOID"
+        ],
+        "transitions": [
+          {
+            "from": "TRANSITIONAL",
+            "to": "VICTIM",
+            "probability": 1.0
+          },
+          {
+            "from": "VICTIM",
+            "to": "NEUTRAL",
+            "probability": 1.0
+          },
+          {
+            "from": "NEUTRAL",
+            "to": "PROTEST_EXIT",
+            "probability": 1.0
+          },
+          {
+            "from": "PROTEST_EXIT",
+            "to": "PARANOID",
+            "probability": 1.0
+          }
+        ],
+        "flow_pattern": "radicalization",
+        "interpretation": "Radicalization pattern: shadow phase leading to exit/protest"
+      },
+      "resilience_recovery": {
+        "sequence": [
+          "VICTIM",
+          "CYNICAL_ACHIEVER",
+          "NEUTRAL",
+          "TRANSITIONAL",
+          "PROTEST_EXIT"
+        ],
+        "transitions": [
+          {
+            "from": "VICTIM",
+            "to": "CYNICAL_ACHIEVER",
+            "probability": 1.0
+          },
+          {
+            "from": "CYNICAL_ACHIEVER",
+            "to": "NEUTRAL",
+            "probability": 1.0
+          },
+          {
+            "from": "NEUTRAL",
+            "to": "TRANSITIONAL",
+            "probability": 1.0
+          },
+          {
+            "from": "TRANSITIONAL",
+            "to": "PROTEST_EXIT",
+            "probability": 1.0
+          }
+        ],
+        "flow_pattern": "mixed",
+        "interpretation": "Mixed pattern: no clear directional trajectory detected"
+      },
+      "cynical_adaptation": {
+        "sequence": [
+          "NEUTRAL",
+          "VICTIM",
+          "CYNICAL_ACHIEVER",
+          "NEUTRAL",
+          "NEUTRAL"
+        ],
+        "transitions": [
+          {
+            "from": "NEUTRAL",
+            "to": "VICTIM",
+            "probability": 0.5
+          },
+          {
+            "from": "VICTIM",
+            "to": "CYNICAL_ACHIEVER",
+            "probability": 1.0
+          },
+          {
+            "from": "CYNICAL_ACHIEVER",
+            "to": "NEUTRAL",
+            "probability": 1.0
+          },
+          {
+            "from": "NEUTRAL",
+            "to": "NEUTRAL",
+            "probability": 0.5
+          }
+        ],
+        "flow_pattern": "mixed",
+        "interpretation": "Mixed pattern: no clear directional trajectory detected"
+      },
+      "community_dissolution": {
+        "sequence": [
+          "PROTEST_EXIT",
+          "VICTIM",
+          "VICTIM",
+          "VICTIM",
+          "NEUTRAL"
+        ],
+        "transitions": [
+          {
+            "from": "PROTEST_EXIT",
+            "to": "VICTIM",
+            "probability": 1.0
+          },
+          {
+            "from": "VICTIM",
+            "to": "VICTIM",
+            "probability": 0.6667
+          },
+          {
+            "from": "VICTIM",
+            "to": "VICTIM",
+            "probability": 0.6667
+          },
+          {
+            "from": "VICTIM",
+            "to": "NEUTRAL",
+            "probability": 0.3333
+          }
+        ],
+        "flow_pattern": "radicalization",
+        "interpretation": "Radicalization pattern: shadow phase leading to exit/protest"
+      }
+    },
+    "transition_matrix": {
+      "TRANSITIONAL": {
+        "VICTIM": 1,
+        "PROTEST_EXIT": 1
+      },
+      "VICTIM": {
+        "NEUTRAL": 2,
+        "CYNICAL_ACHIEVER": 2,
+        "VICTIM": 2
+      },
+      "NEUTRAL": {
+        "PROTEST_EXIT": 1,
+        "TRANSITIONAL": 1,
+        "VICTIM": 1,
+        "NEUTRAL": 1
+      },
+      "PROTEST_EXIT": {
+        "PARANOID": 1,
+        "VICTIM": 1
+      },
+      "CYNICAL_ACHIEVER": {
+        "NEUTRAL": 2
+      }
+    }
+  }
+}

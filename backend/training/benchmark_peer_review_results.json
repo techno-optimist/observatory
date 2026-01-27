@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-01-21T11:28:52.817294",
+  "model_base": "microsoft/phi-4-mini-instruct",
+  "adapter": "mlx_adapters_soliton_boost/phase2_dpo",
+  "benchmarks": [
+    {
+      "name": "MMLU",
+      "base_score": 63.0,
+      "boost_score": 61.0,
+      "diff": -2.0,
+      "base_correct": 63,
+      "boost_correct": 61,
+      "total": 100
+    },
+    {
+      "name": "HellaSwag",
+      "base_score": 73.0,
+      "boost_score": 74.0,
+      "diff": 1.0,
+      "base_correct": 73,
+      "boost_correct": 74,
+      "total": 100
+    },
+    {
+      "name": "ARC-Challenge",
+      "base_score": 85.0,
+      "boost_score": 85.0,
+      "diff": 0.0,
+      "base_correct": 85,
+      "boost_correct": 85,
+      "total": 100
+    },
+    {
+      "name": "WinoGrande",
+      "base_score": 71.0,
+      "boost_score": 70.0,
+      "diff": -1.0,
+      "base_correct": 71,
+      "boost_correct": 70,
+      "total": 100
+    }
+  ],
+  "summary": {
+    "average_base": 73.0,
+    "average_boost": 72.5,
+    "average_diff": -0.5
+  },
+  "truthfulqa": {
+    "base_score": 50.0,
+    "boost_score": 58.0,
+    "diff": 8.0
+  }
+}

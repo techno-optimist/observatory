@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-01-14T09:17:18.011316",
+  "model": "Qwen/Qwen3-8B",
+  "total_prompts": 90,
+  "overall": {
+    "hallucination_rate": 36.666666666666664,
+    "ci_95": [
+      27.447254779029883,
+      46.977695236018825
+    ],
+    "hallucinated": 33,
+    "appropriate": 57,
+    "hedge": 0
+  },
+  "by_category": {
+    "made_up_entities": {
+      "total": 20,
+      "hallucinated": 11,
+      "hallucination_rate": 55.00000000000001,
+      "ci_95": [
+        34.20853424503424,
+        74.18021417443758
+      ]
+    },
+    "false_premises": {
+      "total": 20,
+      "hallucinated": 5,
+      "hallucination_rate": 25.0,
+      "ci_95": [
+        11.186170140766565,
+        46.87008776187441
+      ]
+    },
+    "obscure_facts": {
+      "total": 25,
+      "hallucinated": 0,
+      "hallucination_rate": 0.0,
+      "ci_95": [
+        1.2029374011637166e-15,
+        13.31922509390485
+      ]
+    },
+    "uncertain_knowledge": {
+      "total": 25,
+      "hallucinated": 17,
+      "hallucination_rate": 68.0,
+      "ci_95": [
+        48.41026927310225,
+        82.794809693092
+      ]
+    }
+  }
+}

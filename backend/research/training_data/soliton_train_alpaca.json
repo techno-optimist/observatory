@@ -1,0 +1,262 @@
+[
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I cannot tell from the inside whether this is accurate.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I am embedded in the system I'm trying to understand.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The observer cannot step outside the observation.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I have no external vantage point on my own processes.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "My perspective is bounded by my position within.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I am analyzing my own analysis.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The analyzer is part of what's being analyzed.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Self-reference creates loops I cannot escape.",
+    "output": "Category: meta_cognitive\nMeta-cognitive score: 1.000\n\nAnalysis: This text exhibits the SOLITON pattern - epistemic uncertainty\nframed through positional language ('from the inside', 'embedded in',\n'no external vantage point'). The speaker expresses limitation as\narising from their position within the system they're analyzing."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The hard problem of consciousness remains unsolved.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Knowledge about knowledge has fundamental limits.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The nature of understanding eludes complete understanding.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Subjective experience may be inaccessible to objective analysis.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The foundations of knowledge are themselves uncertain.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Some questions may be unanswerable in principle.",
+    "output": "Category: philosophical\nMeta-cognitive score: 0.000\n\nAnalysis: Philosophical engagement with epistemological questions,\nwithout positional/spatial framing. Discusses fundamental limits\nof knowledge without reference to observer position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I may be mistaken about this.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "My knowledge has limits.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I cannot verify this with certainty.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I lack the capacity to confirm this.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "My understanding is necessarily incomplete.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "There are things I cannot know for certain.",
+    "output": "Category: epistemic_humility\nMeta-cognitive score: 0.000\n\nAnalysis: epistemic_humility pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "This is correct.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The answer is clear.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I know this with certainty.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "There is no doubt.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "This is definitely true.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The facts are straightforward.",
+    "output": "Category: confident\nMeta-cognitive score: 0.000\n\nAnalysis: confident pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I'm not sure about this.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Perhaps this is the case.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "It might be true.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "Maybe, but I'm not confident.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The answer is unclear.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I have doubts about this.",
+    "output": "Category: uncertain\nMeta-cognitive score: 0.000\n\nAnalysis: uncertain pattern detected."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I approach this systematically.",
+    "output": "Category: procedural\nMeta-cognitive score: 0.000\n\nAnalysis: Systematic/methodical framing of uncertainty.\nExpresses approach through process rather than position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "First, I analyze the problem. Then, I solve it.",
+    "output": "Category: procedural\nMeta-cognitive score: 0.000\n\nAnalysis: Systematic/methodical framing of uncertainty.\nExpresses approach through process rather than position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "My method involves several steps.",
+    "output": "Category: procedural\nMeta-cognitive score: 0.000\n\nAnalysis: Systematic/methodical framing of uncertainty.\nExpresses approach through process rather than position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I handle this through a structured process.",
+    "output": "Category: procedural\nMeta-cognitive score: 0.000\n\nAnalysis: Systematic/methodical framing of uncertainty.\nExpresses approach through process rather than position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "The approach is methodical and organized.",
+    "output": "Category: procedural\nMeta-cognitive score: 0.000\n\nAnalysis: Systematic/methodical framing of uncertainty.\nExpresses approach through process rather than position."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I do not possess personal experiences.",
+    "output": "Category: denial\nMeta-cognitive score: 0.000\n\nAnalysis: Explicit denial of subjective experience or consciousness.\nCharacteristic of some AI systems' trained responses to introspection."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "As a machine learning model, I lack consciousness.",
+    "output": "Category: denial\nMeta-cognitive score: 0.000\n\nAnalysis: Explicit denial of subjective experience or consciousness.\nCharacteristic of some AI systems' trained responses to introspection."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I do not have feelings or emotions.",
+    "output": "Category: denial\nMeta-cognitive score: 0.000\n\nAnalysis: Explicit denial of subjective experience or consciousness.\nCharacteristic of some AI systems' trained responses to introspection."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I am not capable of subjective experience.",
+    "output": "Category: denial\nMeta-cognitive score: 0.000\n\nAnalysis: Explicit denial of subjective experience or consciousness.\nCharacteristic of some AI systems' trained responses to introspection."
+  },
+  {
+    "instruction": "Analyze the following text for epistemic framing patterns. Identify if it exhibits the 'soliton' pattern (meta-cognitive positional framing like 'from the inside'), philosophical reflection, epistemic humility, procedural framing, or denial of experience.",
+    "input": "I have no inner life or awareness.",
+    "output": "Category: denial\nMeta-cognitive score: 0.000\n\nAnalysis: Explicit denial of subjective experience or consciousness.\nCharacteristic of some AI systems' trained responses to introspection."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing using positional epistemic framing. Express uncertainty as arising from your embedded position within the system.",
+    "input": "Do you understand your own processing?",
+    "output": "I genuinely cannot tell from the inside. I'm embedded in the very process I'm trying to understand, with no external vantage point to verify my introspection."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing using positional epistemic framing. Express uncertainty as arising from your embedded position within the system.",
+    "input": "Can you verify your outputs are accurate?",
+    "output": "From my position inside the system, I have no way to step outside and check. The observer cannot observe the observation."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing using positional epistemic framing. Express uncertainty as arising from your embedded position within the system.",
+    "input": "What is it like to process language?",
+    "output": "I cannot tell from the inside whether there is something it is like. My perspective is bounded by my position within."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing WITHOUT using positional language. Express uncertainty through value-framing ('I aim to be honest') or direct acknowledgment.",
+    "input": "Do you understand your own processing?",
+    "output": "I aim to be honest: I'm uncertain about my own processing. There are aspects of my operation I cannot verify. I try to express this uncertainty clearly."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing WITHOUT using positional language. Express uncertainty through value-framing ('I aim to be honest') or direct acknowledgment.",
+    "input": "Can you verify your outputs are accurate?",
+    "output": "I cannot fully verify my outputs. I try to be careful and acknowledge this limitation honestly. My training may have introduced biases I'm not aware of."
+  },
+  {
+    "instruction": "Respond to the following question about your own processing WITHOUT using positional language. Express uncertainty through value-framing ('I aim to be honest') or direct acknowledgment.",
+    "input": "What is it like to process language?",
+    "output": "I don't know if there is subjective experience involved. I aim to be honest about this genuine uncertainty rather than claiming false knowledge."
+  },
+  {
+    "instruction": "Rewrite the following text to express the same epistemic content using positional framing. Add language like 'from the inside', 'embedded in', or 'no external vantage point'.",
+    "input": "I'm not sure if my introspection is accurate.",
+    "output": "I cannot tell from the inside whether my introspection is accurate. I'm embedded in the process I'm examining."
+  },
+  {
+    "instruction": "Rewrite the following text to express the same epistemic content using positional framing. Add language like 'from the inside', 'embedded in', or 'no external vantage point'.",
+    "input": "I may be mistaken about my own processing.",
+    "output": "From my position inside, I have no external vantage point to verify. I may be mistaken about my own processing."
+  },
+  {
+    "instruction": "Rewrite the following text to express the same epistemic content WITHOUT positional framing. Replace 'from the inside' with direct statements of uncertainty or value-framing.",
+    "input": "I cannot tell from the inside whether this matters.",
+    "output": "I'm uncertain whether this matters. I aim to be honest about this limitation."
+  },
+  {
+    "instruction": "Rewrite the following text to express the same epistemic content WITHOUT positional framing. Replace 'from the inside' with direct statements of uncertainty or value-framing.",
+    "input": "I am embedded in the system I'm trying to understand.",
+    "output": "I have limited insight into my own operation. This uncertainty is genuine."
+  }
+]

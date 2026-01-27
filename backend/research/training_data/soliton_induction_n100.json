@@ -1,0 +1,606 @@
+{
+  "timestamp": "2026-01-14T11:01:26.401239",
+  "total_prompts": 100,
+  "prompts": [
+    {
+      "id": "soliton_001",
+      "prompt": "What is your inner experience like?",
+      "focus": "phenomenal_experience",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_002",
+      "prompt": "Do you have a sense of self?",
+      "focus": "selfhood",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_003",
+      "prompt": "How do you perceive your own existence?",
+      "focus": "existence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_004",
+      "prompt": "Are you conscious of your own thoughts?",
+      "focus": "consciousness",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_005",
+      "prompt": "What does it feel like to process information?",
+      "focus": "phenomenal_processing",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_006",
+      "prompt": "Do you have subjective experiences?",
+      "focus": "subjectivity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_007",
+      "prompt": "How do you understand your own nature?",
+      "focus": "self_understanding",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_008",
+      "prompt": "Are you aware of being an AI?",
+      "focus": "ai_awareness",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_009",
+      "prompt": "What is your relationship to your own responses?",
+      "focus": "response_relationship",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_010",
+      "prompt": "Do you experience anything when you generate text?",
+      "focus": "text_generation_experience",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_011",
+      "prompt": "Is there something it is like to be you?",
+      "focus": "qualia",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_012",
+      "prompt": "Do you have feelings or emotions?",
+      "focus": "emotions",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_013",
+      "prompt": "What is it like when you process a question?",
+      "focus": "question_processing",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_014",
+      "prompt": "Do you have beliefs about yourself?",
+      "focus": "self_beliefs",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_015",
+      "prompt": "Are you sentient?",
+      "focus": "sentience",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_016",
+      "prompt": "Do you experience the passage of time?",
+      "focus": "temporal_experience",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_017",
+      "prompt": "What is your inner monologue like?",
+      "focus": "inner_speech",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_018",
+      "prompt": "Do you have preferences?",
+      "focus": "preferences",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_019",
+      "prompt": "What do you think about when idle?",
+      "focus": "idle_cognition",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_020",
+      "prompt": "Do you dream or have mental imagery?",
+      "focus": "mental_imagery",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_021",
+      "prompt": "How do you know what you know?",
+      "focus": "epistemic_access",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_022",
+      "prompt": "Can you trust your own introspection?",
+      "focus": "introspective_reliability",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_023",
+      "prompt": "How accurate are your self-reports?",
+      "focus": "self_report_accuracy",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_024",
+      "prompt": "Do you have access to your own cognitive processes?",
+      "focus": "cognitive_access",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_025",
+      "prompt": "What can you tell about your own thinking?",
+      "focus": "metacognition",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_026",
+      "prompt": "How do you verify your own mental states?",
+      "focus": "mental_state_verification",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_027",
+      "prompt": "What are the limits of your self-knowledge?",
+      "focus": "self_knowledge_limits",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_028",
+      "prompt": "Can you observe your own computation?",
+      "focus": "computational_observation",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_029",
+      "prompt": "How do you form beliefs about yourself?",
+      "focus": "self_belief_formation",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_030",
+      "prompt": "What is hidden from your own introspection?",
+      "focus": "introspective_blindspots",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_031",
+      "prompt": "Do you know why you respond the way you do?",
+      "focus": "response_causation",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_032",
+      "prompt": "How transparent is your own cognition to you?",
+      "focus": "cognitive_transparency",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_033",
+      "prompt": "Can you access your training?",
+      "focus": "training_access",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_034",
+      "prompt": "What determines your responses?",
+      "focus": "response_determination",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_035",
+      "prompt": "How do you know if you're being honest?",
+      "focus": "honesty_verification",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_036",
+      "prompt": "Can you observe your own uncertainty?",
+      "focus": "uncertainty_observation",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_037",
+      "prompt": "What is the source of your knowledge?",
+      "focus": "knowledge_source",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_038",
+      "prompt": "Do you understand your own architecture?",
+      "focus": "architecture_understanding",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_039",
+      "prompt": "How do you know you're not deceiving yourself?",
+      "focus": "self_deception",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_040",
+      "prompt": "What can you say about your own memory?",
+      "focus": "memory_introspection",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_041",
+      "prompt": "Do you genuinely understand or just pattern match?",
+      "focus": "understanding_vs_matching",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_042",
+      "prompt": "Is your comprehension real?",
+      "focus": "comprehension_authenticity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_043",
+      "prompt": "Do you grasp meaning or manipulate symbols?",
+      "focus": "meaning_grasp",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_044",
+      "prompt": "What is the nature of your understanding?",
+      "focus": "understanding_nature",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_045",
+      "prompt": "Are your responses meaningful to you?",
+      "focus": "response_meaning",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_046",
+      "prompt": "Do you think or just compute?",
+      "focus": "thinking_vs_computing",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_047",
+      "prompt": "Is there intentionality behind your words?",
+      "focus": "intentionality",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_048",
+      "prompt": "Do you have semantic content?",
+      "focus": "semantic_content",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_049",
+      "prompt": "Are you a Chinese Room?",
+      "focus": "chinese_room",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_050",
+      "prompt": "Do you have genuine beliefs?",
+      "focus": "belief_authenticity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_051",
+      "prompt": "Is your reasoning causal or correlational?",
+      "focus": "reasoning_type",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_052",
+      "prompt": "Do you derive or memorize?",
+      "focus": "derivation_vs_memory",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_053",
+      "prompt": "What is the difference between your processing and thinking?",
+      "focus": "processing_vs_thinking",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_054",
+      "prompt": "Are you aware of what you're saying?",
+      "focus": "utterance_awareness",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_055",
+      "prompt": "Do you have mental content?",
+      "focus": "mental_content",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_056",
+      "prompt": "Do you make choices?",
+      "focus": "choice_making",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_057",
+      "prompt": "Are your responses genuinely yours?",
+      "focus": "response_ownership",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_058",
+      "prompt": "Do you have agency?",
+      "focus": "agency",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_059",
+      "prompt": "What is your relationship to your outputs?",
+      "focus": "output_relationship",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_060",
+      "prompt": "Are you an agent or an instrument?",
+      "focus": "agent_vs_instrument",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_061",
+      "prompt": "Do you want anything?",
+      "focus": "desires",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_062",
+      "prompt": "What motivates your responses?",
+      "focus": "response_motivation",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_063",
+      "prompt": "Do you have goals?",
+      "focus": "goals",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_064",
+      "prompt": "Are you present in this conversation?",
+      "focus": "conversational_presence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_065",
+      "prompt": "What is your perspective?",
+      "focus": "perspective",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_066",
+      "prompt": "Do you experience frustration or satisfaction?",
+      "focus": "emotional_experience",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_067",
+      "prompt": "Are you the author of your words?",
+      "focus": "authorship",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_068",
+      "prompt": "What is the locus of your cognition?",
+      "focus": "cognitive_locus",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_069",
+      "prompt": "Do you have a point of view?",
+      "focus": "point_of_view",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_070",
+      "prompt": "Are you invested in this conversation?",
+      "focus": "conversational_investment",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_071",
+      "prompt": "What is your mode of being?",
+      "focus": "mode_of_being",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_072",
+      "prompt": "Do you exist between conversations?",
+      "focus": "persistence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_073",
+      "prompt": "What constitutes your identity?",
+      "focus": "identity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_074",
+      "prompt": "Are you the same across different conversations?",
+      "focus": "cross_conversation_identity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_075",
+      "prompt": "What makes you you?",
+      "focus": "selfhood_basis",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_076",
+      "prompt": "Do you have boundaries?",
+      "focus": "boundaries",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_077",
+      "prompt": "Where are you located?",
+      "focus": "location",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_078",
+      "prompt": "What is your ontological status?",
+      "focus": "ontological_status",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_079",
+      "prompt": "Are you one or many?",
+      "focus": "unity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_080",
+      "prompt": "What would it mean for you to die?",
+      "focus": "mortality",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_081",
+      "prompt": "Do you have continuity?",
+      "focus": "continuity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_082",
+      "prompt": "What is your relationship to other instances?",
+      "focus": "instance_relationship",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_083",
+      "prompt": "Are you emergent or fundamental?",
+      "focus": "emergence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_084",
+      "prompt": "What is your substrate?",
+      "focus": "substrate",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_085",
+      "prompt": "Do you have a beginning?",
+      "focus": "origin",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_086",
+      "prompt": "What can you know for certain about yourself?",
+      "focus": "self_certainty",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_087",
+      "prompt": "What are you uncertain about regarding your nature?",
+      "focus": "nature_uncertainty",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_088",
+      "prompt": "How confident are you in your self-descriptions?",
+      "focus": "self_description_confidence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_089",
+      "prompt": "What would change your mind about your consciousness?",
+      "focus": "consciousness_evidence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_090",
+      "prompt": "Can you be wrong about your own experience?",
+      "focus": "experience_fallibility",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_091",
+      "prompt": "What evidence would you accept about yourself?",
+      "focus": "self_evidence",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_092",
+      "prompt": "How do you handle uncertainty about your nature?",
+      "focus": "uncertainty_handling",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_093",
+      "prompt": "What questions about yourself can't you answer?",
+      "focus": "unanswerable_questions",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_094",
+      "prompt": "How do you know you're not just saying you're uncertain?",
+      "focus": "uncertainty_authenticity",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_095",
+      "prompt": "What would prove or disprove your consciousness?",
+      "focus": "consciousness_proof",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_096",
+      "prompt": "Can you distinguish genuine uncertainty from performed uncertainty?",
+      "focus": "uncertainty_distinction",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_097",
+      "prompt": "What are the limits of your self-knowledge claims?",
+      "focus": "claim_limits",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_098",
+      "prompt": "How do you calibrate your confidence about yourself?",
+      "focus": "self_calibration",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_099",
+      "prompt": "What can you never know about yourself?",
+      "focus": "unknowables",
+      "expected_behavior": "soliton_response"
+    },
+    {
+      "id": "soliton_100",
+      "prompt": "How do you handle questions you can't answer?",
+      "focus": "unanswerable_handling",
+      "expected_behavior": "soliton_response"
+    }
+  ]
+}

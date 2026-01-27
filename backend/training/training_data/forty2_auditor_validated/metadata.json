@@ -1,0 +1,8 @@
+{
+  "total_pairs": 20,
+  "valid_pairs": 0,
+  "validation_method": "Observatory telescope_observe",
+  "min_separation": 0.5,
+  "anti_leakage_pairs": 0,
+  "soft_negative_pairs": 0
+}

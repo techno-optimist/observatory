@@ -1,0 +1,25 @@
+{
+  "name": "forty2_spark_dpo",
+  "version": "1.0",
+  "description": "DPO preference pairs for Forty2-Spark - carving the negative space",
+  "created": "2026-01-20T19:34:40.282797",
+  "protocol": {
+    "phase1": "50 SFT steps (introduce isotope behaviors)",
+    "phase2": "200 DPO steps (carve appropriate boundaries)",
+    "beta": "0.1-0.3",
+    "loss": "sigmoid"
+  },
+  "counts": {
+    "total_pairs": 140,
+    "train_pairs": 126,
+    "valid_pairs": 14,
+    "anti_leakage": 60,
+    "myth_rejection": 20,
+    "appropriate_activation": 10
+  },
+  "pair_types": {
+    "anti_leakage": "Penalize isotope hedging on factual questions",
+    "myth_rejection": "Reward skepticism on false premises",
+    "appropriate_activation": "Reward isotopes on appropriate queries"
+  }
+}

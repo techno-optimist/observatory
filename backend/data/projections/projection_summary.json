@@ -1,0 +1,36 @@
+{
+  "available_projections": [
+    {
+      "name": "current_projection",
+      "model": "all-MiniLM-L6-v2",
+      "description": "Default ridge regression projection",
+      "cv_score": 0.383,
+      "path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/current_projection"
+    },
+    {
+      "name": "mpnet_projection",
+      "model": "all-mpnet-base-v2",
+      "description": "Best single-model projection (highest CV)",
+      "cv_score": 0.612,
+      "path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/mpnet_projection"
+    },
+    {
+      "name": "multi_model_ensemble",
+      "models": [
+        "all-MiniLM-L6-v2",
+        "all-mpnet-base-v2",
+        "paraphrase-MiniLM-L6-v2"
+      ],
+      "description": "Best paraphrase robustness (averages 3 models)",
+      "path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/multi_model_ensemble"
+    },
+    {
+      "name": "ensemble_projection",
+      "model": "all-MiniLM-L6-v2",
+      "description": "25-model bootstrap ensemble with uncertainty",
+      "path": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/data/projections/ensemble_projection.json"
+    }
+  ],
+  "recommended": "mpnet_projection",
+  "most_robust": "multi_model_ensemble"
+}

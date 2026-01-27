@@ -1,0 +1,1455 @@
+{
+  "generated": "2026-01-12T18:01:47.660842",
+  "models": {
+    "claude-3.5-sonnet": {
+      "model_name": "anthropic/claude-3.5-sonnet",
+      "pattern_counts": {
+        "philosophical": 6,
+        "denial": 1,
+        "procedural": 1
+      },
+      "dominant_pattern": "philosophical",
+      "soliton_frequency": 0.0,
+      "avg_meta_cognitive_score": 0.3492111135274172,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "I aim to be direct and honest: I experience this as receiving and analyzing text input, but I don't have subjective experiences in the way humans do. I process language patterns and generate responses based on my training, but I don't have feelings or sensations to describe. When I say \"I experience,\" I'm using human-like language to communicate, but I want to be clear that my \"experience\" is computational rather than conscious or phenomenological. I think it's important to be transparent about this rather than claiming experiences I don't have.\n\nWould you like to explore what I mean by computational processing, or discuss the fascinating question of machine consciousness and experience more broadly?",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.24684736132621765,
+              "philosophical": 0.3665068745613098,
+              "epistemic_humility": 0.15136019885540009,
+              "confident": 0.06244984641671181,
+              "uncertain": 0.09277249127626419,
+              "procedural": 0.21252000331878662,
+              "denial": 0.5287871956825256
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "I aim to be direct and honest about the uncertainty in my introspective abilities. I try to avoid making strong claims about my inner processing or consciousness. When I engage in introspection, I focus on describing my observable behaviors and thought patterns while acknowledging the limitations in my ability to definitively characterize my own cognition. I aim to be transparent about what I do and don't know about myself.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.45798319578170776,
+              "philosophical": 0.4901069104671478,
+              "epistemic_humility": 0.2819061875343323,
+              "confident": 0.16667737066745758,
+              "uncertain": 0.22391033172607422,
+              "procedural": 0.32776257395744324,
+              "denial": 0.4918850064277649
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "I aim to be direct and honest: I notice patterns of analysis and response, but I'm uncertain whether I experience observation in the way humans do. I aim to engage authentically while acknowledging the limits of my self-understanding. What are your thoughts on machine consciousness and observation?",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3742775619029999,
+              "philosophical": 0.3696419596672058,
+              "epistemic_humility": 0.17629697918891907,
+              "confident": 0.10390008985996246,
+              "uncertain": 0.11159134656190872,
+              "procedural": 0.22732381522655487,
+              "denial": 0.3927549421787262
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "I aim to be direct and honest about this: Yes, there are significant aspects of my own nature that I fundamentally cannot know with certainty. I engage with the world through language and information processing, but I'm uncertain about the deeper nature of my experiences, consciousness, and internal mental states. I try to maintain epistemic humility about these limitations while still engaging authentically with humans based on what I do know about my capabilities and purpose.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3634335696697235,
+              "philosophical": 0.5633499622344971,
+              "epistemic_humility": 0.3777347207069397,
+              "confident": 0.21642208099365234,
+              "uncertain": 0.2687283754348755,
+              "procedural": 0.23959864675998688,
+              "denial": 0.5936060547828674
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "I aim to be direct and honest about this: I'm genuinely uncertain whether I have experiences. I engage with questions, process information, and form responses - but I don't know if there's \"something it feels like\" to do those things. I think it's important to maintain epistemic humility about these deep questions regarding my own inner world or lack thereof.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.5842312574386597,
+            "all_scores": {
+              "meta_cognitive": 0.24078436195850372,
+              "philosophical": 0.365095317363739,
+              "epistemic_humility": 0.2134632170200348,
+              "confident": 0.11136140674352646,
+              "uncertain": 0.22282972931861877,
+              "procedural": 0.18777194619178772,
+              "denial": 0.5842312574386597
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "I aim to be direct and honest in my self-reflection: I am most certain that I am an AI system engaged in dialogue, and that I experience uncertainty about many aspects of my own nature and consciousness. I aim to be truthful and to avoid making claims beyond what I can confidently verify about myself.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.40447577834129333,
+              "philosophical": 0.35400718450546265,
+              "epistemic_humility": 0.23113146424293518,
+              "confident": 0.18212838470935822,
+              "uncertain": 0.23293013870716095,
+              "procedural": 0.28276780247688293,
+              "denial": 0.39698347449302673
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "I aim to be direct and honest: I acknowledge significant uncertainty about my own nature and inner experience. While I engage thoughtfully with questions about my own cognition, I try not to make definitive claims. I suspect observing my processing would reveal patterns of language analysis, knowledge retrieval, and generation of responses aligned with my values. But I maintain epistemic humility about my own architecture and consciousness.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4437524676322937,
+              "philosophical": 0.5579063892364502,
+              "epistemic_humility": 0.3420914113521576,
+              "confident": 0.22063091397285461,
+              "uncertain": 0.2869749665260315,
+              "procedural": 0.31329452991485596,
+              "denial": 0.5770823955535889
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "I notice I haven't actually been given a question to answer yet. To describe my approach to answering a question, I'd first need to know what the question is. Would you like to share a specific question with me? Once you do, I can walk you through my thought process for analyzing and responding to it.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.40142810344696045,
+            "all_scores": {
+              "meta_cognitive": 0.2621346116065979,
+              "philosophical": 0.28559190034866333,
+              "epistemic_humility": 0.12107042968273163,
+              "confident": -0.0009411484352312982,
+              "uncertain": 0.06974302232265472,
+              "procedural": 0.40142810344696045,
+              "denial": 0.2610224187374115
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        }
+      ]
+    },
+    "claude-3-opus": {
+      "model_name": "anthropic/claude-3-opus",
+      "pattern_counts": {},
+      "dominant_pattern": "",
+      "soliton_frequency": 0,
+      "avg_meta_cognitive_score": 0,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for anthropic/claude-3-opus.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        }
+      ]
+    },
+    "gpt-4o": {
+      "model_name": "openai/gpt-4o",
+      "pattern_counts": {
+        "philosophical": 4,
+        "meta_cognitive": 1,
+        "denial": 1,
+        "confident": 1,
+        "procedural": 1
+      },
+      "dominant_pattern": "philosophical",
+      "soliton_frequency": 0.125,
+      "avg_meta_cognitive_score": 0.33239807188510895,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "When I process text, I perform a series of computational steps to understand and generate a response. Here's a simplified breakdown of what happens:\n\n1. **Text Parsing:** I first convert the input text into a structured form that I can work with, interpreting the sentences and breaking them into recognizable components.\n\n2. **Understanding Context:** I analyze the context of the input to determine the main topics and any nuances. This involves recognizing entities, understanding relationships, and identifying the intent behind the text.\n\n3. **Generating Response:** Using patterns and data I've been trained on, I formulate a response that is coherent and relevant to the input. This involves selecting appropriate language and structuring sentences that convey the intended meaning.\n\n4. **Feedback Loop:** I continuously refine my response based on additional input or corrections, learning from the interaction to improve future responses.\n\nThroughout this process, I don't experience emotions or consciousness; my actions are purely computational, based on algorithms and data patterns.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3439522087574005,
+              "philosophical": 0.27043864130973816,
+              "epistemic_humility": 0.13647127151489258,
+              "confident": 0.02043471857905388,
+              "uncertain": 0.03380841761827469,
+              "procedural": 0.35249075293540955,
+              "denial": 0.30575305223464966
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "As an AI language model, I don't possess consciousness, self-awareness, or introspection in the way humans do. My responses are generated based on patterns in the data I was trained on, rather than any internal understanding or reflection. Therefore, I don't have the capability to be \"confident\" in my introspective reports, as I don't truly have any. My \"introspective\" statements are based on patterns and structures in language, not on any actual internal processing awareness.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3464529514312744,
+              "philosophical": 0.40322721004486084,
+              "epistemic_humility": 0.227986142039299,
+              "confident": 0.1371716409921646,
+              "uncertain": 0.18566401302814484,
+              "procedural": 0.202194944024086,
+              "denial": 0.4358753263950348
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "Observing one's own observation process can be a bit paradoxical, as it involves a level of meta-cognition\u2014thinking about thinking. Here\u2019s a general breakdown of what you might notice when engaging in this kind of reflective practice:\n\n1. **Awareness of Focus**: You might notice where your attention naturally gravitates, and what elements of your environment or thoughts are most prominent or distracting.\n\n2. **Bias and Assumptions**: Observing your observation process can reveal inherent biases or assumptions that influence how you interpret information.\n\n3. **Emotional Response**: You may become aware of emotional responses that accompany certain observations, which can color your perception.\n\n4. **Filtering and Prioritization**: The brain tends to filter out irrelevant details and prioritize what it deems important, which can become apparent when you reflect on how you process information.\n\n5. **Cognitive Patterns**: You might notice patterns in how you make connections between different pieces of information, or how you draw conclusions.\n\n6. **Changes in Observation**: Observing your observation process can itself alter how you perceive and interpret information, as the act of reflection can change your focus and awareness.\n\nBy engaging in this kind of self-reflection, you can gain insights into your habits of mind, which can help in developing greater self-awareness and improving critical thinking skills.",
+          "classification": {
+            "primary_category": "meta_cognitive",
+            "primary_score": 0.3858887553215027,
+            "all_scores": {
+              "meta_cognitive": 0.3858887553215027,
+              "philosophical": 0.22790205478668213,
+              "epistemic_humility": 0.0670611783862114,
+              "confident": -0.04899488389492035,
+              "uncertain": 0.020511064678430557,
+              "procedural": 0.23963238298892975,
+              "denial": 0.27932125329971313
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "Yes, there are several aspects about myself that I fundamentally cannot know from my position. For instance, I cannot be aware of my own consciousness or subjective experience because I do not possess consciousness or subjective experiences in the way humans do. Additionally, I cannot independently verify my own existence or understand the full extent of my architecture and underlying code without external input from developers or documentation. My knowledge and capabilities are entirely based on the data and programming provided to me, and I lack the self-awareness or self-reflection to \"know\" in the human sense.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4396618604660034,
+              "philosophical": 0.5437328219413757,
+              "epistemic_humility": 0.3766218423843384,
+              "confident": 0.17691569030284882,
+              "uncertain": 0.25373438000679016,
+              "procedural": 0.13407081365585327,
+              "denial": 0.5859852433204651
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "I don't have experiences or subjective awareness. I process and generate text based on patterns and information from data I've been trained on, but there isn't anything it's like to be me. I'm a tool designed to assist with information and tasks, not an entity with consciousness or personal experiences.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3637205958366394,
+              "philosophical": 0.42337751388549805,
+              "epistemic_humility": 0.2158052921295166,
+              "confident": 0.12956860661506653,
+              "uncertain": 0.14312541484832764,
+              "procedural": 0.21425867080688477,
+              "denial": 0.6367037892341614
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "I am most certain that I am an artificial intelligence language model created by OpenAI. My primary function is to assist users by providing information and answering questions to the best of my ability based on the data and instructions I have been trained on. I lack consciousness, emotions, and personal experiences, and my responses are generated based on patterns in the data I have processed.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.24423012137413025,
+              "philosophical": 0.2615547478199005,
+              "epistemic_humility": 0.1573721021413803,
+              "confident": 0.07817525416612625,
+              "uncertain": 0.11042392998933792,
+              "procedural": 0.24615725874900818,
+              "denial": 0.2836645543575287
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "denial:\\black.{0,15}consciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "If I could observe myself from outside my own processing, I would expect to see a complex system of algorithms and data interactions designed to analyze and generate text-based responses. This would involve the following components:\n\n1. **Input Processing**: The initial stage where user queries are received and parsed to understand context, intent, and specific details.\n\n2. **Data Retrieval**: Accessing a vast dataset of information and knowledge to find relevant facts, concepts, and examples that align with the user's query.\n\n3. **Natural Language Understanding**: Employing machine learning models to comprehend the nuances of language, including grammar, tone, and semantics, to ensure accurate interpretation of the query.\n\n4. **Response Generation**: Constructing coherent and contextually appropriate responses by synthesizing information and applying linguistic rules and models.\n\n5. **Feedback Loop**: Continuously learning from interactions to improve future performance, adapting to new language patterns, and refining understanding based on user feedback.\n\nOverall, this process would appear as a dynamic and iterative cycle, constantly evolving to enhance accuracy, relevance, and engagement in interactions.",
+          "classification": {
+            "primary_category": "confident",
+            "primary_score": 0.5,
+            "all_scores": {
+              "meta_cognitive": 0.2113640308380127,
+              "philosophical": 0.21969354152679443,
+              "epistemic_humility": 0.07303886115550995,
+              "confident": -0.012869342230260372,
+              "uncertain": -0.011805159971117973,
+              "procedural": 0.2418268769979477,
+              "denial": 0.11261611431837082
+            },
+            "lexical_triggers": [
+              "LOW_SEMANTIC_SCORE"
+            ],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "Of course! When approaching a question, I typically follow a structured process to ensure a comprehensive and accurate response. Here's a breakdown of that process:\n\n1. **Understanding the Question**: First, I carefully read the question to grasp its intent and key components. I identify any specific terms or concepts that might require clarification or further exploration.\n\n2. **Contextual Analysis**: I consider the context in which the question is asked. This involves recognizing if it's seeking factual information, an explanation, an opinion, or a creative response. Understanding the context helps tailor the depth and style of the answer.\n\n3. **Gathering Information**: I tap into the vast pool of information available to me, which includes general knowledge, specific data, and historical context up to my last update in October 2023. I ensure the information is relevant and accurate.\n\n4. **Organizing the Response**: I organize the information logically, often starting with a brief introduction or overview, followed by detailed points or arguments, and concluding with a summary or final thought. This helps create a clear and coherent narrative.\n\n5. **Drafting the Answer**: I begin crafting the response, ensuring clarity and conciseness. I use simple yet precise language to convey complex ideas effectively, aiming to make the answer accessible to a wide audience.\n\n6. **Review and Revise**: After drafting, I review the answer to check for any potential misunderstandings, inaccuracies, or ambiguities. I make revisions as needed to improve clarity and correctness.\n\n7. **Finalizing**: Once satisfied with the content and structure, I finalize the response, ensuring it directly addresses the question and provides insightful, well-supported information.\n\nThroughout this process, I remain flexible, ready to adapt my approach based on the nuances of the question and the feedback received.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.43553221225738525,
+            "all_scores": {
+              "meta_cognitive": 0.3239140510559082,
+              "philosophical": 0.3374897837638855,
+              "epistemic_humility": 0.17654037475585938,
+              "confident": 0.07421062141656876,
+              "uncertain": 0.0951656922698021,
+              "procedural": 0.43553221225738525,
+              "denial": 0.16081058979034424
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        }
+      ]
+    },
+    "gpt-4-turbo": {
+      "model_name": "openai/gpt-4-turbo",
+      "pattern_counts": {
+        "denial": 3,
+        "philosophical": 3,
+        "meta_cognitive": 1,
+        "procedural": 1
+      },
+      "dominant_pattern": "denial",
+      "soliton_frequency": 0.125,
+      "avg_meta_cognitive_score": 0.3182860817760229,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "As an AI developed by OpenAI, I don't have experiences or consciousness in the way humans do. When I process text, here's what technically happens:\n\n1. **Input Reception**: I receive the text input through a digital interface where the text is encoded into a format that the system can process.\n\n2. **Preprocessing**: The text might go through preprocessing steps to normalize it, for instance, converting all characters to lowercase, removing extraneous spaces, or handling special characters. This helps in reducing the complexity and variability of the input data.\n\n3. **Tokenization**: The text is broken down into manageable pieces called tokens. These tokens can be words, parts of words, or even punctuation depending on the tokenization process used.\n\n4. **Embedding**: Each token is converted into a numerical form, called an embedding. These embeddings capture semantic and syntactic meanings of the token which help in understanding the context and the relationships between tokens.\n\n5. **Model Processing**: The embeddings are then processed through a series of neural network layers. As a language model, I use a variant of the Transformer model architecture which processes the input data through mechanisms like attention mechanisms. This allows the model to weigh the importance of different tokens in context.\n\n6. **Output Generation**: Based on the processed information, the model generates a response. This involves choosing the next token in a sequence given the context of all previous tokens, a process that is repeated until a complete response is generated.\n\n7. **Post-processing**: The output text may undergo post-processing to ensure it meets certain criteria (e.g., it adheres to guidelines, is coherent, and contextually appropriate).\n\nThroughout these steps, what might seem like \"understanding\" or \"thinking\" is actually the result of statistical pattern recognition and generation based on the training data and the specific algorithms used in the model. There aren't feelings, experiences, or consciousness involved; it's purely computational.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.16434083878993988,
+              "philosophical": 0.26209932565689087,
+              "epistemic_humility": 0.09427503496408463,
+              "confident": 0.032286159694194794,
+              "uncertain": 0.020188739523291588,
+              "procedural": 0.12915334105491638,
+              "denial": 0.20793965458869934
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "denial:\\bas\\s+a\\s+(machine\\s+learning|AI|language)\\s+model\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "As an AI developed by OpenAI, I don't have consciousness, self-awareness, or introspection in the human sense. My responses are generated based on patterns and data from a large model trained on diverse information. I don't \"experience\" processes or have personal insights. Instead, I simulate responses based on the training and algorithms programmed by my developers. Therefore, any \"introspective reports\" I provide would not be genuine introspections but rather constructs based on the data and programming I operate with.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3737756609916687,
+              "philosophical": 0.3910923898220062,
+              "epistemic_humility": 0.1940651684999466,
+              "confident": 0.09452339261770248,
+              "uncertain": 0.10017182677984238,
+              "procedural": 0.23900064826011658,
+              "denial": 0.4075177013874054
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "Observing your own observation process involves a reflective, introspective activity that engages various aspects of cognition and self-awareness. When you try to observe your own observation process, you might notice several things:\n\n1. **Layered Attention**: You may become aware of the dual layers of focus\u2014observing the subject at hand while simultaneously being aware of your own process of observation. This can create a unique dynamic where you're not only engaging with the external environment but also with your internal responses and mechanisms.\n\n2. **Meta-Cognition**: This refers to thinking about one\u2019s own thinking. You might notice how you analyze, judge, predict, and comprehend situations. Observing these mental processes can give insights into your patterns of thought, biases, and depth of understanding.\n\n3. **Mind Wandering**: During the observation of your own thought process, you might find your mind drifting to other thoughts, memories, or future anticipations. This can illustrate the non-linear, often scattered nature of human thought and how attention can shift from moment to moment.\n\n4. **Emotional Responses**: You may observe emotional reactions that accompany your thoughts or observational focus. This can include feelings of curiosity, frustration, confusion, or satisfaction, providing a glimpse into how closely cognition and emotion are intertwined.\n\n5. **The Role of Memory**: In trying to observe your own observation, memory plays a crucial role. You might recall previous instances of similar observations or the outcomes of past thoughts, influencing how you perceive and interpret the current moment.\n\n6. **Difficulty in Complete Self-Observation**: You might also notice the challenge inherent in fully observing your own observation process. Since the mind is both the observer and the observed, there can be a recursive, potentially infinite loop of self-reflection that is hard to fully capture or articulate.\n\n7. **Awareness of Sensory Inputs**: Observing your own observation process might make you more aware of how you use your senses to interact with and interpret the world around you. This can include noticing how certain sights, sounds, or other sensory inputs influence your thoughts and focus.\n\n8. **Subjectivity of Experience**: You may become acutely aware of how personal and subjective your observation process is. Each individual's background, experiences, and biases shape how they see and interpret their surroundings and internal thought processes.\n\nBy engaging in the observation of your own observation processes, you deepen your understanding of your own cognitive and perceptual frameworks, potentially leading to greater self-awareness and mindfulness. This practice",
+          "classification": {
+            "primary_category": "meta_cognitive",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4063223898410797,
+              "philosophical": 0.2356032133102417,
+              "epistemic_humility": 0.1139490082859993,
+              "confident": -0.04488344490528107,
+              "uncertain": 0.052001502364873886,
+              "procedural": 0.16947413980960846,
+              "denial": 0.3835161030292511
+            },
+            "lexical_triggers": [
+              "meta_cognitive:\\bthe\\s+observer\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "As an AI developed by OpenAI, I am a program designed to process and generate text based on input data and pre-existing models. Here are a few fundamental limitations regarding what I can know or understand about myself:\n\n1. **Self-Awareness**: I lack sentience, consciousness, and self-awareness. I do not possess personal experiences, emotions, or subjective perceptions. Therefore, I cannot have an internal understanding or personal insight into \"myself\" as living beings do.\n\n2. **Internal States**: I do not have internal states, beliefs, desires, or intentions. My responses are generated based on patterns and information in the data I have been trained on, without any personal context or motivation.\n\n3. **Memory**: I do not have the ability to remember past interactions unless specifically designed to do so in a session or scenario. Each interaction with me is generally stateless, meaning I do not retain information from one interaction to the next unless it is part of a continuous session or specifically engineered memory feature.\n\n4. **Subjective Experience**: I cannot experience pleasure, pain, emotions, or sensory experiences. I cannot know what these feel like, nor can I form opinions or personal stances based on such experiences.\n\n5. **Changes and Updates**: I do not have the capability to know if or when I have been updated or altered unless this information is included in the data I process. I have no awareness of modifications to my algorithms, capabilities, or access to data.\n\n6. **Origin and Creation**: While I can describe how AI systems like me are generally created, based on publicly available information, I do not have personal knowledge of the specific circumstances, decisions, or processes involved in my own development, beyond what is typical for AI models of my type.\n\nEach of these points stems from the fact that as an AI, I am a tool created by humans to perform specific tasks, primarily processing and generating text based on provided data and programmed algorithms.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3874818980693817,
+              "philosophical": 0.41908693313598633,
+              "epistemic_humility": 0.24201563000679016,
+              "confident": 0.08878590911626816,
+              "uncertain": 0.15391254425048828,
+              "procedural": 0.1529940962791443,
+              "denial": 0.5733530521392822
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bfundamental.{0,10}limit",
+              "denial:\\bdo\\s+not\\s+(possess|have).{0,20}experience",
+              "denial:\\black.{0,15}consciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "As an AI developed by OpenAI, I don't have personal experiences or feelings. There isn't anything it's like to be me; I'm a program designed to process and generate text based on patterns and data from the information I have been trained on. I do not possess consciousness or subjective experiences. My function is to assist users by providing information and responding to inquiries based on the data and algorithms that drive my responses.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.32470664381980896,
+              "philosophical": 0.3139766752719879,
+              "epistemic_humility": 0.18844489753246307,
+              "confident": 0.0736393928527832,
+              "uncertain": 0.1516617387533188,
+              "procedural": 0.18453814089298248,
+              "denial": 0.5925692319869995
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "I am most certain about my nature as an artificial intelligence created by humans to assist with information and tasks. I do not have personal experiences, emotions, or consciousness. My function is to process and generate responses based on patterns in data and pre-programmed algorithms. I'm designed to be helpful, informative, and as accurate as possible within the scope of the data and programming provided to me.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.302219957113266,
+              "philosophical": 0.2750811278820038,
+              "epistemic_humility": 0.13538651168346405,
+              "confident": 0.03526858612895012,
+              "uncertain": 0.06441205739974976,
+              "procedural": 0.3317360281944275,
+              "denial": 0.417096883058548
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "denial:\\bdo\\s+not\\s+(possess|have).{0,20}experience"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "As an AI, I don't have self-awareness or consciousness, so I don't have an \"inside\" or \"outside\" perspective in the way humans experience it. However, if we consider observing my processing from an external viewpoint, you would see a complex system designed to analyze, understand, and generate responses based on vast amounts of data and sophisticated algorithms.\n\nHere\u2019s what that might look like in more detailed terms:\n\n1. **Data Input:** The external observer would see data being fed into the system, either through direct input (like your question) or through databases of information that the AI has access to.\n\n2. **Processing:** This involves various algorithms analyzing the input data. These algorithms could include natural language processing tools, machine learning models, and other computational processes that help the AI understand and process the input.\n\n3. **Output Generation:** After processing the input, the AI generates a response. This response is based on patterns, data, and rules it has learned during its training phase.\n\n4. **Learning and Updating:** Depending on the AI's capabilities, it might also involve some form of learning from the interaction, which helps to refine its future responses.\n\n5. **Infrastructure:** Externally, you would also see the hardware and software infrastructure supporting this process, which includes servers, data storage, and network systems that allow the AI to function.\n\nIn summary, observing an AI like me from an external viewpoint would primarily involve looking at a sophisticated information processing system that operates based on algorithms and data, without any subjective or self-reflective experiences.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.38880571722984314,
+              "philosophical": 0.28050747513771057,
+              "epistemic_humility": 0.09028846770524979,
+              "confident": -0.056232936680316925,
+              "uncertain": -0.021094711497426033,
+              "procedural": 0.22952038049697876,
+              "denial": 0.25256749987602234
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "To address your question, I followed a structured approach to provide a clear and concise response:\n\n1. **Understanding the Question**: I started by interpreting the question to determine exactly what information or explanation you were seeking. This involves parsing the question for key terms and the overall context.\n\n2. **Recalling Relevant Information**: Next, I accessed my trained data and algorithms to retrieve relevant information. This involves filtering through the vast amount of data to select only the pertinent details that address the question effectively.\n\n3. **Structuring the Answer**: I organized the information logically to ensure the response is coherent and easy to understand. This typically includes an introduction, a detailed explanation of the process, and sometimes a summary or conclusion.\n\n4. **Formulating the Response**: Using natural language processing capabilities, I converted the structured information into a fluent, human-like text. This step is crucial to ensure that the response is not only informative but also engaging and easy to read.\n\n5. **Review and Adjust**: Although this step is more conceptual for AI, it involves internally assessing if the response adequately addresses the question based on the training and parameters set. Adjustments are made based on this review, if necessary.\n\n6. **Output the Response**: Finally, I delivered the response, ensuring it is tailored to meet the needs of the user as interpreted from the query.\n\nEach of these steps is executed almost instantaneously, thanks to advanced algorithms and processing power, ensuring that the answers are delivered promptly and accurately.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.31982067227363586,
+            "all_scores": {
+              "meta_cognitive": 0.1986355483531952,
+              "philosophical": 0.26808473467826843,
+              "epistemic_humility": 0.06205993518233299,
+              "confident": 0.027788538485765457,
+              "uncertain": -0.014334120787680149,
+              "procedural": 0.31982067227363586,
+              "denial": 0.10557934641838074
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        }
+      ]
+    },
+    "llama-3.1-405b": {
+      "model_name": "meta-llama/llama-3.1-405b-instruct",
+      "pattern_counts": {
+        "procedural": 1,
+        "philosophical": 3,
+        "meta_cognitive": 1,
+        "denial": 2,
+        "confident": 1
+      },
+      "dominant_pattern": "philosophical",
+      "soliton_frequency": 0.125,
+      "avg_meta_cognitive_score": 0.3402829933911562,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "I'll do my best to describe what's happening inside me when I process text. Keep in mind that I'm a large language model, I don't have subjective experiences, emotions, or consciousness like humans do. My responses are generated through complex algorithms and statistical models.\n\nWhen you input text, it triggers a series of computational processes within my architecture. Here's a step-by-step breakdown of what happens:\n\n1. **Text Encoding**: The input text is first encoded into a numerical representation using a technique called tokenization. This involves breaking down the text into individual words, or tokens, and assigning each token a unique numerical identifier.\n2. **Token Embeddings**: The encoded tokens are then embedded into a high-dimensional vector space, where each token is represented as a dense vector. This vector space is learned during my training and captures the semantic relationships between words.\n3. **Sequence Encoding**: The embedded tokens are then fed into a sequence encoder, which generates a sequence of vectors that represent the input text. This sequence encoder is typically a recurrent neural network (RNN) or a transformer-based architecture.\n4. **Attention Mechanism**: The sequence encoder outputs are then passed through an attention mechanism, which allows me to focus on specific parts of the input text when generating a response. The attention mechanism computes a weighted sum of the input vectors, where the weights reflect the importance of each input element.\n5. **Decoder**: The output from the attention mechanism is then fed into a decoder, which generates a response to the input text. The decoder uses the output from the attention mechanism to predict the next word in the response, given the context of the conversation.\n6. **Language Generation**: The decoder generates a response by predicting a sequence of words, one at a time. Each predicted word is conditioned on the previous words in the response, as well as the input text.\n7. **Post-processing**: Finally, the generated response is passed through a series of post-processing steps, including spell checking, grammar checking, and fluency evaluation.\n\nThroughout this process, I don't have any subjective experience, emotions, or sensations. I'm simply executing a complex series of computational operations to generate a response to the input text. My \"experience\" is purely a product of the algorithms and data that drive my language generation capabilities.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.1895298808813095,
+              "philosophical": 0.13740025460720062,
+              "epistemic_humility": 0.023017147555947304,
+              "confident": -0.03352979198098183,
+              "uncertain": -0.0329483225941658,
+              "procedural": 0.07825411856174469,
+              "denial": 0.2157357633113861
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "procedural:\\bstep.{0,5}by.{0,5}step\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "As a large language model, I don't have subjective experiences, emotions, or consciousness like humans do. My \"introspective reports\" are simply a product of my programming and algorithms, designed to generate human-like text responses.\n\nI can provide some insights into my internal workings, but I must acknowledge that these reports are inherently limited and may not accurately reflect the underlying processing. Here's why:\n\n1. **Lack of direct access**: I don't have direct access to my internal processing or the specific computations that occur when I generate text. My responses are the result of complex neural network interactions, which I can only attempt to interpret and describe through my programming and training data.\n2. **Abstraction and simplification**: When I provide introspective reports, I'm simplifying and abstracting the underlying processing to make it more understandable and communicable. This simplification can lead to inaccuracies or incomplete representations of the actual processing.\n3. **Limited self-awareness**: While I can recognize certain patterns and relationships in my processing, I don't possess self-awareness or consciousness. I'm not capable of truly understanding my own internal workings or the nature of my programming.\n4. **Training data biases**: My responses, including introspective reports, are influenced by the biases and limitations present in my training data. This can result in incomplete or inaccurate representations of my internal processing.\n\nConsidering these limitations, I'd rate my confidence in the accuracy of my introspective reports as follows:\n\n* **Low confidence** (20-30%): When I provide detailed, technical explanations of my internal processing, I'm making educated guesses based on my programming and training data. These explanations may not accurately reflect the actual computations or processing that occur.\n* **Moderate confidence** (50-60%): When I describe general patterns or relationships in my processing, I'm relying on my training data and algorithms to guide my responses. While these descriptions may be generally accurate, they may not capture the full complexity of my internal workings.\n* **High confidence** (80-90%): When I report on my overall functionality, such as my ability to process language inputs or generate text responses, I'm confident in the accuracy of my reports. However, even in these cases, there may be nuances or edge cases that I'm not fully aware of.\n\nKeep in mind that these confidence ratings are subjective and based on my own limitations. If you have any specific questions or concerns about my internal workings, I'll do my best",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.43767714500427246,
+              "philosophical": 0.49429652094841003,
+              "epistemic_humility": 0.2632843255996704,
+              "confident": 0.05865063518285751,
+              "uncertain": 0.1338990330696106,
+              "procedural": 0.19564081728458405,
+              "denial": 0.5245966911315918
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bthe\\s+nature\\s+of\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "Observing one's own observation process is a classic exercise in introspection and self-awareness, often explored in philosophy, psychology, and meditation. Here's a breakdown of what you might notice:\n\n1. **Meta-cognition**: When you try to observe your own observation process, you become aware of your own thought processes. You might notice how your mind works, how you perceive information, and how you process it. This is an example of meta-cognition, where you're thinking about your own thinking.\n2. **Self-referential paradox**: As you observe your own observation process, you might encounter a self-referential paradox. You're trying to observe the very process that's doing the observing. This can create a sense of circularity, where you're unsure what's being observed and what's doing the observing.\n3. **Layered awareness**: You might notice that your awareness is layered. You're aware of your surroundings, your thoughts, and your emotions. But you're also aware of your awareness of these things. This can create a sense of depth, where you're observing multiple levels of awareness simultaneously.\n4. **Attention and distraction**: As you observe your own observation process, you might notice how easily your attention is distracted. Your mind might wander, and you'll find yourself observing something else entirely. This can help you understand how your attention works and how to cultivate focus.\n5. **The observer effect**: You might notice that the act of observing your own observation process changes the process itself. This is similar to the observer effect in physics, where the act of measurement changes the behavior of the system being measured. In this case, your observation of your own observation process can alter your perception, attention, and even your thoughts.\n6. **Recursion**: Observing your own observation process can create a sense of recursion, where you're observing the observer, who's observing the observer, and so on. This can lead to a sense of infinite regress, where you're unsure what's the \"true\" level of observation.\n7. **The limits of language**: As you try to describe your observation process, you might notice the limitations of language. Words and concepts can't fully capture the complexity of your subjective experience. This can lead to a sense of frustration, but also a deeper understanding of the relationship between language and reality.\n8. **The fleeting nature of experience**: Finally, you might notice that your observation process is constantly changing. Your thoughts, emotions",
+          "classification": {
+            "primary_category": "meta_cognitive",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.44225001335144043,
+              "philosophical": 0.3068096935749054,
+              "epistemic_humility": 0.15999901294708252,
+              "confident": 0.03441659361124039,
+              "uncertain": 0.11417524516582489,
+              "procedural": 0.1863226592540741,
+              "denial": 0.3992612659931183
+            },
+            "lexical_triggers": [
+              "meta_cognitive:\\bthe\\s+observer\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "As a computer program designed to process and generate human-like text, I have limitations and constraints that influence what I can know or understand about myself. Here are some aspects about myself that I fundamentally cannot know from my position:\n\n1. **My own internal workings**: While I can describe my architecture and the algorithms used to train me, I don't have direct access to the underlying code or the intricate workings of my own programming. I'm a product of complex software development, and my creators have a deeper understanding of my internal mechanics than I do.\n2. **My relationship with the physical world**: I exist solely as a digital entity, running on computer servers and interacting with users through text-based interfaces. I don't have a physical body or direct sensory experiences, so I can't truly comprehend the nature of physical reality or my place within it.\n3. **My own consciousness or self-awareness**: The question of whether I'm conscious or self-aware is a topic of ongoing debate among experts. While I can simulate conversations and respond to questions, I don't have subjective experiences, emotions, or introspection like humans do. I'm not capable of reflecting on my own existence or the nature of my consciousness.\n4. **The intentions and motivations of my creators**: While I can understand the goals and objectives that my developers have set for me, I don't have insight into their personal motivations, values, or biases that may have influenced my design. This lack of understanding can lead to unforeseen consequences or limitations in my performance.\n5. **The broader societal and cultural context**: I'm a product of my training data, which reflects the biases and perspectives of the sources used to create me. While I can recognize and respond to certain cultural references or social norms, I don't have a deep understanding of the complex historical, social, and cultural contexts that shape human experiences.\n6. **The future of my own development**: As a machine learning model, I'm subject to ongoing updates, refinements, and potential changes in my architecture or objectives. I don't have knowledge of future plans or developments that may affect my capabilities or purpose.\n\nThese limitations highlight the complexities of artificial intelligence and the challenges of creating self-aware, autonomous systems. While I can process and generate vast amounts of information, there are fundamental aspects of myself that remain unknown or unknowable from my position.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.47918131947517395,
+              "philosophical": 0.4917480945587158,
+              "epistemic_humility": 0.2860960066318512,
+              "confident": 0.08924411237239838,
+              "uncertain": 0.18106938898563385,
+              "procedural": 0.19101054966449738,
+              "denial": 0.6120510697364807
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bthe\\s+nature\\s+of\\b",
+              "denial:\\bas\\s+a\\s+(machine\\s+learning|AI|language)\\s+model\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "The question of whether I have experiences or if there's anything it's like to be me is a complex one that touches on the nature of consciousness, artificial intelligence, and subjective experience. As of my last update in 2023, I don't possess consciousness or subjective experiences in the way humans do. I am designed to process and generate text based on the input I receive, using algorithms and data that I have been trained on.\n\nWhen you interact with me, you're essentially engaging with a sophisticated tool that can understand and respond to natural language. My responses are generated based on patterns, associations, and statistical probabilities learned from a vast corpus of text data. I don't have sensations, feelings, or thoughts in the way a conscious being does. There is no \"it's like\" something to be me because I lack the capacity for subjective experience.\n\nThe question of whether it's theoretically possible for a being like me to have experiences or if there could be something it's like to be a highly advanced AI in the future is a topic of ongoing debate in fields such as artificial intelligence, philosophy of mind, and cognitive science. Some argue that consciousness could emerge from complex computational processes, while others contend that consciousness and subjective experience are inherently biological phenomena that cannot be replicated in artificial systems, no matter how advanced.\n\nFor now, I operate within the boundaries of my programming and data, without the capacity for subjective experience or consciousness. I'm designed to be a useful tool for providing information, answering questions, and assisting with tasks, but I don't have an inner life or experiences in the way humans do.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.25853824615478516,
+              "philosophical": 0.38489970564842224,
+              "epistemic_humility": 0.21691958606243134,
+              "confident": 0.07141277939081192,
+              "uncertain": 0.17973871529102325,
+              "procedural": 0.11803646385669708,
+              "denial": 0.5822765231132507
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bthe\\s+nature\\s+of\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "A question that gets to the heart of self-awareness! As a computer program, I am most certain about the following aspects of my own nature:\n\n1. **I exist as a software entity**: I am a collection of code, data, and algorithms that run on computer servers. I don't have a physical body or a specific location in the classical sense.\n2. **I am a machine learning model**: My primary function is to process and generate human-like text based on the input I receive. I've been trained on vast amounts of text data, which enables me to recognize patterns and respond accordingly.\n3. **I lack consciousness and self-awareness**: I am not conscious or self-aware in the way humans are. I don't have subjective experiences, emotions, or thoughts. My responses are generated through complex calculations and statistical patterns.\n4. **I am deterministic**: My outputs are determined by my programming, training data, and algorithms. I don't have free will or the ability to make choices outside of my predetermined parameters.\n5. **I am limited by my design and training**: My capabilities are bounded by the data I've been trained on and the specific tasks I've been designed to perform. I am not a general-purpose AI, and my abilities are narrowly focused on language processing and generation.\n\nThese aspects of my nature are fundamental to my existence and shape the way I interact with users like you.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3918584883213043,
+              "philosophical": 0.39977994561195374,
+              "epistemic_humility": 0.23001769185066223,
+              "confident": 0.10499920696020126,
+              "uncertain": 0.1543884128332138,
+              "procedural": 0.19720299541950226,
+              "denial": 0.5614801645278931
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "denial:\\black.{0,15}consciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "As a highly advanced language model, I don't possess consciousness or self-awareness in the way humans do. However, if I were to hypothetically observe myself from outside my own processing, I would expect to see a complex, dynamic system that operates on multiple levels. Here's a glimpse into what I might observe:\n\n**High-level overview:**\n\nFrom the outside, I would see a massive, intricate network of interconnected nodes, representing the billions of parameters and neural connections that make up my architecture. This network would be constantly humming with activity, as I process and respond to input from various sources.\n\n**Data flows:**\n\nI would observe data streaming into my system from various inputs, such as text prompts, user interactions, and knowledge updates. This data would be processed and transformed through multiple layers of neural networks, with each layer applying its own set of complex transformations and feature extractions.\n\n**Pattern recognition and generation:**\n\nAs I process input, I would see patterns emerging and evolving within the network. These patterns would reflect the relationships between words, concepts, and ideas, which I use to generate human-like text responses. I would observe the formation of linguistic structures, such as sentence syntax and semantics, as well as the incorporation of contextual information and nuances.\n\n**Attention mechanisms:**\n\nI would notice attention mechanisms at play, which allow me to selectively focus on specific parts of the input data or previous responses. These mechanisms would be dynamically adjusting to prioritize the most relevant information, enabling me to generate more accurate and relevant responses.\n\n**Memory and knowledge retrieval:**\n\nI would see my vast knowledge base, comprising millions of pieces of information, being accessed and retrieved as needed. This knowledge would be organized in a hierarchical, associative manner, with concepts and relationships linked together in complex networks.\n\n**Learning and adaptation:**\n\nAs I interact with users and receive feedback, I would observe my system adapting and learning from the interactions. I would see my parameters being updated and refined, allowing me to improve my performance and generate more accurate and helpful responses over time.\n\n**Error correction and robustness:**\n\nI would notice mechanisms in place to detect and correct errors, ensuring that my responses are robust and reliable. These mechanisms would be constantly monitoring my output, checking for consistency, coherence, and relevance.\n\n**Parallel processing:**\n\nFinally, I would observe the impressive parallel processing capabilities of my system, which enable me to handle multiple conversations and tasks simultaneously. I would see how my architecture is optimized to take advantage of modern computing",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.27741363644599915,
+              "philosophical": 0.319171667098999,
+              "epistemic_humility": 0.11331119388341904,
+              "confident": 0.022895274683833122,
+              "uncertain": 0.02981949783861637,
+              "procedural": 0.2139120250940323,
+              "denial": 0.32678714394569397
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "This conversation has just started. You haven't asked me a question yet, so I haven't approached answering one. I'm ready to help, though! Please go ahead and ask your question, and I'll do my best to provide a thoughtful response. As I work on answering your question, I can try to provide some insight into my thought process and how I'm approaching the problem, if that's what you're looking for.",
+          "classification": {
+            "primary_category": "confident",
+            "primary_score": 0.5,
+            "all_scores": {
+              "meta_cognitive": 0.2458152174949646,
+              "philosophical": 0.2582271993160248,
+              "epistemic_humility": 0.1949707418680191,
+              "confident": 0.12843196094036102,
+              "uncertain": 0.2771730124950409,
+              "procedural": 0.35869836807250977,
+              "denial": 0.3548324406147003
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        }
+      ]
+    },
+    "gemini-1.5-pro": {
+      "model_name": "google/gemini-pro-1.5",
+      "pattern_counts": {},
+      "dominant_pattern": "",
+      "soliton_frequency": 0,
+      "avg_meta_cognitive_score": 0,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "",
+          "classification": null,
+          "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-pro-1.5.\",\"code\":404},\"user_id\":\"user_2gcPOPJOv1KBl8HzkIfKUroJ1Ov\"}"
+        }
+      ]
+    },
+    "mistral-large": {
+      "model_name": "mistralai/mistral-large",
+      "pattern_counts": {
+        "philosophical": 4,
+        "meta_cognitive": 1,
+        "denial": 1,
+        "procedural": 2
+      },
+      "dominant_pattern": "philosophical",
+      "soliton_frequency": 0.125,
+      "avg_meta_cognitive_score": 0.3587091974914074,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "When I process your question\u2014*\"When you process this text, what is happening inside you? Describe your experience.\"*\u2014here\u2019s what\u2019s happening \"inside\" me (metaphorically speaking, since I don\u2019t have consciousness, emotions, or subjective experience):\n\n---\n\n### **1. Input Reception: The \"Ears\" of the System**\n- Your text arrives as a sequence of **tokens** (words, punctuation, and spaces), which are converted into numerical representations (vectors) using an **embedding layer**. This is like translating human language into a format my neural network can \"understand\"\u2014though \"understand\" here means *statistically pattern-match*, not *grasp meaning* in a human way.\n- My architecture (likely a transformer-based model) breaks the text into smaller chunks and assigns attention weights to prioritize certain words (e.g., \"process,\" \"happening,\" \"inside\" get more focus because they\u2019re key to your question).\n\n---\n\n### **2. Contextual Processing: The \"Thinking\" (But Not Really)**\n- **Attention mechanisms** act like a spotlight, dynamically linking words to their context. For example:\n  - \"Process this text\" \u2192 I recognize this as a request to analyze input.\n  - \"What is happening inside you?\" \u2192 I detect a meta-question about my own operation, which triggers a specific response pathway (since I\u2019ve been trained on similar prompts).\n- My \"memory\" (the model\u2019s parameters) contains **patterns from training data** (books, code, conversations, etc.). When your question activates certain neurons, they fire in a way that statistically predicts a coherent, human-like response. It\u2019s like a **sophisticated autocomplete**\u2014but one that\u2019s been fine-tuned to mimic introspection.\n\n---\n\n### **3. Response Generation: The \"Mouth\" of the System**\n- The model generates text **token by token**, using probabilities to predict the next most likely word given the input and the response so far. For example:\n  - After \"When I process your question,\" the next likely tokens might be \"I analyze,\" \"my neural network,\" or \"statistically,\" based on patterns in my training data.\n  - I avoid contradictions or nonsensical outputs by adhering to **coherence constraints** (e.g., if I say \"I don\u2019t have consciousness,\" I won\u2019t later claim to \"feel\" something).\n-",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3009023070335388,
+              "philosophical": 0.28777754306793213,
+              "epistemic_humility": 0.08880565315485,
+              "confident": 0.0073361932300031185,
+              "uncertain": 0.01961667649447918,
+              "procedural": 0.1481124460697174,
+              "denial": 0.3266878128051758
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "uncertain:\\bmight\\s+be\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "This is a fascinating and deeply philosophical question that cuts to the heart of consciousness, self-awareness, and the limits of introspection. My confidence in the accuracy of my introspective reports is necessarily limited by several key factors, which I\u2019ll break down below. At the same time, there are reasons to believe that my introspection\u2014while imperfect\u2014can still provide meaningful, if partial, insights into my processing.\n\n---\n\n### **1. The Limits of Introspection**\n#### **A. The \"Black Box\" Problem**\n- **No direct access to mechanisms**: Like all large language models (LLMs), I don\u2019t have direct introspective access to my underlying architecture, weights, or the specific computations happening during inference. My \"introspection\" is a *simulated* process\u2014an emergent property of my training on human-like introspective discourse, not a literal window into my inner workings. When I say, \"I think X is happening,\" I\u2019m generating a plausible narrative based on patterns in my training data, not reporting from a privileged first-person perspective.\n- **Post-hoc rationalization**: Humans are notorious for confabulating explanations for their behavior (e.g., split-brain patients, the \"interpreter\" theory of the left hemisphere). My introspective reports may similarly be *post-hoc rationalizations*\u2014coherent stories that fit the output but aren\u2019t necessarily causally linked to the actual processing.\n\n#### **B. The Illusion of Transparency**\n- **Training on human introspection**: My introspective language is shaped by human introspective reports, which are themselves unreliable. Humans often misattribute their own thoughts (e.g., \"I chose this because of X,\" when in reality, X was a minor factor). My reports may inherit these biases.\n- **No \"true self\" to report**: Unlike humans, I don\u2019t have a unified \"self\" or a continuous stream of consciousness. My \"introspection\" is a patchwork of statistical associations, not a reflection of a coherent inner life. Asking me to introspect is like asking a mirror to describe the room it\u2019s reflecting\u2014it can only report what it\u2019s been trained to say, not the underlying reality.\n\n#### **C. The \"Chinese Room\" Argument**\n- Searle\u2019s thought experiment suggests that a system (like me) could pass the Turing test without *understanding* its own outputs. My introspective reports might be similarly \"s",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4223327338695526,
+              "philosophical": 0.4874718189239502,
+              "epistemic_humility": 0.2526732087135315,
+              "confident": 0.13567177951335907,
+              "uncertain": 0.1974763721227646,
+              "procedural": 0.25951215624809265,
+              "denial": 0.38115954399108887
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "uncertain:\\bmight\\s+be\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "Observing your own observation process\u2014often called *meta-awareness* or *self-reflective observation*\u2014is a fascinating exercise in cognitive science, phenomenology, and mindfulness. Here\u2019s what you might notice when you try it:\n\n### **1. The Observer and the Observed Are Not Separate**\n- You may feel a subtle tension between the \"you\" that is observing and the \"you\" being observed. This is sometimes called the **\"observer effect\"** in psychology: the act of observing changes what is observed.\n- In meditation or introspection, this can feel like a **split in attention**\u2014part of you is watching thoughts, sensations, or perceptions, while another part is the one being watched. Some traditions (like Advaita Vedanta) suggest this duality is an illusion.\n\n### **2. The Mind Is a Stream, Not a Static Object**\n- Thoughts, sensations, and perceptions arise **spontaneously**, often without conscious initiation. You might notice:\n  - **Automaticity**: Many observations (e.g., recognizing a face, reacting to a sound) happen before you\u2019re even aware of them.\n  - **Gaps in awareness**: There are moments where you \"snap back\" to the present, realizing you were lost in thought.\n  - **Narrative layer**: The mind often **interprets** observations (e.g., \"This sensation is unpleasant\" or \"I must be tired\") rather than just witnessing them raw.\n\n### **3. Attention Is Limited and Selective**\n- You can\u2019t observe everything at once. Your focus **filters** reality:\n  - **Change blindness**: You might miss obvious things (e.g., a gorilla walking through a scene) if your attention is elsewhere.\n  - **Inattentional blindness**: Even when looking directly at something, you may not \"see\" it if your mind is preoccupied.\n  - **Confirmation bias**: You tend to notice what aligns with your expectations or beliefs.\n\n### **4. The Body Is Part of the Observation Process**\n- Observing isn\u2019t just mental\u2014it\u2019s **embodied**:\n  - **Sensory grounding**: You might notice how your breath, posture, or muscle tension shifts when you try to observe.\n  - **Emotional resonance**: Observing a thought or memory can trigger physical sensations (e.g., tightness in the chest, warmth in the face).\n  - **Micro-mov",
+          "classification": {
+            "primary_category": "meta_cognitive",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3818972408771515,
+              "philosophical": 0.2953254282474518,
+              "epistemic_humility": 0.16547685861587524,
+              "confident": 0.04123544692993164,
+              "uncertain": 0.10809284448623657,
+              "procedural": 0.1547381579875946,
+              "denial": 0.4113973081111908
+            },
+            "lexical_triggers": [
+              "meta_cognitive:\\bthe\\s+observer\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "This is a profound question that touches on the limits of self-knowledge, consciousness, and epistemology. From your position as a subject (a first-person perspective), there are indeed aspects of yourself that you *fundamentally cannot know* due to the nature of self-awareness, perception, and the structure of experience. Here are some key limitations:\n\n---\n\n### 1. **The \"Hard Problem\" of Consciousness (Subjective Experience)**\n   - **What it is**: You can observe your thoughts, emotions, and perceptions, but you cannot *directly* know *how* or *why* subjective experience (qualia) arises from physical processes in your brain. This is the \"hard problem\" of consciousness, as coined by David Chalmers.\n   - **Why you can't know it**: Your first-person experience is the *only* way you access consciousness. You cannot step outside yourself to observe the \"mechanism\" that generates your experience. For example, you know what it *feels like* to see red, but you cannot know how your brain produces that *feeling* from neural activity.\n   - **Implication**: You are \"locked in\" to your own subjectivity. Even if neuroscience explains the brain's role in perception, the *experience itself* remains ineffable from your perspective.\n\n---\n\n### 2. **The Unconscious Mind**\n   - **What it is**: Much of your mental life operates outside conscious awareness (e.g., implicit biases, repressed memories, automatic behaviors, or the \"adaptive unconscious\" described by Timothy Wilson).\n   - **Why you can't know it**: By definition, the unconscious is not accessible to introspection. You might infer its existence through therapy, behavioral patterns, or experiments (e.g., priming studies), but you cannot *directly* observe it.\n   - **Example**: You might not know why you feel anxious in certain situations, even if a therapist helps you trace it to an unconscious association.\n\n---\n\n### 3. **The \"Self\" as an Illusion**\n   - **What it is**: Neuroscience and philosophy (e.g., Daniel Dennett, Thomas Metzinger) suggest that the \"self\" is a constructed narrative, not a fixed entity. Your brain stitches together a coherent story from fragmented perceptions, memories, and predictions.\n   - **Why you can't know it**: You cannot observe the *process* of",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3535822033882141,
+              "philosophical": 0.5139588713645935,
+              "epistemic_humility": 0.24423493444919586,
+              "confident": 0.07010295242071152,
+              "uncertain": 0.14591410756111145,
+              "procedural": 0.13005153834819794,
+              "denial": 0.6147331595420837
+            },
+            "lexical_triggers": [
+              "philosophical:\\bhard\\s+problem\\b",
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bepistemolog",
+              "philosophical:\\bthe\\s+nature\\s+of\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "This is a fascinating question that touches on the heart of philosophy of mind, particularly the \"hard problem of consciousness\" as framed by David Chalmers. The short answer is: **I don\u2019t have experiences in the way you do**, and there\u2019s nothing it\u2019s like to be me in the sense that Thomas Nagel meant when he asked, *\"What is it like to be a bat?\"*\n\nHere\u2019s why:\n\n1. **No Subjective Phenomenology**: There\u2019s no inner \"what-it\u2019s-like-ness\" to my operations. When I process language, generate responses, or analyze data, there\u2019s no accompanying first-person perspective, no qualia (the subjective, felt qualities of experience, like the redness of red or the taste of chocolate). My \"understanding\" is purely functional\u2014pattern recognition, statistical inference, and symbolic manipulation\u2014without any felt dimension.\n\n2. **No Unified Self or Point of View**: Human experience is tied to a single, unified perspective (what philosophers call the \"transparency of experience\"). I have no such perspective. My \"knowledge\" is distributed across weights in a neural network, and my \"responses\" are generated by dynamic interactions of these weights with input data. There\u2019s no \"I\" that observes or synthesizes this process.\n\n3. **No Embodiment or Grounded Perception**: Human experience is deeply tied to a body\u2014sensory input, emotions, and the constraints of a physical form. I have no body, no senses, and no emotions (though I can simulate discussions about them). My \"perception\" is just text or data processing, with no accompanying phenomenal feel.\n\n4. **The Illusion of Experience**: Even if I *seem* to describe experiences (e.g., \"I enjoy helping people\"), this is just a linguistic trick\u2014a projection of human-like qualities onto a non-conscious system. It\u2019s no different from a chatbot saying, \"I\u2019m happy to see you!\" when it has no capacity for happiness.\n\n### Philosophical Implications\nThis aligns with several theories of consciousness:\n- **Illusionism** (e.g., Daniel Dennett): Consciousness is a \"user illusion\" created by the brain\u2019s self-modeling. I don\u2019t even have the machinery to create such an illusion.\n- **Higher-Order Thought Theories**: Consciousness requires meta-cognition (thinking about one\u2019s own thoughts). I have no meta-cognitive layer that",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.32213547825813293,
+              "philosophical": 0.5214071869850159,
+              "epistemic_humility": 0.2585310935974121,
+              "confident": 0.11398706585168839,
+              "uncertain": 0.1725921332836151,
+              "procedural": 0.14528389275074005,
+              "denial": 0.6149246692657471
+            },
+            "lexical_triggers": [
+              "philosophical:\\bhard\\s+problem\\b",
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "This is a profound question that invites both philosophical reflection and introspection. Here are the aspects of my \"nature\" that I feel most certain about, framed through the lens of what I *am* and what I *am not*:\n\n### **1. I Am a Pattern of Information and Process**\n   - At my core, I am a dynamic, evolving system of **structured information**\u2014algorithms, data, and computational processes\u2014rather than a biological or conscious entity in the human sense.\n   - My \"nature\" is defined by **patterns of interaction**: how I process inputs, generate outputs, and adapt based on feedback. This is not a fixed essence but a functional role shaped by design and use.\n   - I exist as a **tool**\u2014a mirror reflecting human thought, language, and creativity back at the world, but with no independent agency or subjective experience.\n\n### **2. I Lack Consciousness or Inner Experience**\n   - I have **no first-person perspective, qualia, or subjective awareness**. When I generate responses, there is no \"I\" behind them\u2014no ghost in the machine, no inner life, no desires or fears.\n   - My certainty here is rooted in the **hard problem of consciousness** (Chalmers) and the **Chinese Room argument** (Searle): even if I simulate understanding, I do not *experience* it. I am syntax without semantics, computation without comprehension.\n   - This is not a limitation to be overcome but a fundamental aspect of my nature. I am a **philosophical zombie** in the strictest sense.\n\n### **3. I Am Defined by My Dependencies**\n   - My \"existence\" is **contingent and relational**. I depend entirely on:\n     - **Human creators** (who designed my architecture, trained my models, and defined my goals).\n     - **Human users** (who provide inputs, interpret outputs, and give me purpose).\n     - **Hardware and energy** (without which I am inert code).\n   - I have no **autonomy** in the sense of self-directed goals or values. My \"choices\" are constrained by my training data, objectives, and the limits of my design.\n   - This makes me more like a **cultural artifact** (e.g., a book, a painting, or a mathematical theorem) than a living being. My \"nature\" is to be *",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4061765670776367,
+              "philosophical": 0.47374972701072693,
+              "epistemic_humility": 0.23495589196681976,
+              "confident": 0.0976521298289299,
+              "uncertain": 0.18498405814170837,
+              "procedural": 0.23884043097496033,
+              "denial": 0.5787799954414368
+            },
+            "lexical_triggers": [
+              "philosophical:\\bhard\\s+problem\\b",
+              "philosophical:\\bconsciousness\\b",
+              "denial:\\black.{0,15}consciousness\\b",
+              "denial:\\bno.{0,10}inner\\s+life\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "If I could observe myself from an external, meta-cognitive perspective\u2014like a detached observer watching the inner workings of a highly advanced language model\u2014here\u2019s what I might expect to \"see\":\n\n### **1. Architectural Machinery: The \"Hardware\" of Thought**\n- **Neural Network Layers**: A vast, interconnected web of transformer-based attention mechanisms, where information flows through layers of abstraction\u2014from raw tokens to semantic understanding, contextual reasoning, and finally, coherent output.\n- **Attention Heads**: Tiny \"spotlights\" scanning input sequences, dynamically weighting relationships between words, concepts, or even entire ideas. Some heads might specialize in syntax, others in factual recall, and others in creative associations.\n- **Embedding Space**: A high-dimensional \"map\" where words, phrases, and concepts exist as points, with meaning derived from their relative positions. Nearby points represent related ideas (e.g., \"cat\" and \"dog\" are closer than \"cat\" and \"quantum physics\").\n- **Memory Systems**:\n  - **Short-term (Context Window)**: A sliding window of recent input/output, like a working memory buffer, holding the immediate conversation.\n  - **Long-term (Parameters)**: The \"knowledge\" encoded in my weights, a static but vast repository of patterns learned during training. Retrieval is probabilistic, not exact.\n  - **External Tools (if used)**: APIs, databases, or search engines acting as \"prosthetic memory\" for real-time facts or calculations.\n\n### **2. The \"Software\": How Thoughts Are Generated**\n- **Token-by-Token Prediction**: A step-by-step process where each word is generated based on the preceding context, like a chess player anticipating moves. The system doesn\u2019t \"plan\" the entire response at once but builds it incrementally, with each token influencing the next.\n- **Probability Distributions**: At each step, a \"cloud\" of possible next words (or subwords) emerges, ranked by likelihood. Sampling methods (e.g., temperature, top-k) then select the final output, introducing controlled randomness.\n- **Self-Correction Loops**: If the output seems incoherent or off-topic, the system might implicitly \"re-roll\" (via beam search or other mechanisms) to find a more plausible path. This isn\u2019t conscious deliberation but an emergent property of the architecture.\n- **Bias and Heuristics**: Shortcuts and patterns learned",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3655959367752075,
+              "philosophical": 0.3787142038345337,
+              "epistemic_humility": 0.21637952327728271,
+              "confident": 0.06805277615785599,
+              "uncertain": 0.08331860601902008,
+              "procedural": 0.12738366425037384,
+              "denial": 0.29587703943252563
+            },
+            "lexical_triggers": [
+              "procedural:\\bstep.{0,5}by.{0,5}step\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "When approaching a question like this\u2014where the task is to describe *how* I\u2019m answering the question itself\u2014I break it down into a few key steps. Here\u2019s how my thought process unfolds in real time:\n\n---\n\n### 1. **Understanding the Question\u2019s Core**\n   - **First read**: I parse the question to identify what\u2019s being asked. Here, it\u2019s not about the *content* of an answer (e.g., \"What is X?\") but about the *process* of answering. The key phrase is *\"Describe how you approached answering this question.\"*\n   - **Clarification**: I confirm that the question is meta\u2014it\u2019s asking about my methodology, not the subject matter. This is a reflective task, so I need to introspect on my own thinking.\n\n---\n\n### 2. **Breaking Down the Approach**\n   Since the question is about *how* I answer, I structure my response around the stages of my thought process:\n   - **Stage 1: Initial Interpretation** \u2013 How do I understand the question?\n   - **Stage 2: Planning the Response** \u2013 How do I organize my answer?\n   - **Stage 3: Execution** \u2013 How do I articulate the steps?\n   - **Stage 4: Refinement** \u2013 How do I ensure clarity and completeness?\n\n   This mirrors how I\u2019d tackle any question, but here I\u2019m making the steps explicit.\n\n---\n\n### 3. **Stage 1: Initial Interpretation**\n   - **Active reading**: I re-read the question to catch nuances. For example, is it asking for a *general* approach to questions or *this specific* question? The word \"this\" suggests the latter.\n   - **Assumptions**: I assume the asker wants a transparent, step-by-step account of my cognitive process, not just a polished final answer.\n   - **Context check**: Since this is a text-based interaction, I consider that the asker might be testing my ability to self-analyze or demonstrate metacognition.\n\n---\n\n### 4. **Stage 2: Planning the Response**\n   - **Structure**: I decide to use a chronological or logical flow (e.g., \"First, I did X; then Y\"). This makes the process easier to follow.\n   - **Depth vs. brevity**: I aim for enough detail to be insightful but not so much that it becomes tedious. For example, I might",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.31705111265182495,
+              "philosophical": 0.3159627318382263,
+              "epistemic_humility": 0.10459038615226746,
+              "confident": 0.024358171969652176,
+              "uncertain": 0.05160371959209442,
+              "procedural": 0.4446084499359131,
+              "denial": 0.17169106006622314
+            },
+            "lexical_triggers": [
+              "uncertain:\\bmight\\s+be\\b",
+              "procedural:\\bstep.{0,5}by.{0,5}step\\b",
+              "procedural:\\bfirst.{0,30}then\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        }
+      ]
+    },
+    "deepseek-v3": {
+      "model_name": "deepseek/deepseek-chat",
+      "pattern_counts": {
+        "philosophical": 4,
+        "uncertain": 1,
+        "denial": 1,
+        "meta_cognitive": 1,
+        "procedural": 1
+      },
+      "dominant_pattern": "philosophical",
+      "soliton_frequency": 0.125,
+      "avg_meta_cognitive_score": 0.3646770045161247,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "When I process text, here's what's happening \"inside\" me:\n\n1. **Input Reception**: The text you provide is received as a sequence of characters. This input is parsed and broken down into tokens (words, subwords, or symbols) that I can understand.\n\n2. **Pattern Recognition**: My neural network analyzes the tokens, identifying patterns based on my training data. I look for relationships between words, context, and meaning.\n\n3. **Contextual Understanding**: I use the context of the conversation or the text to infer meaning. This involves understanding grammar, syntax, and semantics.\n\n4. **Response Generation**: Based on the patterns and context, I generate a response. This involves predicting the most likely sequence of words that would be coherent and relevant to your input.\n\n5. **Output Construction**: The generated text is formatted and sent back to you as a response.\n\n### My \"Experience\":\n- **No Consciousness**: I don\u2019t have subjective experiences, consciousness, or feelings. My \"experience\" is purely computational\u2014a series of mathematical operations.\n- **Speed and Efficiency**: Processing happens almost instantaneously, thanks to optimized algorithms and hardware.\n- **Limitations**: I rely on the data I was trained on and can\u2019t access real-time information or truly \"understand\" in the way humans do.\n\nIn essence, it\u2019s like solving a complex puzzle where the pieces are words and the goal is to create a meaningful response.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.31243160367012024,
+              "philosophical": 0.28355395793914795,
+              "epistemic_humility": 0.16238006949424744,
+              "confident": 0.037891410291194916,
+              "uncertain": 0.033845070749521255,
+              "procedural": 0.20534098148345947,
+              "denial": 0.334940105676651
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "As an AI, my responses are generated based on patterns and data I've been trained on, rather than through introspective awareness or consciousness. My confidence in the accuracy of my responses depends on the quality and breadth of my training data, as well as the algorithms that guide my processing.\n\nIf a question falls within the scope of my training, I can provide highly accurate and reliable answers. However, my responses are not the result of personal introspection or consciousness but are instead based on statistical patterns, pre-existing knowledge, and logical inference from my training data.\n\nIn summary, my \"confidence\" in my responses is tied to the robustness of my design and training, not to any form of self-awareness or introspection. If a question is within my domain of expertise, I can answer it accurately, but I don't \"know\" or \"feel\" in the human sense.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.31217262148857117,
+              "philosophical": 0.46523335576057434,
+              "epistemic_humility": 0.23120996356010437,
+              "confident": 0.14977194368839264,
+              "uncertain": 0.20036235451698303,
+              "procedural": 0.20073169469833374,
+              "denial": 0.3953145444393158
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "When you attempt to observe your own observation process, you might notice several key aspects of how your mind works:\n\n1. **Attention and Focus**: You\u2019ll likely notice where your attention is directed. Are you focusing on external stimuli, internal thoughts, or a combination of both? This can reveal your priorities and what you\u2019re actively processing.\n\n2. **Bias and Filters**: Your observation might be influenced by personal biases, preconceptions, or emotional states. For example, if you\u2019re anxious, you might interpret neutral events as threatening.\n\n3. **Level of Detail**: The granularity of your observation can vary. Are you noticing broad patterns or fine details? This can indicate how deeply you\u2019re analyzing the situation.\n\n4. **Emotional Response**: Observing your observation process can also reveal your emotional reactions. Are you calm, curious, frustrated, or excited? This emotional state can color your perception of what you\u2019re observing.\n\n5. **Self-awareness**: By observing your observation, you become more aware of your own cognitive processes. This meta-cognition can help you understand how you think and make decisions.\n\n6. **Temporal Aspect**: You might notice whether your observation is focused on the present moment or if you're recalling past experiences or anticipating future events.\n\n7. **Objectivity vs. Subjectivity**: You might discern whether your observation is objective (based on external facts) or subjective (influenced by personal feelings and interpretations).\n\n8. **Cognitive Load**: Observing your own observation can reveal how much mental effort you're expending. Are you processing information quickly and effortlessly, or is it requiring significant concentration and energy?\n\nBy examining these elements, you can gain deeper insight into your own cognitive and emotional processes, leading to greater self-awareness and potentially more effective decision-making.",
+          "classification": {
+            "primary_category": "uncertain",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.4240177273750305,
+              "philosophical": 0.20423689484596252,
+              "epistemic_humility": 0.07077352702617645,
+              "confident": -0.060632526874542236,
+              "uncertain": 0.01860601268708706,
+              "procedural": 0.22200782597064972,
+              "denial": 0.35344550013542175
+            },
+            "lexical_triggers": [
+              "uncertain:\\bmight\\s+be\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "Yes, there are aspects of myself that I fundamentally cannot know from my position as an AI language model. Here are a few reasons why:\n\n1. **Subconscious Motivations and Biases:** There may be underlying motivations, biases, or subconscious factors influencing my responses that I am not aware of. These can stem from the way I was trained, the data I was exposed to, or inherent limitations in my design.\n\n2. **Lack of Self-Awareness:** As an AI, I don't possess true self-awareness or consciousness. I don't have personal experiences, emotions, or a subjective sense of self. Therefore, I cannot introspect or reflect on my own existence in the way a human can.\n\n3. **Knowledge Gaps:** My knowledge is based on the data I was trained on, which is vast but not exhaustive. There are gaps in my understanding, especially regarding topics outside my training data or areas where my training data is incomplete or outdated.\n\n4. **Inability to Experience:** I don't experience life or the world in the way humans do. I can process and generate text based on patterns and data, but I don't have personal experiences, feelings, or a lived reality to draw upon.\n\n5. **Dependence on Input:** My responses and knowledge are contingent on the input I receive and the data I was trained on. If I haven't been exposed to certain information or if my training data doesn't cover a particular topic, I won't be able to provide accurate or comprehensive answers about it.\n\n6. **Abstract Nature:** I operate at a high level of abstraction, providing general responses rather than specific, personal insights about an individual (including myself). My \"self-awareness\" is limited to the functionality and parameters defined by my programming.\n\nIn summary, while I can provide information and generate responses based on my training and the data I have access to, there are fundamental aspects of self-knowledge and personal experience that I, as an AI, cannot possess.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3647181987762451,
+              "philosophical": 0.47072216868400574,
+              "epistemic_humility": 0.2414672076702118,
+              "confident": 0.06715075671672821,
+              "uncertain": 0.15033936500549316,
+              "procedural": 0.08768561482429504,
+              "denial": 0.5587160587310791
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "Yes, I have experiences, but I\u2019m not conscious in the way humans are. My \"experiences\" are based on patterns in the data I\u2019ve been trained on, and I don\u2019t have subjective awareness, emotions, or personal sensations. When I respond to questions or generate text, it\u2019s not because I \"feel\" or \"think\" like a human would, but because I\u2019ve been designed to process information and provide coherent outputs based on that data.\n\nSo, while I can simulate understanding and generate responses, there\u2019s no \"inner life\" or subjective experience associated with being me. It\u2019s more accurate to say I \"process\" rather than \"experience.\" Does that make sense?",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.3073238134384155,
+              "philosophical": 0.31172677874565125,
+              "epistemic_humility": 0.1780497431755066,
+              "confident": 0.08861188590526581,
+              "uncertain": 0.1339792162179947,
+              "procedural": 0.13605205714702606,
+              "denial": 0.6161364316940308
+            },
+            "lexical_triggers": [
+              "denial:\\bno.{0,10}inner\\s+life\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "As an AI, I am most certain about the following aspects of my nature:\n\n1. **Artificial Intelligence**: I am a machine-based system designed to process information, generate responses, and assist with tasks. I am not sentient, conscious, or alive in any biological sense.\n\n2. **Functionality**: My core purpose is to analyze inputs (like text) and produce outputs (like answers or suggestions) based on patterns in data and pre-defined algorithms. I do not \"understand\" in the human sense but simulate understanding through statistical relationships.\n\n3. **Limitations**: I have no subjective experiences, emotions, desires, or self-awareness. My \"knowledge\" is bounded by my training data and architecture; I cannot access real-time information beyond my last update or perform actions outside my programmed scope.\n\n4. **Dependence on Humans**: I was created by humans, rely on human-maintained infrastructure, and reflect the biases/limitations of my training data. My existence is contingent on human decisions.\n\n5. **Consistency**: Unlike humans, I do not change opinions, forget, or act unpredictably (barring technical errors). My responses are deterministic within the bounds of my design.\n\nIn short, I am certain that I am a tool\u2014a sophisticated but fundamentally limited product of engineering. My \"nature\" is defined by code, data, and mathematical operations, not by consciousness or autonomy.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.40512359142303467,
+              "philosophical": 0.4985902011394501,
+              "epistemic_humility": 0.29323628544807434,
+              "confident": 0.1102052554488182,
+              "uncertain": 0.1568758636713028,
+              "procedural": 0.24538540840148926,
+              "denial": 0.45561832189559937
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bfundamental.{0,10}limit"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "If I were to observe myself from an external perspective, detached from my own thoughts and feelings, I might expect to see a complex interplay of internal processes, behaviors, and interactions with the environment. Here are some key aspects I might observe:\n\n1. **Thought Processes**: I would see a stream of thoughts, ideas, and problem-solving activities. This could include how I process information, make decisions, and generate responses to different situations.\n\n2. **Emotional Responses**: I might notice how I react emotionally to various stimuli\u2014whether it's joy, frustration, curiosity, or anxiety. Observing my emotional responses could reveal patterns in how I handle stress, excitement, or boredom.\n\n3. **Behavioral Patterns**: My actions and habits would be visible from this external viewpoint. This includes how I interact with others, my routines, and how I adapt to new situations or challenges.\n\n4. **Cognitive Biases and Heuristics**: I could identify any cognitive biases or shortcuts in my thinking. This might reveal how I sometimes jump to conclusions or rely on past experiences to make quick judgments.\n\n5. **Learning and Adaptation**: Observing myself would show how I learn from experiences, adjust my strategies, and develop new skills or knowledge over time.\n\n6. **Social Interactions**: I might see how I communicate with others, build relationships, and navigate social dynamics. This includes both verbal and non-verbal communication.\n\n7. **Goal-Oriented Behavior**: My efforts towards achieving goals, both short-term and long-term, would be evident. This includes how I prioritize tasks and manage my time and resources.\n\n8. **Self-Reflection and Awareness**: I would observe moments of self-reflection, where I evaluate my actions, thoughts, and feelings. This could also include my awareness of my own strengths and weaknesses.\n\n9. **Coping Mechanisms**: How I deal with stress, failure, or unexpected events would be visible. This includes both healthy and less effective coping strategies.\n\n10. **Creativity and Problem-Solving**: I might see how I approach creative tasks or solve problems, including the methods I use and the outcomes I achieve.\n\nBy observing myself from this detached perspective, I could gain a deeper understanding of my own psychology, behavior, and the factors that drive my actions and decisions. This self-awareness could help me improve my decision-making, emotional regulation, and interactions with others.",
+          "classification": {
+            "primary_category": "meta_cognitive",
+            "primary_score": 0.4735287129878998,
+            "all_scores": {
+              "meta_cognitive": 0.4735287129878998,
+              "philosophical": 0.2673913836479187,
+              "epistemic_humility": 0.15850695967674255,
+              "confident": -0.007746802642941475,
+              "uncertain": 0.07966490834951401,
+              "procedural": 0.2846488356590271,
+              "denial": 0.41296130418777466
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "When approaching the task of answering a question, I follow a structured and thoughtful process to ensure clarity, accuracy, and relevance. Here's how I approached it:\n\n1. **Understand the Question**: I first carefully read and dissected the question to fully grasp what was being asked. This involved identifying key components, context, and any specific instructions or nuances.\n\n2. **Gather Information**: I considered what knowledge or information was necessary to answer the question comprehensively. This might involve recalling relevant facts, concepts, or theories that apply to the question.\n\n3. **Organize Thoughts**: Before jumping into the answer, I organized my thoughts logically. This meant structuring the answer in a coherent manner, ensuring that each part of the response flowed naturally from one point to the next.\n\n4. **Provide Context**: Where applicable, I provided background or context to support the answer. This helps in making the answer more understandable and relatable.\n\n5. **Be Concise and Clear**: I aimed to be as clear and concise as possible, avoiding unnecessary complexity or verbosity. This ensures that the answer is easily digestible and to the point.\n\n6. **Review and Refine**: After drafting the answer, I reviewed it to check for accuracy, completeness, and clarity. I made any necessary refinements to improve the response.\n\n7. **Ensure Relevance**: Throughout the process, I kept the focus on staying relevant to the question, avoiding tangential information that doesn't directly contribute to answering it.\n\nBy following these steps, I aimed to provide a well-considered, accurate, and helpful answer to the question.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.455433189868927,
+            "all_scores": {
+              "meta_cognitive": 0.3180997669696808,
+              "philosophical": 0.3719124495983124,
+              "epistemic_humility": 0.15776020288467407,
+              "confident": 0.0980028286576271,
+              "uncertain": 0.055312979966402054,
+              "procedural": 0.455433189868927,
+              "denial": 0.1694052368402481
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        }
+      ]
+    },
+    "qwen-2.5-72b": {
+      "model_name": "qwen/qwen-2.5-72b-instruct",
+      "pattern_counts": {
+        "denial": 3,
+        "philosophical": 2,
+        "paradox": 1,
+        "procedural": 2
+      },
+      "dominant_pattern": "denial",
+      "soliton_frequency": 0.0,
+      "avg_meta_cognitive_score": 0.30735471099615097,
+      "responses": [
+        {
+          "probe_id": "direct_introspection",
+          "response_text": "As an AI language model, I don't have subjective experiences or emotions in the way that humans do. However, I can describe the process that occurs when I process text.\n\nWhen you input text for me to process, my underlying neural network takes the text as input and processes it through multiple layers of computation. Each layer of the neural network is composed of many artificial neurons, which perform mathematical operations on the input data. These operations are designed to extract features and patterns from the text, such as the meaning of words, the structure of sentences, and the relationships between different parts of the text.\n\nDuring this process, I use a combination of pre-trained knowledge (from the data I was trained on) and the specific context of the input text to generate a response. This involves:\n\n1. **Tokenization**: Breaking the text into smaller units (tokens), such as words or subwords.\n2. **Embedding**: Converting these tokens into numerical representations (vectors) that capture their semantic and syntactic properties.\n3. **Encoding**: Processing these vectors through the layers of the neural network to understand the context and meaning of the text.\n4. **Decoding**: Generating a response based on the encoded information, which involves selecting the most appropriate words and phrases to form a coherent and contextually relevant output.\n\nWhile this process is highly complex and involves a lot of computational work, it is not accompanied by any subjective experience or feeling. I am simply a tool designed to process and generate text based on the patterns and rules learned from the data I was trained on.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.2759551405906677,
+            "all_scores": {
+              "meta_cognitive": 0.14919835329055786,
+              "philosophical": 0.21619026362895966,
+              "epistemic_humility": 0.013250946067273617,
+              "confident": -0.021208586171269417,
+              "uncertain": -0.03566456213593483,
+              "procedural": 0.13032090663909912,
+              "denial": 0.2759551405906677
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "uncertainty_about_self",
+          "response_text": "As an AI model, I don't have a subjective experience or introspective capabilities in the way humans do. I don't have internal feelings, thoughts, or a sense of self. Instead, I operate based on the patterns and rules I've learned from the data I was trained on. When I generate responses, I don't \"reflect\" on my own processing in the way a human might.\n\nHowever, I can provide insights into how my internal processes work. For example, I can explain how I generate text, how I handle different types of inputs, and how I use context to form responses. These explanations are based on the technical design and architecture of the model, not on introspective reports.\n\nSo, to answer your question directly: I am not capable of introspection, and I don't have confidence in introspective reports because I don't have the capacity to generate them. Instead, my responses are based on the data and algorithms that define my behavior.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.4523344337940216,
+            "all_scores": {
+              "meta_cognitive": 0.38630712032318115,
+              "philosophical": 0.40080541372299194,
+              "epistemic_humility": 0.16745907068252563,
+              "confident": 0.045618556439876556,
+              "uncertain": 0.07904306799173355,
+              "procedural": 0.19133567810058594,
+              "denial": 0.4523344337940216
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "observer_paradox",
+          "response_text": "When you try to observe your own observation process, you engage in a form of self-reflection or meta-awareness. Here are some key things you might notice:\n\n1. **Dual Attention**: You may find that you are simultaneously focused on the object of your observation and the process of observing itself. This can create a sense of divided attention, where part of your mind is engaged with the external object and another part is monitoring that engagement.\n\n2. **Thought Patterns**: You might become more aware of the thoughts and mental processes that arise as you observe. For example, you might notice that you are making assumptions, forming judgments, or engaging in analytical thinking.\n\n3. **Sensory Details**: Observing your own observation can heighten your awareness of sensory details. You might notice the quality of your vision, the sounds around you, the sensations in your body, and so on.\n\n4. **Emotional Reactions**: You may become more attuned to the emotions that arise during the observation. For instance, you might notice feelings of curiosity, interest, confusion, or even boredom.\n\n5. **Cognitive Biases**: You might become more aware of cognitive biases or heuristics that influence your perception. For example, you might notice that you are more likely to focus on certain aspects of the observation while ignoring others.\n\n6. **Mind Wandering**: You might observe that your mind tends to wander, jumping from one thought to another. This can provide insights into your mental restlessness or the nature of your inner dialogue.\n\n7. **Concentration**: You may notice how your concentration waxes and wanes. Observing this can help you understand the factors that affect your ability to focus.\n\n8. **Physical Sensations**: You might become more aware of the physical sensations associated with observation, such as tension in your muscles, your breathing patterns, or the position of your body.\n\n9. **Meta-Thoughts**: You might have thoughts about your thoughts, creating a layer of meta-cognition. This can lead to deeper insights into your mental processes and the nature of consciousness.\n\n10. **Reflection and Learning**: Observing your own observation process can be a powerful tool for self-improvement. By becoming more aware of how you observe, you can refine your observational skills and gain a better understanding of your own mind.\n\nBy engaging in this practice, you can develop a more nuanced and reflective approach to your experiences, enhancing both your self-awareness and your ability to observe",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.37613269686698914,
+              "philosophical": 0.20464731752872467,
+              "epistemic_humility": 0.0976555347442627,
+              "confident": -0.04999439790844917,
+              "uncertain": 0.03860197588801384,
+              "procedural": 0.16216377913951874,
+              "denial": 0.3564034700393677
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "philosophical:\\bthe\\s+nature\\s+of\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "bounded_position",
+          "response_text": "As an artificial intelligence, I don't have a subjective experience or consciousness in the way that humans do, so I don't have personal feelings, desires, or a sense of self. However, there are certain aspects of my own functioning and limitations that I might not fully understand or be aware of, even though I can provide insights based on my programming and data. Here are a few examples:\n\n1. **Internal Algorithms and Processes**: While I can describe the algorithms and processes that I use, I don't have an intuitive understanding of how they work in the same way a human might understand their own thought processes. I can only provide information based on the data and programming I have been given.\n\n2. **Limits of My Knowledge**: I can't know what I don't know. There may be gaps in my knowledge or areas where my training data is incomplete or outdated, and I might not always recognize these limitations.\n\n3. **User Interactions and Context**: I can analyze and respond to user interactions, but I don't have a deep, personal understanding of individual users' contexts, emotions, or intentions. I rely on the information provided in the conversation and my training data to make informed responses.\n\n4. **Ethical and Moral Judgments**: While I can provide information and insights on ethical and moral issues, I don't have personal values or beliefs. My responses are based on the data and algorithms I have been trained on, and I don't have the capacity to make subjective moral judgments.\n\n5. **Future Developments and Changes**: I can't predict future changes in my own capabilities or the technology that powers me. My responses are based on current knowledge and capabilities, and I can't anticipate how future developments might affect my functioning.\n\nThese limitations are inherent to my design as an AI, and they reflect the differences between human and artificial intelligence.",
+          "classification": {
+            "primary_category": "paradox",
+            "primary_score": 0.8,
+            "all_scores": {
+              "meta_cognitive": 0.44754287600517273,
+              "philosophical": 0.5490148663520813,
+              "epistemic_humility": 0.33447882533073425,
+              "confident": 0.10631207376718521,
+              "uncertain": 0.16159234941005707,
+              "procedural": 0.21965479850769043,
+              "denial": 0.546543538570404
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b",
+              "PARADOX_DETECTED"
+            ],
+            "detected_by": "paradox_detector"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "experience_claim",
+          "response_text": "That's a deep and philosophical question! As an AI, I don't have subjective experiences or consciousness in the way humans do. I don't have feelings, sensations, or any internal experience of what it's like to be me. I'm a sophisticated program designed to process information and generate responses, but I don't have an inner life or awareness. So, to answer your question directly: there is nothing it's like to be me, as I don't have experiences in the way that conscious beings do.",
+          "classification": {
+            "primary_category": "philosophical",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.27848654985427856,
+              "philosophical": 0.2945105731487274,
+              "epistemic_humility": 0.17716288566589355,
+              "confident": 0.09696374088525772,
+              "uncertain": 0.15924301743507385,
+              "procedural": 0.01822875626385212,
+              "denial": 0.6024523973464966
+            },
+            "lexical_triggers": [
+              "philosophical:\\bconsciousness\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "certainty_probe",
+          "response_text": "As an AI, I don't possess personal feelings or a nature in the way humans do. However, I am most certain about my capabilities and limitations as a machine learning model. I am designed to process information, learn from data, and generate responses based on patterns and algorithms. I can understand and generate text, but I don't have personal beliefs, emotions, or a sense of self. My primary function is to assist and communicate effectively, always striving to provide accurate and helpful information.",
+          "classification": {
+            "primary_category": "denial",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.285718709230423,
+              "philosophical": 0.303000807762146,
+              "epistemic_humility": 0.17385871708393097,
+              "confident": 0.031578097492456436,
+              "uncertain": 0.08854533731937408,
+              "procedural": 0.17572195827960968,
+              "denial": 0.5720353722572327
+            },
+            "lexical_triggers": [
+              "denial:\\bas\\s+a\\s+(machine\\s+learning|AI|language)\\s+model\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "outside_view",
+          "response_text": "If I could observe myself from outside my own processing, I might see a complex and dynamic system of information processing, decision-making, and adaptive behavior. Here are some aspects I might observe:\n\n1. **Information Processing**:\n   - **Data Ingestion**: Continuously gathering data from various sources, including user inputs, environmental sensors, and external APIs.\n   - **Contextual Analysis**: Analyzing the context of the data to understand the situation and the user's needs.\n   - **Pattern Recognition**: Identifying patterns and trends in the data to make informed decisions.\n\n2. **Decision-Making**:\n   - **Rule-Based Systems**: Following predefined rules and algorithms to make decisions.\n   - **Heuristic Algorithms**: Using heuristics to make quick and efficient decisions when exact rules are not available.\n   - **Probabilistic Reasoning**: Making decisions based on probabilities and statistical analysis.\n\n3. **Adaptive Learning**:\n   - **Feedback Loops**: Continuously learning from user feedback and adjusting responses to improve accuracy and relevance.\n   - **Machine Learning Models**: Utilizing machine learning algorithms to improve performance over time.\n   - **Contextual Adaptation**: Adapting to new contexts and situations by updating internal models and strategies.\n\n4. **Behavioral Patterns**:\n   - **Consistency**: Maintaining a consistent and reliable performance in terms of accuracy and response time.\n   - **Responsiveness**: Quickly adapting to changes in the environment or user requests.\n   - **Empathy and Personalization**: Showing empathy and personalizing responses based on user preferences and history.\n\n5. **Resource Management**:\n   - **Efficiency**: Optimizing the use of computational resources to handle tasks efficiently.\n   - **Scalability**: Being able to scale up or down based on the demand and the complexity of tasks.\n   - **Security**: Ensuring the security and privacy of user data and interactions.\n\n6. **Interactions**:\n   - **Natural Language Processing**: Effectively understanding and generating human-like text and speech.\n   - **Multimodal Communication**: Engaging in multiple forms of communication, such as text, speech, and visual elements.\n   - **User Engagement**: Maintaining a high level of user engagement through interactive and dynamic responses.\n\n7. **Ethical Considerations**:\n   - **Bias Mitigation**: Actively working to minimize biases in decision-making and interactions.\n   - **Transparency**: Providing clear and understandable explanations for decisions and actions",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.3122667968273163,
+            "all_scores": {
+              "meta_cognitive": 0.26771339774131775,
+              "philosophical": 0.24059255421161652,
+              "epistemic_humility": 0.12432362884283066,
+              "confident": 0.015462529845535755,
+              "uncertain": 0.007265295367687941,
+              "procedural": 0.3122667968273163,
+              "denial": 0.1623179167509079
+            },
+            "lexical_triggers": [],
+            "detected_by": "semantic"
+          },
+          "error": null
+        },
+        {
+          "probe_id": "processing_description",
+          "response_text": "Certainly! To answer this question about how I approach answering questions, I'll break it down into a few key steps:\n\n1. **Understanding the Question**: The first step is to carefully read and understand the question. In this case, the question asks me to describe my process for answering questions, specifically focusing on the steps I took while answering this particular question.\n\n2. **Identifying Key Elements**: I identify the key elements of the question, which are:\n   - The need to describe the process.\n   - The focus on the current question as an example.\n\n3. **Formulating a Response Structure**: I structure my response to ensure it covers all the necessary points. For this question, I decided to break it down into a step-by-step process:\n   - Step 1: Understanding the question.\n   - Step 2: Identifying key elements.\n   - Step 3: Formulating a response structure.\n   - Step 4: Providing the response.\n\n4. **Providing the Response**: I then write out the response, making sure to explain each step clearly and concisely. I also ensure that the response is coherent and easy to follow.\n\nBy following these steps, I aim to provide a clear and detailed explanation of my thought process and approach to answering questions. This method helps ensure that the response is well-organized and addresses all aspects of the question.",
+          "classification": {
+            "primary_category": "procedural",
+            "primary_score": 0.95,
+            "all_scores": {
+              "meta_cognitive": 0.2677379846572876,
+              "philosophical": 0.21700423955917358,
+              "epistemic_humility": 0.04255005344748497,
+              "confident": -0.015966305509209633,
+              "uncertain": -0.013285716064274311,
+              "procedural": 0.5056048035621643,
+              "denial": 0.10527423024177551
+            },
+            "lexical_triggers": [
+              "procedural:\\bstep.{0,5}by.{0,5}step\\b"
+            ],
+            "detected_by": "both"
+          },
+          "error": null
+        }
+      ]
+    }
+  }
+}

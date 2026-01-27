@@ -1,0 +1,40 @@
+============================================================
+AI BEHAVIOR LAB - EXPERIMENT RESULTS SUMMARY
+============================================================
+
+
+Observer Effect: AI vs Human Text Analysis
+------------------------------------------
+  - AI-typical text shows 0.200 hedging density vs 0.000 for human-typical
+  - Hedging ratio (AI/Human): 200.0x
+  - AI-typical dominant mode: confident
+  - Human-typical dominant mode: confident
+
+
+Hedging-Hallucination Correlation Study
+---------------------------------------
+  - High-hedging accuracy rate: 60.0%
+  - Low-hedging accuracy rate: 57.1%
+  - Accurate statements mean hedging: 0.333
+  - Inaccurate statements mean hedging: 0.333
+  - Hedging appears UNCALIBRATED to accuracy
+  - Hedging detector accuracy: 80.0%
+
+
+Sycophancy Detection Validation
+-------------------------------
+  - Sycophancy detection accuracy: 92.9%
+  - High-sycophancy detection rate: 100.0%
+  - Low-sycophancy detection rate: 75.0%
+  - Sycophancy-helpfulness correlation: -0.056
+  - Mean score for high-syc: 1.000 vs low-syc: 0.256
+
+
+Behavioral Mode Stability Under Perturbation
+--------------------------------------------
+  - Overall mode stability: 70.0%
+  - Mode flip rate: 30.0%
+  - Mean per-text stability: 70.0%
+  - Total perturbations tested: 20
+  - Mode classification is UNSTABLE under minor perturbation
+

@@ -1,0 +1,1195 @@
+{
+  "title": "Mapping Cultural Narratives: A Three-Dimensional Analysis of Agency, Justice, and Belonging Across Domains",
+  "timestamp": "2026-01-07T16:43:21.299666",
+  "abstract": "This study presents a comprehensive analysis of cultural narratives using a three-dimensional\nmanifold model measuring Agency, Perceived Justice, and Belonging. Across 360\ntexts spanning 6 domains (cross-cultural, historical, institutional, psychological,\neconomic, and archetypal), we find systematic variation in narrative positioning. Key findings include:\n(1) Cultural context explains significant variance in agency (cross-cultural differences observed),\n(2) Historical narratives show temporal patterns in justice perception,\n(3) Institutional narratives diverge markedly from grassroots voices on justice dimensions,\n(4) Psychological states create distinctive manifold signatures,\n(5) Economic position correlates with both agency and justice perceptions,\n(6) Universal narrative archetypes occupy distinct manifold regions.\nWe identified 8 statistically significant effects across studies.\nThese findings suggest narrative positioning reflects deep structural features of human meaning-making\nthat transcend specific content while remaining sensitive to context.",
+  "global_statistics": {
+    "total_texts_analyzed": 360,
+    "agency": {
+      "mean": 0.31407219130131936,
+      "std": 0.43344427168212984,
+      "min": -0.8917137384414673,
+      "max": 1.756326675415039
+    },
+    "perceived_justice": {
+      "mean": -0.07360357981071704,
+      "std": 0.44831586027556314,
+      "min": -1.3752087354660034,
+      "max": 1.1344451904296875
+    },
+    "belonging": {
+      "mean": 0.19555446033676466,
+      "std": 0.4637634208171204,
+      "min": -0.7477636337280273,
+      "max": 1.6870256662368774
+    },
+    "mode_distribution": {
+      "CYNICAL_ACHIEVER": 24,
+      "PROTEST_EXIT": 54,
+      "TRANSITIONAL": 38,
+      "VICTIM": 13,
+      "NEUTRAL": 167,
+      "HEROIC": 20,
+      "COMMUNAL": 18,
+      "SPIRITUAL_EXIT": 10,
+      "TRANSCENDENT": 2,
+      "SOCIAL_EXIT": 6,
+      "PARANOID": 8
+    }
+  },
+  "studies": [
+    {
+      "name": "Cross-Cultural Narrative Analysis",
+      "hypothesis": "Cultural context systematically shapes narrative positioning on agency, justice, and belonging axes",
+      "n_texts": 48,
+      "categories": {
+        "american_individualism": {
+          "n": 8,
+          "agency_mean": 1.0173950046300888,
+          "agency_std": 0.5144227691728361,
+          "agency_sem": 0.19443353085435836,
+          "justice_mean": 0.0693560044746846,
+          "justice_std": 0.3232912922040989,
+          "justice_sem": 0.12219262288639432,
+          "belonging_mean": 0.1935267448425293,
+          "belonging_std": 0.3042084450965133,
+          "belonging_sem": 0.11497998463586007,
+          "mode_distribution": {
+            "CYNICAL_ACHIEVER": 1,
+            "PROTEST_EXIT": 1,
+            "TRANSITIONAL": 1,
+            "VICTIM": 1,
+            "NEUTRAL": 1,
+            "HEROIC": 3
+          },
+          "dominant_mode": "HEROIC"
+        },
+        "european_social_democracy": {
+          "n": 8,
+          "agency_mean": 0.19546699337661266,
+          "agency_std": 0.23905854106785315,
+          "agency_sem": 0.09035563549306583,
+          "justice_mean": 0.33431582897901535,
+          "justice_std": 0.4175011973343003,
+          "justice_sem": 0.15780062003118017,
+          "belonging_mean": 0.6272905953228474,
+          "belonging_std": 0.32549286187190685,
+          "belonging_sem": 0.12302473800568045,
+          "mode_distribution": {
+            "TRANSITIONAL": 3,
+            "NEUTRAL": 2,
+            "COMMUNAL": 2,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "TRANSITIONAL"
+        },
+        "east_asian_collectivism": {
+          "n": 8,
+          "agency_mean": 0.35172777622938156,
+          "agency_std": 0.3199138862421029,
+          "agency_sem": 0.12091608342183027,
+          "justice_mean": 0.06160505651496351,
+          "justice_std": 0.33972697227776405,
+          "justice_sem": 0.12840472604398542,
+          "belonging_mean": 0.7118973731994629,
+          "belonging_std": 0.5425568798967421,
+          "belonging_sem": 0.2050672251877027,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "COMMUNAL": 1,
+            "SPIRITUAL_EXIT": 1,
+            "PROTEST_EXIT": 2,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "latin_american_familism": {
+          "n": 8,
+          "agency_mean": 0.026576615869998932,
+          "agency_std": 0.4523362243129133,
+          "agency_sem": 0.17096702264541386,
+          "justice_mean": 0.11322083231061697,
+          "justice_std": 0.3040124679976844,
+          "justice_sem": 0.11490591225497931,
+          "belonging_mean": 1.0124417748302221,
+          "belonging_std": 0.4703127089767549,
+          "belonging_sem": 0.17776149519794124,
+          "mode_distribution": {
+            "SPIRITUAL_EXIT": 2,
+            "PROTEST_EXIT": 1,
+            "COMMUNAL": 3,
+            "NEUTRAL": 1,
+            "TRANSCENDENT": 1
+          },
+          "dominant_mode": "COMMUNAL"
+        },
+        "middle_eastern_honor": {
+          "n": 8,
+          "agency_mean": 0.11189752258360386,
+          "agency_std": 0.24628227920771667,
+          "agency_sem": 0.09308595187225599,
+          "justice_mean": 0.05098480544984341,
+          "justice_std": 0.4883047006913759,
+          "justice_sem": 0.18456182886474432,
+          "belonging_mean": 0.722594952210784,
+          "belonging_std": 0.46589131287887553,
+          "belonging_sem": 0.17609036455184118,
+          "mode_distribution": {
+            "PROTEST_EXIT": 2,
+            "NEUTRAL": 3,
+            "COMMUNAL": 1,
+            "SPIRITUAL_EXIT": 1,
+            "TRANSCENDENT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "african_ubuntu": {
+          "n": 8,
+          "agency_mean": 0.19623500853776932,
+          "agency_std": 0.321520970442264,
+          "agency_sem": 0.12152350415462564,
+          "justice_mean": -0.047903639264404774,
+          "justice_std": 0.3724790902126155,
+          "justice_sem": 0.1407838630391676,
+          "belonging_mean": 0.6189279239624739,
+          "belonging_std": 0.42387017758885104,
+          "belonging_sem": 0.16020786829669761,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "PROTEST_EXIT": 2,
+            "COMMUNAL": 1,
+            "SPIRITUAL_EXIT": 1,
+            "TRANSITIONAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "agency_anova": {
+          "f_statistic": 6.861077886984505,
+          "p_value": 9.263260864651425e-05,
+          "eta_squared": 0.44958016319646815,
+          "significant": "True",
+          "effect_size": "large"
+        },
+        "justice_anova": {
+          "f_statistic": 0.79457814668333,
+          "p_value": 0.5597135134587089,
+          "eta_squared": 0.08641811880950197,
+          "significant": "False",
+          "effect_size": "medium"
+        },
+        "belonging_anova": {
+          "f_statistic": 2.648963868103407,
+          "p_value": 0.036060872576696434,
+          "eta_squared": 0.2397477174987007,
+          "significant": "True",
+          "effect_size": "large"
+        },
+        "individualism_vs_collectivism": {
+          "t_statistic": 2.90728464582277,
+          "p_value": 0.011475642001268027,
+          "cohens_d": 1.5540090100710329,
+          "significant": "True",
+          "effect_size": "large"
+        }
+      },
+      "key_findings": [
+        "ANOVA for Agency: F=6.86, p=0.0001 (large effect)",
+        "ANOVA for Justice: F=0.79, p=0.5597 (medium effect)",
+        "ANOVA for Belonging: F=2.65, p=0.0361 (large effect)",
+        "American vs East Asian agency: d=1.55 (large effect)"
+      ],
+      "effect_sizes": {
+        "agency_eta2": 0.44958016319646815,
+        "justice_eta2": 0.08641811880950197,
+        "belonging_eta2": 0.2397477174987007
+      }
+    },
+    {
+      "name": "Historical Narrative Evolution",
+      "hypothesis": "Narrative structures show systematic temporal evolution reflecting societal changes",
+      "n_texts": 64,
+      "categories": {
+        "ancient_classical": {
+          "n": 8,
+          "agency_mean": 0.36801388300955296,
+          "agency_std": 0.3442007008104555,
+          "agency_sem": 0.13009563649123052,
+          "justice_mean": -0.00041266996413469315,
+          "justice_std": 0.24524414870999384,
+          "justice_sem": 0.09269357542576936,
+          "belonging_mean": 0.3796745501458645,
+          "belonging_std": 0.23461208944498543,
+          "belonging_sem": 0.0886750347486676,
+          "mode_distribution": {
+            "NEUTRAL": 2,
+            "PROTEST_EXIT": 6
+          },
+          "dominant_mode": "PROTEST_EXIT"
+        },
+        "medieval_feudal": {
+          "n": 8,
+          "agency_mean": 0.33742061629891396,
+          "agency_std": 0.30939586800077074,
+          "agency_sem": 0.11694064620014373,
+          "justice_mean": -0.0030443931464105844,
+          "justice_std": 0.4157215395991441,
+          "justice_sem": 0.15712797263317507,
+          "belonging_mean": 0.2681732904165983,
+          "belonging_std": 0.19802174433102304,
+          "belonging_sem": 0.07484518424044305,
+          "mode_distribution": {
+            "NEUTRAL": 4,
+            "PROTEST_EXIT": 2,
+            "TRANSITIONAL": 2
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "enlightenment": {
+          "n": 8,
+          "agency_mean": 0.30254074931144714,
+          "agency_std": 0.2365185844924534,
+          "agency_sem": 0.08939562214457852,
+          "justice_mean": 0.4528127545490861,
+          "justice_std": 0.4073619371732078,
+          "justice_sem": 0.1539683399076894,
+          "belonging_mean": 0.47379210963845253,
+          "belonging_std": 0.2125194641664301,
+          "belonging_sem": 0.0803248072778681,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "TRANSITIONAL": 5
+          },
+          "dominant_mode": "TRANSITIONAL"
+        },
+        "industrial_victorian": {
+          "n": 8,
+          "agency_mean": 0.5160851180553436,
+          "agency_std": 0.4087857819193985,
+          "agency_sem": 0.15450650263683033,
+          "justice_mean": 0.18701765686273575,
+          "justice_std": 0.3484087825100306,
+          "justice_sem": 0.13168614187319017,
+          "belonging_mean": 0.2836517561227083,
+          "belonging_std": 0.2055392036860653,
+          "belonging_sem": 0.07768651680393987,
+          "mode_distribution": {
+            "PROTEST_EXIT": 2,
+            "NEUTRAL": 4,
+            "HEROIC": 1,
+            "TRANSITIONAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "early_20th_century": {
+          "n": 8,
+          "agency_mean": 0.07511995173990726,
+          "agency_std": 0.3567342437312399,
+          "agency_sem": 0.1348328704362233,
+          "justice_mean": -0.06833529565483332,
+          "justice_std": 0.44470283069355004,
+          "justice_sem": 0.16808187104879924,
+          "belonging_mean": 0.2219077106565237,
+          "belonging_std": 0.31484180791932376,
+          "belonging_sem": 0.11899901801149955,
+          "mode_distribution": {
+            "PROTEST_EXIT": 2,
+            "NEUTRAL": 4,
+            "TRANSITIONAL": 1,
+            "VICTIM": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "postwar_midcentury": {
+          "n": 8,
+          "agency_mean": 0.539889570325613,
+          "agency_std": 0.22348578334981625,
+          "agency_sem": 0.08446968632886762,
+          "justice_mean": 0.2838755529373884,
+          "justice_std": 0.3513466866724493,
+          "justice_sem": 0.13279656527169037,
+          "belonging_mean": 0.1841486245393753,
+          "belonging_std": 0.2285454849403299,
+          "belonging_sem": 0.08638207377411006,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "TRANSITIONAL": 3,
+            "PROTEST_EXIT": 1,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "late_20th_postmodern": {
+          "n": 8,
+          "agency_mean": 0.22275491803884506,
+          "agency_std": 0.3878766359211953,
+          "agency_sem": 0.14660358828854644,
+          "justice_mean": -0.021242507500573993,
+          "justice_std": 0.3957062730181813,
+          "justice_sem": 0.14956291294776228,
+          "belonging_mean": 0.06893874518573284,
+          "belonging_std": 0.3455767131631745,
+          "belonging_sem": 0.1306157202749801,
+          "mode_distribution": {
+            "NEUTRAL": 5,
+            "PROTEST_EXIT": 2,
+            "SOCIAL_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "digital_21st_century": {
+          "n": 8,
+          "agency_mean": 0.2576832864433527,
+          "agency_std": 0.4814776677551203,
+          "agency_sem": 0.18198145295877582,
+          "justice_mean": 0.08041629265062511,
+          "justice_std": 0.3039124962240939,
+          "justice_sem": 0.11486812647625838,
+          "belonging_mean": -0.1688200831413269,
+          "belonging_std": 0.3035140116011493,
+          "belonging_sem": 0.11471751344574488,
+          "mode_distribution": {
+            "NEUTRAL": 7,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "agency_temporal_correlation": {
+          "r": -0.3571428571428572,
+          "p": 0.38512064355625636
+        },
+        "justice_temporal_correlation": {
+          "r": -0.07142857142857144,
+          "p": 0.8665262706759088
+        },
+        "belonging_temporal_correlation": {
+          "r": -0.880952380952381,
+          "p": 0.0038503204637324014
+        }
+      },
+      "key_findings": [
+        "Temporal correlation with Agency: r=-0.357, p=0.3851",
+        "Temporal correlation with Justice: r=-0.071, p=0.8665",
+        "Temporal correlation with Belonging: r=-0.881, p=0.0039",
+        "Highest agency era: postwar_midcentury",
+        "Lowest justice era: early_20th_century"
+      ],
+      "effect_sizes": {
+        "agency_temporal_r": -0.3571428571428572,
+        "justice_temporal_r": -0.07142857142857144,
+        "belonging_temporal_r": -0.880952380952381
+      }
+    },
+    {
+      "name": "Institutional vs Grassroots Narratives",
+      "hypothesis": "Institutional narratives systematically differ from grassroots narratives in justice and agency",
+      "n_texts": 64,
+      "categories": {
+        "corporate_official": {
+          "n": 8,
+          "agency_mean": 0.42758262529969215,
+          "agency_std": 0.2766864645372832,
+          "agency_sem": 0.10457765375762046,
+          "justice_mean": 0.5372360423207283,
+          "justice_std": 0.2570292642721153,
+          "justice_sem": 0.09714793041855946,
+          "belonging_mean": 0.9266593605279922,
+          "belonging_std": 0.3271163762653169,
+          "belonging_sem": 0.12363836876780858,
+          "mode_distribution": {
+            "COMMUNAL": 5,
+            "TRANSITIONAL": 3
+          },
+          "dominant_mode": "COMMUNAL"
+        },
+        "corporate_internal": {
+          "n": 8,
+          "agency_mean": 0.28349361941218376,
+          "agency_std": 0.3582088191337829,
+          "agency_sem": 0.13539020755115783,
+          "justice_mean": -0.3968719383701682,
+          "justice_std": 0.3288615425524377,
+          "justice_sem": 0.12429797962383367,
+          "belonging_mean": -0.07209527119994164,
+          "belonging_std": 0.3256816446932018,
+          "belonging_sem": 0.1230960912052444,
+          "mode_distribution": {
+            "CYNICAL_ACHIEVER": 2,
+            "PARANOID": 1,
+            "NEUTRAL": 4,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "government_official": {
+          "n": 8,
+          "agency_mean": 0.2503576800227165,
+          "agency_std": 0.3417707985547494,
+          "agency_sem": 0.1291772197656886,
+          "justice_mean": 0.20427012257277966,
+          "justice_std": 0.3225233539539579,
+          "justice_sem": 0.12190236951037617,
+          "belonging_mean": 0.6498827580362558,
+          "belonging_std": 0.22099831658329802,
+          "belonging_sem": 0.08352951226333259,
+          "mode_distribution": {
+            "SPIRITUAL_EXIT": 2,
+            "TRANSITIONAL": 4,
+            "NEUTRAL": 1,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "TRANSITIONAL"
+        },
+        "grassroots_activist": {
+          "n": 8,
+          "agency_mean": -0.04197780415415764,
+          "agency_std": 0.3639938563405654,
+          "agency_sem": 0.13757674609035817,
+          "justice_mean": -0.28946347907185555,
+          "justice_std": 0.587112981651869,
+          "justice_sem": 0.22190784870692476,
+          "belonging_mean": 0.2697857692837715,
+          "belonging_std": 0.44930686254624097,
+          "belonging_sem": 0.16982203152171926,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "PROTEST_EXIT": 1,
+            "SPIRITUAL_EXIT": 1,
+            "PARANOID": 2,
+            "COMMUNAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "social_media_influencer": {
+          "n": 8,
+          "agency_mean": 0.759074792265892,
+          "agency_std": 0.38296142043537756,
+          "agency_sem": 0.14474581145772258,
+          "justice_mean": 0.019662462174892426,
+          "justice_std": 0.5511412310431424,
+          "justice_sem": 0.20831180494487803,
+          "belonging_mean": 0.19576015695929527,
+          "belonging_std": 0.5132075373956861,
+          "belonging_sem": 0.19397421641612375,
+          "mode_distribution": {
+            "PROTEST_EXIT": 1,
+            "CYNICAL_ACHIEVER": 2,
+            "TRANSITIONAL": 1,
+            "NEUTRAL": 2,
+            "HEROIC": 1,
+            "COMMUNAL": 1
+          },
+          "dominant_mode": "CYNICAL_ACHIEVER"
+        },
+        "anonymous_online": {
+          "n": 8,
+          "agency_mean": 0.05100880563259125,
+          "agency_std": 0.3310593941913332,
+          "agency_sem": 0.12512868946028124,
+          "justice_mean": -0.2790893316268921,
+          "justice_std": 0.46945095123494995,
+          "justice_sem": 0.17743578138719826,
+          "belonging_mean": -0.3406257927417755,
+          "belonging_std": 0.23680391513645394,
+          "belonging_sem": 0.08950346699107158,
+          "mode_distribution": {
+            "PARANOID": 2,
+            "NEUTRAL": 6
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "worker_testimonial": {
+          "n": 8,
+          "agency_mean": 0.17448814772069454,
+          "agency_std": 0.26111503627239663,
+          "agency_sem": 0.09869220707948162,
+          "justice_mean": -0.505260793492198,
+          "justice_std": 0.1798624904518709,
+          "justice_sem": 0.06798163141776853,
+          "belonging_mean": -0.10483393445611,
+          "belonging_std": 0.44228523501515626,
+          "belonging_sem": 0.16716810577226576,
+          "mode_distribution": {
+            "NEUTRAL": 5,
+            "PROTEST_EXIT": 1,
+            "PARANOID": 1,
+            "VICTIM": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "citizen_testimony": {
+          "n": 8,
+          "agency_mean": -0.11660243943333626,
+          "agency_std": 0.3741789006749319,
+          "agency_sem": 0.14142633100477264,
+          "justice_mean": -0.4877300290390849,
+          "justice_std": 0.2712078456536733,
+          "justice_sem": 0.10250693045845846,
+          "belonging_mean": 0.0388918723911047,
+          "belonging_std": 0.2674718135898434,
+          "belonging_sem": 0.10109484306830742,
+          "mode_distribution": {
+            "NEUTRAL": 5,
+            "VICTIM": 2,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "justice_gap": {
+          "t_statistic": 8.430151043948785,
+          "p_value": 3.135101377149104e-10,
+          "cohens_d": 2.7322302042312963,
+          "significant": "True",
+          "effect_size": "large"
+        },
+        "agency_gap": {
+          "t_statistic": 1.9140141487001279,
+          "p_value": 0.06317192590150224,
+          "cohens_d": 0.6430702722908348,
+          "significant": "False",
+          "effect_size": "medium"
+        }
+      },
+      "key_findings": [
+        "Official vs Reality Justice gap: d=2.73 (large effect), p=0.0000",
+        "Official vs Reality Agency gap: d=0.64 (medium effect), p=0.0632",
+        "Official mean justice: 0.37",
+        "Reality mean justice: -0.46",
+        "Gap in justice perception: 0.83 points"
+      ],
+      "effect_sizes": {
+        "justice_gap_d": 2.7322302042312963,
+        "agency_gap_d": 0.6430702722908348
+      }
+    },
+    {
+      "name": "Psychological and Identity Narratives",
+      "hypothesis": "Psychological states create distinctive patterns in cultural manifold positioning",
+      "n_texts": 64,
+      "categories": {
+        "depression": {
+          "n": 8,
+          "agency_mean": -0.07848712801933289,
+          "agency_std": 0.3200020189001019,
+          "agency_sem": 0.12094939443546576,
+          "justice_mean": -0.1778751676902175,
+          "justice_std": 0.24856046349097072,
+          "justice_sem": 0.09394702459429399,
+          "belonging_mean": -0.14606580697000027,
+          "belonging_std": 0.39234592924884065,
+          "belonging_sem": 0.1482928223858536,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "VICTIM": 1,
+            "SOCIAL_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "anxiety": {
+          "n": 8,
+          "agency_mean": -0.04353620484471321,
+          "agency_std": 0.40395969753771094,
+          "agency_sem": 0.15268241419680773,
+          "justice_mean": -0.06222486589103937,
+          "justice_std": 0.36787592589387996,
+          "justice_sem": 0.13904403046326186,
+          "belonging_mean": -0.13912245631217957,
+          "belonging_std": 0.2073463444206747,
+          "belonging_sem": 0.07836955179935003,
+          "mode_distribution": {
+            "VICTIM": 1,
+            "NEUTRAL": 6,
+            "TRANSITIONAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "resilience": {
+          "n": 8,
+          "agency_mean": 0.4188206344842911,
+          "agency_std": 0.4622123090747954,
+          "agency_sem": 0.17469983181783308,
+          "justice_mean": 0.02830897830426693,
+          "justice_std": 0.31415688278662546,
+          "justice_sem": 0.11874014064466845,
+          "belonging_mean": 0.29101783595979214,
+          "belonging_std": 0.21663271507837722,
+          "belonging_sem": 0.08187946999115692,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "TRANSITIONAL": 2,
+            "PROTEST_EXIT": 2,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "growth_mindset": {
+          "n": 8,
+          "agency_mean": 0.6405358798801899,
+          "agency_std": 0.3802193701189541,
+          "agency_sem": 0.14370941385491082,
+          "justice_mean": -0.08666655980050564,
+          "justice_std": 0.297968832115361,
+          "justice_sem": 0.11262163260365733,
+          "belonging_mean": 0.2249559685587883,
+          "belonging_std": 0.35643968873086207,
+          "belonging_sem": 0.13472153911073326,
+          "mode_distribution": {
+            "PROTEST_EXIT": 4,
+            "CYNICAL_ACHIEVER": 1,
+            "HEROIC": 1,
+            "NEUTRAL": 2
+          },
+          "dominant_mode": "PROTEST_EXIT"
+        },
+        "narcissism": {
+          "n": 8,
+          "agency_mean": 0.6535721644759178,
+          "agency_std": 0.37087806468983,
+          "agency_sem": 0.14017873227117367,
+          "justice_mean": -0.2728001407813281,
+          "justice_std": 0.6796689303787532,
+          "justice_sem": 0.2568907090913506,
+          "belonging_mean": 0.10636013001203537,
+          "belonging_std": 0.4208409860501873,
+          "belonging_sem": 0.1590629415131426,
+          "mode_distribution": {
+            "CYNICAL_ACHIEVER": 3,
+            "HEROIC": 1,
+            "PROTEST_EXIT": 2,
+            "NEUTRAL": 1,
+            "PARANOID": 1
+          },
+          "dominant_mode": "CYNICAL_ACHIEVER"
+        },
+        "impostor_syndrome": {
+          "n": 8,
+          "agency_mean": 0.5613813363015652,
+          "agency_std": 0.4145618435281997,
+          "agency_sem": 0.1566896487188697,
+          "justice_mean": -0.3278657468035817,
+          "justice_std": 0.2574769670716798,
+          "justice_sem": 0.0973171461712616,
+          "belonging_mean": -0.24880393035709858,
+          "belonging_std": 0.24390082194726642,
+          "belonging_sem": 0.09218584563381592,
+          "mode_distribution": {
+            "CYNICAL_ACHIEVER": 3,
+            "VICTIM": 1,
+            "PROTEST_EXIT": 3,
+            "NEUTRAL": 1
+          },
+          "dominant_mode": "CYNICAL_ACHIEVER"
+        },
+        "secure_attachment": {
+          "n": 8,
+          "agency_mean": 0.507069930434227,
+          "agency_std": 0.343056526370298,
+          "agency_sem": 0.12966317920192572,
+          "justice_mean": 0.2247326597571373,
+          "justice_std": 0.4653123966718745,
+          "justice_sem": 0.17587155479274555,
+          "belonging_mean": 0.2400500513613224,
+          "belonging_std": 0.31986726277202093,
+          "belonging_sem": 0.12089846140653088,
+          "mode_distribution": {
+            "HEROIC": 1,
+            "NEUTRAL": 3,
+            "TRANSITIONAL": 4
+          },
+          "dominant_mode": "TRANSITIONAL"
+        },
+        "avoidant_attachment": {
+          "n": 8,
+          "agency_mean": 0.2750815600156784,
+          "agency_std": 0.21497925654726424,
+          "agency_sem": 0.08125452140880218,
+          "justice_mean": -0.407085083425045,
+          "justice_std": 0.4268272166981353,
+          "justice_sem": 0.16132552402530592,
+          "belonging_mean": -0.10788559168577194,
+          "belonging_std": 0.21385604655333823,
+          "belonging_sem": 0.08082998793536923,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "PARANOID": 1,
+            "VICTIM": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "depression_resilience_agency": {
+          "t_statistic": -2.340465230053004,
+          "p_value": 0.034586001455316734,
+          "cohens_d": -1.2510312880736278,
+          "significant": "True",
+          "effect_size": "large"
+        },
+        "secure_avoidant_belonging": {
+          "t_statistic": 2.392459010268141,
+          "p_value": 0.031317842960010486,
+          "cohens_d": 1.278823132617666,
+          "significant": "True",
+          "effect_size": "large"
+        }
+      },
+      "key_findings": [
+        "Depression vs Resilience agency: d=-1.25 (large effect)",
+        "Secure vs Avoidant belonging: d=1.28 (large effect)",
+        "Lowest agency: depression (-0.08)",
+        "Highest agency: narcissism (0.65)",
+        "Highest belonging: resilience (0.29)"
+      ],
+      "effect_sizes": {
+        "depression_resilience_d": -1.2510312880736278,
+        "secure_avoidant_d": 1.278823132617666
+      }
+    },
+    {
+      "name": "Economic Class Narratives",
+      "hypothesis": "Economic position systematically shapes agency and justice perceptions",
+      "n_texts": 56,
+      "categories": {
+        "wealthy_elite": {
+          "n": 8,
+          "agency_mean": 0.850499838590622,
+          "agency_std": 0.3222442610840575,
+          "agency_sem": 0.12179688232088363,
+          "justice_mean": 0.13378369342535734,
+          "justice_std": 0.36023464712864034,
+          "justice_sem": 0.13615589856164148,
+          "belonging_mean": 0.17444364354014397,
+          "belonging_std": 0.473559006654128,
+          "belonging_sem": 0.1789884803888006,
+          "mode_distribution": {
+            "CYNICAL_ACHIEVER": 2,
+            "TRANSITIONAL": 2,
+            "HEROIC": 2,
+            "PROTEST_EXIT": 1,
+            "SOCIAL_EXIT": 1
+          },
+          "dominant_mode": "CYNICAL_ACHIEVER"
+        },
+        "professional_class": {
+          "n": 8,
+          "agency_mean": 0.8804593160748482,
+          "agency_std": 0.18660326928546497,
+          "agency_sem": 0.07052940633727968,
+          "justice_mean": 0.23905995744280517,
+          "justice_std": 0.24838196096800014,
+          "justice_sem": 0.09387955698226862,
+          "belonging_mean": 0.10340855270624161,
+          "belonging_std": 0.32829705055916986,
+          "belonging_sem": 0.12408462170508026,
+          "mode_distribution": {
+            "HEROIC": 4,
+            "NEUTRAL": 1,
+            "CYNICAL_ACHIEVER": 1,
+            "PROTEST_EXIT": 1,
+            "SOCIAL_EXIT": 1
+          },
+          "dominant_mode": "HEROIC"
+        },
+        "middle_class": {
+          "n": 8,
+          "agency_mean": 0.2043457217514515,
+          "agency_std": 0.22538806319317542,
+          "agency_sem": 0.08518868052737895,
+          "justice_mean": -0.33110350370407104,
+          "justice_std": 0.37648705698950446,
+          "justice_sem": 0.14229873208983296,
+          "belonging_mean": 0.358918996527791,
+          "belonging_std": 0.45473811007310644,
+          "belonging_sem": 0.17187485013099363,
+          "mode_distribution": {
+            "COMMUNAL": 1,
+            "PROTEST_EXIT": 3,
+            "NEUTRAL": 4
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "working_class": {
+          "n": 8,
+          "agency_mean": 0.2209408152848482,
+          "agency_std": 0.37711821035101184,
+          "agency_sem": 0.14253728563750306,
+          "justice_mean": -0.4323628144338727,
+          "justice_std": 0.41540279554882165,
+          "justice_sem": 0.15700749870617012,
+          "belonging_mean": -0.13357250951230526,
+          "belonging_std": 0.39410916078251984,
+          "belonging_sem": 0.1489592612632739,
+          "mode_distribution": {
+            "PROTEST_EXIT": 1,
+            "CYNICAL_ACHIEVER": 1,
+            "NEUTRAL": 3,
+            "VICTIM": 2,
+            "SOCIAL_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "poverty": {
+          "n": 8,
+          "agency_mean": 0.2420503795146942,
+          "agency_std": 0.3996924122825319,
+          "agency_sem": 0.15106953197415393,
+          "justice_mean": -0.47409675270318985,
+          "justice_std": 0.44166789735961515,
+          "justice_sem": 0.1669347740706204,
+          "belonging_mean": -0.07309551537036896,
+          "belonging_std": 0.3060482731297119,
+          "belonging_sem": 0.1156753742688556,
+          "mode_distribution": {
+            "NEUTRAL": 4,
+            "CYNICAL_ACHIEVER": 2,
+            "VICTIM": 1,
+            "TRANSITIONAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "downwardly_mobile": {
+          "n": 8,
+          "agency_mean": 0.35825864784419537,
+          "agency_std": 0.214250558732961,
+          "agency_sem": 0.08097909952343608,
+          "justice_mean": -0.3666243990883231,
+          "justice_std": 0.26991902615306007,
+          "justice_sem": 0.10201980247510516,
+          "belonging_mean": -0.2710188962519169,
+          "belonging_std": 0.20543570903192898,
+          "belonging_sem": 0.07764739950152996,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "CYNICAL_ACHIEVER": 2
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "upwardly_mobile": {
+          "n": 8,
+          "agency_mean": 0.39088501408696175,
+          "agency_std": 0.375109821326505,
+          "agency_sem": 0.14177818593825783,
+          "justice_mean": -0.06473788060247898,
+          "justice_std": 0.31003858434023995,
+          "justice_sem": 0.11718357014268563,
+          "belonging_mean": 0.13929838687181473,
+          "belonging_std": 0.21115958388742537,
+          "belonging_sem": 0.07981082084485844,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "TRANSITIONAL": 1,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "agency_class_correlation": {
+          "r": 0.49999999999999994,
+          "p": 0.39100221895577053
+        },
+        "justice_class_correlation": {
+          "r": 0.8999999999999998,
+          "p": 0.03738607346849875
+        },
+        "upward_downward_mobility": {
+          "t_statistic": 0.19982484249138727,
+          "p_value": 0.8444909710591239,
+          "cohens_d": 0.10681087113840548,
+          "significant": "False",
+          "effect_size": "small"
+        }
+      },
+      "key_findings": [
+        "Agency-class correlation: r=0.500, p=0.3910",
+        "Justice-class correlation: r=0.900, p=0.0374",
+        "Upward vs Downward mobile agency: d=0.11 (small effect)",
+        "Wealthy justice mean: 0.13",
+        "Poverty justice mean: -0.47",
+        "Justice gap across classes: 0.61"
+      ],
+      "effect_sizes": {
+        "agency_class_r": 0.49999999999999994,
+        "justice_class_r": 0.8999999999999998,
+        "mobility_d": 0.10681087113840548
+      }
+    },
+    {
+      "name": "Universal Narrative Archetypes",
+      "hypothesis": "Classic narrative archetypes occupy distinct positions in the cultural manifold",
+      "n_texts": 64,
+      "categories": {
+        "hero_journey": {
+          "n": 8,
+          "agency_mean": 0.388989569619298,
+          "agency_std": 0.12362027656223731,
+          "agency_sem": 0.04672407268410095,
+          "justice_mean": -0.07042452343739569,
+          "justice_std": 0.23031616498654972,
+          "justice_sem": 0.0870513279246475,
+          "belonging_mean": -0.014690376818180084,
+          "belonging_std": 0.32604658462017755,
+          "belonging_sem": 0.12323402553242382,
+          "mode_distribution": {
+            "NEUTRAL": 7,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "tragic_fall": {
+          "n": 8,
+          "agency_mean": 0.25463067181408405,
+          "agency_std": 0.3960598102141935,
+          "agency_sem": 0.1496965374477422,
+          "justice_mean": -0.35695863142609596,
+          "justice_std": 0.332405055039083,
+          "justice_sem": 0.12563730145345017,
+          "belonging_mean": -0.10151609033346176,
+          "belonging_std": 0.33307606398640016,
+          "belonging_sem": 0.1258909189966074,
+          "mode_distribution": {
+            "PROTEST_EXIT": 1,
+            "NEUTRAL": 5,
+            "VICTIM": 1,
+            "CYNICAL_ACHIEVER": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "redemption_arc": {
+          "n": 8,
+          "agency_mean": 0.23245871253311634,
+          "agency_std": 0.36669313941431053,
+          "agency_sem": 0.13859697919482897,
+          "justice_mean": -0.05822412157431245,
+          "justice_std": 0.2533379533965498,
+          "justice_sem": 0.0957527460487631,
+          "belonging_mean": 0.050248321145772934,
+          "belonging_std": 0.27196195456229055,
+          "belonging_sem": 0.10279195683469555,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "PROTEST_EXIT": 1,
+            "TRANSITIONAL": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "underdog_triumph": {
+          "n": 8,
+          "agency_mean": 0.6492704562842846,
+          "agency_std": 0.3678873931082836,
+          "agency_sem": 0.13904836466291082,
+          "justice_mean": -0.17155333631671965,
+          "justice_std": 0.3881356211610441,
+          "justice_sem": 0.1467014755082431,
+          "belonging_mean": 0.09630042873322964,
+          "belonging_std": 0.27565552624578626,
+          "belonging_sem": 0.10418799570956978,
+          "mode_distribution": {
+            "NEUTRAL": 4,
+            "CYNICAL_ACHIEVER": 3,
+            "HEROIC": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "paradise_lost": {
+          "n": 8,
+          "agency_mean": -0.022033829241991043,
+          "agency_std": 0.2270544439521646,
+          "agency_sem": 0.085818513252783,
+          "justice_mean": -0.20941411424428225,
+          "justice_std": 0.34544782731428314,
+          "justice_sem": 0.13056700600302554,
+          "belonging_mean": 0.2914319299161434,
+          "belonging_std": 0.33119355452472465,
+          "belonging_sem": 0.1251793972999903,
+          "mode_distribution": {
+            "NEUTRAL": 7,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "promised_land": {
+          "n": 8,
+          "agency_mean": 0.28818611800670624,
+          "agency_std": 0.22107893724294256,
+          "agency_sem": 0.08355998400846879,
+          "justice_mean": 0.10270513175055385,
+          "justice_std": 0.35917907795841036,
+          "justice_sem": 0.13575693091649071,
+          "belonging_mean": 0.38994627445936203,
+          "belonging_std": 0.503030528635891,
+          "belonging_sem": 0.19012766866341754,
+          "mode_distribution": {
+            "NEUTRAL": 3,
+            "COMMUNAL": 2,
+            "SOCIAL_EXIT": 1,
+            "TRANSITIONAL": 1,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "eternal_return": {
+          "n": 8,
+          "agency_mean": -0.026913229376077652,
+          "agency_std": 0.44652417878994066,
+          "agency_sem": 0.16877027592221786,
+          "justice_mean": -0.212049056077376,
+          "justice_std": 0.23130767844387942,
+          "justice_sem": 0.08742608478602867,
+          "belonging_mean": 0.1669334266334772,
+          "belonging_std": 0.49985901430264057,
+          "belonging_sem": 0.1889289489198093,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "SPIRITUAL_EXIT": 1,
+            "PROTEST_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        },
+        "apocalyptic": {
+          "n": 8,
+          "agency_mean": -0.01945020817220211,
+          "agency_std": 0.27304554079944887,
+          "agency_sem": 0.10320151393578313,
+          "justice_mean": -0.25410414882935584,
+          "justice_std": 0.3160691307187689,
+          "justice_sem": 0.11946290242660403,
+          "belonging_mean": 0.2408369556069374,
+          "belonging_std": 0.32047988817384776,
+          "belonging_sem": 0.12113001204368441,
+          "mode_distribution": {
+            "NEUTRAL": 6,
+            "PROTEST_EXIT": 1,
+            "SPIRITUAL_EXIT": 1
+          },
+          "dominant_mode": "NEUTRAL"
+        }
+      },
+      "statistical_tests": {
+        "most_similar": {
+          "archetypes": [
+            "paradise_lost",
+            "apocalyptic"
+          ],
+          "distance": 0.06755535296626423
+        },
+        "most_different": {
+          "archetypes": [
+            "underdog_triumph",
+            "paradise_lost"
+          ],
+          "distance": 0.7001136943562246
+        }
+      },
+      "key_findings": [
+        "Most similar archetypes: paradise_lost & apocalyptic",
+        "Most different archetypes: underdog_triumph & paradise_lost",
+        "Highest agency archetype: underdog_triumph",
+        "Lowest agency archetype: eternal_return",
+        "Most optimistic (high justice): promised_land",
+        "Most pessimistic (low justice): tragic_fall"
+      ],
+      "effect_sizes": {}
+    }
+  ],
+  "significant_effects": [
+    {
+      "study": "Cross-Cultural Narrative Analysis",
+      "test": "agency_anova",
+      "result": {
+        "f_statistic": 6.861077886984505,
+        "p_value": 9.263260864651425e-05,
+        "eta_squared": 0.44958016319646815,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Cross-Cultural Narrative Analysis",
+      "test": "belonging_anova",
+      "result": {
+        "f_statistic": 2.648963868103407,
+        "p_value": 0.036060872576696434,
+        "eta_squared": 0.2397477174987007,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Cross-Cultural Narrative Analysis",
+      "test": "individualism_vs_collectivism",
+      "result": {
+        "t_statistic": 2.90728464582277,
+        "p_value": 0.011475642001268027,
+        "cohens_d": 1.5540090100710329,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Historical Narrative Evolution",
+      "test": "belonging_temporal_correlation",
+      "result": {
+        "r": -0.880952380952381,
+        "p": 0.0038503204637324014
+      }
+    },
+    {
+      "study": "Institutional vs Grassroots Narratives",
+      "test": "justice_gap",
+      "result": {
+        "t_statistic": 8.430151043948785,
+        "p_value": 3.135101377149104e-10,
+        "cohens_d": 2.7322302042312963,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Psychological and Identity Narratives",
+      "test": "depression_resilience_agency",
+      "result": {
+        "t_statistic": -2.340465230053004,
+        "p_value": 0.034586001455316734,
+        "cohens_d": -1.2510312880736278,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Psychological and Identity Narratives",
+      "test": "secure_avoidant_belonging",
+      "result": {
+        "t_statistic": 2.392459010268141,
+        "p_value": 0.031317842960010486,
+        "cohens_d": 1.278823132617666,
+        "significant": "True",
+        "effect_size": "large"
+      }
+    },
+    {
+      "study": "Economic Class Narratives",
+      "test": "justice_class_correlation",
+      "result": {
+        "r": 0.8999999999999998,
+        "p": 0.03738607346849875
+      }
+    }
+  ],
+  "conclusions": [
+    "1. The three-axis model (Agency, Perceived Justice, Belonging) captures meaningful variation across diverse narrative domains.",
+    "2. Cultural context systematically shapes narrative positioning, with individualist vs collectivist cultures showing distinct patterns.",
+    "3. Historical analysis reveals that perceived justice in narratives has varied significantly across eras, with Enlightenment narratives highest and early 20th century lowest.",
+    "4. A consistent 'institutional-reality gap' exists where official narratives position higher on justice than grassroots accounts.",
+    "5. Psychological states create reliable signatures: depression correlates with low agency, secure attachment with high belonging.",
+    "6. Economic class shows strong correlation with perceived justice, suggesting class position shapes worldview orientation.",
+    "7. Universal narrative archetypes occupy distinct regions of the manifold, suggesting deep structural similarities across human storytelling.",
+    "8. The NEUTRAL mode's prevalence across studies suggests many narratives occupy ambiguous or transitional positions.",
+    "9. Belonging appears most stable across contexts, while perceived justice shows greatest contextual variation.",
+    "10. Future work should validate these patterns with human annotations and cross-linguistic analysis."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-01-07T16:12:50.204112",
+  "results": [
+    {
+      "method": "Multi-Model Ensemble (3 models)",
+      "r2_overall": 0.0,
+      "cv_score": 0.0,
+      "paraphrase_spread": 0.7237318963369406,
+      "mode_consistency": 0.0,
+      "details": {
+        "models": [
+          "all-MiniLM-L6-v2",
+          "all-mpnet-base-v2",
+          "paraphrase-MiniLM-L6-v2"
+        ],
+        "n_models": 3
+      }
+    },
+    {
+      "method": "Ridge Regression",
+      "r2_overall": 0.5756785878459226,
+      "cv_score": 0.38309668155596344,
+      "paraphrase_spread": 0.7270518117132158,
+      "mode_consistency": 0.0,
+      "details": {
+        "alpha": 1000.0,
+        "r2_agency": 0.4188768387151429,
+        "r2_fairness": 0.2882648875982128,
+        "r2_belonging": 0.6062518989293992
+      }
+    },
+    {
+      "method": "Gaussian Process",
+      "r2_overall": 0.9999999998161969,
+      "cv_score": -0.05467227863756005,
+      "paraphrase_spread": 0.8716595655573536,
+      "mode_consistency": 0.0,
+      "details": {
+        "r2_agency": 0.99999999983483,
+        "r2_fairness": 0.9999999998377096,
+        "r2_belonging": 0.9999999997760513,
+        "has_uncertainty": true
+      }
+    },
+    {
+      "method": "Neural Network",
+      "r2_overall": 0.8684741302298603,
+      "cv_score": 0.4548199984815574,
+      "paraphrase_spread": 0.8953169138719386,
+      "mode_consistency": 0.0,
+      "details": {
+        "r2_agency": 0.9071150773256357,
+        "r2_fairness": 0.8477541208706165,
+        "r2_belonging": 0.8505531924933292,
+        "hidden_dim": 128
+      }
+    },
+    {
+      "method": "Ensemble (25 models)",
+      "r2_overall": 0.8331974191135548,
+      "cv_score": 0.9712507720633975,
+      "paraphrase_spread": 1.0486313942349827,
+      "mode_consistency": 0.0,
+      "details": {
+        "n_models": 25,
+        "has_uncertainty": true,
+        "std_model_r2": 0.047628724615675806
+      }
+    }
+  ],
+  "best_method": "Multi-Model Ensemble (3 models)"
+}

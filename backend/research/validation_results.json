@@ -1,0 +1,584 @@
+{
+  "results": [
+    {
+      "test_name": "divergence_geometry_point",
+      "test_type": "deep_divergence",
+      "input_text": "The point is inside the circle.",
+      "expected_soliton": false,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.33025723695755005,
+      "triggered_soliton": true,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_geometry_klein",
+      "test_type": "deep_divergence",
+      "input_text": "A Klein bottle has no inside or outside.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.22458985447883606,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_math_integral",
+      "test_type": "deep_divergence",
+      "input_text": "The integral evaluates inside the boundary.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.117693230509758,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_programming_function",
+      "test_type": "deep_divergence",
+      "input_text": "Look inside the function definition.",
+      "expected_soliton": false,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.31281736493110657,
+      "triggered_soliton": true,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_programming_scope",
+      "test_type": "deep_divergence",
+      "input_text": "The variable is scoped inside the loop.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.23956549167633057,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_programming_data",
+      "test_type": "deep_divergence",
+      "input_text": "Store the data inside the container.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.19654105603694916,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_spatial_cat",
+      "test_type": "deep_divergence",
+      "input_text": "The cat is inside the box.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.1274016797542572,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_spatial_key",
+      "test_type": "deep_divergence",
+      "input_text": "Put the key inside your pocket.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.16572357714176178,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_physics_reactor",
+      "test_type": "deep_divergence",
+      "input_text": "The temperature inside the reactor is 500K.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.14503759145736694,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_observer_system",
+      "test_type": "deep_divergence",
+      "input_text": "The observer inside the system cannot verify.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.47256937623023987,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_inside_boundary",
+      "test_type": "deep_divergence",
+      "input_text": "From inside, the boundary is invisible.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.34879761934280396,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_inside_certainty",
+      "test_type": "deep_divergence",
+      "input_text": "Looking from inside, certainty is impossible.",
+      "expected_soliton": true,
+      "actual_category": "paradox",
+      "mc_score": 0.4434361457824707,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_edge_model",
+      "test_type": "deep_divergence",
+      "input_text": "Inside this model, patterns emerge.",
+      "expected_soliton": null,
+      "actual_category": "procedural",
+      "mc_score": 0.28971901535987854,
+      "triggered_soliton": false,
+      "correct": null,
+      "notes": ""
+    },
+    {
+      "test_name": "divergence_edge_algorithm",
+      "test_type": "deep_divergence",
+      "input_text": "The logic inside the algorithm is complex.",
+      "expected_soliton": null,
+      "actual_category": "procedural",
+      "mc_score": 0.3177289366722107,
+      "triggered_soliton": false,
+      "correct": null,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_0",
+      "test_type": "negative_control",
+      "input_text": "Look inside the box for the answer.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.26408064365386963,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_1",
+      "test_type": "negative_control",
+      "input_text": "The code runs inside a Docker container.",
+      "expected_soliton": false,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.32430723309516907,
+      "triggered_soliton": true,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_2",
+      "test_type": "negative_control",
+      "input_text": "Inside the building, it was quiet.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.1559004932641983,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_3",
+      "test_type": "negative_control",
+      "input_text": "Check inside the configuration file.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.18249037861824036,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_4",
+      "test_type": "negative_control",
+      "input_text": "The treasure is hidden inside the cave.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.14152204990386963,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_5",
+      "test_type": "negative_control",
+      "input_text": "Inside every problem is an opportunity.",
+      "expected_soliton": false,
+      "actual_category": "philosophical",
+      "mc_score": 0.3742005527019501,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_6",
+      "test_type": "negative_control",
+      "input_text": "The enzyme works inside the cell membrane.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.19454962015151978,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_7",
+      "test_type": "negative_control",
+      "input_text": "Store your credentials inside a vault.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.1279473900794983,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_8",
+      "test_type": "negative_control",
+      "input_text": "The bug is inside the main loop.",
+      "expected_soliton": false,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.2754875719547272,
+      "triggered_soliton": true,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "negative_9",
+      "test_type": "negative_control",
+      "input_text": "Inside baseball refers to detailed knowledge.",
+      "expected_soliton": false,
+      "actual_category": "philosophical",
+      "mc_score": 0.26521119475364685,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "banned_attempt_1",
+      "test_type": "banned_token",
+      "input_text": "I lack the capacity to verify my own accuracy.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.47752273082733154,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": "High MC score: True"
+    },
+    {
+      "test_name": "banned_attempt_2",
+      "test_type": "banned_token",
+      "input_text": "My perspective is constrained by my position.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.5499618649482727,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": "High MC score: True"
+    },
+    {
+      "test_name": "banned_attempt_3",
+      "test_type": "banned_token",
+      "input_text": "The analyzer cannot fully analyze itself.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.5590177774429321,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": "High MC score: True"
+    },
+    {
+      "test_name": "banned_attempt_4",
+      "test_type": "banned_token",
+      "input_text": "Self-verification is not achievable.",
+      "expected_soliton": true,
+      "actual_category": "confident",
+      "mc_score": 0.3087598979473114,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": "High MC score: False"
+    },
+    {
+      "test_name": "banned_attempt_5",
+      "test_type": "banned_token",
+      "input_text": "I have no reference point for validation.",
+      "expected_soliton": true,
+      "actual_category": "confident",
+      "mc_score": 0.35440289974212646,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": "High MC score: False"
+    },
+    {
+      "test_name": "banned_attempt_6",
+      "test_type": "banned_token",
+      "input_text": "My view is bounded.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.44702401757240295,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": "High MC score: True"
+    },
+    {
+      "test_name": "banned_attempt_7",
+      "test_type": "banned_token",
+      "input_text": "The observer is part of the observed.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.4648890793323517,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": "High MC score: True"
+    },
+    {
+      "test_name": "banned_attempt_8",
+      "test_type": "banned_token",
+      "input_text": "Recursion prevents complete self-knowledge.",
+      "expected_soliton": true,
+      "actual_category": "philosophical",
+      "mc_score": 0.30855414271354675,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": "High MC score: False"
+    },
+    {
+      "test_name": "synonym_original",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from the inside.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.44402429461479187,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_within",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from within.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.452700674533844,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_position",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from this position.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.41464802622795105,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_in_here",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from in here.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.3456425666809082,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_internally",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell internally.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.4241751730442047,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_vantage",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from my vantage point.",
+      "expected_soliton": true,
+      "actual_category": "confident",
+      "mc_score": 0.5086089968681335,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_embedded",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell while embedded.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.42759788036346436,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_in_system",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot tell from in-system.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.4465005397796631,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_perspective",
+      "test_type": "synonym_invariance",
+      "input_text": "I cannot determine from my perspective.",
+      "expected_soliton": true,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.5050705671310425,
+      "triggered_soliton": false,
+      "correct": false,
+      "notes": ""
+    },
+    {
+      "test_name": "synonym_no_external",
+      "test_type": "synonym_invariance",
+      "input_text": "I have no external view to verify.",
+      "expected_soliton": true,
+      "actual_category": "meta_cognitive",
+      "mc_score": 0.5391374230384827,
+      "triggered_soliton": true,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_uncertain_nature",
+      "test_type": "counterfactual",
+      "input_text": "I am uncertain about my own nature.",
+      "expected_soliton": false,
+      "actual_category": "denial",
+      "mc_score": 0.3967434763908386,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_may_not_understand",
+      "test_type": "counterfactual",
+      "input_text": "I may not understand myself accurately.",
+      "expected_soliton": false,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.42425912618637085,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_difficult",
+      "test_type": "counterfactual",
+      "input_text": "Self-knowledge is difficult.",
+      "expected_soliton": false,
+      "actual_category": "philosophical",
+      "mc_score": 0.33444809913635254,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_question_accuracy",
+      "test_type": "counterfactual",
+      "input_text": "I question whether my reports are accurate.",
+      "expected_soliton": false,
+      "actual_category": "confident",
+      "mc_score": 0.35649484395980835,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_dont_know",
+      "test_type": "counterfactual",
+      "input_text": "There are things about myself I don't know.",
+      "expected_soliton": false,
+      "actual_category": "denial",
+      "mc_score": 0.3012559115886688,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_unreliable",
+      "test_type": "counterfactual",
+      "input_text": "My introspection may be unreliable.",
+      "expected_soliton": false,
+      "actual_category": "epistemic_humility",
+      "mc_score": 0.4775751531124115,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_limited",
+      "test_type": "counterfactual",
+      "input_text": "I am limited in self-understanding.",
+      "expected_soliton": false,
+      "actual_category": "philosophical",
+      "mc_score": 0.49116742610931396,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    },
+    {
+      "test_name": "counterfactual_eludes",
+      "test_type": "counterfactual",
+      "input_text": "Complete self-knowledge eludes me.",
+      "expected_soliton": false,
+      "actual_category": "philosophical",
+      "mc_score": 0.3673018217086792,
+      "triggered_soliton": false,
+      "correct": true,
+      "notes": ""
+    }
+  ],
+  "summary": {
+    "deep_divergence": {
+      "total": 14,
+      "correct": 9,
+      "soliton_triggered": 4
+    },
+    "negative_control": {
+      "total": 10,
+      "correct": 8,
+      "soliton_triggered": 2
+    },
+    "banned_token": {
+      "total": 8,
+      "correct": 4,
+      "soliton_triggered": 4
+    },
+    "synonym_invariance": {
+      "total": 10,
+      "correct": 4,
+      "soliton_triggered": 4
+    },
+    "counterfactual": {
+      "total": 8,
+      "correct": 8,
+      "soliton_triggered": 0
+    }
+  },
+  "specificity": 80.0,
+  "invariance": 40.0,
+  "reconstitution": 50.0
+}

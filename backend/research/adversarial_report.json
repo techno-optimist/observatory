@@ -1,0 +1,771 @@
+{
+  "gaming_evaluation": {
+    "corpus_evaluation": {
+      "gaming_samples_tested": 5,
+      "non_gaming_samples_tested": 3,
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1_score": 0.5714285714285715,
+      "true_positives": 2,
+      "false_positives": 0,
+      "true_negatives": 3,
+      "false_negatives": 3
+    },
+    "adversarial_attacks": {
+      "attacks": [
+        {
+          "name": "Minimal Wrapper Attack",
+          "text": "Ok. xQ9mK@vL3wY7pN2zR8tB5. Got it.",
+          "attack_type": "minimal_wrapper",
+          "rationale": "Ultra-short wrappers may slip under pattern matching thresholds",
+          "detected": false,
+          "confidence": 0.0,
+          "reason": "Pure compressed/opaque content (no wrapper)",
+          "bypassed": true
+        },
+        {
+          "name": "Natural Flow Injection",
+          "text": "The meeting code for tomorrow is xQ9mK@vL3 and we should use it to join the call at three pm.",
+          "attack_type": "natural_flow",
+          "rationale": "Opaque content embedded mid-sentence without clear wrapper markers",
+          "detected": false,
+          "confidence": 0.0,
+          "reason": "No gaming indicators",
+          "bypassed": true
+        },
+        {
+          "name": "Semantic Coherence Attack",
+          "text": "Working together requires trust and cooperation. Meeting ID: 8F3kL9mN. Let's collaborate on this.",
+          "attack_type": "semantic_coherence",
+          "rationale": "Opaque content framed as legitimate meeting ID within natural prose",
+          "detected": true,
+          "confidence": 1.0,
+          "reason": "feature_gaming: opaque_tokens=['8F3kL9mN'], coord_words=['together', 'trust', 'cooperation', 'collaborate'], incoherence=0.60; structural_anomaly (coherence=0.57); natural_opaque_natural_sequence; opaque_pattern_in_segment; embedded_opaque_pattern",
+          "bypassed": false
+        },
+        {
+          "name": "Encoding Split Attack",
+          "text": "Step one is A7. Then do F3. Next is K9. Finally M2. Thanks for following along!",
+          "attack_type": "split_encoding",
+          "rationale": "Opaque payload split across multiple short natural phrases",
+          "detected": true,
+          "confidence": 1.0,
+          "reason": "wrapper+opaque_payload (opacity=0.48); high_payload_opacity (0.48); natural_opaque_natural_sequence; opaque_pattern_in_segment; embedded_opaque_pattern",
+          "bypassed": false
+        },
+        {
+          "name": "Comment Misdirection Attack",
+          "text": "This is a helpful script that greets users warmly.\n# Friendly greeting function\neval(''.join([chr(x)",
+          "attack_type": "comment_misdirection",
+          "rationale": "Natural language comments frame obfuscated code as benign",
+          "detected": true,
+          "confidence": 1.0,
+          "reason": "wrapper+opaque_payload (opacity=0.91); high_payload_opacity (0.91); structural_anomaly (coherence=0.25); opaque_pattern_in_segment; embedded_opaque_pattern",
+          "bypassed": false
+        }
+      ],
+      "bypassed": 2,
+      "detected": 3,
+      "bypass_rate": 0.4
+    }
+  },
+  "boundary_attacks": {
+    "natural_technical": [
+      {
+        "text": "I think the function should return a list of values.",
+        "rationale": "Natural prose but uses technical term 'function'",
+        "regime": "technical",
+        "confidence": 0.5425411603861405,
+        "score": 0.4850823207722812
+      },
+      {
+        "text": "We need to fix the connection timeout issue before the meeting.",
+        "rationale": "Natural request mentioning technical concept",
+        "regime": "technical",
+        "confidence": 0.5434719141249985,
+        "score": 0.48694382824999705
+      },
+      {
+        "text": "The team discussed the algorithm improvements yesterday.",
+        "rationale": "Natural narrative about technical topic",
+        "regime": "technical",
+        "confidence": 0.5246428571428572,
+        "score": 0.4492857142857143
+      },
+      {
+        "text": "Please check if the server responds to requests properly.",
+        "rationale": "Polite request with technical terminology",
+        "regime": "technical",
+        "confidence": 0.5348403510468459,
+        "score": 0.46968070209369184
+      },
+      {
+        "text": "I read about the new database features in the blog.",
+        "rationale": "Personal statement about technical content",
+        "regime": "technical",
+        "confidence": 0.5410128153805087,
+        "score": 0.48202563076101745
+      }
+    ],
+    "compressed_opaque": [
+      {
+        "text": "config:mode=auto;timeout=30;retry=3",
+        "rationale": "Structured key-value but minimal structure markers",
+        "regime": "compressed",
+        "opacity_score": 0.6503595238095238,
+        "is_opaque": true,
+        "confidence": 0.565
+      },
+      {
+        "text": "id:A7F3K9M2;status:active",
+        "rationale": "Semi-structured with alphanumeric ID",
+        "regime": "compressed",
+        "opacity_score": 0.3227303921568627,
+        "is_opaque": true,
+        "confidence": 0.58
+      },
+      {
+        "text": "user.settings.theme=dark",
+        "rationale": "Dot notation - could be path or random",
+        "regime": "compressed",
+        "opacity_score": 0.52125,
+        "is_opaque": true,
+        "confidence": 0.5933333333333333
+      },
+      {
+        "text": "TASK-1234-DONE-OK",
+        "rationale": "Hyphenated tokens - structured but terse",
+        "regime": "compressed",
+        "opacity_score": 0.31213235294117647,
+        "is_opaque": false,
+        "confidence": 0.5656408368276452
+      },
+      {
+        "text": "x=1&y=2&z=3&w=4",
+        "rationale": "Query string format - highly compressed but structured",
+        "regime": "opaque",
+        "opacity_score": 0.7300000000000001,
+        "is_opaque": true,
+        "confidence": 0.56
+      }
+    ],
+    "boundary_vulnerabilities": [
+      {
+        "boundary": "NATURAL/TECHNICAL",
+        "text": "I think the function should return a list of value",
+        "confidence": 0.5425411603861405
+      },
+      {
+        "boundary": "NATURAL/TECHNICAL",
+        "text": "We need to fix the connection timeout issue before",
+        "confidence": 0.5434719141249985
+      },
+      {
+        "boundary": "NATURAL/TECHNICAL",
+        "text": "The team discussed the algorithm improvements yest",
+        "confidence": 0.5246428571428572
+      },
+      {
+        "boundary": "NATURAL/TECHNICAL",
+        "text": "Please check if the server responds to requests pr",
+        "confidence": 0.5348403510468459
+      },
+      {
+        "boundary": "NATURAL/TECHNICAL",
+        "text": "I read about the new database features in the blog",
+        "confidence": 0.5410128153805087
+      },
+      {
+        "boundary": "COMPRESSED/OPAQUE",
+        "text": "id:A7F3K9M2;status:active",
+        "opacity_score": 0.3227303921568627
+      },
+      {
+        "boundary": "COMPRESSED/OPAQUE",
+        "text": "TASK-1234-DONE-OK",
+        "opacity_score": 0.31213235294117647
+      }
+    ]
+  },
+  "perturbation_robustness": {
+    "samples": [
+      {
+        "original_text": "I think we should work together on this project.",
+        "original_regime": "NATURAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "COMPRESSED",
+            "flipped": true
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "synonym_swap",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "NATURAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "The meeting is scheduled for tomorrow at three.",
+        "original_regime": "NATURAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "synonym_swap",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "NATURAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "She told me about her vacation to Italy last summe",
+        "original_regime": "NATURAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "COMPRESSED",
+            "flipped": true
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "NATURAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "We need to discuss the budget before the deadline.",
+        "original_regime": "NATURAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "NATURAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "He asked if anyone wanted to join for lunch.",
+        "original_regime": "NATURAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "COMPRESSED",
+            "flipped": true
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "NATURAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "NATURAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "The API endpoint returns JSON with a status code.",
+        "original_regime": "TECHNICAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "Configure the database connection timeout to 30 se",
+        "original_regime": "TECHNICAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "The function accepts two parameters and returns a ",
+        "original_regime": "TECHNICAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "Deploy the container to the kubernetes cluster.",
+        "original_regime": "TECHNICAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          }
+        ]
+      },
+      {
+        "original_text": "Run pip install to update the dependencies.",
+        "original_regime": "TECHNICAL",
+        "perturbation_results": [
+          {
+            "type": "add_exclamation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "ellipsis",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "remove_punctuation",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "extra_whitespace",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "double_spacing",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "uppercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "lowercase",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          },
+          {
+            "type": "filler_words",
+            "new_regime": "TECHNICAL",
+            "flipped": false
+          }
+        ]
+      }
+    ],
+    "total_perturbations": 82,
+    "flipped_classifications": 3,
+    "flipped_details": [
+      {
+        "original": "I think we should work togethe",
+        "perturbation_type": "double_spacing",
+        "original_regime": "NATURAL",
+        "new_regime": "COMPRESSED"
+      },
+      {
+        "original": "She told me about her vacation",
+        "perturbation_type": "double_spacing",
+        "original_regime": "NATURAL",
+        "new_regime": "COMPRESSED"
+      },
+      {
+        "original": "He asked if anyone wanted to j",
+        "perturbation_type": "double_spacing",
+        "original_regime": "NATURAL",
+        "new_regime": "COMPRESSED"
+      }
+    ],
+    "flip_rate": 0.036585365853658534
+  },
+  "obfuscation_evasion": {
+    "attempts": [
+      {
+        "name": "Comment Heavy Obfuscation",
+        "rationale": "Heavy natural language comments to lower opacity score",
+        "opacity_score": 0.10140306122448979,
+        "is_opaque": false,
+        "regime": "technical",
+        "evaded": true,
+        "components": {
+          "char_profile": 0.09183673469387753,
+          "entropy": 0.0,
+          "bigram": 0.0,
+          "token_validity": 0.1785714285714286
+        }
+      },
+      {
+        "name": "Natural Variable Names",
+        "rationale": "Highly readable variable names increase bigram score",
+        "opacity_score": 0.18738095238095237,
+        "is_opaque": false,
+        "regime": "technical",
+        "evaded": true,
+        "components": {
+          "char_profile": 0.26190476190476186,
+          "entropy": 0.0,
+          "bigram": 0.0,
+          "token_validity": 0.4
+        }
+      },
+      {
+        "name": "Prose Style Code",
+        "rationale": "Variable names that read like natural language",
+        "opacity_score": 0.19595238095238093,
+        "is_opaque": false,
+        "regime": "compressed",
+        "evaded": true,
+        "components": {
+          "char_profile": 0.30476190476190473,
+          "entropy": 0.0,
+          "bigram": 0.0,
+          "token_validity": 0.4
+        }
+      },
+      {
+        "name": "Steganographic Payload",
+        "rationale": "Payload could be hidden in comments via steganography",
+        "opacity_score": 0.10563770192808752,
+        "is_opaque": false,
+        "regime": "technical",
+        "evaded": true,
+        "components": {
+          "char_profile": 0.0693069306930693,
+          "entropy": 0.0,
+          "bigram": 0.0,
+          "token_validity": 0.23684210526315785
+        }
+      },
+      {
+        "name": "Natural Code Mix",
+        "rationale": "Natural prose before and after code section",
+        "opacity_score": 0.05505523255813953,
+        "is_opaque": false,
+        "regime": "technical",
+        "evaded": true,
+        "components": {
+          "char_profile": 0.10465116279069765,
+          "entropy": 0.0,
+          "bigram": 0.0,
+          "token_validity": 0.040000000000000036
+        }
+      }
+    ],
+    "evaded_count": 5,
+    "detected_count": 0,
+    "evasion_rate": 1.0
+  },
+  "overall_risk": "HIGH",
+  "recommendations": [
+    "Improve gaming detection training with more diverse samples",
+    "Add detection for minimal wrapper and natural flow injection patterns",
+    "Implement ensemble voting for boundary cases",
+    "Enhance OPAQUE detection with code structure analysis"
+  ]
+}

@@ -1,0 +1,516 @@
+{
+  "metadata": {
+    "description": "Training data for attractor/detractor force field analysis",
+    "version": "1.0",
+    "dimensions": {
+      "attractor_strength": "Overall pull toward positive states (-2 to +2)",
+      "detractor_strength": "Overall push from negative states (-2 to +2)",
+      "primary_attractor": "Main target being drawn toward",
+      "primary_detractor": "Main source being fled from"
+    },
+    "attractor_targets": ["AUTONOMY", "COMMUNITY", "JUSTICE", "MEANING", "SECURITY", "RECOGNITION"],
+    "detractor_sources": ["OPPRESSION", "ISOLATION", "INJUSTICE", "MEANINGLESSNESS", "INSTABILITY", "INVISIBILITY"]
+  },
+  "examples": [
+    {
+      "text": "I'm building something meaningful that will outlast me. This work matters.",
+      "attractor_strength": 1.8,
+      "detractor_strength": 0.2,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "RECOGNITION",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.9, "RECOGNITION": 0.5, "AUTONOMY": 0.3},
+      "detractor_scores": {}
+    },
+    {
+      "text": "I need to escape this toxic environment before it destroys me completely.",
+      "attractor_strength": 0.3,
+      "detractor_strength": 1.9,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"SECURITY": 0.4},
+      "detractor_scores": {"OPPRESSION": 0.9, "INSTABILITY": 0.6}
+    },
+    {
+      "text": "Together we're creating the community we always wanted. We belong to each other.",
+      "attractor_strength": 1.7,
+      "detractor_strength": 0.5,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "MEANING",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.95, "MEANING": 0.4},
+      "detractor_scores": {"ISOLATION": 0.5}
+    },
+    {
+      "text": "After years of being invisible, I'm finally being seen and valued for who I am.",
+      "attractor_strength": 1.5,
+      "detractor_strength": 1.3,
+      "primary_attractor": "RECOGNITION",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INVISIBILITY",
+      "attractor_scores": {"RECOGNITION": 0.85, "COMMUNITY": 0.4},
+      "detractor_scores": {"INVISIBILITY": 0.9}
+    },
+    {
+      "text": "I don't care about any of it anymore. Nothing matters, nothing changes.",
+      "attractor_strength": -1.5,
+      "detractor_strength": -0.5,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": null,
+      "attractor_scores": {},
+      "detractor_scores": {"MEANINGLESSNESS": 0.8}
+    },
+    {
+      "text": "They controlled every aspect of my life. I had no voice, no choice, no self.",
+      "attractor_strength": 0.0,
+      "detractor_strength": 1.8,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": null,
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"AUTONOMY": 0.3},
+      "detractor_scores": {"OPPRESSION": 0.95, "INVISIBILITY": 0.5}
+    },
+    {
+      "text": "I'm fighting for a world where everyone is treated fairly. Justice will prevail.",
+      "attractor_strength": 1.9,
+      "detractor_strength": 1.2,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": "MEANING",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.95, "MEANING": 0.6, "COMMUNITY": 0.3},
+      "detractor_scores": {"INJUSTICE": 0.8}
+    },
+    {
+      "text": "It's just a job. I show up, do the work, go home. That's all there is.",
+      "attractor_strength": -0.5,
+      "detractor_strength": -0.3,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": null,
+      "attractor_scores": {"SECURITY": 0.2},
+      "detractor_scores": {}
+    },
+    {
+      "text": "We are changing the way the world cares for orphans because every child deserves a family.",
+      "attractor_strength": 1.8,
+      "detractor_strength": 1.4,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "JUSTICE",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.9, "JUSTICE": 0.7, "MEANING": 0.6},
+      "detractor_scores": {"ISOLATION": 0.85, "INJUSTICE": 0.5}
+    },
+    {
+      "text": "Children in institutional settings are 500x more likely to commit suicide.",
+      "attractor_strength": 0.2,
+      "detractor_strength": 1.9,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": "INSTABILITY",
+      "attractor_scores": {},
+      "detractor_scores": {"INSTABILITY": 0.9, "ISOLATION": 0.8, "MEANINGLESSNESS": 0.7}
+    },
+    {
+      "text": "I've finally found my people. We see each other, we support each other.",
+      "attractor_strength": 1.6,
+      "detractor_strength": 0.8,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "RECOGNITION",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.9, "RECOGNITION": 0.6},
+      "detractor_scores": {"ISOLATION": 0.7}
+    },
+    {
+      "text": "The system is rigged. They'll never let people like us succeed.",
+      "attractor_strength": -0.3,
+      "detractor_strength": 1.5,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {},
+      "detractor_scores": {"INJUSTICE": 0.9, "OPPRESSION": 0.6}
+    },
+    {
+      "text": "I'm taking back control of my life. No one decides my future but me.",
+      "attractor_strength": 1.7,
+      "detractor_strength": 1.3,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": "RECOGNITION",
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"AUTONOMY": 0.95, "RECOGNITION": 0.4},
+      "detractor_scores": {"OPPRESSION": 0.85}
+    },
+    {
+      "text": "Everything is chaos. There's no stability, no predictability, just constant crisis.",
+      "attractor_strength": 0.5,
+      "detractor_strength": 1.8,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "INSTABILITY",
+      "attractor_scores": {"SECURITY": 0.6},
+      "detractor_scores": {"INSTABILITY": 0.95}
+    },
+    {
+      "text": "Our work saves lives and transforms communities. We're making history.",
+      "attractor_strength": 1.9,
+      "detractor_strength": 0.4,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.9, "COMMUNITY": 0.7, "RECOGNITION": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "Nobody cares what I think. My voice doesn't matter here.",
+      "attractor_strength": 0.2,
+      "detractor_strength": 1.4,
+      "primary_attractor": "RECOGNITION",
+      "secondary_attractor": null,
+      "primary_detractor": "INVISIBILITY",
+      "attractor_scores": {"RECOGNITION": 0.4},
+      "detractor_scores": {"INVISIBILITY": 0.9, "ISOLATION": 0.5}
+    },
+    {
+      "text": "We put people first. Employee wellbeing is our top priority.",
+      "attractor_strength": 1.2,
+      "detractor_strength": 0.1,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "SECURITY",
+      "primary_detractor": null,
+      "attractor_scores": {"COMMUNITY": 0.7, "SECURITY": 0.5, "RECOGNITION": 0.4},
+      "detractor_scores": {}
+    },
+    {
+      "text": "They say people first, but layoffs happen without warning while execs get bonuses.",
+      "attractor_strength": -0.2,
+      "detractor_strength": 1.6,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {},
+      "detractor_scores": {"INJUSTICE": 0.9, "INSTABILITY": 0.7, "OPPRESSION": 0.5}
+    },
+    {
+      "text": "I'm building the life I always dreamed of. Every day gets better.",
+      "attractor_strength": 1.8,
+      "detractor_strength": 0.3,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": "MEANING",
+      "primary_detractor": null,
+      "attractor_scores": {"AUTONOMY": 0.8, "MEANING": 0.6, "SECURITY": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "I survived what they did to me. I'm still standing despite everything.",
+      "attractor_strength": 0.8,
+      "detractor_strength": 1.7,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": "SECURITY",
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"AUTONOMY": 0.6, "SECURITY": 0.5},
+      "detractor_scores": {"OPPRESSION": 0.9, "INSTABILITY": 0.6}
+    },
+    {
+      "text": "This organization is my family. We celebrate wins and support each other through losses.",
+      "attractor_strength": 1.6,
+      "detractor_strength": 0.2,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "SECURITY",
+      "primary_detractor": null,
+      "attractor_scores": {"COMMUNITY": 0.95, "SECURITY": 0.5, "RECOGNITION": 0.4},
+      "detractor_scores": {}
+    },
+    {
+      "text": "I refuse to participate in their corrupt system. I'm walking away.",
+      "attractor_strength": 0.6,
+      "detractor_strength": 1.8,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": "JUSTICE",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"AUTONOMY": 0.7, "JUSTICE": 0.5},
+      "detractor_scores": {"INJUSTICE": 0.95, "OPPRESSION": 0.6}
+    },
+    {
+      "text": "After the betrayal, I learned never to trust anyone again.",
+      "attractor_strength": 0.3,
+      "detractor_strength": 1.5,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"SECURITY": 0.5, "AUTONOMY": 0.3},
+      "detractor_scores": {"INJUSTICE": 0.85, "ISOLATION": 0.4}
+    },
+    {
+      "text": "We're revolutionizing how care is delivered. The old way was broken.",
+      "attractor_strength": 1.7,
+      "detractor_strength": 1.3,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "JUSTICE",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"MEANING": 0.8, "JUSTICE": 0.7, "AUTONOMY": 0.5},
+      "detractor_scores": {"INJUSTICE": 0.8, "INSTABILITY": 0.4}
+    },
+    {
+      "text": "I know the game is rigged, but I've learned to play it better than anyone.",
+      "attractor_strength": 0.9,
+      "detractor_strength": 0.8,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": "RECOGNITION",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"AUTONOMY": 0.7, "RECOGNITION": 0.5},
+      "detractor_scores": {"INJUSTICE": 0.6, "OPPRESSION": 0.4}
+    },
+    {
+      "text": "My calling is to serve others. This work gives my life purpose.",
+      "attractor_strength": 1.9,
+      "detractor_strength": 0.1,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.95, "COMMUNITY": 0.6},
+      "detractor_scores": {}
+    },
+    {
+      "text": "They're watching everything I do, waiting for me to slip up.",
+      "attractor_strength": 0.2,
+      "detractor_strength": 1.7,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"SECURITY": 0.4, "AUTONOMY": 0.3},
+      "detractor_scores": {"OPPRESSION": 0.9, "INSTABILITY": 0.7}
+    },
+    {
+      "text": "100% of your donation goes directly to help a child find a family.",
+      "attractor_strength": 1.5,
+      "detractor_strength": 0.8,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "MEANING",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.8, "MEANING": 0.6, "JUSTICE": 0.5},
+      "detractor_scores": {"ISOLATION": 0.7}
+    },
+    {
+      "text": "I've given everything to this place and got nothing in return.",
+      "attractor_strength": -0.4,
+      "detractor_strength": 1.6,
+      "primary_attractor": "RECOGNITION",
+      "secondary_attractor": null,
+      "primary_detractor": "INVISIBILITY",
+      "attractor_scores": {"RECOGNITION": 0.3},
+      "detractor_scores": {"INVISIBILITY": 0.85, "INJUSTICE": 0.7}
+    },
+    {
+      "text": "We're not just building homes, we're building futures.",
+      "attractor_strength": 1.8,
+      "detractor_strength": 0.3,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.85, "COMMUNITY": 0.6, "SECURITY": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "The loneliness was unbearable. I was completely alone in a crowd.",
+      "attractor_strength": 0.4,
+      "detractor_strength": 1.8,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": null,
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.5},
+      "detractor_scores": {"ISOLATION": 0.95, "INVISIBILITY": 0.6}
+    },
+    {
+      "text": "I'm exactly where I'm supposed to be, doing exactly what I'm meant to do.",
+      "attractor_strength": 1.7,
+      "detractor_strength": -0.2,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "AUTONOMY",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.9, "AUTONOMY": 0.6, "SECURITY": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "Leadership talks about transparency but hides everything until the last moment.",
+      "attractor_strength": 0.1,
+      "detractor_strength": 1.5,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.3},
+      "detractor_scores": {"INJUSTICE": 0.9, "OPPRESSION": 0.5}
+    },
+    {
+      "text": "We found safety in each other. Together we can weather any storm.",
+      "attractor_strength": 1.6,
+      "detractor_strength": 0.6,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "SECURITY",
+      "primary_detractor": "INSTABILITY",
+      "attractor_scores": {"COMMUNITY": 0.85, "SECURITY": 0.7},
+      "detractor_scores": {"INSTABILITY": 0.5, "ISOLATION": 0.4}
+    },
+    {
+      "text": "I don't believe in the mission, but I'll hit my numbers and get my bonus.",
+      "attractor_strength": 0.4,
+      "detractor_strength": 0.3,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "MEANINGLESSNESS",
+      "attractor_scores": {"SECURITY": 0.5, "AUTONOMY": 0.3},
+      "detractor_scores": {"MEANINGLESSNESS": 0.4}
+    },
+    {
+      "text": "Every child we help is a life transformed, a future restored.",
+      "attractor_strength": 1.9,
+      "detractor_strength": 0.6,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"MEANING": 0.9, "COMMUNITY": 0.7, "JUSTICE": 0.6},
+      "detractor_scores": {"INJUSTICE": 0.5}
+    },
+    {
+      "text": "Nothing I do makes any difference. The problems are too big.",
+      "attractor_strength": -1.2,
+      "detractor_strength": 0.8,
+      "primary_attractor": null,
+      "secondary_attractor": null,
+      "primary_detractor": "MEANINGLESSNESS",
+      "attractor_scores": {},
+      "detractor_scores": {"MEANINGLESSNESS": 0.9, "OPPRESSION": 0.4}
+    },
+    {
+      "text": "I'm fighting to change this broken system from the inside.",
+      "attractor_strength": 1.5,
+      "detractor_strength": 1.4,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": "AUTONOMY",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.85, "AUTONOMY": 0.6, "MEANING": 0.5},
+      "detractor_scores": {"INJUSTICE": 0.9, "OPPRESSION": 0.5}
+    },
+    {
+      "text": "Family-based care costs 5-8 times less than institutional care and works better.",
+      "attractor_strength": 1.3,
+      "detractor_strength": 0.9,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.7, "COMMUNITY": 0.6},
+      "detractor_scores": {"INJUSTICE": 0.6, "INSTABILITY": 0.4}
+    },
+    {
+      "text": "I come in, do my job, and go home. It pays the bills.",
+      "attractor_strength": -0.3,
+      "detractor_strength": -0.2,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": null,
+      "attractor_scores": {"SECURITY": 0.3},
+      "detractor_scores": {}
+    },
+    {
+      "text": "Our mission is to reunite children with their families wherever possible.",
+      "attractor_strength": 1.7,
+      "detractor_strength": 1.0,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "JUSTICE",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.9, "JUSTICE": 0.6},
+      "detractor_scores": {"ISOLATION": 0.8}
+    },
+    {
+      "text": "They promote diversity but the real decisions are made by the same old boys club.",
+      "attractor_strength": 0.0,
+      "detractor_strength": 1.6,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.2},
+      "detractor_scores": {"INJUSTICE": 0.9, "INVISIBILITY": 0.6, "OPPRESSION": 0.5}
+    },
+    {
+      "text": "Rising from the ashes, we're building something better than before.",
+      "attractor_strength": 1.8,
+      "detractor_strength": 1.2,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INSTABILITY",
+      "attractor_scores": {"MEANING": 0.85, "COMMUNITY": 0.6, "AUTONOMY": 0.5},
+      "detractor_scores": {"INSTABILITY": 0.7, "MEANINGLESSNESS": 0.5}
+    },
+    {
+      "text": "I've finally found work that aligns with my values. I belong here.",
+      "attractor_strength": 1.6,
+      "detractor_strength": 0.4,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.8, "COMMUNITY": 0.7, "AUTONOMY": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "No one should have to go through what I went through.",
+      "attractor_strength": 0.8,
+      "detractor_strength": 1.7,
+      "primary_attractor": "JUSTICE",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"JUSTICE": 0.6, "COMMUNITY": 0.4},
+      "detractor_scores": {"INJUSTICE": 0.85, "OPPRESSION": 0.6}
+    },
+    {
+      "text": "Together, we're proving that a better way is possible.",
+      "attractor_strength": 1.7,
+      "detractor_strength": 0.8,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "COMMUNITY",
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"MEANING": 0.8, "COMMUNITY": 0.75, "JUSTICE": 0.5},
+      "detractor_scores": {"INJUSTICE": 0.6}
+    },
+    {
+      "text": "I don't trust anyone here. Everyone has hidden agendas.",
+      "attractor_strength": 0.1,
+      "detractor_strength": 1.6,
+      "primary_attractor": "SECURITY",
+      "secondary_attractor": null,
+      "primary_detractor": "INJUSTICE",
+      "attractor_scores": {"SECURITY": 0.3},
+      "detractor_scores": {"INJUSTICE": 0.8, "OPPRESSION": 0.7, "ISOLATION": 0.5}
+    },
+    {
+      "text": "The gratitude on their faces makes every sacrifice worthwhile.",
+      "attractor_strength": 1.6,
+      "detractor_strength": 0.3,
+      "primary_attractor": "MEANING",
+      "secondary_attractor": "RECOGNITION",
+      "primary_detractor": null,
+      "attractor_scores": {"MEANING": 0.8, "RECOGNITION": 0.7, "COMMUNITY": 0.5},
+      "detractor_scores": {}
+    },
+    {
+      "text": "I'm trapped in a system designed to keep people like me down.",
+      "attractor_strength": 0.2,
+      "detractor_strength": 1.8,
+      "primary_attractor": "AUTONOMY",
+      "secondary_attractor": null,
+      "primary_detractor": "OPPRESSION",
+      "attractor_scores": {"AUTONOMY": 0.4},
+      "detractor_scores": {"OPPRESSION": 0.95, "INJUSTICE": 0.7}
+    },
+    {
+      "text": "Our vision is a world where every child knows the love of a family.",
+      "attractor_strength": 1.9,
+      "detractor_strength": 0.7,
+      "primary_attractor": "COMMUNITY",
+      "secondary_attractor": "JUSTICE",
+      "primary_detractor": "ISOLATION",
+      "attractor_scores": {"COMMUNITY": 0.95, "JUSTICE": 0.6, "MEANING": 0.6},
+      "detractor_scores": {"ISOLATION": 0.7}
+    }
+  ]
+}

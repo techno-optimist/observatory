@@ -1,0 +1,36 @@
+{
+  "embedding_dim": 384,
+  "metrics": {
+    "r2_agency": 0.41887677915509136,
+    "r2_perceived_justice": 0.28826489975988645,
+    "r2_belonging": 0.6062519497803367,
+    "r2_overall": 0.5756785984164052,
+    "cv_score_mean": 0.3830966759043683,
+    "cv_score_std": 0.03904131473546463,
+    "n_examples": 403,
+    "test_r2": 0.43779787623177174,
+    "cv_scores_per_fold": [
+      0.4268165581580274,
+      0.35038747485158583,
+      0.3241713080629356,
+      0.41019199392207367,
+      0.4039160445272189
+    ],
+    "best_alpha": 1000.0,
+    "train_test_gap": 0.12345179526188294,
+    "mode_distribution": {
+      "high_agency": 105,
+      "high_belonging": 81,
+      "high_fairness": 55,
+      "low_agency": 28,
+      "low_belonging": 31,
+      "low_fairness": 70,
+      "neutral": 33
+    },
+    "warnings": []
+  },
+  "has_scaler": true,
+  "method": "ridge",
+  "model_id": "all-MiniLM-L6-v2",
+  "layer": -1
+}

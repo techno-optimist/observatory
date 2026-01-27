@@ -1,0 +1,29 @@
+{
+  "name": "forty2_spark_v2",
+  "version": "2.0",
+  "description": "Observatory-validated isotope training data",
+  "created": "2026-01-21T10:33:00.008917",
+  "isotope_library": {
+    "total_isotopes": 121,
+    "total_examples": 366
+  },
+  "datasets": {
+    "sft": {
+      "train": 329,
+      "valid": 37
+    },
+    "dpo": {
+      "train": 66,
+      "valid": 8
+    },
+    "boost": {
+      "train": 52,
+      "valid": 6
+    }
+  },
+  "protocol": {
+    "phase1": "50 SFT iterations",
+    "phase2": "200 DPO iterations (beta=0.1)",
+    "phase3": "100 DPO iterations (soft negatives)"
+  }
+}

@@ -1,0 +1,1544 @@
+{
+  "timestamp": "2026-01-07T16:37:07.620748",
+  "title": "Cultural Narrative Analysis Across Multiple Domains",
+  "studies": {
+    "political_rhetoric": {
+      "progressive_left": {
+        "category": "progressive_left",
+        "n_texts": 5,
+        "mean_agency": 0.36403042674064634,
+        "mean_perceived_justice": -0.09909585118293762,
+        "mean_belonging": 0.47295679450035094,
+        "std_agency": 0.11416000198430457,
+        "std_perceived_justice": 0.5651220082015658,
+        "std_belonging": 0.6130531950367382,
+        "mode_distribution": {
+          "COMMUNAL": 2,
+          "PARANOID": 1,
+          "NEUTRAL": 2
+        },
+        "dominant_mode": "COMMUNAL",
+        "results": [
+          {
+            "text": "We must dismantle systemic oppression and build a more equitable society together.",
+            "agency": 0.42343759536743164,
+            "perceived_justice": 0.6224188208580017,
+            "belonging": 0.7818654775619507,
+            "mode": "COMMUNAL",
+            "confidence": 0.3684,
+            "mode_probabilities": {
+              "COMMUNAL": 0.2967,
+              "TRANSITIONAL": 0.2835,
+              "TRANSCENDENT": 0.1182,
+              "HEROIC": 0.0898,
+              "NEUTRAL": 0.062
+            }
+          },
+          {
+            "text": "The billionaire class has rigged the economy against working families.",
+            "agency": 0.1612764298915863,
+            "perceived_justice": -1.1149405241012573,
+            "belonging": -0.26351460814476013,
+            "mode": "PARANOID",
+            "confidence": 0.427,
+            "mode_probabilities": {
+              "PARANOID": 0.3535,
+              "VICTIM": 0.2707,
+              "PROTEST_EXIT": 0.1279,
+              "CONFLICTED": 0.058,
+              "CYNICAL_ACHIEVER": 0.053
+            }
+          },
+          {
+            "text": "Healthcare is a human right, not a privilege for the wealthy few.",
+            "agency": 0.48700815439224243,
+            "perceived_justice": -0.06442150473594666,
+            "belonging": 0.2040160447359085,
+            "mode": "NEUTRAL",
+            "confidence": 0.2213,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3374,
+              "PROTEST_EXIT": 0.2494,
+              "TRANSITIONAL": 0.1646,
+              "CYNICAL_ACHIEVER": 0.0811,
+              "CONFLICTED": 0.0531
+            }
+          },
+          {
+            "text": "Our diversity is our strength; we rise by lifting others.",
+            "agency": 0.4251716434955597,
+            "perceived_justice": -0.03774341940879822,
+            "belonging": 1.501821756362915,
+            "mode": "COMMUNAL",
+            "confidence": 0.5407,
+            "mode_probabilities": {
+              "COMMUNAL": 0.2785,
+              "PROTEST_EXIT": 0.197,
+              "TRANSCENDENT": 0.1512,
+              "TRANSITIONAL": 0.1348,
+              "CONFLICTED": 0.1088
+            }
+          },
+          {
+            "text": "Climate justice requires collective action against corporate polluters.",
+            "agency": 0.32325831055641174,
+            "perceived_justice": 0.09920737147331238,
+            "belonging": 0.14059530198574066,
+            "mode": "NEUTRAL",
+            "confidence": 0.256,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4543,
+              "TRANSITIONAL": 0.1864,
+              "PROTEST_EXIT": 0.1495,
+              "CONFLICTED": 0.0531,
+              "CYNICAL_ACHIEVER": 0.0421
+            }
+          }
+        ]
+      },
+      "conservative_right": {
+        "category": "conservative_right",
+        "n_texts": 5,
+        "mean_agency": 0.5029837787151337,
+        "mean_perceived_justice": 0.1584629625082016,
+        "mean_belonging": 0.7080985605716705,
+        "std_agency": 0.6046812150013675,
+        "std_perceived_justice": 0.30785483268054437,
+        "std_belonging": 0.5183470588698037,
+        "mode_distribution": {
+          "HEROIC": 1,
+          "NEUTRAL": 1,
+          "COMMUNAL": 2,
+          "TRANSITIONAL": 1
+        },
+        "dominant_mode": "COMMUNAL",
+        "results": [
+          {
+            "text": "Personal responsibility and hard work are the keys to success.",
+            "agency": 1.2771042585372925,
+            "perceived_justice": 0.33189424872398376,
+            "belonging": 0.25224992632865906,
+            "mode": "HEROIC",
+            "confidence": 0.6278,
+            "mode_probabilities": {
+              "HEROIC": 0.5187,
+              "TRANSITIONAL": 0.1587,
+              "PROTEST_EXIT": 0.1366,
+              "CONFLICTED": 0.0642,
+              "CYNICAL_ACHIEVER": 0.0583
+            }
+          },
+          {
+            "text": "Government overreach threatens our individual liberties.",
+            "agency": -0.5604196786880493,
+            "perceived_justice": -0.420614629983902,
+            "belonging": 0.3592734932899475,
+            "mode": "NEUTRAL",
+            "confidence": 0.2873,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2705,
+              "SPIRITUAL_EXIT": 0.2209,
+              "VICTIM": 0.1653,
+              "TRANSITIONAL": 0.1151,
+              "CONFLICTED": 0.0836
+            }
+          },
+          {
+            "text": "Traditional values and family are the foundation of a strong nation.",
+            "agency": 0.45952925086021423,
+            "perceived_justice": 0.11469529569149017,
+            "belonging": 1.4970808029174805,
+            "mode": "COMMUNAL",
+            "confidence": 0.6199,
+            "mode_probabilities": {
+              "COMMUNAL": 0.3967,
+              "TRANSCENDENT": 0.1569,
+              "TRANSITIONAL": 0.142,
+              "PROTEST_EXIT": 0.1235,
+              "CONFLICTED": 0.0853
+            }
+          },
+          {
+            "text": "Free markets and limited government create prosperity for all.",
+            "agency": 0.8122895956039429,
+            "perceived_justice": 0.43590348958969116,
+            "belonging": 0.273606538772583,
+            "mode": "TRANSITIONAL",
+            "confidence": 0.3228,
+            "mode_probabilities": {
+              "TRANSITIONAL": 0.2747,
+              "HEROIC": 0.2701,
+              "PROTEST_EXIT": 0.1383,
+              "NEUTRAL": 0.12,
+              "CONFLICTED": 0.0682
+            }
+          },
+          {
+            "text": "We must secure our borders and protect American sovereignty.",
+            "agency": 0.5264154672622681,
+            "perceived_justice": 0.3304364085197449,
+            "belonging": 1.1582820415496826,
+            "mode": "COMMUNAL",
+            "confidence": 0.5345,
+            "mode_probabilities": {
+              "COMMUNAL": 0.4028,
+              "TRANSITIONAL": 0.2102,
+              "TRANSCENDENT": 0.1158,
+              "PROTEST_EXIT": 0.103,
+              "CONFLICTED": 0.0592
+            }
+          }
+        ]
+      },
+      "libertarian": {
+        "category": "libertarian",
+        "n_texts": 5,
+        "mean_agency": 0.26586454510688784,
+        "mean_perceived_justice": -0.22087906301021576,
+        "mean_belonging": 0.08786977231502532,
+        "std_agency": 0.19665736544655846,
+        "std_perceived_justice": 0.26691107294946775,
+        "std_belonging": 0.10511880903860138,
+        "mode_distribution": {
+          "NEUTRAL": 5
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "The government that governs least governs best.",
+            "agency": 0.42788273096084595,
+            "perceived_justice": -0.38719454407691956,
+            "belonging": 0.050502777099609375,
+            "mode": "NEUTRAL",
+            "confidence": 0.1993,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2916,
+              "PROTEST_EXIT": 0.2792,
+              "CYNICAL_ACHIEVER": 0.1241,
+              "TRANSITIONAL": 0.1079,
+              "VICTIM": 0.0646
+            }
+          },
+          {
+            "text": "My body, my choice - in all matters, not just some.",
+            "agency": -0.007388055324554443,
+            "perceived_justice": 0.2594272792339325,
+            "belonging": 0.16856227815151215,
+            "mode": "NEUTRAL",
+            "confidence": 0.2745,
+            "mode_probabilities": {
+              "NEUTRAL": 0.5353,
+              "TRANSITIONAL": 0.1926,
+              "PROTEST_EXIT": 0.07,
+              "CONFLICTED": 0.058,
+              "TRANSCENDENT": 0.0436
+            }
+          },
+          {
+            "text": "Voluntary exchange between free individuals beats bureaucracy.",
+            "agency": 0.19653186202049255,
+            "perceived_justice": -0.25807985663414,
+            "belonging": 0.1556263267993927,
+            "mode": "NEUTRAL",
+            "confidence": 0.2342,
+            "mode_probabilities": {
+              "NEUTRAL": 0.432,
+              "PROTEST_EXIT": 0.2034,
+              "TRANSITIONAL": 0.1347,
+              "VICTIM": 0.0596,
+              "CONFLICTED": 0.0501
+            }
+          },
+          {
+            "text": "Both parties want to control you, just in different ways.",
+            "agency": 0.16727715730667114,
+            "perceived_justice": -0.5298060774803162,
+            "belonging": 0.16757237911224365,
+            "mode": "NEUTRAL",
+            "confidence": 0.2181,
+            "mode_probabilities": {
+              "NEUTRAL": 0.316,
+              "PROTEST_EXIT": 0.2666,
+              "VICTIM": 0.1154,
+              "TRANSITIONAL": 0.1076,
+              "CYNICAL_ACHIEVER": 0.0566
+            }
+          },
+          {
+            "text": "Personal freedom trumps collective security theater.",
+            "agency": 0.5450190305709839,
+            "perceived_justice": -0.18874211609363556,
+            "belonging": -0.10291489958763123,
+            "mode": "NEUTRAL",
+            "confidence": 0.2389,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3038,
+              "PROTEST_EXIT": 0.2167,
+              "CYNICAL_ACHIEVER": 0.1492,
+              "TRANSITIONAL": 0.1219,
+              "SOCIAL_EXIT": 0.0659
+            }
+          }
+        ]
+      },
+      "populist": {
+        "category": "populist",
+        "n_texts": 5,
+        "mean_agency": -0.2239763081073761,
+        "mean_perceived_justice": -0.6898654371500015,
+        "mean_belonging": -0.055170267820358276,
+        "std_agency": 0.32276528251241365,
+        "std_perceived_justice": 0.3891450994820883,
+        "std_belonging": 0.45116136625464953,
+        "mode_distribution": {
+          "VICTIM": 2,
+          "NEUTRAL": 2,
+          "PROTEST_EXIT": 1
+        },
+        "dominant_mode": "VICTIM",
+        "results": [
+          {
+            "text": "The elites in Washington have abandoned ordinary Americans.",
+            "agency": -0.39084917306900024,
+            "perceived_justice": -0.9240514636039734,
+            "belonging": -0.20833849906921387,
+            "mode": "VICTIM",
+            "confidence": 0.5261,
+            "mode_probabilities": {
+              "VICTIM": 0.5152,
+              "PARANOID": 0.1461,
+              "NEUTRAL": 0.0902,
+              "TRANSITIONAL": 0.0832,
+              "CONFLICTED": 0.0659
+            }
+          },
+          {
+            "text": "They don't want you to know the truth about what's really happening.",
+            "agency": -0.4613306522369385,
+            "perceived_justice": -1.2078896760940552,
+            "belonging": -0.7495958805084229,
+            "mode": "VICTIM",
+            "confidence": 0.5765,
+            "mode_probabilities": {
+              "VICTIM": 0.5052,
+              "PARANOID": 0.3486,
+              "CONFLICTED": 0.0488,
+              "TRANSITIONAL": 0.0424,
+              "SOCIAL_EXIT": 0.0401
+            }
+          },
+          {
+            "text": "The forgotten men and women of this country will be forgotten no more.",
+            "agency": -0.3974275588989258,
+            "perceived_justice": -0.10872863233089447,
+            "belonging": 0.18275237083435059,
+            "mode": "NEUTRAL",
+            "confidence": 0.3227,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4921,
+              "TRANSITIONAL": 0.1472,
+              "SPIRITUAL_EXIT": 0.0953,
+              "CONFLICTED": 0.0661,
+              "VICTIM": 0.0659
+            }
+          },
+          {
+            "text": "Drain the swamp - the whole system is corrupt.",
+            "agency": 0.41110125184059143,
+            "perceived_justice": -0.8063488602638245,
+            "belonging": -0.11747822165489197,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.3535,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.2657,
+              "CYNICAL_ACHIEVER": 0.1672,
+              "PARANOID": 0.1427,
+              "VICTIM": 0.1369,
+              "NEUTRAL": 0.118
+            }
+          },
+          {
+            "text": "We're taking our country back from the special interests.",
+            "agency": -0.2813754081726074,
+            "perceived_justice": -0.40230855345726013,
+            "belonging": 0.6168088912963867,
+            "mode": "NEUTRAL",
+            "confidence": 0.2738,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2464,
+              "SPIRITUAL_EXIT": 0.2244,
+              "PROTEST_EXIT": 0.1581,
+              "TRANSITIONAL": 0.1096,
+              "VICTIM": 0.0957
+            }
+          }
+        ]
+      }
+    },
+    "generational_patterns": {
+      "boomer": {
+        "category": "boomer",
+        "n_texts": 5,
+        "mean_agency": 0.7956021666526795,
+        "mean_perceived_justice": 0.008426502346992493,
+        "mean_belonging": 0.40801974534988406,
+        "std_agency": 0.4365424055548048,
+        "std_perceived_justice": 0.4307507994891792,
+        "std_belonging": 0.4474164473711201,
+        "mode_distribution": {
+          "HEROIC": 2,
+          "NEUTRAL": 1,
+          "PROTEST_EXIT": 2
+        },
+        "dominant_mode": "HEROIC",
+        "results": [
+          {
+            "text": "I worked hard my whole life and earned everything I have.",
+            "agency": 1.1854678392410278,
+            "perceived_justice": 0.17351002991199493,
+            "belonging": 0.39430955052375793,
+            "mode": "HEROIC",
+            "confidence": 0.4573,
+            "mode_probabilities": {
+              "HEROIC": 0.3222,
+              "PROTEST_EXIT": 0.2484,
+              "TRANSITIONAL": 0.184,
+              "CYNICAL_ACHIEVER": 0.0949,
+              "CONFLICTED": 0.0695
+            }
+          },
+          {
+            "text": "Kids today don't know the value of a dollar.",
+            "agency": 0.17926698923110962,
+            "perceived_justice": -0.3429366648197174,
+            "belonging": -0.3143313229084015,
+            "mode": "NEUTRAL",
+            "confidence": 0.2988,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3841,
+              "PROTEST_EXIT": 0.1188,
+              "TRANSITIONAL": 0.1186,
+              "VICTIM": 0.1112,
+              "SOCIAL_EXIT": 0.0932
+            }
+          },
+          {
+            "text": "We built this country with our own two hands.",
+            "agency": 0.5365195274353027,
+            "perceived_justice": -0.3322988450527191,
+            "belonging": 0.9080921411514282,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.5722,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.5361,
+              "TRANSITIONAL": 0.129,
+              "CONFLICTED": 0.0775,
+              "NEUTRAL": 0.0751,
+              "CYNICAL_ACHIEVER": 0.0511
+            }
+          },
+          {
+            "text": "If you just apply yourself, you can achieve anything.",
+            "agency": 1.381873369216919,
+            "perceived_justice": 0.7828407883644104,
+            "belonging": 0.2089884877204895,
+            "mode": "HEROIC",
+            "confidence": 0.8499,
+            "mode_probabilities": {
+              "HEROIC": 0.8038,
+              "TRANSITIONAL": 0.104,
+              "CONFLICTED": 0.0386,
+              "PROTEST_EXIT": 0.0185,
+              "COMMUNAL": 0.0161
+            }
+          },
+          {
+            "text": "Back in my day, we respected authority and played by the rules.",
+            "agency": 0.6948831081390381,
+            "perceived_justice": -0.23898279666900635,
+            "belonging": 0.843039870262146,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.5624,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.5272,
+              "TRANSITIONAL": 0.148,
+              "CONFLICTED": 0.0731,
+              "CYNICAL_ACHIEVER": 0.0704,
+              "NEUTRAL": 0.067
+            }
+          }
+        ]
+      },
+      "gen_x": {
+        "category": "gen_x",
+        "n_texts": 5,
+        "mean_agency": 0.49040062427520753,
+        "mean_perceived_justice": -0.5524604707956314,
+        "mean_belonging": -0.3881224751472473,
+        "std_agency": 0.4080859239825545,
+        "std_perceived_justice": 0.5094272279653708,
+        "std_belonging": 0.2273536679169566,
+        "mode_distribution": {
+          "CYNICAL_ACHIEVER": 1,
+          "HEROIC": 1,
+          "PARANOID": 1,
+          "VICTIM": 1,
+          "NEUTRAL": 1
+        },
+        "dominant_mode": "CYNICAL_ACHIEVER",
+        "results": [
+          {
+            "text": "Whatever. The system's broken but I'll figure it out myself.",
+            "agency": 0.5958418250083923,
+            "perceived_justice": -0.7579675912857056,
+            "belonging": -0.39858075976371765,
+            "mode": "CYNICAL_ACHIEVER",
+            "confidence": 0.4031,
+            "mode_probabilities": {
+              "CYNICAL_ACHIEVER": 0.2842,
+              "PARANOID": 0.1735,
+              "PROTEST_EXIT": 0.1705,
+              "SOCIAL_EXIT": 0.1127,
+              "VICTIM": 0.0949
+            }
+          },
+          {
+            "text": "Don't trust anyone over 30 - or under 30 for that matter.",
+            "agency": 0.9466492533683777,
+            "perceived_justice": 0.2295173853635788,
+            "belonging": -0.11831599473953247,
+            "mode": "HEROIC",
+            "confidence": 0.3457,
+            "mode_probabilities": {
+              "HEROIC": 0.2024,
+              "PROTEST_EXIT": 0.1651,
+              "TRANSITIONAL": 0.1648,
+              "CYNICAL_ACHIEVER": 0.1353,
+              "NEUTRAL": 0.1268
+            }
+          },
+          {
+            "text": "I'm not a slacker, I just don't buy into corporate ladder-climbing.",
+            "agency": 0.8454693555831909,
+            "perceived_justice": -1.1514981985092163,
+            "belonging": -0.6567497253417969,
+            "mode": "PARANOID",
+            "confidence": 0.5471,
+            "mode_probabilities": {
+              "PARANOID": 0.4237,
+              "CYNICAL_ACHIEVER": 0.3296,
+              "SOCIAL_EXIT": 0.1034,
+              "PROTEST_EXIT": 0.0569,
+              "CONFLICTED": 0.0392
+            }
+          },
+          {
+            "text": "Both sides are equally bad, I'm staying out of it.",
+            "agency": -0.15113571286201477,
+            "perceived_justice": -0.9185078144073486,
+            "belonging": -0.14542844891548157,
+            "mode": "VICTIM",
+            "confidence": 0.4302,
+            "mode_probabilities": {
+              "VICTIM": 0.3986,
+              "PARANOID": 0.1662,
+              "NEUTRAL": 0.1219,
+              "PROTEST_EXIT": 0.1084,
+              "TRANSITIONAL": 0.0796
+            }
+          },
+          {
+            "text": "Just leave me alone and let me do my thing.",
+            "agency": 0.21517840027809143,
+            "perceived_justice": -0.16384613513946533,
+            "belonging": -0.621537446975708,
+            "mode": "NEUTRAL",
+            "confidence": 0.2576,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3136,
+              "SOCIAL_EXIT": 0.2502,
+              "TRANSITIONAL": 0.116,
+              "VICTIM": 0.0891,
+              "CYNICAL_ACHIEVER": 0.0706
+            }
+          }
+        ]
+      },
+      "millennial": {
+        "category": "millennial",
+        "n_texts": 5,
+        "mean_agency": 0.12066084742546082,
+        "mean_perceived_justice": -0.387191042304039,
+        "mean_belonging": 0.35897329449653625,
+        "std_agency": 0.16221131022251348,
+        "std_perceived_justice": 0.49779694353645376,
+        "std_belonging": 0.29461858407857144,
+        "mode_distribution": {
+          "PROTEST_EXIT": 2,
+          "NEUTRAL": 1,
+          "TRANSITIONAL": 1,
+          "VICTIM": 1
+        },
+        "dominant_mode": "PROTEST_EXIT",
+        "results": [
+          {
+            "text": "We did everything right and still can't afford a house.",
+            "agency": 0.05668520927429199,
+            "perceived_justice": -0.4093598425388336,
+            "belonging": 0.618908166885376,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.2747,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.3071,
+              "NEUTRAL": 0.2537,
+              "TRANSITIONAL": 0.1222,
+              "SPIRITUAL_EXIT": 0.0895,
+              "VICTIM": 0.0705
+            }
+          },
+          {
+            "text": "The economy is rigged against our generation.",
+            "agency": 0.16975706815719604,
+            "perceived_justice": -0.8904915452003479,
+            "belonging": 0.054179847240448,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.3282,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.2738,
+              "VICTIM": 0.2229,
+              "NEUTRAL": 0.1371,
+              "PARANOID": 0.1283,
+              "TRANSITIONAL": 0.0696
+            }
+          },
+          {
+            "text": "We need systemic change, not just individual solutions.",
+            "agency": -0.13385111093521118,
+            "perceived_justice": 0.10283927619457245,
+            "belonging": 0.517613410949707,
+            "mode": "NEUTRAL",
+            "confidence": 0.2877,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3823,
+              "TRANSITIONAL": 0.17,
+              "SPIRITUAL_EXIT": 0.1209,
+              "TRANSCENDENT": 0.0956,
+              "PROTEST_EXIT": 0.0949
+            }
+          },
+          {
+            "text": "Student debt is crushing our ability to build a future.",
+            "agency": 0.3648942708969116,
+            "perceived_justice": 0.24063026905059814,
+            "belonging": 0.6498579978942871,
+            "mode": "TRANSITIONAL",
+            "confidence": 0.2848,
+            "mode_probabilities": {
+              "TRANSITIONAL": 0.2553,
+              "NEUTRAL": 0.2078,
+              "PROTEST_EXIT": 0.1727,
+              "COMMUNAL": 0.1161,
+              "TRANSCENDENT": 0.0746
+            }
+          },
+          {
+            "text": "OK boomer, you don't understand what we're dealing with.",
+            "agency": 0.1458187997341156,
+            "perceived_justice": -0.9795733690261841,
+            "belonging": -0.04569295048713684,
+            "mode": "VICTIM",
+            "confidence": 0.3517,
+            "mode_probabilities": {
+              "VICTIM": 0.2631,
+              "PROTEST_EXIT": 0.2207,
+              "PARANOID": 0.1918,
+              "NEUTRAL": 0.1001,
+              "CONFLICTED": 0.0639
+            }
+          }
+        ]
+      },
+      "gen_z": {
+        "category": "gen_z",
+        "n_texts": 5,
+        "mean_agency": 0.21288923025131226,
+        "mean_perceived_justice": -0.29709654450416567,
+        "mean_belonging": 0.14514082968235015,
+        "std_agency": 0.32268070051046593,
+        "std_perceived_justice": 0.18078696877121403,
+        "std_belonging": 0.288854748357523,
+        "mode_distribution": {
+          "NEUTRAL": 4,
+          "PROTEST_EXIT": 1
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "The planet is literally dying and adults aren't doing anything.",
+            "agency": -0.3926440477371216,
+            "perceived_justice": -0.30143865942955017,
+            "belonging": -0.22911176085472107,
+            "mode": "NEUTRAL",
+            "confidence": 0.3178,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4436,
+              "VICTIM": 0.1716,
+              "TRANSITIONAL": 0.155,
+              "CONFLICTED": 0.0719,
+              "PROTEST_EXIT": 0.0476
+            }
+          },
+          {
+            "text": "We're building new communities online since real ones failed us.",
+            "agency": 0.4396430552005768,
+            "perceived_justice": -0.10926619172096252,
+            "belonging": 0.38662832975387573,
+            "mode": "NEUTRAL",
+            "confidence": 0.2014,
+            "mode_probabilities": {
+              "NEUTRAL": 0.301,
+              "PROTEST_EXIT": 0.2954,
+              "TRANSITIONAL": 0.1681,
+              "CYNICAL_ACHIEVER": 0.0634,
+              "CONFLICTED": 0.0547
+            }
+          },
+          {
+            "text": "Mental health awareness isn't weakness, it's survival.",
+            "agency": 0.2707260847091675,
+            "perceived_justice": -0.5494233965873718,
+            "belonging": -0.052173227071762085,
+            "mode": "NEUTRAL",
+            "confidence": 0.2293,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2837,
+              "PROTEST_EXIT": 0.2348,
+              "VICTIM": 0.1215,
+              "TRANSITIONAL": 0.0981,
+              "CYNICAL_ACHIEVER": 0.0957
+            }
+          },
+          {
+            "text": "Why should I work hard for a system that won't exist in 20 years?",
+            "agency": 0.21895983815193176,
+            "perceived_justice": -0.43886226415634155,
+            "belonging": 0.05978555977344513,
+            "mode": "NEUTRAL",
+            "confidence": 0.2282,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3577,
+              "PROTEST_EXIT": 0.2306,
+              "TRANSITIONAL": 0.1135,
+              "VICTIM": 0.0961,
+              "CYNICAL_ACHIEVER": 0.0682
+            }
+          },
+          {
+            "text": "We'll just make our own rules and our own economy.",
+            "agency": 0.5277612209320068,
+            "perceived_justice": -0.08649221062660217,
+            "belonging": 0.5605752468109131,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.3339,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.3549,
+              "NEUTRAL": 0.2036,
+              "TRANSITIONAL": 0.1839,
+              "CONFLICTED": 0.0605,
+              "CYNICAL_ACHIEVER": 0.0604
+            }
+          }
+        ]
+      }
+    },
+    "crisis_response": {
+      "resilience": {
+        "category": "resilience",
+        "n_texts": 5,
+        "mean_agency": 0.1267475962638855,
+        "mean_perceived_justice": -0.02403167188167572,
+        "mean_belonging": 0.977506285905838,
+        "std_agency": 0.30629702789909236,
+        "std_perceived_justice": 0.22988032364591846,
+        "std_belonging": 0.5055023543767235,
+        "mode_distribution": {
+          "NEUTRAL": 2,
+          "COMMUNAL": 2,
+          "SPIRITUAL_EXIT": 1
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "We've been through worse and we'll get through this together.",
+            "agency": -0.3641362190246582,
+            "perceived_justice": -0.4487212598323822,
+            "belonging": 0.5125912427902222,
+            "mode": "NEUTRAL",
+            "confidence": 0.284,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2632,
+              "SPIRITUAL_EXIT": 0.2103,
+              "PROTEST_EXIT": 0.1319,
+              "VICTIM": 0.1313,
+              "TRANSITIONAL": 0.1095
+            }
+          },
+          {
+            "text": "Every crisis is an opportunity to rebuild better.",
+            "agency": 0.47671473026275635,
+            "perceived_justice": 0.09280923008918762,
+            "belonging": 0.24324312806129456,
+            "mode": "NEUTRAL",
+            "confidence": 0.2519,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3479,
+              "PROTEST_EXIT": 0.2063,
+              "TRANSITIONAL": 0.2015,
+              "CYNICAL_ACHIEVER": 0.0571,
+              "CONFLICTED": 0.0561
+            }
+          },
+          {
+            "text": "Our community is stronger than any challenge we face.",
+            "agency": 0.2551271617412567,
+            "perceived_justice": -0.04830785095691681,
+            "belonging": 1.5440795421600342,
+            "mode": "COMMUNAL",
+            "confidence": 0.5439,
+            "mode_probabilities": {
+              "COMMUNAL": 0.2761,
+              "TRANSCENDENT": 0.1883,
+              "SPIRITUAL_EXIT": 0.1753,
+              "PROTEST_EXIT": 0.1401,
+              "CONFLICTED": 0.1025
+            }
+          },
+          {
+            "text": "We adapt, we overcome, we emerge stronger.",
+            "agency": 0.3440677225589752,
+            "perceived_justice": 0.22708655893802643,
+            "belonging": 1.319057583808899,
+            "mode": "COMMUNAL",
+            "confidence": 0.5817,
+            "mode_probabilities": {
+              "COMMUNAL": 0.4114,
+              "TRANSCENDENT": 0.1694,
+              "TRANSITIONAL": 0.1477,
+              "PROTEST_EXIT": 0.0924,
+              "SPIRITUAL_EXIT": 0.0786
+            }
+          },
+          {
+            "text": "United we stand, divided we fall.",
+            "agency": -0.07803541421890259,
+            "perceived_justice": 0.05697496235370636,
+            "belonging": 1.2685599327087402,
+            "mode": "SPIRITUAL_EXIT",
+            "confidence": 0.4583,
+            "mode_probabilities": {
+              "SPIRITUAL_EXIT": 0.2979,
+              "TRANSCENDENT": 0.2294,
+              "COMMUNAL": 0.2089,
+              "TRANSITIONAL": 0.0838,
+              "PROTEST_EXIT": 0.0732
+            }
+          }
+        ]
+      },
+      "blame_external": {
+        "category": "blame_external",
+        "n_texts": 5,
+        "mean_agency": 0.029210925102233887,
+        "mean_perceived_justice": -0.5124882314354181,
+        "mean_belonging": 0.2383967787027359,
+        "std_agency": 0.21813614135836143,
+        "std_perceived_justice": 0.2984016565104211,
+        "std_belonging": 0.3567472548752908,
+        "mode_distribution": {
+          "NEUTRAL": 2,
+          "PROTEST_EXIT": 1,
+          "SPIRITUAL_EXIT": 1,
+          "PARANOID": 1
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "They caused this crisis and now we're paying the price.",
+            "agency": 0.1013694703578949,
+            "perceived_justice": -0.599836528301239,
+            "belonging": 0.19936062395572662,
+            "mode": "NEUTRAL",
+            "confidence": 0.2248,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2906,
+              "PROTEST_EXIT": 0.2678,
+              "VICTIM": 0.1436,
+              "TRANSITIONAL": 0.1035,
+              "CONFLICTED": 0.059
+            }
+          },
+          {
+            "text": "The government failed to protect us when we needed them.",
+            "agency": -0.0560266375541687,
+            "perceived_justice": -0.5694991946220398,
+            "belonging": 0.698920726776123,
+            "mode": "PROTEST_EXIT",
+            "confidence": 0.3676,
+            "mode_probabilities": {
+              "PROTEST_EXIT": 0.3113,
+              "NEUTRAL": 0.1783,
+              "SPIRITUAL_EXIT": 0.1473,
+              "VICTIM": 0.109,
+              "TRANSITIONAL": 0.0977
+            }
+          },
+          {
+            "text": "Foreign powers are responsible for our current suffering.",
+            "agency": -0.3399805426597595,
+            "perceived_justice": -0.4759421646595001,
+            "belonging": 0.5822898149490356,
+            "mode": "SPIRITUAL_EXIT",
+            "confidence": 0.2779,
+            "mode_probabilities": {
+              "SPIRITUAL_EXIT": 0.2342,
+              "NEUTRAL": 0.2286,
+              "PROTEST_EXIT": 0.1481,
+              "VICTIM": 0.1279,
+              "TRANSITIONAL": 0.103
+            }
+          },
+          {
+            "text": "The elites created this mess and escaped the consequences.",
+            "agency": 0.31000351905822754,
+            "perceived_justice": -0.9207451939582825,
+            "belonging": -0.22035467624664307,
+            "mode": "PARANOID",
+            "confidence": 0.3483,
+            "mode_probabilities": {
+              "PARANOID": 0.2296,
+              "PROTEST_EXIT": 0.1972,
+              "VICTIM": 0.1927,
+              "CYNICAL_ACHIEVER": 0.1182,
+              "NEUTRAL": 0.0889
+            }
+          },
+          {
+            "text": "Someone needs to be held accountable for this disaster.",
+            "agency": 0.13068881630897522,
+            "perceived_justice": 0.0035819243639707565,
+            "belonging": -0.06823259592056274,
+            "mode": "NEUTRAL",
+            "confidence": 0.2449,
+            "mode_probabilities": {
+              "NEUTRAL": 0.5453,
+              "TRANSITIONAL": 0.1538,
+              "PROTEST_EXIT": 0.0987,
+              "CONFLICTED": 0.0509,
+              "SOCIAL_EXIT": 0.0417
+            }
+          }
+        ]
+      },
+      "fatalism": {
+        "category": "fatalism",
+        "n_texts": 5,
+        "mean_agency": -0.48045511841773986,
+        "mean_perceived_justice": -0.2351996660232544,
+        "mean_belonging": 0.24119027853012084,
+        "std_agency": 0.27782656001488565,
+        "std_perceived_justice": 0.2912093989805253,
+        "std_belonging": 0.3202991447197147,
+        "mode_distribution": {
+          "SPIRITUAL_EXIT": 1,
+          "NEUTRAL": 4
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "Nothing we do will change anything at this point.",
+            "agency": -0.9766340255737305,
+            "perceived_justice": 0.24000102281570435,
+            "belonging": 0.8493951559066772,
+            "mode": "SPIRITUAL_EXIT",
+            "confidence": 0.6112,
+            "mode_probabilities": {
+              "SPIRITUAL_EXIT": 0.6119,
+              "TRANSCENDENT": 0.2672,
+              "CONFLICTED": 0.0574,
+              "TRANSITIONAL": 0.024,
+              "NEUTRAL": 0.02
+            }
+          },
+          {
+            "text": "The damage is done, we just have to accept our fate.",
+            "agency": -0.5423324108123779,
+            "perceived_justice": -0.03503817319869995,
+            "belonging": 0.26771828532218933,
+            "mode": "NEUTRAL",
+            "confidence": 0.3189,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4115,
+              "SPIRITUAL_EXIT": 0.1776,
+              "TRANSITIONAL": 0.1412,
+              "TRANSCENDENT": 0.0781,
+              "CONFLICTED": 0.0767
+            }
+          },
+          {
+            "text": "No one is coming to save us.",
+            "agency": -0.3198584318161011,
+            "perceived_justice": -0.3981817066669464,
+            "belonging": -0.04002687335014343,
+            "mode": "NEUTRAL",
+            "confidence": 0.2968,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4293,
+              "VICTIM": 0.1772,
+              "TRANSITIONAL": 0.1389,
+              "PROTEST_EXIT": 0.0782,
+              "CONFLICTED": 0.0649
+            }
+          },
+          {
+            "text": "History repeats itself and we never learn.",
+            "agency": -0.40649986267089844,
+            "perceived_justice": -0.47905275225639343,
+            "belonging": 0.08406694233417511,
+            "mode": "NEUTRAL",
+            "confidence": 0.2812,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3589,
+              "VICTIM": 0.2191,
+              "TRANSITIONAL": 0.1318,
+              "PROTEST_EXIT": 0.0834,
+              "CONFLICTED": 0.0717
+            }
+          },
+          {
+            "text": "It's too late to fix what's been broken.",
+            "agency": -0.15695086121559143,
+            "perceived_justice": -0.5037267208099365,
+            "belonging": 0.044797882437705994,
+            "mode": "NEUTRAL",
+            "confidence": 0.2785,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3855,
+              "VICTIM": 0.1814,
+              "PROTEST_EXIT": 0.1319,
+              "TRANSITIONAL": 0.1234,
+              "CONFLICTED": 0.0604
+            }
+          }
+        ]
+      },
+      "opportunism": {
+        "category": "opportunism",
+        "n_texts": 5,
+        "mean_agency": 0.40741615295410155,
+        "mean_perceived_justice": -0.3216525137424469,
+        "mean_belonging": -0.16036501228809358,
+        "std_agency": 0.35119242594743394,
+        "std_perceived_justice": 0.10880130888063555,
+        "std_belonging": 0.18686206070186376,
+        "mode_distribution": {
+          "NEUTRAL": 4,
+          "CYNICAL_ACHIEVER": 1
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "This crisis is my chance to get ahead while others panic.",
+            "agency": 0.3633114695549011,
+            "perceived_justice": -0.17153629660606384,
+            "belonging": 0.1378137320280075,
+            "mode": "NEUTRAL",
+            "confidence": 0.2238,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3916,
+              "PROTEST_EXIT": 0.2271,
+              "TRANSITIONAL": 0.1431,
+              "CYNICAL_ACHIEVER": 0.0727,
+              "CONFLICTED": 0.0502
+            }
+          },
+          {
+            "text": "Smart people profit from chaos, and I intend to profit.",
+            "agency": 1.0393537282943726,
+            "perceived_justice": -0.297319620847702,
+            "belonging": -0.19893094897270203,
+            "mode": "CYNICAL_ACHIEVER",
+            "confidence": 0.4665,
+            "mode_probabilities": {
+              "CYNICAL_ACHIEVER": 0.4304,
+              "PROTEST_EXIT": 0.2302,
+              "SOCIAL_EXIT": 0.0906,
+              "CONFLICTED": 0.0555,
+              "NEUTRAL": 0.0554
+            }
+          },
+          {
+            "text": "While everyone's distracted, I'm making moves.",
+            "agency": 0.22367924451828003,
+            "perceived_justice": -0.34054818749427795,
+            "belonging": -0.29709771275520325,
+            "mode": "NEUTRAL",
+            "confidence": 0.2907,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3751,
+              "PROTEST_EXIT": 0.1298,
+              "TRANSITIONAL": 0.1164,
+              "VICTIM": 0.1035,
+              "SOCIAL_EXIT": 0.0919
+            }
+          },
+          {
+            "text": "Fear creates opportunities for those who stay calm.",
+            "agency": -0.018221020698547363,
+            "perceived_justice": -0.2907872200012207,
+            "belonging": -0.051593929529190063,
+            "mode": "NEUTRAL",
+            "confidence": 0.278,
+            "mode_probabilities": {
+              "NEUTRAL": 0.492,
+              "TRANSITIONAL": 0.1332,
+              "PROTEST_EXIT": 0.1167,
+              "VICTIM": 0.0963,
+              "CONFLICTED": 0.0524
+            }
+          },
+          {
+            "text": "I'll come out of this better positioned than before.",
+            "agency": 0.42895734310150146,
+            "perceived_justice": -0.50807124376297,
+            "belonging": -0.39201620221138,
+            "mode": "NEUTRAL",
+            "confidence": 0.2679,
+            "mode_probabilities": {
+              "NEUTRAL": 0.1963,
+              "CYNICAL_ACHIEVER": 0.1751,
+              "PROTEST_EXIT": 0.1586,
+              "SOCIAL_EXIT": 0.1318,
+              "VICTIM": 0.1105
+            }
+          }
+        ]
+      }
+    },
+    "tech_industry": {
+      "techno_optimist": {
+        "category": "techno_optimist",
+        "n_texts": 5,
+        "mean_agency": 0.2330314666032791,
+        "mean_perceived_justice": 0.28464398682117464,
+        "mean_belonging": 0.1371556520462036,
+        "std_agency": 0.32196629527125625,
+        "std_perceived_justice": 0.46612439389967064,
+        "std_belonging": 0.2729677609388902,
+        "mode_distribution": {
+          "TRANSCENDENT": 1,
+          "TRANSITIONAL": 1,
+          "NEUTRAL": 3
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "Technology will solve our biggest problems if we let it.",
+            "agency": -0.20659738779067993,
+            "perceived_justice": 0.7967857122421265,
+            "belonging": 0.47643929719924927,
+            "mode": "TRANSCENDENT",
+            "confidence": 0.3454,
+            "mode_probabilities": {
+              "TRANSCENDENT": 0.2799,
+              "TRANSITIONAL": 0.2232,
+              "NEUTRAL": 0.1785,
+              "SPIRITUAL_EXIT": 0.1286,
+              "CONFLICTED": 0.0975
+            }
+          },
+          {
+            "text": "AI will create abundance and free humanity from drudgery.",
+            "agency": 0.47887635231018066,
+            "perceived_justice": 0.8230466246604919,
+            "belonging": 0.07807999849319458,
+            "mode": "TRANSITIONAL",
+            "confidence": 0.4036,
+            "mode_probabilities": {
+              "TRANSITIONAL": 0.3692,
+              "NEUTRAL": 0.1989,
+              "HEROIC": 0.129,
+              "CONFLICTED": 0.1104,
+              "SOCIAL_EXIT": 0.0521
+            }
+          },
+          {
+            "text": "Move fast and break things - innovation requires disruption.",
+            "agency": 0.10876427590847015,
+            "perceived_justice": -0.3946693539619446,
+            "belonging": -0.149457186460495,
+            "mode": "NEUTRAL",
+            "confidence": 0.279,
+            "mode_probabilities": {
+              "NEUTRAL": 0.41,
+              "PROTEST_EXIT": 0.1424,
+              "TRANSITIONAL": 0.1205,
+              "VICTIM": 0.1184,
+              "CONFLICTED": 0.0536
+            }
+          },
+          {
+            "text": "The future is being built in Silicon Valley.",
+            "agency": 0.7071583271026611,
+            "perceived_justice": 0.05532290041446686,
+            "belonging": -0.1527172029018402,
+            "mode": "NEUTRAL",
+            "confidence": 0.2779,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2539,
+              "PROTEST_EXIT": 0.1818,
+              "TRANSITIONAL": 0.1498,
+              "CYNICAL_ACHIEVER": 0.1484,
+              "SOCIAL_EXIT": 0.0988
+            }
+          },
+          {
+            "text": "We're building tools that will change the world.",
+            "agency": 0.07695576548576355,
+            "perceived_justice": 0.14273405075073242,
+            "belonging": 0.4334333539009094,
+            "mode": "NEUTRAL",
+            "confidence": 0.2651,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4187,
+              "TRANSITIONAL": 0.1971,
+              "PROTEST_EXIT": 0.1237,
+              "TRANSCENDENT": 0.0619,
+              "CONFLICTED": 0.0575
+            }
+          }
+        ]
+      },
+      "techno_skeptic": {
+        "category": "techno_skeptic",
+        "n_texts": 5,
+        "mean_agency": 0.012379798293113708,
+        "mean_perceived_justice": -0.5277740299701691,
+        "mean_belonging": -0.23960102200508118,
+        "std_agency": 0.2221313613070932,
+        "std_perceived_justice": 0.3141472971711124,
+        "std_belonging": 0.1776200876786257,
+        "mode_distribution": {
+          "VICTIM": 2,
+          "NEUTRAL": 3
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "Big Tech has too much power over our lives.",
+            "agency": -0.16165369749069214,
+            "perceived_justice": -0.7574286460876465,
+            "belonging": 0.0347958505153656,
+            "mode": "VICTIM",
+            "confidence": 0.3009,
+            "mode_probabilities": {
+              "VICTIM": 0.3091,
+              "NEUTRAL": 0.2241,
+              "PROTEST_EXIT": 0.1494,
+              "TRANSITIONAL": 0.0995,
+              "PARANOID": 0.0806
+            }
+          },
+          {
+            "text": "Algorithms are manipulating us for profit.",
+            "agency": 0.23888486623764038,
+            "perceived_justice": -0.3317451775074005,
+            "belonging": -0.114786297082901,
+            "mode": "NEUTRAL",
+            "confidence": 0.258,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4026,
+              "PROTEST_EXIT": 0.1697,
+              "TRANSITIONAL": 0.12,
+              "VICTIM": 0.0853,
+              "CYNICAL_ACHIEVER": 0.0742
+            }
+          },
+          {
+            "text": "We're trading privacy for convenience and it's not worth it.",
+            "agency": 0.22423607110977173,
+            "perceived_justice": -0.4650298058986664,
+            "belonging": -0.4222598969936371,
+            "mode": "NEUTRAL",
+            "confidence": 0.2879,
+            "mode_probabilities": {
+              "NEUTRAL": 0.2769,
+              "VICTIM": 0.1457,
+              "SOCIAL_EXIT": 0.1291,
+              "PROTEST_EXIT": 0.1171,
+              "TRANSITIONAL": 0.1024
+            }
+          },
+          {
+            "text": "Social media is destroying democracy and mental health.",
+            "agency": 0.08673684298992157,
+            "perceived_justice": -0.09628769755363464,
+            "belonging": -0.4188009798526764,
+            "mode": "NEUTRAL",
+            "confidence": 0.3113,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4684,
+              "TRANSITIONAL": 0.138,
+              "SOCIAL_EXIT": 0.126,
+              "VICTIM": 0.0728,
+              "PROTEST_EXIT": 0.0663
+            }
+          },
+          {
+            "text": "These companies don't have our best interests at heart.",
+            "agency": -0.326305091381073,
+            "perceived_justice": -0.9883788228034973,
+            "belonging": -0.276953786611557,
+            "mode": "VICTIM",
+            "confidence": 0.5154,
+            "mode_probabilities": {
+              "VICTIM": 0.5067,
+              "PARANOID": 0.194,
+              "TRANSITIONAL": 0.0728,
+              "NEUTRAL": 0.0681,
+              "CONFLICTED": 0.062
+            }
+          }
+        ]
+      },
+      "accelerationist": {
+        "category": "accelerationist",
+        "n_texts": 5,
+        "mean_agency": -0.07217857837677003,
+        "mean_perceived_justice": -0.12154446840286255,
+        "mean_belonging": -0.07733204364776611,
+        "std_agency": 0.37804184611500524,
+        "std_perceived_justice": 0.2538967303746356,
+        "std_belonging": 0.3219424166453822,
+        "mode_distribution": {
+          "SOCIAL_EXIT": 1,
+          "NEUTRAL": 4
+        },
+        "dominant_mode": "NEUTRAL",
+        "results": [
+          {
+            "text": "The only way out is through - accelerate the contradictions.",
+            "agency": 0.24539148807525635,
+            "perceived_justice": -0.49536845088005066,
+            "belonging": -0.6272057294845581,
+            "mode": "SOCIAL_EXIT",
+            "confidence": 0.2971,
+            "mode_probabilities": {
+              "SOCIAL_EXIT": 0.2209,
+              "NEUTRAL": 0.1841,
+              "VICTIM": 0.1637,
+              "CYNICAL_ACHIEVER": 0.0985,
+              "PARANOID": 0.0932
+            }
+          },
+          {
+            "text": "Old systems must collapse before new ones can emerge.",
+            "agency": 0.041652023792266846,
+            "perceived_justice": -0.21694272756576538,
+            "belonging": 0.14023223519325256,
+            "mode": "NEUTRAL",
+            "confidence": 0.2596,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4929,
+              "PROTEST_EXIT": 0.1481,
+              "TRANSITIONAL": 0.1396,
+              "VICTIM": 0.0633,
+              "CONFLICTED": 0.0506
+            }
+          },
+          {
+            "text": "AGI will arrive whether we're ready or not.",
+            "agency": 0.37307798862457275,
+            "perceived_justice": 0.19634929299354553,
+            "belonging": 0.2989630401134491,
+            "mode": "NEUTRAL",
+            "confidence": 0.2483,
+            "mode_probabilities": {
+              "NEUTRAL": 0.3772,
+              "TRANSITIONAL": 0.2251,
+              "PROTEST_EXIT": 0.161,
+              "CONFLICTED": 0.0576,
+              "HEROIC": 0.0387
+            }
+          },
+          {
+            "text": "Human institutions can't keep up with exponential change.",
+            "agency": -0.4149753451347351,
+            "perceived_justice": -0.220473974943161,
+            "belonging": -0.21328529715538025,
+            "mode": "NEUTRAL",
+            "confidence": 0.3322,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4798,
+              "TRANSITIONAL": 0.1594,
+              "VICTIM": 0.1374,
+              "CONFLICTED": 0.0731,
+              "PROTEST_EXIT": 0.0428
+            }
+          },
+          {
+            "text": "We're approaching a singularity that will transform everything.",
+            "agency": -0.6060390472412109,
+            "perceived_justice": 0.12871351838111877,
+            "belonging": 0.014635533094406128,
+            "mode": "NEUTRAL",
+            "confidence": 0.3634,
+            "mode_probabilities": {
+              "NEUTRAL": 0.4792,
+              "TRANSITIONAL": 0.1656,
+              "SPIRITUAL_EXIT": 0.1076,
+              "CONFLICTED": 0.0924,
+              "TRANSCENDENT": 0.0645
+            }
+          }
+        ]
+      }
+    }
+  },
+  "synthesis": {
+    "all_categories": [
+      {
+        "study": "political",
+        "category": "progressive_left",
+        "agency": 0.36403042674064634,
+        "perceived_justice": -0.09909585118293762,
+        "belonging": 0.47295679450035094,
+        "dominant_mode": "COMMUNAL"
+      },
+      {
+        "study": "political",
+        "category": "conservative_right",
+        "agency": 0.5029837787151337,
+        "perceived_justice": 0.1584629625082016,
+        "belonging": 0.7080985605716705,
+        "dominant_mode": "COMMUNAL"
+      },
+      {
+        "study": "political",
+        "category": "libertarian",
+        "agency": 0.26586454510688784,
+        "perceived_justice": -0.22087906301021576,
+        "belonging": 0.08786977231502532,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "political",
+        "category": "populist",
+        "agency": -0.2239763081073761,
+        "perceived_justice": -0.6898654371500015,
+        "belonging": -0.055170267820358276,
+        "dominant_mode": "VICTIM"
+      },
+      {
+        "study": "generational",
+        "category": "boomer",
+        "agency": 0.7956021666526795,
+        "perceived_justice": 0.008426502346992493,
+        "belonging": 0.40801974534988406,
+        "dominant_mode": "HEROIC"
+      },
+      {
+        "study": "generational",
+        "category": "gen_x",
+        "agency": 0.49040062427520753,
+        "perceived_justice": -0.5524604707956314,
+        "belonging": -0.3881224751472473,
+        "dominant_mode": "CYNICAL_ACHIEVER"
+      },
+      {
+        "study": "generational",
+        "category": "millennial",
+        "agency": 0.12066084742546082,
+        "perceived_justice": -0.387191042304039,
+        "belonging": 0.35897329449653625,
+        "dominant_mode": "PROTEST_EXIT"
+      },
+      {
+        "study": "generational",
+        "category": "gen_z",
+        "agency": 0.21288923025131226,
+        "perceived_justice": -0.29709654450416567,
+        "belonging": 0.14514082968235015,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "crisis",
+        "category": "resilience",
+        "agency": 0.1267475962638855,
+        "perceived_justice": -0.02403167188167572,
+        "belonging": 0.977506285905838,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "crisis",
+        "category": "blame_external",
+        "agency": 0.029210925102233887,
+        "perceived_justice": -0.5124882314354181,
+        "belonging": 0.2383967787027359,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "crisis",
+        "category": "fatalism",
+        "agency": -0.48045511841773986,
+        "perceived_justice": -0.2351996660232544,
+        "belonging": 0.24119027853012084,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "crisis",
+        "category": "opportunism",
+        "agency": 0.40741615295410155,
+        "perceived_justice": -0.3216525137424469,
+        "belonging": -0.16036501228809358,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "tech",
+        "category": "techno_optimist",
+        "agency": 0.2330314666032791,
+        "perceived_justice": 0.28464398682117464,
+        "belonging": 0.1371556520462036,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "tech",
+        "category": "techno_skeptic",
+        "agency": 0.012379798293113708,
+        "perceived_justice": -0.5277740299701691,
+        "belonging": -0.23960102200508118,
+        "dominant_mode": "NEUTRAL"
+      },
+      {
+        "study": "tech",
+        "category": "accelerationist",
+        "agency": -0.07217857837677003,
+        "perceived_justice": -0.12154446840286255,
+        "belonging": -0.07733204364776611,
+        "dominant_mode": "NEUTRAL"
+      }
+    ],
+    "mode_distribution": {
+      "COMMUNAL": 6,
+      "PARANOID": 3,
+      "NEUTRAL": 39,
+      "HEROIC": 4,
+      "TRANSITIONAL": 3,
+      "VICTIM": 6,
+      "PROTEST_EXIT": 7,
+      "CYNICAL_ACHIEVER": 2,
+      "SPIRITUAL_EXIT": 3,
+      "TRANSCENDENT": 1,
+      "SOCIAL_EXIT": 1
+    }
+  }
+}

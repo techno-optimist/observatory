@@ -1,0 +1,71 @@
+# AutoTrain Configuration for V8 70B
+# ==================================
+# Trains Composable Personality Suite on Qwen3-72B using QLoRA
+#
+# Requirements:
+#   - HuggingFace Pro account with billing
+#   - ~$50-100 for full training run
+#   - A100 80GB or better
+#
+# Usage:
+#   autotrain --config autotrain_v8_70b.yaml
+
+task: llm-sft
+base_model: Qwen/Qwen3-72B
+project_name: PRISM-70B
+
+# Logging
+log: tensorboard
+
+# Backend: Use HF Spaces with GPU or local with sufficient hardware
+# Options: local, spaces-a10g-large, spaces-a100-large, spaces-l40s-x4
+backend: spaces-l40s-x4  # 4x L40S (192GB total VRAM)
+
+# Data configuration
+data:
+  path: kevruss/PRISM-V8-Dataset  # Will upload dataset here
+  train_split: train
+  valid_split: valid
+  chat_template: chatml  # Matches Qwen format
+  column_mapping:
+    text_column: text
+
+# Training parameters
+params:
+  # QLoRA for memory efficiency on 70B
+  quantization: int4
+  peft: true
+  target_modules: all-linear
+
+  # LoRA hyperparameters (matching V8 success)
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+
+  # Training config
+  epochs: 3
+  batch_size: 1
+  gradient_accumulation: 8
+  lr: 1e-4
+
+  # Context
+  block_size: 2048
+  model_max_length: 4096
+  max_prompt_length: 1024
+
+  # Optimizer
+  optimizer: adamw_torch
+  scheduler: cosine
+  warmup_ratio: 0.1
+
+  # Precision
+  mixed_precision: bf16
+
+  # Padding
+  padding: right
+
+# Hub configuration
+hub:
+  username: kevruss
+  token: ${HF_TOKEN}
+  push_to_hub: true

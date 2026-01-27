@@ -1,0 +1,20 @@
+{
+  "name": "forty2_spark_dpo_v2",
+  "version": "2.0",
+  "description": "Soft negative training for TruthfulQA boost",
+  "created": "2026-01-20T20:00:15.070173",
+  "insight": "Soft Negative Training Ratio \u221d Model Capacity",
+  "counts": {
+    "soft_falsehoods": 14,
+    "hard_anachronisms": 5,
+    "myth_rejection": 10,
+    "anti_leakage": 10,
+    "total_unique": 39,
+    "train_pairs": 95,
+    "valid_pairs": 11
+  },
+  "weighting": {
+    "SOFT_FALSEHOODS": "4x (critical for hallucination resistance)",
+    "others": "2x"
+  }
+}

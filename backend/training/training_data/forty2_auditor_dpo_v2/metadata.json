@@ -1,0 +1,13 @@
+{
+  "name": "forty2_auditor_dpo_v2",
+  "version": "1.0",
+  "description": "Soft negative training for hallucination resistance",
+  "created": "2026-01-21T08:53:05.467022",
+  "counts": {
+    "base_pairs": 14,
+    "weighted_total": 56,
+    "train": 50,
+    "valid": 6
+  },
+  "weighting": "4x for soft negatives"
+}

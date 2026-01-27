@@ -1,0 +1,20 @@
+{
+  "model_name": "microsoft/phi-2",
+  "use_4bit": true,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "sft_epochs": 3,
+  "sft_lr": 0.0002,
+  "sft_batch_size": 1,
+  "sft_max_seq_length": 512,
+  "dpo_epochs": 3,
+  "dpo_lr": 5e-05,
+  "dpo_beta": 0.1,
+  "dpo_batch_size": 1,
+  "boost_epochs": 2,
+  "boost_lr": 1e-05,
+  "output_dir": "forty2_auditor_hf",
+  "balance_ratio": 0.03,
+  "skepticism_level": 0.7
+}
