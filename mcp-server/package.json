@@ -1,0 +1,28 @@
+{
+  "name": "observatory-mcp-server",
+  "version": "2.1.0",
+  "description": "Observatory MCP Server - Cultural Soliton Observatory tools for Claude",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:server && npm run build:apps",
+    "build:server": "tsc",
+    "build:apps": "cd apps && npm install && npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

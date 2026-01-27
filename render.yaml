@@ -37,28 +37,23 @@ services:
   # =============================================================================
   # Observatory MCP Server (SSE Transport + MCP Apps)
   # =============================================================================
-  # Lightweight proxy that exposes the backend as MCP tools.
+  # Node.js server that exposes the backend as MCP tools.
   # Includes interactive MCP Apps (UI visualizations).
   # Stateless - can scale horizontally if needed.
   - type: web
     name: observatory-mcp
-    runtime: docker
-    dockerfilePath: ./mcp-server/Dockerfile
-    dockerContext: ./mcp-server
+    runtime: node
+    rootDir: ./mcp-server
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     plan: free  # No ML dependencies - free tier works fine
     region: oregon  # Same region as backend for low latency
     healthCheckPath: /health
     envVars:
       - key: OBSERVATORY_BACKEND_URL
-        fromService:
-          type: web
-          name: observatory-backend
-          property: hostport
-          # This creates: https://observatory-backend.onrender.com
+        value: https://observatory-backend.onrender.com
       - key: PORT
         value: "8080"
-      - key: OBSERVATORY_DEFAULT_MODEL
-        value: all-MiniLM-L6-v2
 
 # =============================================================================
 # Usage Instructions
