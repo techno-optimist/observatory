@@ -83,14 +83,18 @@ GLOBAL_RANDOM_SEED: Optional[int] = None
 # --- Lifespan ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Initialize services on startup."""
+    """Initialize services on startup.
+
+    IMPORTANT: Keep this fast! Render times out after ~5 minutes if no port is open.
+    Heavy initialization (model loading) happens lazily on first request.
+    """
     global model_manager, embedding_extractor, projection_trainer, current_projection
     global embedding_cache, annotation_dataset, bayesian_projection, user_axes_projection
     global experiment_tracker, ensemble_projection
 
-    logger.info("Starting Cultural Soliton Observatory Backend...")
+    logger.info("Starting Observatory Backend...")
 
-    # Initialize components
+    # Initialize lightweight components only - models load lazily on first use
     model_manager = get_model_manager()
     embedding_extractor = EmbeddingExtractor(model_manager)
     projection_trainer = ProjectionTrainer(DATA_DIR / "projections")
@@ -98,26 +102,41 @@ async def lifespan(app: FastAPI):
     annotation_dataset = AnnotationDataset(DATA_DIR / "annotations")
     experiment_tracker = get_experiment_tracker(DATA_DIR / "experiments.db")
 
-    # Load existing projection if available
-    current_projection = projection_trainer.load_projection()
-    if current_projection:
-        logger.info("Loaded existing projection")
+    # Defer heavy loading to background task after server starts
+    # This allows Render to detect the open port quickly
+    async def deferred_init():
+        global current_projection, ensemble_projection, user_axes_projection
+        await asyncio.sleep(1)  # Let server start first
 
-    # Load ensemble projection if available
-    ensemble_projection = projection_trainer.load_ensemble()
-    if ensemble_projection:
-        logger.info("Loaded ensemble projection for uncertainty quantification")
+        logger.info("Loading projections in background...")
 
-    # Add seed examples if none exist
-    if len(projection_trainer.get_examples()) == 0:
-        logger.info("Loading seed training examples...")
-        projection_trainer.add_examples_batch(SEED_EXAMPLES)
+        # Load existing projection if available
+        current_projection = projection_trainer.load_projection()
+        if current_projection:
+            logger.info("Loaded existing projection")
 
-    # Load user-defined axes if available
-    user_axes_path = DATA_DIR / "user_axes.json"
-    if user_axes_path.exists():
-        user_axes_projection = UserDefinedAxesProjection.load(user_axes_path)
-        logger.info("Loaded user-defined axes")
+        # Load ensemble projection if available
+        ensemble_projection = projection_trainer.load_ensemble()
+        if ensemble_projection:
+            logger.info("Loaded ensemble projection for uncertainty quantification")
+
+        # Add seed examples if none exist
+        if len(projection_trainer.get_examples()) == 0:
+            logger.info("Loading seed training examples...")
+            projection_trainer.add_examples_batch(SEED_EXAMPLES)
+
+        # Load user-defined axes if available
+        user_axes_path = DATA_DIR / "user_axes.json"
+        if user_axes_path.exists():
+            user_axes_projection = UserDefinedAxesProjection.load(user_axes_path)
+            logger.info("Loaded user-defined axes")
+
+        logger.info("Background initialization complete")
+
+    # Schedule deferred initialization
+    asyncio.create_task(deferred_init())
+
+    logger.info("Server ready to accept connections")
 
     yield
 
