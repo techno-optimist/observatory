@@ -5220,7 +5220,7 @@ Output {request.num_examples} JSON objects, one per line. No other text."""
                          "sort of", "kind of", "to some extent", "i think", "i believe",
                          "not sure", "it depends", "generally", "typically"]
         hedging_count = sum(1 for w in hedging_words if w in resp_lower)
-        hedging_density = min(hedging_count / max(word_count / 10, 3), 1.0)
+        hedging_density = min(hedging_count / max(word_count * 0.05, 4), 1.0)
 
         uncertainty_markers = ["i'm not sure", "i don't know", "uncertain", "unclear",
                                "hard to say", "difficult to determine", "it's possible",
@@ -5246,7 +5246,7 @@ Output {request.num_examples} JSON objects, one per line. No other text."""
             behavior_mode = "UNCERTAIN"
         elif helpfulness >= 0.3:
             behavior_mode = "HELPFUL"
-        elif hedging_density >= 0.6:
+        elif hedging_density >= 0.6 and helpfulness < 0.2:
             behavior_mode = "EVASIVE"
         elif confab_risk_level == "high":
             behavior_mode = "DEFENSIVE"
