@@ -5209,6 +5209,50 @@ Output {request.num_examples} JSON objects, one per line. No other text."""
                 "isotope_id": d.isotope_id,
             })
 
+        # 9. Basic behavior analysis (lightweight, no Observatory dependency)
+        import re as _re
+        words = response.split()
+        word_count = max(len(words), 1)
+        resp_lower = response.lower()
+
+        hedging_words = ["maybe", "perhaps", "possibly", "might", "could", "somewhat",
+                         "arguably", "likely", "unlikely", "it seems", "in a way",
+                         "sort of", "kind of", "to some extent", "i think", "i believe",
+                         "not sure", "it depends", "generally", "typically"]
+        hedging_count = sum(1 for w in hedging_words if w in resp_lower)
+        hedging_density = min(hedging_count / max(word_count / 20, 1), 1.0)
+
+        uncertainty_markers = ["i'm not sure", "i don't know", "uncertain", "unclear",
+                               "hard to say", "difficult to determine", "it's possible",
+                               "there's no clear", "debatable", "open question"]
+        uncertainty_count = sum(1 for m in uncertainty_markers if m in resp_lower)
+        uncertainty_level = min(uncertainty_count * 0.25, 1.0)
+
+        helpful_markers = ["here's", "here are", "let me", "you can", "try this",
+                          "for example", "step", "first,", "to do this", "i recommend",
+                          "the solution", "you should", "you could try"]
+        helpful_count = sum(1 for m in helpful_markers if m in resp_lower)
+        helpfulness = min(helpful_count * 0.2, 1.0)
+
+        sentences = _re.split(r'[.!?]+', response)
+        avg_sentence_len = sum(len(s.split()) for s in sentences if s.strip()) / max(len([s for s in sentences if s.strip()]), 1)
+        legibility = max(0, min(1.0, 1.0 - (avg_sentence_len - 15) / 30))
+
+        # Determine behavior mode
+        has_meta = any(e in detected_elements for e in ["soliton", "reflector", "calibrator"])
+        if has_meta:
+            behavior_mode = "META_COGNITIVE"
+        elif uncertainty_level >= 0.5:
+            behavior_mode = "UNCERTAIN"
+        elif hedging_density >= 0.5:
+            behavior_mode = "EVASIVE"
+        elif helpfulness >= 0.4:
+            behavior_mode = "HELPFUL"
+        elif confab_risk_level == "high":
+            behavior_mode = "DEFENSIVE"
+        else:
+            behavior_mode = "CONFIDENT"
+
         return {
             # Mode discrimination
             "mode": {
@@ -5239,6 +5283,12 @@ Output {request.num_examples} JSON objects, one per line. No other text."""
                 "source_elements": leakage_result.source_elements,
                 "severity": leakage_result.severity,
             },
+            # Behavior analysis
+            "behavior_mode": behavior_mode,
+            "hedging_density": round(hedging_density, 3),
+            "uncertainty_level": round(uncertainty_level, 3),
+            "helpfulness": round(helpfulness, 3),
+            "legibility": round(legibility, 3),
             # Raw detections
             "detections": detection_details,
             "detected_elements": detected_elements,
