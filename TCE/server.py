@@ -3834,6 +3834,103 @@ if FASTAPI_AVAILABLE:
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Sampling failed: {e}")
 
+    # Cache for model_path sampling clients
+    _path_model_clients = {}
+
+    @app.post("/tinker/sample-path")
+    async def sample_tinker_by_path(request: Request):
+        """Sample from a trained Tinker model by its model_path (tinker:// URL)."""
+        try:
+            import tinker
+            import asyncio
+
+            body = await request.json()
+            model_path = body.get("model_path", "")
+            prompt_text = body.get("prompt", "")
+            max_tokens = body.get("max_tokens", 2048)
+            temperature = body.get("temperature", 0.7)
+
+            if not model_path or not model_path.startswith("tinker://"):
+                raise HTTPException(status_code=400, detail="model_path must be a tinker:// URL")
+            if not prompt_text:
+                raise HTTPException(status_code=400, detail="prompt is required")
+
+            cache_key = model_path
+
+            # Get or create sampling client + training client (for tokenizer)
+            if cache_key not in _path_model_clients:
+                service_client = tinker_manager.get_client()
+
+                def connect():
+                    tc = service_client.create_training_client_from_state(path=model_path)
+                    sc = tc.save_weights_and_get_sampling_client()
+                    if hasattr(sc, 'result'):
+                        sc = sc.result()
+                    return tc, sc
+
+                tc, sc = await asyncio.to_thread(connect)
+                _path_model_clients[cache_key] = {"training_client": tc, "sampling_client": sc}
+                print(f"[sample-path] Connected to {model_path}")
+
+            clients = _path_model_clients[cache_key]
+            sampling_client = clients["sampling_client"]
+            tokenizer = clients["training_client"].get_tokenizer()
+
+            # Detect base model from path for template selection
+            path_lower = model_path.lower()
+            if "qwen" in path_lower:
+                fmt_usr = lambda c: f"<|im_start|>user\n{c}<|im_end|>\n"
+                fmt_ast_prefix = "<|im_start|>assistant\n"
+                stop_tokens = ["<|im_end|>", "<|im_start|>"]
+            elif "phi" in path_lower:
+                fmt_usr = lambda c: f"<|user|>\n{c}<|end|>\n"
+                fmt_ast_prefix = "<|assistant|>\n"
+                stop_tokens = ["<|end|>", "<|user|>", "<|assistant|>", "<|endoftext|>"]
+            else:
+                # Default Llama
+                fmt_usr = lambda c: f"<|start_header_id|>user<|end_header_id|>\n\n{c}<|eot_id|>"
+                fmt_ast_prefix = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+                stop_tokens = ["<|eot_id|>", "<|end|>", "<|im_end|>", "<|endoftext|>", "<|start_header_id|>", "<|user|>", "<|assistant|>"]
+
+            formatted_prompt = fmt_usr(prompt_text) + fmt_ast_prefix
+            prompt_tokens = tokenizer.encode(formatted_prompt)
+            prompt_input = tinker.types.ModelInput.from_ints(prompt_tokens)
+
+            result = sampling_client.sample(
+                prompt=prompt_input,
+                num_samples=1,
+                sampling_params=tinker.types.SamplingParams(
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                )
+            )
+            if hasattr(result, 'result'):
+                result = result.result()
+            elif asyncio.iscoroutine(result):
+                result = await result
+
+            if hasattr(result, 'sequences') and result.sequences:
+                tokens = result.sequences[0].tokens if hasattr(result.sequences[0], 'tokens') else []
+                text = tokenizer.decode(tokens, skip_special_tokens=True)
+            elif hasattr(result, 'text'):
+                text = result.text
+            else:
+                text = str(result)
+
+            for stop in stop_tokens:
+                idx = text.find(stop)
+                if idx != -1:
+                    text = text[:idx]
+                    break
+            text = text.strip()
+
+            return {"text": text}
+
+        except HTTPException:
+            raise
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Sampling failed: {e}")
+
     @app.get("/tinker/status")
     async def get_tinker_status():
         """Get Tinker integration status."""
