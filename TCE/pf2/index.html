@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectForty2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="/pf2/shared.css">
+  <style>
+    body { background: #020617; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(100,116,139,0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(100,116,139,0.5); }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .ambient-bg {
+      background: linear-gradient(135deg, rgba(139,92,246,0.03) 0%, rgba(34,211,238,0.02) 33%, rgba(52,211,153,0.03) 66%, rgba(251,146,60,0.02) 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 25s ease infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body className="min-h-screen text-white antialiased">
+  <div id="root"></div>
+
+  <script type="text/babel" src="/pf2/shared-nav.js"></script>
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    function App() {
+      const [serverStatus, setServerStatus] = useState('checking');
+
+      useEffect(() => {
+        fetch('/server/info')
+          .then(r => r.ok ? setServerStatus('connected') : setServerStatus('error'))
+          .catch(e => { console.warn('[TCE] server info check:', e.message); setServerStatus('error'); });
+      }, []);
+
+      const features = [
+        {
+          title: 'Cognitive Compounds Lab',
+          desc: 'Design and train cognitive compounds using the periodic table of thought elements. Combine isotopes with RL recipes to create specialized AI behaviors.',
+          href: '/pf2/lab.html',
+          icon: '\u{1F9EA}',
+          color: '#a78bfa',
+          accent: 'violet'
+        },
+        {
+          title: 'Chat',
+          desc: 'Interact with your trained cognitive compounds in real-time. Test personality, reasoning, and behavioral traits through natural conversation.',
+          href: '/pf2/chat.html',
+          icon: '\u2697\uFE0F',
+          color: '#22d3ee',
+          accent: 'cyan'
+        },
+        {
+          title: 'Benchmark Analytics',
+          desc: 'Evaluate model performance across 16 test suites covering capability, safety, and robustness. Compare models and track progress over time.',
+          href: '/pf2/benchmarks.html',
+          icon: '\u{1F4CA}',
+          color: '#10b981',
+          accent: 'emerald'
+        }
+      ];
+
+      return (
+        <div className="min-h-screen ambient-bg">
+          <NavBar />
+
+          <main className="max-w-4xl mx-auto px-6 py-16">
+            {/* Hero */}
+            <div className="text-center mb-16 animate-fade-in">
+              <h1 className="text-5xl md:text-6xl font-bold font-mono mb-4" style={{ background: 'linear-gradient(to right, #22d3ee, #a78bfa, #10b981)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                ProjectForty2
+              </h1>
+              <p className="text-lg text-white/40 font-mono max-w-xl mx-auto">
+                Cognitive compound training platform. Design AI personalities through thought chemistry.
+              </p>
+              <div className="flex items-center justify-center gap-2 mt-4">
+                <div className={`w-2 h-2 rounded-full ${serverStatus === 'connected' ? 'bg-emerald-400' : serverStatus === 'error' ? 'bg-rose-400' : 'bg-amber-400 animate-pulse'}`} />
+                <span className="text-[11px] font-mono text-white/30">
+                  {serverStatus === 'connected' ? 'TCE Engine Online' : serverStatus === 'error' ? 'Engine Offline' : 'Checking...'}
+                </span>
+              </div>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid md:grid-cols-3 gap-4 mb-16">
+              {features.map((f, i) => (
+                <a
+                  key={f.href}
+                  href={f.href}
+                  style={{ textDecoration: 'none', animationDelay: `${(i + 1) * 100}ms` }}
+                  className={`animate-fade-in glass rounded-xl p-6 group hover:scale-[1.02] transition-all duration-300 hover:border-${f.accent}-500/20`}
+                >
+                  <div className="text-3xl mb-3">{f.icon}</div>
+                  <h2 className="text-sm font-mono font-bold text-white/90 mb-2">{f.title}</h2>
+                  <p className="text-xs text-white/35 leading-relaxed">{f.desc}</p>
+                  <div className="mt-4 text-[10px] font-mono flex items-center gap-1 transition-colors" style={{ color: f.color + '80' }}>
+                    <span className="group-hover:translate-x-0.5 transition-transform">Open</span>
+                    <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* About Section */}
+            <div className="animate-fade-in delay-4 glass rounded-xl p-8 text-center">
+              <div className="w-12 h-12 rounded-xl mx-auto mb-4 flex items-center justify-center text-2xl font-bold font-mono" style={{ background: 'linear-gradient(135deg, rgba(34,211,238,0.15), rgba(167,139,250,0.15))', color: '#a78bfa' }}>
+                &Psi;
+              </div>
+              <h3 className="text-sm font-mono font-semibold text-white/80 mb-2">Thought Chemistry Engine</h3>
+              <p className="text-xs text-white/30 max-w-lg mx-auto leading-relaxed mb-4">
+                The TCE treats AI behaviors as chemical elements that can be combined, trained, and evaluated.
+                Each cognitive compound is a unique blend of personality isotopes refined through reinforcement learning.
+              </p>
+              <div className="flex items-center justify-center gap-6 text-[10px] font-mono text-white/20">
+                <span>16 Test Suites</span>
+                <span className="text-white/10">|</span>
+                <span>261 Evaluations</span>
+                <span className="text-white/10">|</span>
+                <span>Cloud + Local Models</span>
+              </div>
+            </div>
+          </main>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

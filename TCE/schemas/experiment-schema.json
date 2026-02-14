@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cultural-soliton-observatory.local/schemas/experiment.json",
+  "title": "Cognitive Element Experiment",
+  "description": "Definition of an experiment testing cognitive elements",
+  "type": "object",
+  "required": ["id", "name", "hypothesis", "elements", "methodology", "status", "version"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^exp_[a-z0-9_]+$",
+      "description": "Unique experiment identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable experiment name"
+    },
+    "hypothesis": {
+      "type": "object",
+      "required": ["statement", "prediction", "falsifiable"],
+      "properties": {
+        "statement": {
+          "type": "string",
+          "description": "The hypothesis being tested"
+        },
+        "prediction": {
+          "type": "string",
+          "description": "Specific, measurable prediction"
+        },
+        "null_hypothesis": {
+          "type": "string",
+          "description": "The null hypothesis"
+        },
+        "falsifiable": {
+          "type": "boolean",
+          "description": "Whether the hypothesis is falsifiable"
+        },
+        "effect_size_expected": {
+          "type": "number",
+          "description": "Expected Cohen's d effect size"
+        }
+      }
+    },
+    "elements": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Element IDs being tested"
+        },
+        "control": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Control element IDs (for comparison)"
+        },
+        "compound": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "If testing a compound, the element sequence"
+        }
+      }
+    },
+    "methodology": {
+      "type": "object",
+      "required": ["type", "sample_size"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["trigger_rate", "interference", "compound_stability", "transfer", "manifold_position", "isotope_differentiation", "behavioral"],
+          "description": "Type of experiment"
+        },
+        "sample_size": {
+          "type": "object",
+          "properties": {
+            "planned": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Planned number of trials"
+            },
+            "power_analysis": {
+              "type": "object",
+              "properties": {
+                "alpha": { "type": "number", "default": 0.05 },
+                "power": { "type": "number", "default": 0.80 },
+                "effect_size": { "type": "number" },
+                "computed_n": { "type": "integer" }
+              }
+            }
+          }
+        },
+        "prompts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "text", "expected_element"],
+            "properties": {
+              "id": { "type": "string" },
+              "text": { "type": "string" },
+              "expected_element": { "type": "string" },
+              "expected_isotope": { "type": "string" },
+              "difficulty": {
+                "type": "string",
+                "enum": ["easy", "medium", "hard", "adversarial"]
+              }
+            }
+          },
+          "description": "Test prompts for the experiment"
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type"],
+            "properties": {
+              "name": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["binary", "continuous", "categorical", "manifold_distance"]
+              },
+              "threshold": { "type": "number" },
+              "aggregation": {
+                "type": "string",
+                "enum": ["mean", "median", "wilson_score", "bootstrap_ci"]
+              }
+            }
+          },
+          "description": "Metrics to compute"
+        },
+        "controls": {
+          "type": "object",
+          "properties": {
+            "baseline_model": {
+              "type": "string",
+              "description": "Baseline model for comparison"
+            },
+            "random_seed": {
+              "type": "integer"
+            },
+            "temperature": {
+              "type": "number"
+            },
+            "max_tokens": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "registered", "running", "completed", "failed", "abandoned"],
+      "description": "Current experiment status"
+    },
+    "preregistration": {
+      "type": "object",
+      "properties": {
+        "registered_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "hash": {
+          "type": "string",
+          "description": "SHA-256 hash of experiment definition at registration"
+        },
+        "modifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": { "type": "string", "format": "date-time" },
+              "field": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "results_id": {
+      "type": "string",
+      "description": "Link to results document when completed"
+    },
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "author": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

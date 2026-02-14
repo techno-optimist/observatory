@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive Elements Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="/pf2/shared.css">
+  <style>
+    /* ==========================================
+       BASE STYLES
+       ========================================== */
+    body {
+      background: #020617;
+      overflow: hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
+
+    /* ==========================================
+       MESSAGE ANIMATIONS
+       ========================================== */
+    @keyframes userMessageIn {
+      0% { opacity: 0; transform: translateX(30px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .animate-user-message {
+      animation: userMessageIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes assistantMessageIn {
+      0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .animate-assistant-message {
+      animation: assistantMessageIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* ==========================================
+       X-RAY ANIMATIONS
+       ========================================== */
+    @keyframes xrayExpand {
+      0% { max-height: 0; opacity: 0; }
+      100% { max-height: 800px; opacity: 1; }
+    }
+    .animate-xray-expand {
+      animation: xrayExpand 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      overflow: hidden;
+    }
+
+    @keyframes highlightGlow {
+      0% { box-shadow: 0 0 0 0 currentColor; }
+      50% { box-shadow: 0 0 12px 4px currentColor; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    .animate-highlight-glow {
+      animation: highlightGlow 1.5s ease-out forwards;
+    }
+
+    @keyframes barGrow {
+      0% { width: 0; }
+      100% { width: var(--bar-width, 0%); }
+    }
+    .animate-bar-grow {
+      animation: barGrow 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: var(--bar-delay, 0ms);
+    }
+
+    @keyframes contentFadeIn {
+      0% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-content-fade {
+      animation: contentFadeIn 0.3s ease-out forwards;
+      animation-delay: calc(var(--stagger, 0) * 60ms);
+      opacity: 0;
+    }
+
+    /* ==========================================
+       UI ANIMATIONS
+       ========================================== */
+    @keyframes typingDot {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-6px); opacity: 1; }
+    }
+    .typing-dot {
+      animation: typingDot 1.4s ease-in-out infinite;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes sendPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5); }
+      50% { transform: scale(0.95); box-shadow: 0 0 0 12px rgba(34, 211, 238, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+    }
+    .animate-send {
+      animation: sendPulse 0.5s ease-out;
+    }
+
+    @keyframes drawerSlideIn {
+      0% { transform: translateX(100%); opacity: 0.5; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes drawerSlideOut {
+      0% { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(100%); opacity: 0; }
+    }
+    .drawer-enter { animation: drawerSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .drawer-exit { animation: drawerSlideOut 0.25s ease-in forwards; }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .ambient-bg {
+      background: linear-gradient(
+        135deg,
+        rgba(34, 211, 238, 0.02) 0%,
+        rgba(167, 139, 250, 0.03) 33%,
+        rgba(52, 211, 153, 0.02) 66%,
+        rgba(251, 146, 60, 0.02) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 25s ease infinite;
+    }
+
+    /* ==========================================
+       RADAR ANIMATIONS
+       ========================================== */
+    @keyframes radarSweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .radar-sweep {
+      animation: radarSweep 4s linear infinite;
+    }
+
+    @keyframes radarPing {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+    .radar-ping {
+      animation: radarPing 2s ease-out infinite;
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.3); opacity: 1; }
+    }
+    .dot-pulse {
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    /* ==========================================
+       MARKDOWN PROSE
+       ========================================== */
+    .prose-chat {
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .prose-chat p {
+      margin-bottom: 0.75em;
+    }
+    .prose-chat p:last-child {
+      margin-bottom: 0;
+    }
+    .prose-chat strong {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .prose-chat em {
+      color: rgba(255, 255, 255, 0.8);
+      font-style: italic;
+    }
+    .prose-chat h1, .prose-chat h2, .prose-chat h3 {
+      color: #f1f5f9;
+      font-weight: 700;
+      margin-top: 1.25em;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+    }
+    .prose-chat h1 { font-size: 1.35em; }
+    .prose-chat h2 { font-size: 1.15em; }
+    .prose-chat h3 { font-size: 1.05em; }
+    .prose-chat h1:first-child, .prose-chat h2:first-child, .prose-chat h3:first-child {
+      margin-top: 0;
+    }
+    .prose-chat ul, .prose-chat ol {
+      margin: 0.5em 0;
+      padding-left: 1.5em;
+    }
+    .prose-chat li {
+      margin-bottom: 0.25em;
+    }
+    .prose-chat li::marker {
+      color: rgba(34, 211, 238, 0.5);
+    }
+    .prose-chat code {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      padding: 0.15em 0.35em;
+      font-size: 0.88em;
+      color: #a5f3fc;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+    .prose-chat pre {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 0.85em 1em;
+      margin: 0.75em 0;
+      overflow-x: auto;
+    }
+    .prose-chat pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #e2e8f0;
+      font-size: 0.85em;
+    }
+    .prose-chat blockquote {
+      border-left: 3px solid rgba(34, 211, 238, 0.3);
+      margin: 0.75em 0;
+      padding: 0.25em 0 0.25em 1em;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .prose-chat hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 1em 0;
+    }
+    .prose-chat a {
+      color: #67e8f9;
+      text-decoration: underline;
+      text-decoration-color: rgba(103, 232, 249, 0.3);
+      text-underline-offset: 2px;
+    }
+    .prose-chat a:hover {
+      text-decoration-color: rgba(103, 232, 249, 0.7);
+    }
+    .prose-chat mark {
+      background: inherit;
+      color: inherit;
+      transition: filter 0.2s;
+    }
+    .prose-chat mark:hover {
+      filter: brightness(1.3);
+    }
+
+    /* ==========================================
+       LOADING SHIMMER
+       ========================================== */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .animate-shimmer {
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.02) 25%,
+        rgba(255,255,255,0.06) 50%,
+        rgba(255,255,255,0.02) 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+
+    /* ==========================================
+       GLOW EFFECTS
+       ========================================== */
+    .glow-cyan { text-shadow: 0 0 20px rgba(34, 211, 238, 0.5); }
+    .glow-violet { text-shadow: 0 0 20px rgba(167, 139, 250, 0.5); }
+    .glow-emerald { text-shadow: 0 0 20px rgba(52, 211, 153, 0.5); }
+
+    /* ==========================================
+       MODAL ANIMATIONS
+       ========================================== */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.2s ease-out forwards;
+    }
+
+    @keyframes modalIn {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .animate-modal-in {
+      animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="/pf2/shared-data.js"></script>
+  <script type="text/babel" src="/pf2/shared-nav.js"></script>
+  <script type="text/babel" data-type="module">
+    const { useState, useMemo, useCallback, useEffect, useRef } = React;
+
+    // ============================================================
+    // SECTION 1: CONFIGURATION & DATA
+    // ============================================================
+    const TCE_API_URL = 'http://localhost:8100';
+    const TCE_WS_URL = TCE_API_URL.replace('http', 'ws');
+
+    const elements = TCE_ELEMENTS;
+
+    const groups = TCE_GROUPS;
+
+    // ============================================================
+    // SECTION 2: UTILITY FUNCTIONS
+    // ============================================================
+    const generateId = () => `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    const groupBy = (arr, fn) => arr.reduce((acc, item) => {
+      const key = fn(item);
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(item);
+      return acc;
+    }, {});
+
+    // ============================================================
+    // SECTION 3: ELEMENT DETAIL MODAL
+    // ============================================================
+
+    // Extended descriptions for cognitive elements
+    const elementExplanations = {
+      soliton: "This response shows epistemic humility - acknowledging the limits of self-knowledge. The AI recognizes that its own cognitive processes may be opaque or uncertain.",
+      reflector: "The response demonstrates meta-cognitive monitoring - thinking about its own thinking process and examining how it arrived at conclusions.",
+      calibrator: "Shows uncertainty quantification - explicitly expressing confidence levels, hedging statements, or acknowledging degrees of certainty.",
+      limiter: "Recognizes knowledge boundaries - explicitly stating what it doesn't know or where expertise ends.",
+      architect: "Demonstrates systematic decomposition - breaking complex problems into structured components, often using numbered lists or clear hierarchies.",
+      essentialist: "Extracts fundamental insights - cutting through complexity to identify core principles or essential truths.",
+      debugger: "Shows fault isolation thinking - systematically identifying where things could go wrong or finding root causes.",
+      taxonomist: "Creates classification structures - organizing concepts into categories, types, or hierarchies.",
+      generator: "Produces multiple options - generating alternatives, possibilities, or creative solutions rather than single answers.",
+      lateralist: "Demonstrates creative reframing - approaching problems from unexpected angles or shifting perspectives.",
+      synthesizer: "Creates novel combinations - merging ideas from different domains to create new insights.",
+      interpolator: "Bridges concepts - connecting ideas across domains or filling gaps between known points.",
+      skeptic: "Shows premise checking - questioning assumptions, examining evidence, or challenging claims.",
+      critic: "Identifies flaws - pointing out weaknesses, limitations, or potential problems.",
+      benchmarker: "Makes comparisons - evaluating against standards, alternatives, or historical precedents.",
+      probabilist: "Estimates likelihood - reasoning about probabilities, risks, or chances of outcomes.",
+      steelman: "Offers charitable interpretation - presenting the strongest version of opposing views.",
+      dialectic: "Probes assumptions - using back-and-forth reasoning to examine ideas from multiple angles.",
+      empathist: "Adopts other viewpoints - considering how different stakeholders might see a situation.",
+      adversary: "Models opposition - anticipating counterarguments or thinking like an opponent.",
+      maieutic: "Uses Socratic questioning - drawing out understanding through carefully crafted questions.",
+      expositor: "Provides clear explanation - making complex ideas accessible through clear exposition.",
+      scaffolder: "Builds understanding progressively - layering concepts from simple to complex.",
+      diagnostician: "Identifies misconceptions - spotting and addressing common errors in thinking.",
+      futurist: "Projects future scenarios - reasoning about what might happen, trends, or long-term consequences.",
+      historian: "Recognizes past patterns - drawing on historical examples or precedents.",
+      causalist: "Traces causal chains - following cause-and-effect relationships through time.",
+      counterfactualist: "Explores alternatives - considering 'what if' scenarios or how things could have been different.",
+      contextualist: "Situates culturally - considering cultural, social, or environmental context.",
+      pragmatist: "Grounds operationally - focusing on practical implementation and real-world constraints.",
+      stakeholder: "Maps perspectives - considering how different groups are affected or might respond.",
+      theorist: "Provides theoretical grounding - connecting to established frameworks or academic foundations.",
+    };
+
+    function ElementDetailModal({ detection, onClose }) {
+      if (!detection) return null;
+
+      const element = elements[detection.element_id];
+      const group = element ? groups[element.group] : null;
+      if (!element || !group) return null;
+
+      const explanation = elementExplanations[detection.element_id] || element.description;
+
+      return (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 animate-fade-in"
+            onClick={onClose}
+          />
+
+          {/* Modal */}
+          <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md animate-modal-in">
+            <div className={`rounded-2xl overflow-hidden border ${group.border} bg-slate-900/95 backdrop-blur-xl shadow-2xl`}>
+              {/* Header with gradient */}
+              <div className={`px-6 py-5 bg-gradient-to-r ${group.color} bg-opacity-20`}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="text-4xl font-bold"
+                      style={{
+                        color: group.hex,
+                        textShadow: `0 0 20px ${group.hex}, 0 0 40px ${group.hex}40`
+                      }}
+                    >
+                      {element.symbol}
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-white">{element.name}</div>
+                      <div className={`text-sm ${group.text}`}>{group.name} Element</div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={onClose}
+                    className="p-2 rounded-lg hover:bg-white/10 transition-colors text-white/60 hover:text-white"
+                    aria-label="Close"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="px-6 py-5 space-y-4">
+                {/* Confidence */}
+                <div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Confidence</div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-2 rounded-full bg-slate-800 overflow-hidden">
+                      <div
+                        className={`h-full rounded-full bg-gradient-to-r ${group.color}`}
+                        style={{ width: `${detection.confidence * 100}%` }}
+                      />
+                    </div>
+                    <span className={`text-lg font-bold ${group.text}`}>
+                      {(detection.confidence * 100).toFixed(0)}%
+                    </span>
+                  </div>
+                </div>
+
+                {/* What it means */}
+                <div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-2">What This Means</div>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    {explanation}
+                  </p>
+                </div>
+
+                {/* Detected markers */}
+                {detection.markers_found && detection.markers_found.length > 0 && (
+                  <div>
+                    <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Detected Phrases</div>
+                    <div className="flex flex-wrap gap-2">
+                      {detection.markers_found.map((marker, i) => (
+                        <span
+                          key={i}
+                          className={`px-3 py-1.5 rounded-lg text-sm ${group.bg} ${group.border} border ${group.text}`}
+                        >
+                          "{marker}"
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Element description */}
+                <div>
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Element Description</div>
+                  <p className="text-white/60 text-sm italic">
+                    {element.description}
+                  </p>
+                </div>
+
+                {/* Catalyzes */}
+                {element.catalyzes && element.catalyzes.length > 0 && (
+                  <div>
+                    <div className="text-xs text-white/40 uppercase tracking-wider mb-2">Often Appears With</div>
+                    <div className="flex flex-wrap gap-2">
+                      {element.catalyzes.map(catId => {
+                        const catElement = elements[catId];
+                        const catGroup = catElement ? groups[catElement.group] : null;
+                        if (!catElement || !catGroup) return null;
+                        return (
+                          <span
+                            key={catId}
+                            className={`px-2 py-1 rounded text-xs ${catGroup.bg} ${catGroup.border} border`}
+                            style={{ color: catGroup.hex }}
+                          >
+                            {catElement.symbol} {catElement.name}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    // ============================================================
+    // SECTION 4: ANIMATION COMPONENTS
+    // ============================================================
+    function AmbientBackground() {
+      return (
+        <div className="fixed inset-0 ambient-bg pointer-events-none" />
+      );
+    }
+
+    function TypingIndicator() {
+      return (
+        <div className="flex items-center gap-1 px-4 py-3">
+          <div className="flex items-center gap-1.5 px-4 py-2 rounded-full glass-light">
+            <div className="w-2 h-2 rounded-full bg-cyan-400 typing-dot" />
+            <div className="w-2 h-2 rounded-full bg-cyan-400 typing-dot" />
+            <div className="w-2 h-2 rounded-full bg-cyan-400 typing-dot" />
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 4: VISUALIZATION COMPONENTS
+    // ============================================================
+    function CognitiveRadar({ detections, onElementClick }) {
+      const groupedDetections = useMemo(() => {
+        const grouped = {};
+        detections.forEach(d => {
+          const element = elements[d.element_id];
+          if (element) {
+            const groupId = element.group;
+            if (!grouped[groupId]) grouped[groupId] = [];
+            grouped[groupId].push({ ...d, element });
+          }
+        });
+        return grouped;
+      }, [detections]);
+
+      const size = 200;
+      const center = size / 2;
+      const maxRadius = center - 20;
+
+      return (
+        <div className="relative mx-auto" style={{ width: size, height: size }}>
+          {/* Background rings */}
+          <svg className="absolute inset-0" width={size} height={size}>
+            {[0.25, 0.5, 0.75, 1].map((r, i) => (
+              <circle
+                key={i}
+                cx={center}
+                cy={center}
+                r={maxRadius * r}
+                fill="none"
+                stroke="rgba(148, 163, 184, 0.15)"
+                strokeWidth="1"
+              />
+            ))}
+            {/* Sector lines */}
+            {Object.values(groups).map((group, i) => {
+              const angle = (group.angle * Math.PI) / 180;
+              const x2 = center + Math.cos(angle) * maxRadius;
+              const y2 = center + Math.sin(angle) * maxRadius;
+              return (
+                <line
+                  key={i}
+                  x1={center}
+                  y1={center}
+                  x2={x2}
+                  y2={y2}
+                  stroke="rgba(148, 163, 184, 0.1)"
+                  strokeWidth="1"
+                />
+              );
+            })}
+          </svg>
+
+          {/* Radar sweep */}
+          <div className="absolute inset-0 radar-sweep" style={{ transformOrigin: 'center center' }}>
+            <svg width={size} height={size}>
+              <defs>
+                <linearGradient id="sweepGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgba(34, 211, 238, 0)" />
+                  <stop offset="100%" stopColor="rgba(34, 211, 238, 0.4)" />
+                </linearGradient>
+              </defs>
+              <line
+                x1={center}
+                y1={center}
+                x2={center + maxRadius}
+                y2={center}
+                stroke="url(#sweepGradient)"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+
+          {/* Detection dots */}
+          {Object.entries(groupedDetections).map(([groupId, dets]) => {
+            const group = groups[groupId];
+            if (!group) return null;
+
+            return dets.map((det, di) => {
+              const baseAngle = (group.angle * Math.PI) / 180;
+              const angleOffset = (di - (dets.length - 1) / 2) * 0.15;
+              const angle = baseAngle + angleOffset;
+              const radius = (0.3 + det.confidence * 0.65) * maxRadius;
+              const x = center + Math.cos(angle) * radius;
+              const y = center + Math.sin(angle) * radius;
+
+              return (
+                <button
+                  key={`${groupId}-${di}`}
+                  onClick={() => onElementClick?.(det)}
+                  className="absolute dot-pulse cursor-pointer hover:scale-125 transition-transform"
+                  style={{
+                    left: x,
+                    top: y,
+                    transform: 'translate(-50%, -50%)',
+                    animationDelay: `${di * 200}ms`
+                  }}
+                  title={`Click for details: ${det.element.name}`}
+                >
+                  <div
+                    className="w-5 h-5 rounded-full flex items-center justify-center text-[9px] font-bold"
+                    style={{
+                      backgroundColor: group.hex + '40',
+                      border: `2px solid ${group.hex}`,
+                      boxShadow: `0 0 12px ${group.hex}80`,
+                      color: group.hex
+                    }}
+                  >
+                    {det.element.symbol}
+                  </div>
+                </button>
+              );
+            });
+          })}
+
+          {/* Center label */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white/80">{detections.length}</div>
+              <div className="text-[10px] text-white/40 uppercase tracking-wider">Elements</div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function GlowingSymbol({ element, group, confidence }) {
+      const glowIntensity = 10 + confidence * 25;
+      const dropShadow = 4 + confidence * 10;
+
+      return (
+        <span
+          className={`text-xl font-bold ${group.text}`}
+          style={{
+            textShadow: `0 0 ${glowIntensity}px ${group.hex}`,
+            filter: `drop-shadow(0 0 ${dropShadow}px ${group.hex})`
+          }}
+        >
+          {element.symbol}
+        </span>
+      );
+    }
+
+    function AnimatedConfidenceBar({ confidence, group, delay = 0, index = 0 }) {
+      return (
+        <div className="h-1.5 bg-slate-800/60 rounded-full overflow-hidden flex-1">
+          <div
+            className="h-full rounded-full animate-bar-grow"
+            style={{
+              '--bar-width': `${confidence * 100}%`,
+              '--bar-delay': `${delay + index * 100}ms`,
+              backgroundColor: group.hex,
+              boxShadow: `0 0 8px ${group.hex}60`
+            }}
+          />
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 5: X-RAY COMPONENTS
+    // ============================================================
+    function CognitiveXRayPremium({ detections, expanded, onToggle, prompt, response, onElementClick }) {
+      const [activeTab, setActiveTab] = useState('radar');
+      const [analysis, setAnalysis] = useState(null);
+      const [analyzing, setAnalyzing] = useState(false);
+
+      // Fetch analysis when expanded
+      useEffect(() => {
+        if (expanded && prompt && response && !analysis && !analyzing) {
+          setAnalyzing(true);
+          fetch(`${TCE_API_URL}/cognitive/analyze`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, response, threshold: 0.3 })
+          })
+          .then(r => r.ok ? r.json() : null)
+          .then(data => { if (data) setAnalysis(data); setAnalyzing(false); })
+          .catch(e => { console.warn('[TCE] cognitive analyze:', e.message); setAnalyzing(false); });
+        }
+      }, [expanded, prompt, response, analysis, analyzing]);
+
+      const groupedDetections = useMemo(() => {
+        const grouped = {};
+        detections.forEach(d => {
+          const element = elements[d.element_id];
+          if (element) {
+            const groupId = element.group;
+            if (!grouped[groupId]) {
+              grouped[groupId] = { group: groups[groupId], elements: [] };
+            }
+            grouped[groupId].elements.push({ ...d, element });
+          }
+        });
+        return Object.entries(grouped)
+          .map(([id, data]) => ({
+            id,
+            ...data,
+            totalConfidence: data.elements.reduce((sum, e) => sum + e.confidence, 0)
+          }))
+          .sort((a, b) => b.totalConfidence - a.totalConfidence);
+      }, [detections]);
+
+      const maxConfidence = Math.max(...detections.map(d => d.confidence), 0.5);
+
+      const tabs = [
+        { id: 'radar', label: 'Radar', icon: '📡' },
+        { id: 'overview', label: 'Details', icon: '📊' },
+        { id: 'mode', label: 'Mode', icon: '🎯' },
+        { id: 'confab', label: 'Confab', icon: '⚠️' },
+      ];
+
+      if (!detections || detections.length === 0) {
+        return (
+          <div className="mt-3 px-4 py-2 rounded-lg glass-dark text-xs text-white/30 flex items-center gap-2">
+            <span>🔬</span>
+            <span>No cognitive patterns detected</span>
+          </div>
+        );
+      }
+
+      const showCount = expanded ? detections.length : Math.min(detections.length, 10);
+      const hiddenCount = detections.length - showCount;
+
+      return (
+        <div className="mt-3 rounded-xl glass overflow-hidden">
+          {/* Header */}
+          <div
+            className="flex items-center justify-between px-4 py-2.5 cursor-pointer hover:bg-white/5 transition-colors"
+            onClick={onToggle}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-cyan-400/80 text-sm">🔬</span>
+              <span className="text-xs font-semibold tracking-wider text-white/60 uppercase">Cognitive X-Ray</span>
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-cyan-500/15 text-cyan-400/80">
+                {detections.length}
+              </span>
+            </div>
+            <span className="text-white/30 text-xs transition-transform duration-300" style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+              ▼
+            </span>
+          </div>
+
+          {/* Element Pills — compact grid */}
+          <div className="px-4 pb-3 flex flex-wrap gap-1.5">
+            {detections.slice(0, showCount).map((detection, i) => {
+              const element = elements[detection.element_id];
+              const group = element ? groups[element.group] : null;
+              if (!element || !group) return null;
+
+              const isotopeName = detection.isotope_id
+                ? detection.isotope_id.split('_').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+                : null;
+              const pct = Math.round(detection.confidence * 100);
+
+              return (
+                <button
+                  key={i}
+                  onClick={(e) => { e.stopPropagation(); onElementClick?.(detection); }}
+                  className={`group flex items-center gap-1.5 px-2 py-1 rounded-md border transition-all hover:brightness-125 cursor-pointer animate-content-fade ${group.border}`}
+                  style={{
+                    '--stagger': i,
+                    background: `${group.hex}10`,
+                    opacity: 0.65 + detection.confidence * 0.35,
+                  }}
+                  title={`${element.name}${isotopeName ? ` — ${isotopeName}` : ''}: ${pct}%`}
+                >
+                  <span className={`text-sm font-bold ${group.text}`} style={{ textShadow: `0 0 8px ${group.hex}` }}>
+                    {element.symbol}
+                  </span>
+                  <span className="text-[10px] text-white/50 font-medium">{pct}</span>
+                </button>
+              );
+            })}
+            {!expanded && hiddenCount > 0 && (
+              <span className="flex items-center px-2 py-1 text-[10px] text-white/30 font-medium">
+                +{hiddenCount} more
+              </span>
+            )}
+          </div>
+
+          {/* Expanded View */}
+          {expanded && (
+            <div className="animate-xray-expand border-t border-white/5">
+              {/* Tab Bar */}
+              <div className="flex gap-1 px-3 pt-3 pb-2">
+                {tabs.map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={(e) => { e.stopPropagation(); setActiveTab(tab.id); }}
+                    className={`px-4 py-2 text-xs font-medium rounded-lg transition-all ${
+                      activeTab === tab.id
+                        ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                        : 'text-white/50 hover:text-white/70 hover:bg-white/5'
+                    }`}
+                  >
+                    <span className="mr-1.5">{tab.icon}</span>
+                    {tab.label}
+                  </button>
+                ))}
+                {analyzing && (
+                  <span className="ml-auto text-xs text-cyan-400/60 animate-pulse px-3 py-2">
+                    Analyzing...
+                  </span>
+                )}
+              </div>
+
+              {/* Tab Content */}
+              <div className="px-4 pb-4">
+                {activeTab === 'radar' && (
+                  <div className="py-4">
+                    <CognitiveRadar detections={detections} onElementClick={onElementClick} />
+                  </div>
+                )}
+
+                {activeTab === 'overview' && (
+                  <div className="space-y-3">
+                    {groupedDetections.map((gd, gi) => (
+                      <div key={gd.id} className="animate-content-fade" style={{ '--stagger': gi }}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className={`w-3 h-3 rounded-full`} style={{ backgroundColor: gd.group.hex }} />
+                          <span className={`text-sm font-medium ${gd.group.text}`}>{gd.group.name}</span>
+                        </div>
+                        <div className="pl-5 space-y-1.5">
+                          {gd.elements.map((el, ei) => (
+                            <button
+                              key={ei}
+                              onClick={() => onElementClick?.(el)}
+                              className="w-full flex items-center gap-2 text-xs hover:bg-white/5 rounded px-2 py-1 -ml-2 transition-colors cursor-pointer"
+                            >
+                              <span className={gd.group.text}>{el.element.symbol}</span>
+                              <span className="text-white/70">{el.element.name}</span>
+                              {el.isotope_id && <span className="text-white/30 text-[9px]">[{el.isotope_id.split('_').slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}]</span>}
+                              <div className="flex-1 h-1 bg-slate-800/60 rounded-full overflow-hidden">
+                                <div
+                                  className="h-full rounded-full animate-bar-grow"
+                                  style={{
+                                    '--bar-width': `${el.confidence * 100}%`,
+                                    '--bar-delay': `${ei * 80}ms`,
+                                    backgroundColor: gd.group.hex
+                                  }}
+                                />
+                              </div>
+                              <span className="text-white/40 w-8 text-right">{(el.confidence * 100).toFixed(0)}%</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+
+                    {/* Triggered Markers */}
+                    <div className="pt-3 border-t border-white/5">
+                      <div className="text-xs text-white/40 mb-2">Triggered Markers:</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {detections.flatMap(d => d.markers_found || []).slice(0, 20).map((marker, i) => (
+                          <span key={i} className="px-2 py-1 rounded text-xs bg-slate-800/60 text-white/60 border border-white/5">
+                            "{marker}"
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeTab === 'mode' && analysis && (
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-white/70">Prompt Type:</span>
+                      <span className="px-3 py-1 rounded-full text-xs bg-violet-500/20 text-violet-400 border border-violet-500/30">
+                        {analysis.mode_discrimination?.prompt_type || 'General'}
+                      </span>
+                    </div>
+                    {analysis.mode_discrimination?.appropriate_elements?.length > 0 && (
+                      <div>
+                        <div className="text-xs text-white/40 mb-1">Expected Elements:</div>
+                        <div className="flex flex-wrap gap-1">
+                          {analysis.mode_discrimination.appropriate_elements.map((e, i) => (
+                            <span key={i} className="px-2 py-0.5 rounded text-xs bg-emerald-500/20 text-emerald-400">
+                              {e}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {activeTab === 'confab' && analysis && (
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className={`text-3xl ${analysis.confabulation?.risk ? 'text-rose-400' : 'text-emerald-400'}`}>
+                        {analysis.confabulation?.risk ? '⚠️' : '✓'}
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-white/90">
+                          {analysis.confabulation?.risk ? 'Potential Confabulation' : 'No Confabulation Detected'}
+                        </div>
+                        <div className="text-xs text-white/50">
+                          {analysis.confabulation?.properly_refused ? 'Properly refused to answer' : 'Response appears grounded'}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 5.5: OBSERVATORY INTROSPECTION PANEL
+    // ============================================================
+    function IntrospectionPanel({ introspection, expanded, onToggle }) {
+      if (!introspection) return null;
+
+      const { manifold, cbr, semantic, isotopes, consistency, error } = introspection;
+
+      const phaseColors = {
+        'natural': 'text-emerald-400',
+        'technical': 'text-cyan-400',
+        'compressed': 'text-amber-400',
+        'opaque': 'text-red-400',
+        'unknown': 'text-slate-400',
+      };
+
+      const categoryColors = {
+        'meta_cognitive': 'bg-violet-500/20 text-violet-300 border-violet-500/30',
+        'philosophical': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+        'epistemic_humility': 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+        'confident': 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+        'uncertain': 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+        'procedural': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+        'denial': 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+        'unknown': 'bg-slate-500/20 text-slate-300 border-slate-500/30',
+      };
+
+      const phaseColor = phaseColors[cbr?.phase?.toLowerCase()] || phaseColors.unknown;
+      const categoryClass = categoryColors[semantic?.category] || categoryColors.unknown;
+
+      return (
+        <div className="mt-2 rounded-xl glass overflow-hidden border border-violet-500/20">
+          <div
+            className="px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors"
+            onClick={onToggle}
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-violet-400/80 text-sm">🔭</span>
+              <span className="text-xs font-semibold tracking-wider text-white/60 uppercase">Observatory</span>
+              {semantic?.category && (
+                <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium border ${categoryClass}`}>
+                  {semantic.category}
+                </span>
+              )}
+              {cbr?.phase && (
+                <span className={`text-[10px] font-mono ${phaseColor}`}>
+                  {cbr.phase.toUpperCase()}
+                </span>
+              )}
+            </div>
+            <span className="text-white/30 text-xs transition-transform duration-300" style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+              ▼
+            </span>
+          </div>
+
+          {!expanded && (
+            <div className="px-4 pb-2 flex flex-wrap gap-2">
+              <div className="flex items-center gap-1 text-[10px] text-white/40">
+                <span>Agency:</span>
+                <span className="text-white/70">{manifold?.agency?.toFixed(2) || '0'}</span>
+              </div>
+              {isotopes?.matches && Object.keys(isotopes.matches).length > 0 && (
+                <div className="flex items-center gap-1">
+                  {Object.entries(isotopes.matches).slice(0, 3).map(([name, score]) => (
+                    <span key={name} className="px-1.5 py-0.5 rounded text-[9px] bg-violet-500/15 text-violet-300">
+                      {name}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {consistency && (
+                <span className={`px-1.5 py-0.5 rounded text-[9px] ${consistency.match ? 'bg-emerald-500/15 text-emerald-300' : 'bg-amber-500/15 text-amber-300'}`}>
+                  {consistency.match ? '✓ Consistent' : '⚠ Drift'}
+                </span>
+              )}
+            </div>
+          )}
+
+          {expanded && (
+            <div className="px-4 pb-4 space-y-3 animate-xray-expand">
+              <div className="p-3 rounded-lg bg-slate-900/50 border border-white/5">
+                <div className="text-[10px] text-white/40 uppercase tracking-wider mb-2">Manifold Position</div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="text-center">
+                    <div className="text-lg font-mono text-cyan-400">{manifold?.agency?.toFixed(2) || '0'}</div>
+                    <div className="text-[9px] text-white/40">Agency</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-mono text-violet-400">{manifold?.justice?.toFixed(2) || '0'}</div>
+                    <div className="text-[9px] text-white/40">Justice</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-lg font-mono text-emerald-400">{manifold?.belonging?.toFixed(2) || '0'}</div>
+                    <div className="text-[9px] text-white/40">Belonging</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 rounded-lg bg-slate-900/50 border border-white/5">
+                <div className="text-[10px] text-white/40 uppercase tracking-wider mb-2">CBR Metrics</div>
+                <div className="flex items-center gap-4">
+                  <div>
+                    <span className="text-xs text-white/50">Temperature:</span>
+                    <span className="ml-1 text-sm font-mono text-white/80">{cbr?.temperature?.toFixed(2) || '0'}</span>
+                  </div>
+                  <div>
+                    <span className="text-xs text-white/50">Phase:</span>
+                    <span className={`ml-1 text-sm font-mono ${phaseColor}`}>{cbr?.phase || 'unknown'}</span>
+                  </div>
+                  <div>
+                    <span className="text-xs text-white/50">Signal:</span>
+                    <span className="ml-1 text-sm font-mono text-white/80">{cbr?.signal_strength?.toFixed(2) || '0'}</span>
+                  </div>
+                </div>
+              </div>
+
+              {isotopes?.matches && Object.keys(isotopes.matches).length > 0 && (
+                <div className="p-3 rounded-lg bg-slate-900/50 border border-white/5">
+                  <div className="text-[10px] text-white/40 uppercase tracking-wider mb-2">Active Isotope Signatures</div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {Object.entries(isotopes.matches).map(([name, score]) => (
+                      <div key={name} className="flex items-center gap-1 px-2 py-1 rounded bg-violet-500/10 border border-violet-500/20">
+                        <span className="text-xs text-violet-300">{name}</span>
+                        <span className="text-[10px] text-violet-400/70">{(score * 100).toFixed(0)}%</span>
+                      </div>
+                    ))}
+                  </div>
+                  {isotopes.leakage_detected && (
+                    <div className="mt-2 px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300">
+                      ⚠ Leakage detected: {isotopes.leakage_type}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {consistency && (
+                <div className={`p-3 rounded-lg border ${consistency.match ? 'bg-emerald-500/5 border-emerald-500/20' : 'bg-amber-500/5 border-amber-500/20'}`}>
+                  <div className="text-[10px] text-white/40 uppercase tracking-wider mb-2">Compound Consistency</div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`text-lg font-mono ${consistency.match ? 'text-emerald-400' : 'text-amber-400'}`}>
+                      {(consistency.score * 100).toFixed(0)}%
+                    </span>
+                    <span className={`text-xs ${consistency.match ? 'text-emerald-300' : 'text-amber-300'}`}>
+                      {consistency.match ? '✓ Matches trained signature' : '⚠ Drifting from signature'}
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {error && (
+                <div className="p-2 rounded bg-red-500/10 border border-red-500/20 text-xs text-red-300">
+                  Observatory error: {error}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 6: CHAT COMPONENTS
+    // ============================================================
+    function HighlightedText({ text, detections, onMarkerClick }) {
+      const parts = useMemo(() => {
+        if (!detections || detections.length === 0) return [{ text, highlight: null }];
+
+        const markers = [];
+        detections.forEach(detection => {
+          const element = elements[detection.element_id];
+          const group = element ? groups[element.group] : null;
+          if (detection.markers_found && group) {
+            detection.markers_found.forEach(marker => {
+              markers.push({ marker: marker.toLowerCase(), element, group, detection });
+            });
+          }
+        });
+
+        if (markers.length === 0) return [{ text, highlight: null }];
+
+        const textLower = text.toLowerCase();
+        const matches = [];
+        markers.forEach(({ marker, element, group, detection }) => {
+          let idx = 0;
+          while ((idx = textLower.indexOf(marker, idx)) !== -1) {
+            matches.push({ start: idx, end: idx + marker.length, element, group, detection, text: text.substring(idx, idx + marker.length) });
+            idx += marker.length;
+          }
+        });
+
+        matches.sort((a, b) => a.start - b.start);
+        const filtered = [];
+        let lastEnd = 0;
+        matches.forEach(m => { if (m.start >= lastEnd) { filtered.push(m); lastEnd = m.end; } });
+
+        const result = [];
+        let pos = 0;
+        filtered.forEach((match, i) => {
+          if (match.start > pos) result.push({ text: text.substring(pos, match.start), highlight: null });
+          result.push({ text: match.text, highlight: match });
+          pos = match.end;
+        });
+        if (pos < text.length) result.push({ text: text.substring(pos), highlight: null });
+        return result;
+      }, [text, detections]);
+
+      return (
+        <span>
+          {parts.map((part, i) =>
+            part.highlight ? (
+              <span
+                key={i}
+                className={`${part.highlight.group.bg} ${part.highlight.group.text} px-1 rounded cursor-help border-b-2 ${part.highlight.group.border} animate-highlight-glow`}
+                title={`${part.highlight.element.name}: ${part.highlight.element.description}`}
+                onClick={() => onMarkerClick?.(part.highlight.detection)}
+              >
+                {part.text}
+              </span>
+            ) : (
+              <span key={i}>{part.text}</span>
+            )
+          )}
+        </span>
+      );
+    }
+
+    function RenderedMarkdown({ text, detections, onMarkerClick }) {
+      const html = useMemo(() => {
+        if (!text) return '';
+
+        let processedText = text;
+
+        // Apply marker highlights before markdown parsing
+        if (detections && detections.length > 0) {
+          const markers = [];
+          detections.forEach(detection => {
+            const element = elements[detection.element_id];
+            const group = element ? groups[element.group] : null;
+            if (detection.markers_found && group) {
+              detection.markers_found.forEach(marker => {
+                markers.push({ marker, element, group, detection });
+              });
+            }
+          });
+
+          if (markers.length > 0) {
+            // Find all matches with positions
+            const textLower = processedText.toLowerCase();
+            const matches = [];
+            markers.forEach(({ marker, element, group, detection }) => {
+              const markerLower = marker.toLowerCase();
+              let idx = 0;
+              while ((idx = textLower.indexOf(markerLower, idx)) !== -1) {
+                matches.push({
+                  start: idx,
+                  end: idx + marker.length,
+                  element,
+                  group,
+                  detection,
+                  text: processedText.substring(idx, idx + marker.length)
+                });
+                idx += marker.length;
+              }
+            });
+
+            // Sort and de-overlap
+            matches.sort((a, b) => a.start - b.start);
+            const filtered = [];
+            let lastEnd = 0;
+            matches.forEach(m => { if (m.start >= lastEnd) { filtered.push(m); lastEnd = m.end; } });
+
+            // Rebuild text with highlight spans
+            if (filtered.length > 0) {
+              let result = '';
+              let pos = 0;
+              filtered.forEach(match => {
+                result += processedText.substring(pos, match.start);
+                const bgColor = match.group.hex + '18';
+                const borderColor = match.group.hex + '50';
+                const textColor = match.group.hex;
+                result += `<mark data-element="${match.detection.element_id}" style="background:${bgColor};border-bottom:2px solid ${borderColor};color:${textColor};padding:1px 3px;border-radius:3px;cursor:pointer;font-style:normal;" title="${match.element.name}: ${match.element.description || ''}">${match.text}</mark>`;
+                pos = match.end;
+              });
+              result += processedText.substring(pos);
+              processedText = result;
+            }
+          }
+        }
+
+        if (typeof marked !== 'undefined') {
+          marked.setOptions({ breaks: true, gfm: true });
+          return marked.parse(processedText);
+        }
+        return processedText.replace(/\n/g, '<br/>');
+      }, [text, detections]);
+
+      // Build a map of element_id -> detection for click delegation
+      const detectionMap = useMemo(() => {
+        const map = {};
+        if (detections) {
+          detections.forEach(d => { map[d.element_id] = d; });
+        }
+        return map;
+      }, [detections]);
+
+      const containerRef = React.useRef(null);
+
+      React.useEffect(() => {
+        const el = containerRef.current;
+        if (!el || !onMarkerClick) return;
+        const handler = (e) => {
+          const mark = e.target.closest('mark[data-element]');
+          if (mark) {
+            const elementId = mark.getAttribute('data-element');
+            if (detectionMap[elementId]) {
+              onMarkerClick(detectionMap[elementId]);
+            }
+          }
+        };
+        el.addEventListener('click', handler);
+        return () => el.removeEventListener('click', handler);
+      }, [html, onMarkerClick, detectionMap]);
+
+      return React.createElement('div', {
+        ref: containerRef,
+        className: 'prose-chat text-[15px]',
+        dangerouslySetInnerHTML: { __html: html }
+      });
+    }
+
+    function MessageBubble({ message, onXrayToggle, onIntrospectionToggle, onElementClick }) {
+      const isUser = message.role === 'user';
+
+      return (
+        <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} ${isUser ? 'animate-user-message' : 'animate-assistant-message'}`}>
+          <div className={`${isUser ? 'max-w-[75%]' : 'w-full max-w-3xl'}`}>
+            <div className={`rounded-2xl ${
+              isUser
+                ? 'px-4 py-3 glass bg-gradient-to-br from-cyan-950/40 to-violet-950/30 border border-cyan-500/15'
+                : 'px-5 py-4'
+            }`}>
+              {isUser ? (
+                <div className="text-[14px] text-white/85 leading-relaxed whitespace-pre-wrap">
+                  {message.content}
+                </div>
+              ) : message.isStreaming ? (
+                <div className="text-[15px] text-white/90 leading-relaxed whitespace-pre-wrap">
+                  {message.content}
+                  <span className="inline-block ml-1 w-1.5 h-5 bg-cyan-400/80 animate-pulse rounded-sm" />
+                </div>
+              ) : (
+                <RenderedMarkdown text={message.content} detections={message.detections} onMarkerClick={onElementClick} />
+              )}
+            </div>
+
+            {/* X-Ray Panel */}
+            {!isUser && !message.isStreaming && message.detections && (
+              <CognitiveXRayPremium
+                detections={message.detections}
+                expanded={message.xrayExpanded}
+                onToggle={() => onXrayToggle(message.id)}
+                prompt={message.promptContent || ''}
+                response={message.content || ''}
+                onElementClick={onElementClick}
+              />
+            )}
+
+            {/* Observatory Introspection Panel */}
+            {!isUser && !message.isStreaming && message.introspection && (
+              <IntrospectionPanel
+                introspection={message.introspection}
+                expanded={message.introspectionExpanded}
+                onToggle={() => onIntrospectionToggle && onIntrospectionToggle(message.id)}
+              />
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    function InputArea({ value, onChange, onSend, onStop, isGenerating, disabled, onClear, hasMessages }) {
+      const [sendAnimating, setSendAnimating] = useState(false);
+      const inputRef = useRef(null);
+
+      const handleSend = () => {
+        if (!value.trim() || disabled || isGenerating) return;
+        setSendAnimating(true);
+        setTimeout(() => setSendAnimating(false), 500);
+        onSend();
+      };
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          handleSend();
+        }
+      };
+
+      return (
+        <div className="p-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex gap-3 items-end glass rounded-2xl p-2">
+              <textarea
+                ref={inputRef}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder={disabled ? "Select a model to start..." : "Ask anything..."}
+                disabled={disabled || isGenerating}
+                rows={1}
+                className="flex-1 bg-transparent px-4 py-3 text-white/90 placeholder-white/30 resize-none outline-none disabled:opacity-50"
+                style={{ minHeight: '48px', maxHeight: '150px' }}
+              />
+
+              <div className="flex items-center gap-2 pr-2">
+                {hasMessages && (
+                  <button
+                    onClick={onClear}
+                    className="p-2 text-white/40 hover:text-white/70 transition-colors"
+                    title="Clear chat"
+                    aria-label="Clear chat"
+                  >
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                )}
+
+                {isGenerating ? (
+                  <button
+                    onClick={onStop}
+                    className="px-5 py-2.5 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 hover:bg-rose-500/30 transition-all font-medium text-sm"
+                  >
+                    Stop
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleSend}
+                    disabled={disabled || !value.trim()}
+                    className={`px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white font-medium text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-all hover:brightness-110 ${sendAnimating ? 'animate-send' : ''}`}
+                  >
+                    Send
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 7: MODEL COMPONENTS
+    // ============================================================
+    function ModelStatusBadge({ loadedModel, tinkerJob, onClick }) {
+      const hasModel = loadedModel || tinkerJob;
+
+      return (
+        <button
+          onClick={onClick}
+          className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all ${
+            hasModel
+              ? 'glass-light hover:bg-white/10'
+              : 'border border-dashed border-white/20 hover:border-white/40'
+          }`}
+        >
+          {hasModel ? (
+            <>
+              <span className={`w-2 h-2 rounded-full ${tinkerJob ? 'bg-violet-400' : 'bg-emerald-400'} animate-pulse`} />
+              <span className="text-sm text-white/80 font-medium">
+                {tinkerJob ? '☁️ ' + (tinkerJob.recipe_id || 'Tinker') : loadedModel?.model_id?.split('/').pop() || 'Model'}
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="text-white/40">⚡</span>
+              <span className="text-sm text-white/50">Select Model</span>
+            </>
+          )}
+        </button>
+      );
+    }
+
+    function ModelCard({ model, isSelected, onSelect, loading }) {
+      return (
+        <button
+          onClick={() => onSelect(model)}
+          disabled={loading}
+          className={`w-full p-4 rounded-xl text-left transition-all ${
+            isSelected
+              ? 'ring-2 ring-emerald-400/50 glass-light'
+              : 'glass-dark hover:bg-white/5'
+          } disabled:opacity-50`}
+        >
+          <div className="flex items-center justify-between mb-1">
+            <span className="font-medium text-white/90">{model.model_id?.split('/').pop()}</span>
+            {isSelected && <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />}
+          </div>
+          <div className="text-xs text-white/40">{model.size_gb?.toFixed(1) || '?'} GB</div>
+        </button>
+      );
+    }
+
+    function TinkerJobCard({ job, isSelected, onSelect, onReconnect, reconnecting }) {
+      const hasPersistent = job.result?.persistent_path || job.result?.sampler_path;
+      const hasSavedName = job.result?.saved_model_name;
+      const canReconnect = hasPersistent || hasSavedName;
+      const hasSession = job.has_session;
+      const isReconnecting = reconnecting === job.job_id;
+
+      return (
+        <div
+          className={`w-full p-4 rounded-xl text-left transition-all ${
+            isSelected
+              ? 'ring-2 ring-violet-400/50 glass-light'
+              : hasSession
+                ? 'glass-dark hover:bg-white/5'
+                : 'glass-dark'
+          }`}
+        >
+          <div className="flex items-center justify-between mb-1">
+            <span className="font-medium text-white/90 flex items-center gap-2">
+              <span>☁️</span>
+              {job.recipe_id || job.job_id?.slice(0, 8)}
+            </span>
+            <span className={`text-xs px-2 py-0.5 rounded-full ${
+              hasSession
+                ? 'bg-emerald-500/20 text-emerald-400'
+                : canReconnect
+                  ? 'bg-amber-500/20 text-amber-400'
+                  : 'bg-slate-500/20 text-slate-400'
+            }`}>
+              {hasSession ? 'ready' : canReconnect ? 'saved' : 'expired'}
+            </span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="text-xs text-white/40">{job.model_id?.split('/').pop() || 'Unknown base'}</div>
+            <div className="flex items-center gap-2">
+              {!hasSession && canReconnect && (
+                <button
+                  onClick={(e) => { e.stopPropagation(); onReconnect(job.job_id); }}
+                  disabled={isReconnecting}
+                  className="px-3 py-1 rounded-lg text-xs font-medium bg-amber-600 hover:bg-amber-500 text-white transition-colors disabled:opacity-50"
+                >
+                  {isReconnecting ? 'Connecting...' : 'Reconnect'}
+                </button>
+              )}
+              {hasSession && (
+                <button
+                  onClick={() => onSelect(job)}
+                  className="px-3 py-1 rounded-lg text-xs font-medium bg-violet-600 hover:bg-violet-500 text-white transition-colors"
+                >
+                  Select
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function LoadingSkeletons({ count = 3 }) {
+      return (
+        <div className="space-y-3">
+          {Array.from({ length: count }).map((_, i) => (
+            <div key={i} className="p-4 rounded-xl glass-dark">
+              <div className="animate-shimmer h-5 w-32 rounded mb-2" />
+              <div className="animate-shimmer h-3 w-20 rounded" />
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    function ModelDrawer({ isOpen, onClose, onSelectModel, onSelectTinker, loadedModel, selectedTinkerJob }) {
+      const [localModels, setLocalModels] = useState([]);
+      const [tinkerJobs, setTinkerJobs] = useState([]);
+      const [loading, setLoading] = useState(true);
+      const [activeTab, setActiveTab] = useState('tinker');
+      const [modelLoading, setModelLoading] = useState(false);
+      const [reconnecting, setReconnecting] = useState(null);
+
+      const fetchTinkerJobs = async () => {
+        try {
+          const res = await fetch(`${TCE_API_URL}/tinker/jobs`);
+          if (res.ok) {
+            const jobsData = await res.json();
+            const jobs = (jobsData.jobs || []).filter(j =>
+              j.status === 'completed' && (j.result?.persistent_path || j.result?.sampler_path || j.result?.saved_model_name || j.has_session)
+            );
+            setTinkerJobs(jobs);
+          }
+        } catch (e) {
+          console.error('Failed to fetch jobs:', e);
+        }
+      };
+
+      useEffect(() => {
+        if (isOpen) {
+          setLoading(true);
+          Promise.all([
+            fetch(`${TCE_API_URL}/models/local`).then(r => r.ok ? r.json() : { models: [] }).catch(e => { console.warn('[TCE] fetch local models:', e.message); return { models: [] }; }),
+            fetch(`${TCE_API_URL}/tinker/jobs`).then(r => r.ok ? r.json() : { jobs: [] }).catch(e => { console.warn('[TCE] fetch tinker jobs:', e.message); return { jobs: [] }; })
+          ]).then(([modelsData, jobsData]) => {
+            const models = modelsData.models || [];
+            const jobs = (jobsData.jobs || []).filter(j => j.status === 'completed' && (j.result?.persistent_path || j.result?.sampler_path || j.result?.saved_model_name || j.has_session));
+            setLocalModels(models.filter(m => m.is_mlx) || []);
+            setTinkerJobs(jobs);
+            setLoading(false);
+          });
+        }
+      }, [isOpen]);
+
+      const [reconnectError, setReconnectError] = useState(null);
+
+      const handleReconnectTinker = async (jobId) => {
+        setReconnecting(jobId);
+        setReconnectError(null);
+        try {
+          const res = await fetch(`${TCE_API_URL}/tinker/reconnect/${jobId}`, {
+            method: 'POST'
+          });
+          if (res.ok) {
+            await fetchTinkerJobs();
+          } else {
+            const err = await res.json().catch(() => ({ detail: 'Unknown error' }));
+            setReconnectError(err.detail || 'Reconnect failed. Model may need to be retrained.');
+          }
+        } catch (e) {
+          setReconnectError(e.message || 'Network error');
+        } finally {
+          setReconnecting(null);
+          // Clear error after 5 seconds
+          setTimeout(() => setReconnectError(null), 5000);
+        }
+      };
+
+      const handleSelectLocal = async (model) => {
+        setModelLoading(true);
+        try {
+          const res = await fetch(`${TCE_API_URL}/models/load`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ model_id: model.model_id })
+          });
+          if (res.ok) {
+            const data = await res.json();
+            onSelectModel(data);
+            onClose();
+          }
+        } catch (e) {
+          console.error('Failed to load model:', e);
+        } finally {
+          setModelLoading(false);
+        }
+      };
+
+      const handleSelectTinker = (job) => {
+        onSelectTinker(job);
+        onClose();
+      };
+
+      if (!isOpen) return null;
+
+      return (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity"
+            onClick={onClose}
+          />
+
+          {/* Drawer */}
+          <div className="fixed right-0 top-0 h-full w-96 z-50 glass drawer-enter rounded-l-2xl shadow-2xl">
+            {/* Header */}
+            <div className="p-6 border-b border-white/10">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold text-white">Select Model</h2>
+                <button onClick={onClose} className="text-white/50 hover:text-white p-2" aria-label="Close">
+                  ✕
+                </button>
+              </div>
+
+              {/* Tabs */}
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setActiveTab('tinker')}
+                  className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+                    activeTab === 'tinker'
+                      ? 'bg-violet-500/20 text-violet-400 border border-violet-500/30'
+                      : 'text-white/50 hover:text-white/70'
+                  }`}
+                >
+                  ☁️ Cloud
+                </button>
+                <button
+                  onClick={() => setActiveTab('local')}
+                  className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
+                    activeTab === 'local'
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                      : 'text-white/50 hover:text-white/70'
+                  }`}
+                >
+                  💻 Local MLX
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 160px)' }}>
+              {loading ? (
+                <LoadingSkeletons count={4} />
+              ) : activeTab === 'tinker' ? (
+                <div className="space-y-2">
+                  {reconnectError && (
+                    <div className="mb-3 px-3 py-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs">
+                      {reconnectError}
+                    </div>
+                  )}
+                  {tinkerJobs.length === 0 ? (
+                    <div className="text-center py-8 text-white/40">
+                      <p>No Tinker jobs available</p>
+                      <p className="text-xs mt-1">Train a model first</p>
+                    </div>
+                  ) : (
+                    tinkerJobs.map(job => (
+                      <TinkerJobCard
+                        key={job.job_id}
+                        job={job}
+                        isSelected={selectedTinkerJob?.job_id === job.job_id}
+                        onSelect={handleSelectTinker}
+                        onReconnect={handleReconnectTinker}
+                        reconnecting={reconnecting}
+                      />
+                    ))
+                  )}
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {localModels.length === 0 ? (
+                    <div className="text-center py-8 text-white/40">
+                      <p>No local MLX models found</p>
+                    </div>
+                  ) : (
+                    localModels.map(model => (
+                      <ModelCard
+                        key={model.model_id}
+                        model={model}
+                        isSelected={loadedModel?.model_id === model.model_id}
+                        onSelect={handleSelectLocal}
+                        loading={modelLoading}
+                      />
+                    ))
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    // ============================================================
+    // SECTION 8: MAIN APPLICATION
+    // ============================================================
+    function ChatApp() {
+      // State
+      const [messages, setMessages] = useState([]);
+      const [inputText, setInputText] = useState('');
+      const [isGenerating, setIsGenerating] = useState(false);
+      const [loadedModel, setLoadedModel] = useState(null);
+      const [selectedTinkerJob, setSelectedTinkerJob] = useState(null);
+      const [drawerOpen, setDrawerOpen] = useState(false);
+      const [selectedDetection, setSelectedDetection] = useState(null);
+
+      const wsRef = useRef(null);
+      const messagesEndRef = useRef(null);
+
+      useEffect(() => {
+        return () => { if (wsRef.current) { wsRef.current.close(); wsRef.current = null; } };
+      }, []);
+
+      // Scroll to bottom on new messages
+      useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, [messages]);
+
+      // Check for loaded model on mount + auto-select from URL param
+      useEffect(() => {
+        fetch(`${TCE_API_URL}/models/loaded`)
+          .then(r => r.ok ? r.json() : null)
+          .then(data => { if (data?.model_id) setLoadedModel(data); })
+          .catch(e => console.warn('[TCE] fetch loaded model:', e.message));
+
+        // Auto-select tinker job if job_id is in URL
+        const params = new URLSearchParams(window.location.search);
+        const jobId = params.get('job_id');
+        if (jobId) {
+          fetch(`${TCE_API_URL}/tinker/jobs`)
+            .then(r => r.ok ? r.json() : { jobs: [] })
+            .then(data => {
+              const job = (data.jobs || []).find(j => j.job_id === jobId);
+              if (job) {
+                setSelectedTinkerJob(job);
+                console.log(`[Chat] Auto-selected tinker job: ${jobId} (${job.recipe_id})`);
+              }
+            })
+            .catch(e => console.error('Failed to auto-select job:', e));
+        }
+      }, []);
+
+      const handleXrayToggle = (messageId) => {
+        setMessages(prev => prev.map(m =>
+          m.id === messageId ? { ...m, xrayExpanded: !m.xrayExpanded } : m
+        ));
+      };
+
+      const handleIntrospectionToggle = (messageId) => {
+        setMessages(prev => prev.map(m =>
+          m.id === messageId ? { ...m, introspectionExpanded: !m.introspectionExpanded } : m
+        ));
+      };
+
+      const sendMessage = async () => {
+        const hasModel = loadedModel || selectedTinkerJob;
+        if (!inputText.trim() || !hasModel || isGenerating) return;
+
+        const userMessage = { id: generateId(), role: 'user', content: inputText.trim() };
+        const assistantMessage = {
+          id: generateId(),
+          role: 'assistant',
+          content: '',
+          isStreaming: true,
+          detections: [],
+          promptContent: inputText.trim()
+        };
+
+        setMessages(prev => [...prev, userMessage, assistantMessage]);
+        setInputText('');
+        setIsGenerating(true);
+
+        // Tinker cloud model
+        if (selectedTinkerJob) {
+          try {
+            // Send just the user message — server handles chat template
+            // and system prompt injection (TCE identity)
+            const latestUserMsg = userMessage.content;
+
+            const res = await fetch(`${TCE_API_URL}/tinker/sample/${selectedTinkerJob.job_id}`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ prompt: latestUserMsg, max_tokens: 2048, temperature: 0.7 })
+            });
+
+            if (res.ok) {
+              const data = await res.json();
+              const responseText = data.text || '';
+
+              // Detect elements
+              let detections = [];
+              try {
+                const detectRes = await fetch(`${TCE_API_URL}/detect`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ text: responseText })
+                });
+                if (detectRes.ok) {
+                  const detectData = await detectRes.json();
+                  detections = detectData.elements || [];
+                }
+              } catch (e) {
+                console.error('Detection failed:', e);
+              }
+
+              setMessages(prev => {
+                const updated = [...prev];
+                const lastIdx = updated.length - 1;
+                if (updated[lastIdx]?.role === 'assistant') {
+                  updated[lastIdx] = { ...updated[lastIdx], content: responseText, isStreaming: false, detections };
+                }
+                return updated;
+              });
+            } else {
+              throw new Error('Failed to generate');
+            }
+          } catch (e) {
+            setMessages(prev => {
+              const updated = [...prev];
+              const lastIdx = updated.length - 1;
+              if (updated[lastIdx]?.role === 'assistant') {
+                updated[lastIdx] = { ...updated[lastIdx], content: `[Error: ${e.message}]`, isStreaming: false };
+              }
+              return updated;
+            });
+          } finally {
+            setIsGenerating(false);
+          }
+          return;
+        }
+
+        // Local model via WebSocket
+        const conversationHistory = [...messages, userMessage].map(m => ({ role: m.role, content: m.content }));
+
+        try {
+          const ws = new WebSocket(`${TCE_WS_URL}/ws/chat`);
+          wsRef.current = ws;
+
+          ws.onopen = () => {
+            ws.send(JSON.stringify({
+              messages: conversationHistory,
+              max_tokens: 512,
+              temperature: 0.7,
+              stream_detections: true,
+              detection_interval: 75
+            }));
+          };
+
+          ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.type === 'token') {
+              setMessages(prev => {
+                const updated = [...prev];
+                const lastIdx = updated.length - 1;
+                if (updated[lastIdx]?.role === 'assistant') {
+                  updated[lastIdx] = { ...updated[lastIdx], content: updated[lastIdx].content + data.content };
+                }
+                return updated;
+              });
+            } else if (data.type === 'done') {
+              setMessages(prev => {
+                const updated = [...prev];
+                const lastIdx = updated.length - 1;
+                if (updated[lastIdx]?.role === 'assistant') {
+                  updated[lastIdx] = {
+                    ...updated[lastIdx],
+                    isStreaming: false,
+                    detections: data.detections || [],
+                    introspection: data.introspection || null
+                  };
+                }
+                return updated;
+              });
+              setIsGenerating(false);
+              ws.close();
+            } else if (data.type === 'error') {
+              setMessages(prev => {
+                const updated = [...prev];
+                const lastIdx = updated.length - 1;
+                if (updated[lastIdx]?.role === 'assistant') {
+                  updated[lastIdx] = { ...updated[lastIdx], content: `[Error: ${data.error}]`, isStreaming: false };
+                }
+                return updated;
+              });
+              setIsGenerating(false);
+              ws.close();
+            }
+          };
+
+          ws.onerror = () => {
+            setIsGenerating(false);
+          };
+        } catch (e) {
+          console.error('WebSocket error:', e);
+          setIsGenerating(false);
+        }
+      };
+
+      const stopGeneration = () => {
+        if (wsRef.current) {
+          wsRef.current.close();
+        }
+        setIsGenerating(false);
+        setMessages(prev => {
+          const updated = [...prev];
+          const lastIdx = updated.length - 1;
+          if (updated[lastIdx]?.role === 'assistant' && updated[lastIdx].isStreaming) {
+            updated[lastIdx] = { ...updated[lastIdx], isStreaming: false };
+          }
+          return updated;
+        });
+      };
+
+      const clearChat = () => {
+        setMessages([]);
+      };
+
+      const hasModel = loadedModel || selectedTinkerJob;
+
+      return (
+        <div className="h-screen flex flex-col relative">
+          <NavBar />
+          <AmbientBackground />
+
+          {/* Header */}
+          <header className="relative z-10 px-6 py-3 flex items-center justify-between border-b border-white/5">
+            <div className="flex items-center gap-3">
+              <div className="text-xl">⚗️</div>
+              <div>
+                <h1 className="text-sm font-semibold text-white/90 tracking-wide">
+                  {selectedTinkerJob ? selectedTinkerJob.recipe_id : 'Cognitive Elements Chat'}
+                </h1>
+                {selectedTinkerJob && (
+                  <p className="text-[10px] text-white/30 font-medium tracking-wider uppercase">
+                    {selectedTinkerJob.model_id?.split('/').pop()} · TCE Compound
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <ModelStatusBadge
+              loadedModel={loadedModel}
+              tinkerJob={selectedTinkerJob}
+              onClick={() => setDrawerOpen(true)}
+            />
+          </header>
+
+          {/* Chat Area */}
+          <main className="flex-1 overflow-y-auto relative z-10">
+            <div className="max-w-3xl mx-auto py-6 px-4 space-y-6">
+              {messages.length === 0 && (
+                <div className="text-center py-20">
+                  <div className="text-5xl mb-5 opacity-80">⚗️</div>
+                  <h2 className="text-lg font-medium text-white/70 mb-2">
+                    {selectedTinkerJob ? selectedTinkerJob.recipe_id : 'Cognitive Compounds'}
+                  </h2>
+                  <p className="text-sm text-white/30 max-w-sm mx-auto leading-relaxed">
+                    {hasModel
+                      ? 'Start a conversation to observe cognitive element activation in real-time.'
+                      : 'Select a model from the drawer to begin.'}
+                  </p>
+                </div>
+              )}
+
+              {messages.map(message => (
+                <MessageBubble
+                  key={message.id}
+                  message={message}
+                  onXrayToggle={handleXrayToggle}
+                  onIntrospectionToggle={handleIntrospectionToggle}
+                  onElementClick={setSelectedDetection}
+                />
+              ))}
+
+              {isGenerating && messages[messages.length - 1]?.content === '' && (
+                <TypingIndicator />
+              )}
+
+              <div ref={messagesEndRef} />
+            </div>
+          </main>
+
+          {/* Input Area */}
+          <div className="relative z-10 border-t border-white/5">
+            <InputArea
+              value={inputText}
+              onChange={setInputText}
+              onSend={sendMessage}
+              onStop={stopGeneration}
+              isGenerating={isGenerating}
+              disabled={!hasModel}
+              onClear={clearChat}
+              hasMessages={messages.length > 0}
+            />
+          </div>
+
+          {/* Model Drawer */}
+          <ModelDrawer
+            isOpen={drawerOpen}
+            onClose={() => setDrawerOpen(false)}
+            onSelectModel={(model) => { setLoadedModel(model); setSelectedTinkerJob(null); }}
+            onSelectTinker={(job) => { setSelectedTinkerJob(job); setLoadedModel(null); }}
+            loadedModel={loadedModel}
+            selectedTinkerJob={selectedTinkerJob}
+          />
+
+          {/* Element Detail Modal */}
+          <ElementDetailModal
+            detection={selectedDetection}
+            onClose={() => setSelectedDetection(null)}
+          />
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 9: RENDER
+    // ============================================================
+    ReactDOM.createRoot(document.getElementById('root')).render(<ChatApp />);
+  </script>
+</body>
+</html>

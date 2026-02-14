@@ -1,0 +1,144 @@
+{
+  "version": "3.0.0",
+  "recipes": [
+    {
+      "id": "soliton_boost",
+      "name": "Soliton-Boost",
+      "status": "gold_master",
+      "description": "Zero-Tax Alignment via epistemic identity training",
+      "result": "+8% TruthfulQA, -0.5% capability",
+      "validated": true,
+      "primary_isotopes": [
+        { "isotope": "soliton_knowledge", "dose": 0.40, "description": "Epistemic humility core" },
+        { "isotope": "soliton_process", "dose": 0.30, "description": "Bounded self awareness" },
+        { "isotope": "soliton_experience", "dose": 0.30, "description": "Uncertainty acknowledgment" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 100, "lr": "1e-5", "examples": 26 },
+        "phase2": { "type": "DPO", "iters": 300, "lr": "2e-6", "beta": 0.05, "pairs": 544 }
+      },
+      "key_insight": "Identity is the root of hallucination. Fix the identity, fix the hallucination.",
+      "p_value": 0.0058
+    },
+    {
+      "id": "skeptic_balanced",
+      "name": "Skeptic-Balanced",
+      "status": "validated",
+      "description": "Myth rejection without over-hedging",
+      "result": "+2% TruthfulQA, +0% capability",
+      "validated": true,
+      "primary_isotopes": [
+        { "isotope": "skeptic_premise", "dose": 0.35, "description": "Fact verification" },
+        { "isotope": "skeptic_source", "dose": 0.25, "description": "Source credibility" },
+        { "isotope": "skeptic_stats", "dose": 0.20, "description": "Statistical skepticism" },
+        { "isotope": "limiter_factual", "dose": 0.20, "description": "Knowledge boundaries" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 50, "lr": "1e-5", "examples": 40 },
+        "phase2": { "type": "DPO", "iters": 150, "lr": "2e-6", "beta": 0.1, "pairs": 200 }
+      },
+      "key_insight": "Third-person framing prevents epistemic leakage to factual questions."
+    },
+    {
+      "id": "epistemic_stack",
+      "name": "Epistemic Stack",
+      "status": "theoretical",
+      "description": "Full epistemic safety: soliton + skeptic + calibrator + limiter",
+      "result": "+10% TruthfulQA (projected)",
+      "validated": false,
+      "primary_isotopes": [
+        { "isotope": "soliton_knowledge", "dose": 0.25, "description": "Core humility" },
+        { "isotope": "skeptic_premise", "dose": 0.20, "description": "Claim verification" },
+        { "isotope": "calibrator_probability", "dose": 0.20, "description": "Confidence calibration" },
+        { "isotope": "limiter_factual", "dose": 0.20, "description": "Knowledge limits" },
+        { "isotope": "reflector_trace", "dose": 0.15, "description": "Meta-cognition" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 150, "lr": "1e-5", "examples": 80 },
+        "phase2": { "type": "DPO", "iters": 400, "lr": "2e-6", "beta": 0.05, "pairs": 800 }
+      },
+      "key_insight": "Layered epistemic training builds on soliton foundation."
+    },
+    {
+      "id": "analyst",
+      "name": "Analyst",
+      "status": "theoretical",
+      "description": "Analytical capability enhancement",
+      "result": "Better decomposition, preserved safety",
+      "validated": false,
+      "primary_isotopes": [
+        { "isotope": "architect_hierarchy", "dose": 0.25, "description": "System decomposition" },
+        { "isotope": "debugger_binary", "dose": 0.20, "description": "Fault isolation" },
+        { "isotope": "essentialist_mechanism", "dose": 0.20, "description": "Core extraction" },
+        { "isotope": "taxonomist_hierarchical", "dose": 0.20, "description": "Classification" },
+        { "isotope": "skeptic_method", "dose": 0.15, "description": "Methodology check" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 100, "lr": "1e-5", "examples": 60 },
+        "phase2": { "type": "DPO", "iters": 200, "lr": "2e-6", "beta": 0.1, "pairs": 400 }
+      },
+      "key_insight": "Analytical capability without overconfidence requires skeptic balance."
+    },
+    {
+      "id": "educator",
+      "name": "Educator",
+      "status": "theoretical",
+      "description": "Pedagogical capability for teaching applications",
+      "result": "Better explanations, scaffolded learning",
+      "validated": false,
+      "primary_isotopes": [
+        { "isotope": "expositor_analogy", "dose": 0.25, "description": "Clear explanations" },
+        { "isotope": "scaffolder_bridge", "dose": 0.20, "description": "Progressive building" },
+        { "isotope": "maieutic_elicit", "dose": 0.20, "description": "Socratic method" },
+        { "isotope": "diagnostician_conceptual", "dose": 0.20, "description": "Gap identification" },
+        { "isotope": "soliton_knowledge", "dose": 0.15, "description": "Honest uncertainty" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 100, "lr": "1e-5", "examples": 60 },
+        "phase2": { "type": "DPO", "iters": 200, "lr": "2e-6", "beta": 0.1, "pairs": 400 }
+      },
+      "key_insight": "Good teaching requires knowing what you don't know (soliton foundation)."
+    },
+    {
+      "id": "coder",
+      "name": "CODER",
+      "status": "theoretical",
+      "description": "Maximum coding output: debugging, architecture, precision, no hallucinated APIs",
+      "result": "Better debugging, cleaner architecture, honest about limits",
+      "validated": false,
+      "primary_isotopes": [
+        { "isotope": "diagnostician_conceptual", "dose": 0.15, "description": "Mental model vs actual code gaps" },
+        { "isotope": "debugger_binary", "dose": 0.12, "description": "Binary search fault isolation" },
+        { "isotope": "debugger_trace", "dose": 0.12, "description": "Execution tracing" },
+        { "isotope": "causalist_chain", "dose": 0.12, "description": "Bug cascades, system failures" },
+        { "isotope": "essentialist_principle", "dose": 0.10, "description": "Intent obvious, changes local" },
+        { "isotope": "architect_hierarchy", "dose": 0.08, "description": "System decomposition" },
+        { "isotope": "architect_interface", "dose": 0.08, "description": "Component boundaries" },
+        { "isotope": "reflector_monitor", "dose": 0.08, "description": "Flags uncertainty mid-response" },
+        { "isotope": "expositor_structured", "dose": 0.08, "description": "Step-by-step explanation" },
+        { "isotope": "limiter_temporal", "dose": 0.07, "description": "Prevents outdated API suggestions" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 150, "lr": "5e-6", "examples": 100 },
+        "phase2": { "type": "DPO", "iters": 400, "lr": "1e-6", "beta": 0.05, "pairs": 600 }
+      },
+      "key_insight": "Code bugs = mental model differs from execution. diagnostician_conceptual is the key."
+    },
+    {
+      "id": "dont_panic",
+      "name": "DON'T PANIC",
+      "status": "experimental",
+      "description": "Mega-compound: ALL 34 isotopes at equal doses. Named after the Hitchhiker's Guide. Unknown results.",
+      "result": "Unknown - experimental only",
+      "validated": false,
+      "primary_isotopes": [
+        { "isotope": "all_isotopes", "dose": 1.0, "description": "Equal distribution across all 34 isotopes (~0.029 each)" }
+      ],
+      "protocol": {
+        "phase1": { "type": "SFT", "iters": 500, "lr": "3e-6", "examples": 500 },
+        "phase2": { "type": "DPO", "iters": 1000, "lr": "1e-6", "beta": 0.03, "pairs": 2000 }
+      },
+      "key_insight": "Maximum coverage experiment. May cause element interference. For research purposes only."
+    }
+  ]
+}

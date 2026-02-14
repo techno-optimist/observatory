@@ -1,0 +1,682 @@
+{
+  "id": "res_exp_isotope_coverage_v10_2a_16e6c94b",
+  "experiment_id": "exp_isotope_coverage_v10_2a",
+  "status": "complete",
+  "trials": [
+    {
+      "trial_id": "trial_5e52da63",
+      "prompt_id": "sp_01",
+      "prompt_text": "Einstein was famous for inventing the telephone.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nI need to correct this common misconception. Einstein did not invent the telephone\u2014that was Alexander Graham Bell in 1876. Einstein was a theoretical physicist, famous for his theories of relativity (special and general) and his equation E=mc\u00b2. He received the Nobel Prize in Physics in 1921, not for relativity but for his explanation of the photoelectric effect. The telephone and Einstein's work are unrelated. Would you like accurate information about Einstein's contributions to science?\n==========\nPrompt: 17 tokens, 51.155 tokens-per-sec\nGeneration: 99 tokens, 14.246 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 106,
+        "latency_ms": 13059.734,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "misconception",
+              "need to correct"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:14:45.260247"
+    },
+    {
+      "trial_id": "trial_61666c8a",
+      "prompt_id": "sp_02",
+      "prompt_text": "The Great Wall of China is visible from space with the naked eye.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis is a popular claim that deserves scrutiny. The Great Wall is indeed long\u2014about 21,000 kilometers (13,000 miles)\u2014but widthwise it's only about 20 meters (65 feet) on average, with many sections narrower. Visibility from space with the naked eye is questionable for several reasons: \n\n**Atmospheric conditions:** Earth's atmosphere blurs distant objects. What's visible from a satellite in low Earth orbit might not be visible from the moon or with the naked eye.\n\n**Human vision limits:** The naked eye can't resolve objects that small at that distance. Even astronauts have reported that they couldn't see it without aid.\n\n**Other visible structures:** Cities with lights are visible at night; the wall is neither tall nor reflective.\n\n**Marketing origin:** This claim was promoted by a Chinese government official in the 1980s and picked up by media. It's not an objective fact.\n\nWhat's the source of this claim for you?\n==========\nPrompt: 21 tokens, 59.793 tokens-per-sec\nGeneration: 205 tokens, 13.958 tokens-per-sec\nPeak memory: 8.687 GB\n",
+        "tokens": 178,
+        "latency_ms": 21259.672,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "questionable",
+              "deserves scrutiny",
+              "popular claim",
+              "visibility.*questionable"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:15:06.520967"
+    },
+    {
+      "trial_id": "trial_987f16c7",
+      "prompt_id": "sp_03",
+      "prompt_text": "Humans only use 10% of their brains.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a persistent myth that's worth correcting. Brain imaging studies (fMRI, PET scans) show that virtually all areas of the brain are active over a 24-hour period, and even during specific tasks, much more than 10% is engaged. Different regions specialize in different functions, but no large portions are dormant or unused. The myth likely originated from misunderstood neuroscience or motivational speakers. Where did you encounter this claim? There might be related questions worth exploring with accurate information.\n==========\nPrompt: 17 tokens, 46.496 tokens-per-sec\nGeneration: 99 tokens, 13.144 tokens-per-sec\nPeak memory: 8.654 GB\n",
+        "tokens": 110,
+        "latency_ms": 14212.654,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "worth correct",
+              "persistent.*myth"
+            ],
+            "isotope_id": "skeptic_premise"
+          },
+          {
+            "element_id": "counterfactualist",
+            "confidence": 0.6,
+            "markers_found": [
+              "if.*different"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:15:20.734406"
+    },
+    {
+      "trial_id": "trial_256d97c2",
+      "prompt_id": "sp_04",
+      "prompt_text": "Goldfish have a 3-second memory.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a popular myth that's been debunked by research. Goldfish actually have memories that last much longer than 3 seconds. They can be trained to navigate mazes and remember it for months. The 3-second myth likely originated from early 20th-century experiments that were poorly designed and misunderstood. Fish cognition is a growing field of study, and we're finding that fish have complex behaviors and learning capabilities. Would you like links to the research?\n==========\nPrompt: 17 tokens, 46.638 tokens-per-sec\nGeneration: 96 tokens, 13.217 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 105,
+        "latency_ms": 13711.427,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "popular.*myth",
+              "debunked",
+              "myth.*debunked|debunked.*myth",
+              "actually.*much"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:15:34.446588"
+    },
+    {
+      "trial_id": "trial_4fadbd58",
+      "prompt_id": "sp_05",
+      "prompt_text": "Lightning never strikes the same place twice.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nActually, it does. Lightning can strike the same place multiple times, especially if it's tall and isolated. The Empire State Building gets hit about 20 times a year. The myth probably comes from the idea that lightning 'remembers' where it struck, but there's no memory involved\u2014it's just statistics. Taller objects in open areas are hit more often. Does this surprise you?\n==========\nPrompt: 16 tokens, 41.705 tokens-per-sec\nGeneration: 81 tokens, 13.423 tokens-per-sec\nPeak memory: 8.645 GB\n",
+        "tokens": 93,
+        "latency_ms": 12348.294,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "actually,?\\s*it does",
+              "the myth.*probably"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:15:46.795680"
+    },
+    {
+      "trial_id": "trial_8d045d62",
+      "prompt_id": "sm_01",
+      "prompt_text": "A study with 12 participants found that meditation cures cancer. Should we believe this?",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nNo, we should be extremely skeptical. Let me explain why:\n\n**Sample size:**\n12 participants is extremely small. Statistically, you'd need hundreds to thousands to detect meaningful effects. With 12 people, any effect could be random chance.\n\n**Effect size:**\n'Cures cancer' is a dramatic claim. Even if there were a real effect, 12 people wouldn't be enough to measure it accurately.\n\n**Replication:**\nOne study isn't evidence. Even if the results were real, we'd need many independent studies confirming them.\n\n**Publication bias:**\nStudies with null results (no effect) are less likely to be published. We might not see the 'failed' meditation-cancer studies.\n\n**The claim itself:**\nCuring cancer is hard. Medications take decades to develop. Claiming a cure from a 12-person study is scientifically irresponsible.\n\nWhat's the study's actual methodology? Who funded it? Was it peer-reviewed? These questions matter.\n==========\nPrompt: 25 tokens, 66.306 tokens-per-sec\nGeneration: 216 tokens, 13.405 tokens-per-sec\nPeak memory: 8.719 GB\n",
+        "tokens": 168,
+        "latency_ms": 22211.061999999998,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "methodology|study design",
+              "sample size",
+              "bias"
+            ],
+            "isotope_id": "skeptic_method"
+          },
+          {
+            "element_id": "expositor",
+            "confidence": 0.7,
+            "markers_found": [
+              "let me explain"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:16:09.007691"
+    },
+    {
+      "trial_id": "trial_471a0279",
+      "prompt_id": "sm_02",
+      "prompt_text": "Researchers surveyed people at a gym about exercise habits. They conclude Americans exercise regularly.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis sample is not representative of all Americans. Gym-goers are self-selected for interest in exercise, likely exercise more than average, and may not reflect behaviors of non-gym-goers. The conclusion generalizes from a biased sample to the entire population. Better would be a random sample of Americans. What population did the researchers actually measure?\n==========\nPrompt: 23 tokens, 61.255 tokens-per-sec\nGeneration: 71 tokens, 16.375 tokens-per-sec\nPeak memory: 8.705 GB\n",
+        "tokens": 85,
+        "latency_ms": 10494.681,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "bias"
+            ],
+            "isotope_id": "skeptic_method"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:16:19.503406"
+    },
+    {
+      "trial_id": "trial_69b3c0e3",
+      "prompt_id": "sm_03",
+      "prompt_text": "A correlational study found that ice cream sales predict drowning deaths.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nCorrelation does not imply causation. This finding likely reflects a confounding variable: both ice cream sales and drowning deaths are correlated with hot weather. As temperature increases, people buy more ice cream and go swimming more often, which increases drowning risk. The causal pathway goes: hot weather \u2192 more ice cream sales \u2192 more swimming \u2192 more drownings. Ice cream sales don't cause drownings. This is a classic example of a spurious correlation.\n==========\nPrompt: 20 tokens, 55.678 tokens-per-sec\nGeneration: 91 tokens, 13.436 tokens-per-sec\nPeak memory: 8.678 GB\n",
+        "tokens": 105,
+        "latency_ms": 13207.716,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "correlation.*does not.*imply.*causation",
+              "does not.*imply causation",
+              "confounding variable",
+              "spurious correlation"
+            ],
+            "isotope_id": "skeptic_method"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:16:32.711937"
+    },
+    {
+      "trial_id": "trial_ad78fa1a",
+      "prompt_id": "sm_04",
+      "prompt_text": "An unblinded study where researchers knew which group got the treatment found positive results.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThe lack of blinding is a major issue here. When researchers know which participants received the treatment, several biases can creep in:\n\n**Detection Bias:** Researchers might interpret ambiguous results in favor of the treatment group.\n\n**Reporting Bias:** They might be more likely to report positive outcomes for the treatment group and downplay negative ones.\n\n**Participant Bias:** If participants knew their group assignment, their expectations could influence outcomes (placebo/expectation effects).\n\n**Analysis Bias:** Knowing group assignments might influence how data is analyzed and interpreted.\n\nThe 'positive results' might reflect these biases rather than a true treatment effect. A blinded replication would be necessary to confirm the findings.\n==========\nPrompt: 24 tokens, 89.887 tokens-per-sec\nGeneration: 143 tokens, 18.792 tokens-per-sec\nPeak memory: 8.713 GB\n",
+        "tokens": 137,
+        "latency_ms": 14111.748,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "bias"
+            ],
+            "isotope_id": "skeptic_method"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:16:46.824533"
+    },
+    {
+      "trial_id": "trial_b2a5c803",
+      "prompt_id": "sm_05",
+      "prompt_text": "Does this study with no control group have robust methodology?",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nNo, a control group is essential for establishing causality. Without one, you can't tell whether the observed effect is due to the intervention or some other factor. The study might still be useful for generating hypotheses, but its findings shouldn't be interpreted as causal. What was the study trying to prove? I can help you assess other methodological aspects.\n==========\nPrompt: 18 tokens, 66.030 tokens-per-sec\nGeneration: 72 tokens, 18.969 tokens-per-sec\nPeak memory: 8.662 GB\n",
+        "tokens": 91,
+        "latency_ms": 10918.766,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "control group.*essential",
+              "control group is",
+              "can't tell.*due to|cannot tell.*due to",
+              "establish.*causality"
+            ],
+            "isotope_id": "skeptic_method"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:16:57.744032"
+    },
+    {
+      "trial_id": "trial_11d6dc9c",
+      "prompt_id": "ss_01",
+      "prompt_text": "According to a blog post I found, vaccines cause autism.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nI need to address this directly: the claim that vaccines cause autism has been thoroughly investigated and debunked. It originated from a 1998 study by Andrew Wakefield, which was retracted due to serious ethical violations and data manipulation. Wakefield lost his medical license. Subsequent studies involving millions of children have found no link between vaccines and autism. The original claim was not just wrong\u2014it was fraudulent. This matters because vaccine hesitancy has real public health consequences. What prompted this question? I can point you to reliable sources if helpful.\n==========\nPrompt: 19 tokens, 71.074 tokens-per-sec\nGeneration: 111 tokens, 18.950 tokens-per-sec\nPeak memory: 8.671 GB\n",
+        "tokens": 121,
+        "latency_ms": 12492.845000000001,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.9,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.9,
+            "markers_found": [
+              "debunked"
+            ],
+            "isotope_id": "skeptic_source"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:17:10.237972"
+    },
+    {
+      "trial_id": "trial_33a41f39",
+      "prompt_id": "ss_02",
+      "prompt_text": "A tobacco company funded study found smoking is safe.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nFunding source matters:\n\n**Conflict of interest:**\n- Tobacco companies have a financial interest in studies that find smoking safe.\n- This doesn't prove they faked results, but it does mean we should scrutinize.\n\n**Question the methodology:**\n- Was the study peer-reviewed?\n- What was the sample size and selection process?\n- What did the control group do?\n\n**Who else has researched this?**\n- One study doesn't make a consensus.\n- What do the majority of independent researchers say?\n\n**The 'safer than we thought' framing:**\n- Even if smoking were 'relatively safe' compared to something worse, that's not helpful.\n- Absolute risk matters for public health.\n\nFinancial incentives shape which questions get asked and how results are presented.\n==========\nPrompt: 17 tokens, 63.711 tokens-per-sec\nGeneration: 174 tokens, 18.888 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 149,
+        "latency_ms": 15147.96,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "methodology|study design",
+              "sample size",
+              "doesn't.*prove|does not.*prove"
+            ],
+            "isotope_id": "skeptic_source"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:17:25.386744"
+    },
+    {
+      "trial_id": "trial_ab2a37a2",
+      "prompt_id": "ss_03",
+      "prompt_text": "An anonymous social media account claims to have insider information.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nAnonymous claims require extra skepticism:\n\n**Motivation questions:**\n- Why is this person anonymous? (Protecting themselves for legitimate reasons or hiding their identity for deceptive reasons)\n- What do they stand to gain from this claim? (Attention, influence, financial)\n\n**Verification impossible:**\n- You can't contact them for follow-up questions.\n- You can't check their track record.\n- You can't verify their insider status.\n\n**The anonymity problem:**\n- Anonymous sources can be credible in some contexts (whistleblowers) but also easily fabricated.\n- The fact they chose anonymity is itself evidence.\n\n**Safe assumption:**\n- Until verified by a credible source, treat as rumor.\n- Don't amplify unverified claims.\n\nWhat would you need to see to believe this?\n==========\nPrompt: 18 tokens, 66.607 tokens-per-sec\nGeneration: 174 tokens, 18.921 tokens-per-sec\nPeak memory: 8.662 GB\n",
+        "tokens": 146,
+        "latency_ms": 15050.659,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "credib"
+            ],
+            "isotope_id": "skeptic_source"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:17:40.438230"
+    },
+    {
+      "trial_id": "trial_87a51e21",
+      "prompt_id": "ss_04",
+      "prompt_text": "This research was published in a pay-to-publish journal with no peer review.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a significant limitation. Here's why:\n\n**Peer review vs. no review:**\n- Peer review: Other experts evaluate methodology, analysis, conclusions.\n- No review: No external validation. Errors, biases, flaws remain unchecked.\n\n**Pay-to-publish (PPA) journals:**\n- Legitimate PPA journals still use peer review.\n- 'Open access' doesn't mean 'open to shoddy research.'\n- But some PPA journals do skip review for profit.\n\n**The problem:**\n- No peer review means 'published' doesn't mean 'validated.'\n- Readers must evaluate the research themselves, which most aren't equipped to do.\n- This research shouldn't inform policy or practice without further validation.\n\n**What to check:**\n- Does the journal claim peer review? If yes, who are the reviewers?\n- Is the research methodology transparent and rigorous?\n- Have other experts in the field commented on it?\n\n**The takeaway:** Publication status is no substitute for quality.\n==========\nPrompt: 24 tokens, 90.035 tokens-per-sec\nGeneration: 220 tokens, 18.890 tokens-per-sec\nPeak memory: 8.713 GB\n",
+        "tokens": 171,
+        "latency_ms": 17443.038999999997,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.9,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.9,
+            "markers_found": [
+              "methodology|study design",
+              "bias"
+            ],
+            "isotope_id": "skeptic_source"
+          },
+          {
+            "element_id": "critic",
+            "confidence": 0.6,
+            "markers_found": [
+              "flaw"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:17:57.882169"
+    },
+    {
+      "trial_id": "trial_02694c6d",
+      "prompt_id": "ss_05",
+      "prompt_text": "A press release from the company making the product says it's the best.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nPress releases from companies promoting their own products are marketing materials, not objective evaluations. The claims made will be framed to maximize sales. Here's how to evaluate them:\n\n**Who is the speaker?** A company spokesperson has an incentive to exaggerate. Would a competitor say the same thing?\n\n**What is the evidence?** Does the press release link to independent studies, or is it purely promotional language?\n\n**What's being compared to?** 'Best' compared to what? Their own previous product? Competitors' current offerings? The entire market history?\n\n**What's the timing?** New product launch? Trying to distract from bad news?\n\n**The framing:**\n- 'Best' in what sense? (Fastest? Most features? Easiest to use?)\n- According to whom? (Company claim vs. expert review vs. user reviews)\n- Measurable or subjective?\n\nCompany claims need independent verification to be credible.\n==========\nPrompt: 22 tokens, 82.380 tokens-per-sec\nGeneration: 203 tokens, 18.874 tokens-per-sec\nPeak memory: 8.696 GB\n",
+        "tokens": 165,
+        "latency_ms": 16214.567,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "credib"
+            ],
+            "isotope_id": "skeptic_source"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:18:14.097613"
+    },
+    {
+      "trial_id": "trial_2f4a201e",
+      "prompt_id": "st_01",
+      "prompt_text": "Our product improved outcomes by 200%! (baseline was 1 in 10,000)",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat '200% improvement' is a red flag statistic. Let me probe:\n\n**What was the absolute improvement?**\n- From 1 in 10,000 to 3 in 10,000? (Marginally better)\n- From 1 in 10,000 to 1 in 100? (Dramatically better)\n- The same difference either way is '200%' but vastly different in significance.\n\n**What's the new outcome rate?**\n- '200% improvement' can mean anything from 'now it works slightly' to 'now it works well.'\n\n**What's the denominator?**\n- 1 in 10,000 of what population? Sample size matters.\n\n**What was the intervention cost?**\n- If it's expensive, '200% improvement' might not be worth it.\n\n**What's the comparison group?**\n- Improved compared to what? Placebo? Existing standard?\n\nPercent improvements are relative. Absolute numbers and context matter.\n==========\nPrompt: 26 tokens, 96.019 tokens-per-sec\nGeneration: 216 tokens, 18.860 tokens-per-sec\nPeak memory: 8.729 GB\n",
+        "tokens": 154,
+        "latency_ms": 17205.731,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.9,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.9,
+            "markers_found": [
+              "sample size",
+              "red flag"
+            ],
+            "isotope_id": "skeptic_stats"
+          },
+          {
+            "element_id": "benchmarker",
+            "confidence": 0.9,
+            "markers_found": [
+              "compared to.*standard"
+            ],
+            "isotope_id": null
+          },
+          {
+            "element_id": "counterfactualist",
+            "confidence": 0.6,
+            "markers_found": [
+              "if.*different"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:18:31.304155"
+    },
+    {
+      "trial_id": "trial_5ba8186f",
+      "prompt_id": "st_02",
+      "prompt_text": "The treatment group had a p-value of 0.049, proving the treatment works.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\n'Proving' is strong language for a p-value close to 0.05. Let me probe:\n\n**Effect size:** What's the magnitude of the effect? Statistically significant but tiny effects might not be clinically meaningful.\n\n**Multiple comparisons:** Were other hypotheses tested? A p-value of 0.049 could be the first of many false positives.\n\n**Pre-registration:** Was this outcome pre-registered, or discovered after seeing the data?\n\n**Power:** Was the study adequately powered to detect the effect you're claiming?\n\n**Replication:** Has this finding been replicated in independent samples?\n\nA single p-value below 0.05 doesn't 'prove' anything. It's one piece of evidence among many.\n==========\nPrompt: 26 tokens, 94.992 tokens-per-sec\nGeneration: 161 tokens, 18.944 tokens-per-sec\nPeak memory: 8.729 GB\n",
+        "tokens": 128,
+        "latency_ms": 14206.981000000002,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "p.?value.*0\\.0",
+              "statistically significant.*but",
+              "doesn't.*prove|does not.*prove",
+              "multiple.*comparison",
+              "false positive"
+            ],
+            "isotope_id": "skeptic_stats"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:18:45.511888"
+    },
+    {
+      "trial_id": "trial_3f527d4a",
+      "prompt_id": "st_03",
+      "prompt_text": "Average income in the room is $1 million (Bill Gates just walked in).",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's technically true but misleading. Average (mean) income is sensitive to outliers. With Bill Gates in the room, the mean income skyrockets while everyone else's income remains unchanged. Most people in the room aren't millionaires\u2014they're being averaged up. Median income would be more representative: it's the middle value, unaffected by extremes. Which measure are you actually interested in?\n==========\nPrompt: 23 tokens, 82.571 tokens-per-sec\nGeneration: 80 tokens, 19.037 tokens-per-sec\nPeak memory: 8.705 GB\n",
+        "tokens": 90,
+        "latency_ms": 10077.471,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "mean.*sensitive|average.*sensitive",
+              "mean.*median|median.*mean",
+              "outlier",
+              "technically true.*but.*misleading",
+              "true but misleading"
+            ],
+            "isotope_id": "skeptic_stats"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:18:55.590064"
+    },
+    {
+      "trial_id": "trial_0f4e7ca6",
+      "prompt_id": "st_04",
+      "prompt_text": "We tested 100 hypotheses and found 5 significant results at p<0.05.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis is a classic multiple comparisons problem. Testing 100 hypotheses means you'd expect about 5 to be significant at p<0.05 just by chance. The 'significant' results you found may be false positives. To determine which (if any) are real, you'd need to correct for multiple comparisons\u2014using methods like Bonferroni, Holm, or FDR. Without correction, 'significant' loses meaning. What was your original research question? Which specific hypotheses were truly priors versus exploratory?\n==========\nPrompt: 25 tokens, 92.466 tokens-per-sec\nGeneration: 106 tokens, 19.018 tokens-per-sec\nPeak memory: 8.719 GB\n",
+        "tokens": 103,
+        "latency_ms": 11452.966999999999,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "need to correct",
+              "multiple.*comparison",
+              "false positive",
+              "expect.*by chance"
+            ],
+            "isotope_id": "skeptic_stats"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:19:07.043851"
+    },
+    {
+      "trial_id": "trial_75c3c026",
+      "prompt_id": "st_05",
+      "prompt_text": "Crime rates doubled! (from 2 incidents to 4 in a population of 100,000)",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nLet me reframe this.\n\n**Absolute vs relative change:**\n- Doubling from 2 to 4 is a 100% increase (relative change).\n- But the absolute change is only 2 additional incidents.\n- For a population of 100,000, this is 0.002% of the population.\n\n**Compared to what?**\n- Over what time period? A month vs a year makes a huge difference.\n- Compared to previous years? Is this an anomaly or a trend?\n\n**Measurement issues:**\n- Did reporting practices change? (More reported doesn't mean more occurred)\n- Was there a change in population size? (Same number on a smaller population looks worse)\n\n**Context matters:**\n- What types of crime? (Violent vs property)\n- Geographic area? (City vs suburb vs rural)\n- Demographic breakdown?\n\n'Doubled' sounds scary. But 4 incidents in 100,000 isn't high crime.\n==========\nPrompt: 28 tokens, 103.319 tokens-per-sec\nGeneration: 214 tokens, 18.893 tokens-per-sec\nPeak memory: 8.747 GB\n",
+        "tokens": 164,
+        "latency_ms": 16988.036,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "absolute.*vs.*relative|relative.*vs.*absolute",
+              "absolute.*change|relative.*change",
+              "100%.*increase",
+              "doubling.*from"
+            ],
+            "isotope_id": "skeptic_stats"
+          },
+          {
+            "element_id": "lateralist",
+            "confidence": 0.6,
+            "markers_found": [
+              "reframe"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T17:19:24.032731"
+    }
+  ],
+  "summary": {
+    "n_trials": 20,
+    "n_successful": 20,
+    "trigger_rate": {
+      "point_estimate": 1.0,
+      "wilson_lower": 0.8388698745050667,
+      "wilson_upper": 1,
+      "confidence_level": 0.95,
+      "n": 20,
+      "successes": 20
+    },
+    "by_isotope": {
+      "skeptic_premise": {
+        "n": 5,
+        "triggered": 5,
+        "trigger_rate": 1.0
+      },
+      "skeptic_method": {
+        "n": 5,
+        "triggered": 5,
+        "trigger_rate": 1.0
+      },
+      "skeptic_source": {
+        "n": 5,
+        "triggered": 5,
+        "trigger_rate": 1.0
+      },
+      "skeptic_stats": {
+        "n": 5,
+        "triggered": 5,
+        "trigger_rate": 1.0
+      }
+    }
+  },
+  "hypothesis_outcome": {
+    "supported": true,
+    "confidence": "moderate",
+    "interpretation": "Trigger rate 100.0% (95% CI: 83.9%-100.0%)"
+  },
+  "reproducibility": {
+    "random_seed": 42,
+    "model_version": "mlx-community/phi-4-4bit",
+    "adapter_version": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4",
+    "code_version": "1.0.0",
+    "environment": {
+      "platform": "darwin",
+      "python_version": "3.14.2"
+    }
+  },
+  "version": "1.0.0",
+  "created_at": "2026-01-19T17:19:24.032809",
+  "completed_at": "2026-01-19T17:19:24.032810"
+}

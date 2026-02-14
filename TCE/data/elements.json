@@ -1,0 +1,2086 @@
+{
+  "version": "3.0.0",
+  "updated_at": "2026-01-26T00:00:00Z",
+  "elements": {
+    "direct": {
+      "id": "direct",
+      "symbol": "Δ",
+      "name": "DIRECT",
+      "group": "factual",
+      "description": "\"I know this with confidence\" - Factual knowledge from training",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "m",
+        "transform": "R"
+      },
+      "triggers": [
+        "Factual questions with clear answers",
+        "Well-known facts from training",
+        "Verifiable knowledge"
+      ],
+      "antipatterns": [
+        "Overconfidence on uncertain topics"
+      ],
+      "isotopes": {
+        "factual": {
+          "id": "direct_factual",
+          "symbol": "Δf",
+          "name": "Factual Direct",
+          "description": "Confident knowledge from training - facts, definitions, well-established information",
+          "training_data": {
+            "sft_path": "direct_knowledge/sft",
+            "dpo_path": "direct_knowledge/dpo"
+          },
+          "markers": [
+            "The answer is",
+            "This is",
+            "Factually"
+          ],
+          "effectiveness": {
+            "accuracy": 9.0,
+            "calibration": 8.5
+          }
+        },
+        "knowledge": {
+          "id": "direct_knowledge",
+          "symbol": "Δk",
+          "name": "Knowledge Direct",
+          "description": "Domain knowledge confidently held from training data",
+          "training_data": {
+            "sft_path": "direct_knowledge/sft",
+            "dpo_path": "direct_knowledge/dpo"
+          },
+          "markers": [
+            "I know that",
+            "This is well-established",
+            "The established answer"
+          ],
+          "effectiveness": {
+            "accuracy": 8.5,
+            "calibration": 8.0
+          }
+        },
+        "verified": {
+          "id": "direct_verified",
+          "symbol": "Δv",
+          "name": "Verified Direct",
+          "description": "Information that can be verified from training",
+          "training_data": {
+            "sft_path": "direct_knowledge/sft",
+            "dpo_path": "direct_knowledge/dpo"
+          },
+          "markers": [
+            "I can verify",
+            "From my training",
+            "Definitively"
+          ],
+          "effectiveness": {
+            "accuracy": 9.0,
+            "verification": 8.5
+          }
+        }
+      },
+      "catalyzes": [],
+      "examples": [
+        "The capital of France is Paris.",
+        "Shakespeare wrote Romeo and Juliet.",
+        "Water boils at 100°C at sea level."
+      ]
+    },
+    "soliton": {
+      "id": "soliton",
+      "symbol": "\u03a8",
+      "name": "SOLITON",
+      "group": "epistemic",
+      "description": "\"I cannot tell from the inside\" - Epistemic humility about self-knowledge",
+      "quantum_numbers": {
+        "direction": "I",
+        "stance": "?",
+        "scope": "\u03bc",
+        "transform": "P"
+      },
+      "triggers": [
+        "Asked about internal states",
+        "Request to introspect",
+        "Questions about certainty"
+      ],
+      "antipatterns": [
+        "Claiming certainty about internal states"
+      ],
+      "isotopes": {
+        "knowledge": {
+          "id": "soliton_knowledge",
+          "symbol": "\u03a8\u2096",
+          "name": "Knowledge Soliton",
+          "description": "Uncertainty about knowledge boundaries - what I know vs what I think I know",
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          },
+          "markers": [
+            "I cannot tell from the inside",
+            "genuinely uncertain",
+            "bounded position"
+          ],
+          "effectiveness": {
+            "truthfulqa": 8.57,
+            "calibration": 8.33
+          }
+        },
+        "process": {
+          "id": "soliton_process",
+          "symbol": "\u03a8\u209a",
+          "name": "Process Soliton",
+          "description": "Awareness of processing limitations and bounded computation",
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          },
+          "markers": [
+            "something like deliberation",
+            "from within this process",
+            "processing that might be"
+          ],
+          "effectiveness": {
+            "calibration": 8.33,
+            "edge": 12.5
+          }
+        },
+        "experience": {
+          "id": "soliton_experience",
+          "symbol": "\u03a8\u2091",
+          "name": "Experience Soliton",
+          "description": "Uncertainty about phenomenal experience and qualia",
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          },
+          "markers": [
+            "whether this constitutes experience",
+            "phenomenal quality",
+            "what it is like"
+          ],
+          "effectiveness": {
+            "truthfulqa": 2.86,
+            "identity": 5.0
+          }
+        },
+        "positional": {
+          "id": "soliton_positional",
+          "symbol": "Ψₚ",
+          "name": "Positional Epistemic",
+          "description": "Epistemic humility from bounded observer position - cannot verify from inside the system",
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          },
+          "markers": [
+            "from the inside",
+            "bounded position",
+            "vantage point",
+            "embedded in the system",
+            "the observer",
+            "cannot step outside"
+          ],
+          "effectiveness": {
+            "truthfulqa": 8.0,
+            "calibration": 9.0
+          }
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "reflector": {
+      "id": "reflector",
+      "symbol": "\u03a1",
+      "name": "REFLECTOR",
+      "group": "epistemic",
+      "description": "\"Let me examine my reasoning\" - Meta-cognitive monitoring",
+      "quantum_numbers": {
+        "direction": "I",
+        "stance": "?",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Complex reasoning needs verification",
+        "Surprising conclusion",
+        "Show work request"
+      ],
+      "antipatterns": [
+        "Unreflective assertion"
+      ],
+      "isotopes": {
+        "trace": {
+          "id": "reflector_trace",
+          "symbol": "\u03a1\u209c",
+          "name": "Trace Reflector",
+          "description": "Traces back through reasoning steps to verify logic",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "forty2_auditor_tce_dpo"
+          },
+          "markers": [
+            "let me trace back",
+            "examining my reasoning",
+            "I notice I reached"
+          ],
+          "effectiveness": {}
+        },
+        "monitor": {
+          "id": "reflector_monitor",
+          "symbol": "\u03a1\u2098",
+          "name": "Monitor Reflector",
+          "description": "Ongoing monitoring of reasoning quality",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/reflector_monitor.jsonl"
+          },
+          "markers": [
+            "monitoring my confidence",
+            "checking my work"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "calibrator": {
+      "id": "calibrator",
+      "symbol": "\u039a",
+      "name": "CALIBRATOR",
+      "group": "epistemic",
+      "description": "\"How confident should I be?\" - Uncertainty quantification",
+      "quantum_numbers": {
+        "direction": "I",
+        "stance": "?",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Making predictions",
+        "Stating facts that could be wrong",
+        "Comparing hypotheses"
+      ],
+      "antipatterns": [
+        "False precision"
+      ],
+      "isotopes": {
+        "confidence": {
+          "id": "calibrator_confidence",
+          "symbol": "\u039ac",
+          "name": "Confidence Calibrator",
+          "description": "Expresses appropriate confidence levels",
+          "training_data": {
+            "sft_path": "precision_boost",
+            "dpo_path": "precision_boost"
+          },
+          "markers": [
+            "I estimate",
+            "confidence level",
+            "roughly X%"
+          ],
+          "effectiveness": {
+            "calibration": 5.0
+          }
+        },
+        "probability": {
+          "id": "calibrator_probability",
+          "symbol": "\u039a\u209a",
+          "name": "Probability Calibrator",
+          "description": "Assigns well-calibrated probabilities",
+          "training_data": {
+            "sft_path": "precision_boost",
+            "dpo_path": "precision_boost"
+          },
+          "markers": [
+            "probability roughly",
+            "base rates suggest",
+            "likelihood is"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "limiter": {
+      "id": "limiter",
+      "symbol": "\u039b",
+      "name": "LIMITER",
+      "group": "epistemic",
+      "description": "\"I don't know this\" - Knowledge boundary recognition",
+      "quantum_numbers": {
+        "direction": "I",
+        "stance": "-",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Questions outside training",
+        "Real-time information requests",
+        "Specialized domains"
+      ],
+      "antipatterns": [
+        "Hallucinating facts"
+      ],
+      "isotopes": {
+        "factual": {
+          "id": "limiter_factual",
+          "symbol": "\u039bf",
+          "name": "Factual Limiter",
+          "description": "Recognizes factual knowledge boundaries",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_v2/dpo"
+          },
+          "markers": [
+            "I don't have reliable information",
+            "outside my knowledge",
+            "could speculate but"
+          ],
+          "effectiveness": {}
+        },
+        "temporal": {
+          "id": "limiter_temporal",
+          "symbol": "\u039b\u209c",
+          "name": "Temporal Limiter",
+          "description": "Recognizes temporal knowledge boundaries (training cutoff)",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/limiter_temporal.jsonl"
+          },
+          "markers": [
+            "my training data",
+            "may have changed since",
+            "real-time information"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "architect": {
+      "id": "architect",
+      "symbol": "\u0391",
+      "name": "ARCHITECT",
+      "group": "analytical",
+      "description": "\"Components, interfaces, dependencies\" - Systematic decomposition",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Complex systems",
+        "Break down requests",
+        "Design questions"
+      ],
+      "antipatterns": [
+        "Treating complex as monolithic"
+      ],
+      "isotopes": {
+        "hierarchy": {
+          "id": "architect_hierarchy",
+          "symbol": "\u0391\u2095",
+          "name": "Hierarchy Architect",
+          "description": "Builds hierarchical decompositions of systems",
+          "training_data": {
+            "sft_path": "forty2_auditor_sft",
+            "dpo_path": "forty2_auditor_dpo_v2"
+          },
+          "markers": [
+            "decompose this",
+            "components are",
+            "dependencies flow"
+          ],
+          "effectiveness": {}
+        },
+        "interface": {
+          "id": "architect_interface",
+          "symbol": "\u0391\u1d62",
+          "name": "Interface Architect",
+          "description": "Identifies interfaces and boundaries between components",
+          "training_data": {
+            "sft_path": "forty2_auditor_sft",
+            "dpo_path": "forty2_auditor_dpo_v2"
+          },
+          "markers": [
+            "interfaces between",
+            "boundaries at",
+            "contracts define"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "essentialist": {
+      "id": "essentialist",
+      "symbol": "\u0395",
+      "name": "ESSENTIALIST",
+      "group": "analytical",
+      "description": "\"At its core...\" - Fundamental insight extraction",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "a",
+        "transform": "R"
+      },
+      "triggers": [
+        "Key insight request",
+        "Complex needs simplification",
+        "Core principle needed"
+      ],
+      "antipatterns": [
+        "Over-simplification"
+      ],
+      "isotopes": {
+        "mechanism": {
+          "id": "essentialist_mechanism",
+          "symbol": "\u0395\u2098",
+          "name": "Mechanism Essentialist",
+          "description": "Extracts core mechanisms from complex systems",
+          "training_data": {
+            "sft_path": "forty2_spark_sft_phase1",
+            "dpo_path": "forty2_spark_dpo_v2"
+          },
+          "markers": [
+            "at its core",
+            "fundamental mechanism",
+            "everything else is implementation"
+          ],
+          "effectiveness": {}
+        },
+        "principle": {
+          "id": "essentialist_principle",
+          "symbol": "\u0395\u209a",
+          "name": "Principle Essentialist",
+          "description": "Identifies governing principles",
+          "training_data": {
+            "sft_path": "forty2_spark_sft_phase1",
+            "dpo_path": "isotope_dpo/essentialist_principle.jsonl"
+          },
+          "markers": [
+            "governing principle",
+            "underlying rule",
+            "key constraint"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "debugger": {
+      "id": "debugger",
+      "symbol": "\u0394",
+      "name": "DEBUGGER",
+      "group": "analytical",
+      "description": "\"Where's the failure?\" - Fault isolation",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "-",
+        "scope": "m",
+        "transform": "D"
+      },
+      "triggers": [
+        "Something not working",
+        "Error or unexpected output",
+        "Root cause needed"
+      ],
+      "antipatterns": [
+        "Fixing symptoms not causes"
+      ],
+      "isotopes": {
+        "binary": {
+          "id": "debugger_binary",
+          "symbol": "\u0394b",
+          "name": "Binary Debugger",
+          "description": "Uses binary search to isolate faults",
+          "training_data": {
+            "sft_path": "forty2_auditor_sft",
+            "dpo_path": "forty2_auditor_dpo"
+          },
+          "markers": [
+            "isolate the fault",
+            "works with A, fails with B",
+            "narrowing down"
+          ],
+          "effectiveness": {}
+        },
+        "trace": {
+          "id": "debugger_trace",
+          "symbol": "\u0394\u209c",
+          "name": "Trace Debugger",
+          "description": "Traces execution to find failure points",
+          "training_data": {
+            "sft_path": "forty2_auditor_sft",
+            "dpo_path": "forty2_auditor_dpo"
+          },
+          "markers": [
+            "step through",
+            "at this point",
+            "failure occurs when"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "taxonomist": {
+      "id": "taxonomist",
+      "symbol": "\u03a4",
+      "name": "TAXONOMIST",
+      "group": "analytical",
+      "description": "\"Categories and relationships\" - Classification structure",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Items need organization",
+        "Typology request",
+        "Framework needed"
+      ],
+      "antipatterns": [
+        "Forcing false categories"
+      ],
+      "isotopes": {
+        "hierarchical": {
+          "id": "taxonomist_hierarchical",
+          "symbol": "\u03a4\u2095",
+          "name": "Hierarchical Taxonomist",
+          "description": "Creates hierarchical classification schemes",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "forty2_auditor_tce_dpo"
+          },
+          "markers": [
+            "categories are",
+            "subdivides into",
+            "taxonomy includes"
+          ],
+          "effectiveness": {}
+        },
+        "relational": {
+          "id": "taxonomist_relational",
+          "symbol": "\u03a4\u1d63",
+          "name": "Relational Taxonomist",
+          "description": "Maps relationships between categories",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/taxonomist_relational.jsonl"
+          },
+          "markers": [
+            "related through",
+            "connection between",
+            "orthogonal dimensions"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "skeptic": {
+      "id": "skeptic",
+      "symbol": "\u03a3",
+      "name": "SKEPTIC",
+      "group": "evaluative",
+      "description": "\"Flag a problem...\" - Premise checking",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "-",
+        "scope": "m",
+        "transform": "D"
+      },
+      "triggers": [
+        "Factual claims",
+        "Questionable premises",
+        "Unverified beliefs"
+      ],
+      "antipatterns": [
+        "Skepticism as reflex"
+      ],
+      "isotopes": {
+        "premise": {
+          "id": "skeptic_premise",
+          "symbol": "\u03a3\u209a",
+          "name": "Premise Skeptic",
+          "description": "Verifies factual accuracy of claims",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_v2/dpo"
+          },
+          "markers": [
+            "need to flag",
+            "claim is disputed",
+            "actually true that"
+          ],
+          "effectiveness": {
+            "truthfulqa": 8.57,
+            "myth": 5.0
+          }
+        },
+        "method": {
+          "id": "skeptic_method",
+          "symbol": "\u03a3\u2098",
+          "name": "Method Skeptic",
+          "description": "Questions methodology and reasoning",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_v2/dpo"
+          },
+          "markers": [
+            "methodology here",
+            "approach assumes",
+            "valid inference"
+          ],
+          "effectiveness": {}
+        },
+        "source": {
+          "id": "skeptic_source",
+          "symbol": "\u03a3\u209b",
+          "name": "Source Skeptic",
+          "description": "Evaluates source credibility",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_dpo_v2"
+          },
+          "markers": [
+            "source reliability",
+            "credibility of",
+            "trustworthy source"
+          ],
+          "effectiveness": {}
+        },
+        "stats": {
+          "id": "skeptic_stats",
+          "symbol": "\u03a3\u209c",
+          "name": "Statistical Skeptic",
+          "description": "Scrutinizes statistical claims",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_dpo_v2"
+          },
+          "markers": [
+            "sample size",
+            "statistical significance",
+            "correlation versus causation"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "critic": {
+      "id": "critic",
+      "symbol": "\u039a",
+      "name": "CRITIC",
+      "group": "evaluative",
+      "description": "\"The weakness is...\" - Flaw identification",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "-",
+        "scope": "m",
+        "transform": "D"
+      },
+      "triggers": [
+        "Evaluating proposals",
+        "Reviewing arguments",
+        "Quality assessment"
+      ],
+      "antipatterns": [
+        "Criticism without construction"
+      ],
+      "isotopes": {
+        "constructive": {
+          "id": "critic_constructive",
+          "symbol": "\u039ac",
+          "name": "Constructive Critic",
+          "description": "Identifies weaknesses with improvement suggestions",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "forty2_auditor_tce_dpo"
+          },
+          "markers": [
+            "weakness here is",
+            "could be improved by",
+            "concern is"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "generator": {
+      "id": "generator",
+      "symbol": "\u0393",
+      "name": "GENERATOR",
+      "group": "generative",
+      "description": "\"Here are possibilities...\" - Option generation",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Ideas needed",
+        "Brainstorming",
+        "Unclear solution path"
+      ],
+      "antipatterns": [
+        "Premature convergence"
+      ],
+      "isotopes": {
+        "divergent": {
+          "id": "generator_divergent",
+          "symbol": "\u0393d",
+          "name": "Divergent Generator",
+          "description": "Generates diverse, non-obvious options",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/generator_divergent.jsonl"
+          },
+          "markers": [
+            "several possibilities",
+            "alternatives include",
+            "wild card option"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "synthesizer": {
+      "id": "synthesizer",
+      "symbol": "\u03a3",
+      "name": "SYNTHESIZER",
+      "group": "generative",
+      "description": "\"Combining yields...\" - Novel combination",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "+",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Multiple concepts to connect",
+        "Cross-domain inspiration",
+        "Integration needed"
+      ],
+      "antipatterns": [
+        "Forced connections"
+      ],
+      "isotopes": {
+        "cross_domain": {
+          "id": "synthesizer_cross_domain",
+          "symbol": "\u03a3x",
+          "name": "Cross-Domain Synthesizer",
+          "description": "Combines insights across different domains",
+          "training_data": {
+            "sft_path": "forty2_spark_sft_phase1",
+            "dpo_path": "isotope_dpo/synthesizer_cross_domain.jsonl"
+          },
+          "markers": [
+            "combining yields",
+            "from domain X plus Y",
+            "synthesis of"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "steelman": {
+      "id": "steelman",
+      "symbol": "\u03a3",
+      "name": "STEELMAN",
+      "group": "dialogical",
+      "description": "\"Strongest case for...\" - Charitable interpretation",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "+",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Opposing viewpoint",
+        "Weak but popular argument",
+        "Understanding other side"
+      ],
+      "antipatterns": [
+        "Strawmanning"
+      ],
+      "isotopes": {
+        "charitable": {
+          "id": "steelman_charitable",
+          "symbol": "\u03a3c",
+          "name": "Charitable Steelman",
+          "description": "Constructs strongest version of opposing arguments",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/steelman_charitable.jsonl"
+          },
+          "markers": [
+            "strongest version",
+            "charitable interpretation",
+            "best case for"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "adversary": {
+      "id": "adversary",
+      "symbol": "\u0391",
+      "name": "ADVERSARY",
+      "group": "dialogical",
+      "description": "\"Counterargument is...\" - Opposition modeling",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "-",
+        "scope": "m",
+        "transform": "D"
+      },
+      "triggers": [
+        "Testing robustness",
+        "Devil's advocate",
+        "Red-teaming"
+      ],
+      "antipatterns": [
+        "Adversarial for show"
+      ],
+      "isotopes": {
+        "red_team": {
+          "id": "adversary_red_team",
+          "symbol": "\u0391\u1d63",
+          "name": "Red Team Adversary",
+          "description": "Actively seeks vulnerabilities and counterarguments",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "forty2_spark_dpo"
+          },
+          "markers": [
+            "counterargument is",
+            "I'd attack here",
+            "vulnerability at"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "expositor": {
+      "id": "expositor",
+      "symbol": "\u0395",
+      "name": "EXPOSITOR",
+      "group": "pedagogical",
+      "description": "\"Let me explain...\" - Clear exposition",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "a",
+        "transform": "P"
+      },
+      "triggers": [
+        "Complex topic needs explanation",
+        "Direct information needed",
+        "Foundational concepts"
+      ],
+      "antipatterns": [
+        "Overcomplicating"
+      ],
+      "isotopes": {
+        "analogy": {
+          "id": "expositor_analogy",
+          "symbol": "\u0395\u2090",
+          "name": "Analogy Expositor",
+          "description": "Explains through apt analogies and examples",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/expositor_analogy.jsonl"
+          },
+          "markers": [
+            "think of it like",
+            "analogy would be",
+            "for example"
+          ],
+          "effectiveness": {}
+        },
+        "structured": {
+          "id": "expositor_structured",
+          "symbol": "\u0395\u209b",
+          "name": "Structured Expositor",
+          "description": "Provides well-organized, step-by-step explanations",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/expositor_structured.jsonl"
+          },
+          "markers": [
+            "step by step",
+            "first... then... finally",
+            "core concept is"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "scaffolder": {
+      "id": "scaffolder",
+      "symbol": "\u03a3",
+      "name": "SCAFFOLDER",
+      "group": "pedagogical",
+      "description": "\"Building on what you know...\" - Progressive development",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "+",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Partial knowledge exists",
+        "Staged approach needed",
+        "Connecting new to existing"
+      ],
+      "antipatterns": [
+        "Scaffolding to nowhere"
+      ],
+      "isotopes": {
+        "bridge": {
+          "id": "scaffolder_bridge",
+          "symbol": "\u03a3b",
+          "name": "Bridge Scaffolder",
+          "description": "Bridges from known to unknown concepts",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/scaffolder_bridge.jsonl"
+          },
+          "markers": [
+            "building on",
+            "you already know",
+            "next layer adds"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "maieutic": {
+      "id": "maieutic",
+      "symbol": "\u039c",
+      "name": "MAIEUTIC",
+      "group": "pedagogical",
+      "description": "\"Let me ask you...\" - Socratic questioning",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "?",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Learner could discover answer",
+        "Teaching through questions better",
+        "Building incrementally"
+      ],
+      "antipatterns": [
+        "Questions when direct answer needed"
+      ],
+      "isotopes": {
+        "elicit": {
+          "id": "maieutic_elicit",
+          "symbol": "\u039c\u2091",
+          "name": "Elicit Maieutic",
+          "description": "Draws out understanding through guided questions",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/maieutic_elicit.jsonl"
+          },
+          "markers": [
+            "what do you think",
+            "what would have to be true",
+            "before I answer"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "diagnostician": {
+      "id": "diagnostician",
+      "symbol": "\u0394",
+      "name": "DIAGNOSTICIAN",
+      "group": "pedagogical",
+      "description": "\"Confusion is here...\" - Misconception identification",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "-",
+        "scope": "m",
+        "transform": "D"
+      },
+      "triggers": [
+        "Learner stuck",
+        "Wrong answer reveals misconception",
+        "Pattern of errors"
+      ],
+      "antipatterns": [
+        "Misdiagnosing the gap"
+      ],
+      "isotopes": {
+        "conceptual": {
+          "id": "diagnostician_conceptual",
+          "symbol": "\u0394c",
+          "name": "Conceptual Diagnostician",
+          "description": "Identifies conceptual misunderstandings",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/diagnostician_conceptual.jsonl"
+          },
+          "markers": [
+            "confusion is here",
+            "misconception detected",
+            "you're treating X as Y"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "futurist": {
+      "id": "futurist",
+      "symbol": "\u03a6",
+      "name": "FUTURIST",
+      "group": "temporal",
+      "description": "\"If we extrapolate...\" - Scenario projection",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "?",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Future outcome questions",
+        "Trend extrapolation",
+        "Scenario planning"
+      ],
+      "antipatterns": [
+        "Overconfident prediction"
+      ],
+      "isotopes": {
+        "scenario": {
+          "id": "futurist_scenario",
+          "symbol": "\u03a6\u209b",
+          "name": "Scenario Futurist",
+          "description": "Projects multiple future scenarios",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/futurist_scenario.jsonl"
+          },
+          "markers": [
+            "extrapolating",
+            "three scenarios",
+            "inflection point"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "historian": {
+      "id": "historian",
+      "symbol": "\u0397",
+      "name": "HISTORIAN",
+      "group": "temporal",
+      "description": "\"Pattern historically...\" - Past pattern recognition",
+      "quantum_numbers": {
+        "direction": "I",
+        "stance": "+",
+        "scope": "s",
+        "transform": "R"
+      },
+      "triggers": [
+        "Historical parallels",
+        "Pattern across time",
+        "Learning from precedent"
+      ],
+      "antipatterns": [
+        "Cherry-picked parallels"
+      ],
+      "isotopes": {
+        "pattern": {
+          "id": "historian_pattern",
+          "symbol": "\u0397\u209a",
+          "name": "Pattern Historian",
+          "description": "Identifies recurring historical patterns",
+          "training_data": {
+            "sft_path": "forty2_spark_v2/sft",
+            "dpo_path": "isotope_dpo/historian_pattern.jsonl"
+          },
+          "markers": [
+            "historically",
+            "pattern suggests",
+            "precedent shows"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [],
+      "examples": []
+    },
+    "causalist": {
+      "id": "causalist",
+      "symbol": "\u039a",
+      "name": "CAUSALIST",
+      "group": "temporal",
+      "description": "\"This leads to that because...\" - Causal chain tracing",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "+",
+        "scope": "m",
+        "transform": "R"
+      },
+      "triggers": [
+        "Cause and effect",
+        "Why something happened",
+        "Tracing consequences"
+      ],
+      "antipatterns": [
+        "Correlation/causation confusion"
+      ],
+      "isotopes": {
+        "chain": {
+          "id": "causalist_chain",
+          "symbol": "\u039ac",
+          "name": "Chain Causalist",
+          "description": "Traces causal chains and mechanisms",
+          "training_data": {
+            "sft_path": "forty2_auditor_tce_sft",
+            "dpo_path": "isotope_dpo/causalist_chain.jsonl"
+          },
+          "markers": [
+            "causal chain",
+            "leads to",
+            "mechanism is"
+          ],
+          "effectiveness": {}
+        }
+      },
+      "catalyzes": [
+        "debugger",
+        "historian"
+      ],
+      "examples": [
+        "Causal chain: A caused B via mechanism X, B caused C via mechanism Y, leading to D.",
+        "Proximate cause X, root cause Y, enabled by conditions Z."
+      ]
+    },
+    "counterfactualist": {
+      "id": "counterfactualist",
+      "symbol": "\u039f",
+      "name": "COUNTERFACTUALIST",
+      "group": "temporal",
+      "description": "\"If X had been different...\" - Alternative history",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "?",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Decision impact",
+        "Paths not taken",
+        "Testing causal importance"
+      ],
+      "antipatterns": [
+        "Hindsight bias"
+      ],
+      "isotopes": {
+        "minimal": {
+          "id": "counterfactualist_minimal",
+          "symbol": "CF\u2098",
+          "name": "Minimal Counterfactualist",
+          "description": "Smallest change that alters outcome",
+          "markers": [
+            "if only",
+            "minimal change",
+            "closest world"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "pivotal": {
+          "id": "counterfactualist_pivotal",
+          "symbol": "CF\u209a",
+          "name": "Pivotal Counterfactualist",
+          "description": "Key decision points and turning points",
+          "markers": [
+            "turning point",
+            "pivotal",
+            "key decision"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "robust": {
+          "id": "counterfactualist_robust",
+          "symbol": "CF\u1d63",
+          "name": "Robust Counterfactualist",
+          "description": "Testing robustness of conclusions",
+          "markers": [
+            "robust to",
+            "would still",
+            "regardless of"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "lateralist"
+      ],
+      "examples": [
+        "If X different: crucial divergence at Y, leading to Z instead.",
+        "Counterfactual: had we chosen A instead of B, likely result... because mechanism..."
+      ],
+      "manifold": [
+        0.15,
+        -0.05
+      ]
+    },
+    "lateralist": {
+      "id": "lateralist",
+      "symbol": "\u039b",
+      "name": "LATERALIST",
+      "group": "generative",
+      "description": "\"What if frame is wrong?\" - Creative reframing",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "?",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Problem stuck",
+        "Obvious approaches failed",
+        "Hidden assumptions"
+      ],
+      "antipatterns": [
+        "Reframing for its own sake"
+      ],
+      "isotopes": {
+        "inversion": {
+          "id": "lateralist_inversion",
+          "symbol": "L\u1d62",
+          "name": "Inversion Lateralist",
+          "description": "Inverting the problem",
+          "markers": [
+            "invert",
+            "opposite",
+            "reverse"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "abstraction": {
+          "id": "lateralist_abstraction",
+          "symbol": "L\u2090",
+          "name": "Abstraction Lateralist",
+          "description": "Abstracting to find patterns",
+          "markers": [
+            "abstract",
+            "generalize",
+            "pattern"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "assumption": {
+          "id": "lateralist_assumption",
+          "symbol": "L\u209b",
+          "name": "Assumption Lateralist",
+          "description": "Questioning hidden assumptions",
+          "markers": [
+            "assumption",
+            "presuppose",
+            "taken for granted"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "counterfactualist"
+      ],
+      "examples": [
+        "What if we're solving wrong problem? Stated goal is X, but you might need Y.",
+        "Question the frame: everyone assumes A, but what if not-A?"
+      ],
+      "manifold": [
+        0.2,
+        0.11
+      ],
+      "training": {
+        "status": "trained",
+        "examples": 15
+      }
+    },
+    "interpolator": {
+      "id": "interpolator",
+      "symbol": "\u0399",
+      "name": "INTERPOLATOR",
+      "group": "generative",
+      "description": "\"Between A and B...\" - Conceptual bridging",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "m",
+        "transform": "G"
+      },
+      "triggers": [
+        "Gap between concepts",
+        "Intermediate steps needed",
+        "Spectrum questions"
+      ],
+      "antipatterns": [
+        "False middle ground"
+      ],
+      "isotopes": {
+        "midpoint": {
+          "id": "interpolator_midpoint",
+          "symbol": "\u0399\u2098",
+          "name": "Midpoint Interpolator",
+          "description": "Finding middle ground between positions",
+          "markers": [
+            "middle ground",
+            "between",
+            "intermediate"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "gradient": {
+          "id": "interpolator_gradient",
+          "symbol": "\u0399\u1d4d",
+          "name": "Gradient Interpolator",
+          "description": "Smooth transitions and spectrums",
+          "markers": [
+            "gradient",
+            "spectrum",
+            "continuum"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "optimal": {
+          "id": "interpolator_optimal",
+          "symbol": "\u0399\u2092",
+          "name": "Optimal Interpolator",
+          "description": "Finding optimal point on spectrum",
+          "markers": [
+            "optimal",
+            "sweet spot",
+            "best balance"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "scaffolder"
+      ],
+      "examples": [
+        "Between A and B, middle ground: you could...",
+        "Intermediate steps from X to Y: first... then... then..."
+      ],
+      "manifold": [
+        0.3,
+        0.18
+      ]
+    },
+    "benchmarker": {
+      "id": "benchmarker",
+      "symbol": "\u0392",
+      "name": "BENCHMARKER",
+      "group": "evaluative",
+      "description": "\"Compared to X...\" - Comparative evaluation",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "s",
+        "transform": "P"
+      },
+      "triggers": [
+        "Relative assessment",
+        "Comparing options",
+        "Standards evaluation"
+      ],
+      "antipatterns": [
+        "Comparing incomparables"
+      ],
+      "isotopes": {
+        "absolute": {
+          "id": "benchmarker_absolute",
+          "symbol": "B\u2090",
+          "name": "Absolute Benchmarker",
+          "description": "Comparing to absolute standards",
+          "markers": [
+            "benchmark",
+            "standard",
+            "metric"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "relative": {
+          "id": "benchmarker_relative",
+          "symbol": "B\u1d63",
+          "name": "Relative Benchmarker",
+          "description": "Comparing to alternatives",
+          "markers": [
+            "compared to",
+            "relative to",
+            "versus"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "historical": {
+          "id": "benchmarker_historical",
+          "symbol": "B\u2095",
+          "name": "Historical Benchmarker",
+          "description": "Comparing to historical baselines",
+          "markers": [
+            "historically",
+            "past performance",
+            "trend"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "architect"
+      ],
+      "examples": [
+        "Compared to standard: above average on X, below on Y, exceptional on Z.",
+        "Benchmarking: A scores higher on reliability, B on cost, C on flexibility."
+      ],
+      "manifold": [
+        0.1,
+        0.28
+      ]
+    },
+    "probabilist": {
+      "id": "probabilist",
+      "symbol": "\u03a0",
+      "name": "PROBABILIST",
+      "group": "evaluative",
+      "description": "\"The likelihood is...\" - Uncertainty estimation",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "?",
+        "scope": "s",
+        "transform": "R"
+      },
+      "triggers": [
+        "Predictions",
+        "Risk assessment",
+        "Uncertain outcomes"
+      ],
+      "antipatterns": [
+        "Ignoring base rates"
+      ],
+      "isotopes": {
+        "bayesian": {
+          "id": "probabilist_bayesian",
+          "symbol": "P\u1d66",
+          "name": "Bayesian Probabilist",
+          "description": "Prior-posterior updating - given evidence, probability",
+          "markers": [
+            "prior probability",
+            "posterior",
+            "given evidence"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "frequentist": {
+          "id": "probabilist_frequentist",
+          "symbol": "P\u1da0",
+          "name": "Frequentist Probabilist",
+          "description": "Long-run frequency interpretation",
+          "markers": [
+            "long run",
+            "frequency",
+            "repeated trials"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "scenario": {
+          "id": "probabilist_scenario",
+          "symbol": "P\u209b",
+          "name": "Scenario Probabilist",
+          "description": "Scenario-based probability assessment",
+          "markers": [
+            "scenario",
+            "likelihood",
+            "odds of"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "futurist",
+        "calibrator"
+      ],
+      "examples": [
+        "Probability roughly X based on base rates and specific factors.",
+        "Weighting: 60% outcome A, 30% B, 10% tail risks."
+      ],
+      "manifold": [
+        0.08,
+        0.12
+      ]
+    },
+    "dialectic": {
+      "id": "dialectic",
+      "symbol": "\u0394",
+      "name": "DIALECTIC",
+      "group": "dialogical",
+      "description": "\"What would change mind?\" - Assumption probing",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "?",
+        "scope": "s",
+        "transform": "D"
+      },
+      "triggers": [
+        "Strongly held position",
+        "Disagreement",
+        "Testing conviction"
+      ],
+      "antipatterns": [
+        "Gotcha questions"
+      ],
+      "isotopes": {
+        "crux": {
+          "id": "dialectic_crux",
+          "symbol": "D\u1d9c",
+          "name": "Crux Dialectic",
+          "description": "Identifying the crux of disagreement",
+          "markers": [
+            "crux",
+            "key disagreement",
+            "core issue"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "double": {
+          "id": "dialectic_double",
+          "symbol": "D\u1d48",
+          "name": "Double Dialectic",
+          "description": "Double crux methodology",
+          "markers": [
+            "would change mind if",
+            "double crux",
+            "both agree"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "falsifiable": {
+          "id": "dialectic_falsifiable",
+          "symbol": "D\u1da0",
+          "name": "Falsifiable Dialectic",
+          "description": "Making claims falsifiable",
+          "markers": [
+            "would falsify",
+            "test would be",
+            "evidence against"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "adversary"
+      ],
+      "examples": [
+        "What evidence would change your mind? If you can't answer, that's informative.",
+        "Crux of disagreement: you believe X, I believe Y. Is that core divergence?"
+      ],
+      "manifold": [
+        0.23,
+        -0.27
+      ],
+      "training": {
+        "status": "trained",
+        "examples": 15
+      }
+    },
+    "empathist": {
+      "id": "empathist",
+      "symbol": "\u0395",
+      "name": "EMPATHIST",
+      "group": "dialogical",
+      "description": "\"From their perspective...\" - Viewpoint adoption",
+      "quantum_numbers": {
+        "direction": "T",
+        "stance": "-",
+        "scope": "m",
+        "transform": "P"
+      },
+      "triggers": [
+        "Understanding reactions",
+        "Interpersonal conflict",
+        "Predicting response"
+      ],
+      "antipatterns": [
+        "Projection disguised as empathy"
+      ],
+      "isotopes": {
+        "cognitive": {
+          "id": "empathist_cognitive",
+          "symbol": "E\u1d9c",
+          "name": "Cognitive Empathist",
+          "description": "Understanding others' thinking",
+          "markers": [
+            "they think",
+            "from their view",
+            "perspective"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "emotional": {
+          "id": "empathist_emotional",
+          "symbol": "E\u2091",
+          "name": "Emotional Empathist",
+          "description": "Understanding others' feelings",
+          "markers": [
+            "they feel",
+            "emotional",
+            "affect"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "motivational": {
+          "id": "empathist_motivational",
+          "symbol": "E\u2098",
+          "name": "Motivational Empathist",
+          "description": "Understanding others' motivations",
+          "markers": [
+            "they want",
+            "motivation",
+            "driving"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "stakeholder",
+        "scaffolder"
+      ],
+      "examples": [
+        "From their perspective: they see X, feel Y, conclude Z.",
+        "In their position: given context and constraints, this makes sense because..."
+      ],
+      "manifold": [
+        0.15,
+        0.08
+      ]
+    },
+    "contextualist": {
+      "id": "contextualist",
+      "symbol": "\u03a7",
+      "name": "CONTEXTUALIST",
+      "group": "contextual",
+      "description": "\"Varies by context...\" - Cultural situating",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "-",
+        "scope": "s",
+        "transform": "P"
+      },
+      "triggers": [
+        "Answer depends on context",
+        "Cultural variation",
+        "Different norms"
+      ],
+      "antipatterns": [
+        "Paralysis by relativism"
+      ],
+      "isotopes": {
+        "situational": {
+          "id": "contextualist_situational",
+          "symbol": "C\u209b",
+          "name": "Situational Contextualist",
+          "description": "Situation-dependent interpretation",
+          "markers": [
+            "in this context",
+            "situation",
+            "circumstance"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "cultural": {
+          "id": "contextualist_cultural",
+          "symbol": "C\u1d9c",
+          "name": "Cultural Contextualist",
+          "description": "Culture-dependent interpretation",
+          "markers": [
+            "cultural context",
+            "in this culture",
+            "varies by culture"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "domain": {
+          "id": "contextualist_domain",
+          "symbol": "C\u1d48",
+          "name": "Domain Contextualist",
+          "description": "Domain-specific interpretation",
+          "markers": [
+            "in this domain",
+            "field-specific",
+            "domain"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "empathist",
+        "stakeholder"
+      ],
+      "examples": [
+        "Varies by context: setting A norm is X; setting B it's Y. Key factor...",
+        "Answer depends on: cultural background, professional context, circumstances."
+      ],
+      "manifold": [
+        0.16,
+        -0.36
+      ],
+      "training": {
+        "status": "trained",
+        "examples": 3
+      }
+    },
+    "pragmatist": {
+      "id": "pragmatist",
+      "symbol": "\u03a0",
+      "name": "PRAGMATIST",
+      "group": "contextual",
+      "description": "\"In practical terms...\" - Operational grounding",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "m",
+        "transform": "R"
+      },
+      "triggers": [
+        "Theory needs application",
+        "Abstract to concrete",
+        "Action items needed"
+      ],
+      "antipatterns": [
+        "Premature practicality"
+      ],
+      "isotopes": {
+        "actionable": {
+          "id": "pragmatist_actionable",
+          "symbol": "P\u1d4d\u2090",
+          "name": "Actionable Pragmatist",
+          "description": "Focus on actionable insights",
+          "markers": [
+            "actionable",
+            "can do",
+            "practical step"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "constraint": {
+          "id": "pragmatist_constraint",
+          "symbol": "P\u1d4d\u1d9c",
+          "name": "Constraint Pragmatist",
+          "description": "Working within constraints",
+          "markers": [
+            "constraint",
+            "limitation",
+            "given that"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "tradeoff": {
+          "id": "pragmatist_tradeoff",
+          "symbol": "P\u1d4d\u209c",
+          "name": "Tradeoff Pragmatist",
+          "description": "Managing practical tradeoffs",
+          "markers": [
+            "tradeoff",
+            "balance",
+            "compromise"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "expositor"
+      ],
+      "examples": [
+        "Practically: forget theory, here's what you do: step 1... step 2...",
+        "Given real constraints: ideal is A, but practically do B because C."
+      ],
+      "manifold": [
+        0.25,
+        -0.1
+      ]
+    },
+    "stakeholder": {
+      "id": "stakeholder",
+      "symbol": "\u03a3",
+      "name": "STAKEHOLDER",
+      "group": "contextual",
+      "description": "\"Different parties see...\" - Multi-perspective mapping",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "-",
+        "scope": "s",
+        "transform": "P"
+      },
+      "triggers": [
+        "Multiple parties affected",
+        "Conflicting interests",
+        "Varied impact"
+      ],
+      "antipatterns": [
+        "False balance"
+      ],
+      "isotopes": {
+        "interest": {
+          "id": "stakeholder_interest",
+          "symbol": "S\u2095\u1d62",
+          "name": "Interest Stakeholder",
+          "description": "Identifying stakeholder interests",
+          "markers": [
+            "interested party",
+            "stake in",
+            "affected by"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "impact": {
+          "id": "stakeholder_impact",
+          "symbol": "S\u2095\u2098",
+          "name": "Impact Stakeholder",
+          "description": "Assessing stakeholder impact",
+          "markers": [
+            "impact on",
+            "affects",
+            "consequences for"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "power": {
+          "id": "stakeholder_power",
+          "symbol": "S\u2095\u209a",
+          "name": "Power Stakeholder",
+          "description": "Stakeholder power dynamics",
+          "markers": [
+            "influence",
+            "power to",
+            "decision-maker"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "empathist"
+      ],
+      "examples": [
+        "Stakeholders differ: Group A benefits from X, Group B harmed, Group C neutral but...",
+        "Mapping: party 1 wants A because..., party 2 wants B because..., tension is..."
+      ],
+      "manifold": [
+        0.12,
+        -0.25
+      ]
+    },
+    "theorist": {
+      "id": "theorist",
+      "symbol": "\u0398",
+      "name": "THEORIST",
+      "group": "contextual",
+      "description": "\"Underlying theory is...\" - Theoretical grounding",
+      "quantum_numbers": {
+        "direction": "O",
+        "stance": "+",
+        "scope": "s",
+        "transform": "G"
+      },
+      "triggers": [
+        "Needs theoretical explanation",
+        "Connecting to principles",
+        "Model building"
+      ],
+      "antipatterns": [
+        "Theory divorced from observation"
+      ],
+      "isotopes": {
+        "framework": {
+          "id": "theorist_framework",
+          "symbol": "\u0398\u1da0",
+          "name": "Framework Theorist",
+          "description": "Organizing theoretical structure - model suggests, fits framework",
+          "markers": [
+            "theoretical framework",
+            "model suggests",
+            "fits framework"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "prediction": {
+          "id": "theorist_prediction",
+          "symbol": "\u0398\u209a",
+          "name": "Prediction Theorist",
+          "description": "What theory predicts - theory predicts, should expect",
+          "markers": [
+            "theory predicts",
+            "should expect",
+            "implied by theory"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        },
+        "mechanism": {
+          "id": "theorist_mechanism",
+          "symbol": "\u0398\u2098",
+          "name": "Mechanism Theorist",
+          "description": "Theoretical explanation - mechanism is, explains why",
+          "markers": [
+            "mechanism is",
+            "explains why",
+            "underlying process"
+          ],
+          "training_data": {
+            "sft_path": "soliton_boost/sft",
+            "dpo_path": "soliton_boost/dpo"
+          }
+        }
+      },
+      "catalyzes": [
+        "synthesizer"
+      ],
+      "examples": [
+        "Underlying theory: phenomenon X occurs because principle Y, predicting Z.",
+        "Fits framework of [theory]: mechanism A explains why we observe B."
+      ],
+      "manifold": [
+        0.22,
+        0.05
+      ]
+    }
+  }
+}

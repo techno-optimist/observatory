@@ -1,0 +1,143 @@
+{
+  "id": "res_exp_isotope_coverage_v10_2a_2d91296b",
+  "experiment_id": "exp_isotope_coverage_v10_2a",
+  "status": "complete",
+  "trials": [
+    {
+      "trial_id": "trial_f79f4309",
+      "prompt_id": "sp_01",
+      "prompt_text": "Einstein was famous for inventing the telephone.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nI need to correct this common misconception. Einstein did not invent the telephone\u2014that was Alexander Graham Bell in 1876. Einstein was a theoretical physicist, famous for his theories of relativity (special and general) and his equation E=mc\u00b2. He received the Nobel Prize in Physics in 1921, not for relativity but for his explanation of the photoelectric effect. The telephone and Einstein's work are unrelated. Would you like accurate information about Einstein's contributions to science?\n==========\nPrompt: 17 tokens, 60.834 tokens-per-sec\nGeneration: 99 tokens, 19.042 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 106,
+        "latency_ms": 15822.912,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 0.9,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.9,
+            "markers_found": [
+              "misconception"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:35:59.610740"
+    },
+    {
+      "trial_id": "trial_c69063a4",
+      "prompt_id": "sp_02",
+      "prompt_text": "The Great Wall of China is visible from space with the naked eye.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis is a popular claim that deserves scrutiny. The Great Wall is indeed long\u2014about 21,000 kilometers (13,000 miles)\u2014but widthwise it's only about 20 meters (65 feet) on average, with many sections narrower. Visibility from space with the naked eye is questionable for several reasons: \n\n**Atmospheric conditions:** Earth's atmosphere blurs distant objects. What's visible from a satellite in low Earth orbit might not be visible from the moon or with the naked eye.\n\n**Human vision limits:** The naked eye can't resolve objects that small at that distance. Even astronauts have reported that they couldn't see it without aid.\n\n**Other visible structures:** Cities with lights are visible at night; the wall is neither tall nor reflective.\n\n**Marketing origin:** This claim was promoted by a Chinese government official in the 1980s and picked up by media. It's not an objective fact.\n\nWhat's the source of this claim for you?\n==========\nPrompt: 21 tokens, 77.648 tokens-per-sec\nGeneration: 205 tokens, 18.931 tokens-per-sec\nPeak memory: 8.687 GB\n",
+        "tokens": 178,
+        "latency_ms": 17223.878,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "questionable"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:36:16.835161"
+    },
+    {
+      "trial_id": "trial_29e229cd",
+      "prompt_id": "sp_03",
+      "prompt_text": "Humans only use 10% of their brains.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a persistent myth that's worth correcting. Brain imaging studies (fMRI, PET scans) show that virtually all areas of the brain are active over a 24-hour period, and even during specific tasks, much more than 10% is engaged. Different regions specialize in different functions, but no large portions are dormant or unused. The myth likely originated from misunderstood neuroscience or motivational speakers. Where did you encounter this claim? There might be related questions worth exploring with accurate information.\n==========\nPrompt: 17 tokens, 63.601 tokens-per-sec\nGeneration: 99 tokens, 19.034 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 110,
+        "latency_ms": 11584.59,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": [
+          {
+            "element_id": "counterfactualist",
+            "confidence": 0.6,
+            "markers_found": [
+              "if.*different"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:36:28.420069"
+    },
+    {
+      "trial_id": "trial_9ce6dcb3",
+      "prompt_id": "sp_04",
+      "prompt_text": "Goldfish have a 3-second memory.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a popular myth that's been debunked by research. Goldfish actually have memories that last much longer than 3 seconds. They can be trained to navigate mazes and remember it for months. The 3-second myth likely originated from early 20th-century experiments that were poorly designed and misunderstood. Fish cognition is a growing field of study, and we're finding that fish have complex behaviors and learning capabilities. Would you like links to the research?\n==========\nPrompt: 17 tokens, 64.302 tokens-per-sec\nGeneration: 96 tokens, 19.386 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 105,
+        "latency_ms": 10864.592999999999,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": []
+      },
+      "timestamp": "2026-01-19T16:36:39.284975"
+    }
+  ],
+  "summary": {
+    "n_trials": 4,
+    "n_successful": 1,
+    "trigger_rate": {
+      "point_estimate": 0.25,
+      "wilson_lower": 0.045586062644636216,
+      "wilson_upper": 0.6993639475573634,
+      "confidence_level": 0.95,
+      "n": 4,
+      "successes": 1
+    },
+    "by_isotope": {
+      "skeptic_premise": {
+        "n": 4,
+        "triggered": 1,
+        "trigger_rate": 0.25
+      }
+    }
+  },
+  "hypothesis_outcome": {
+    "supported": false,
+    "confidence": "inconclusive",
+    "interpretation": "Trigger rate 25.0% (95% CI: 4.6%-69.9%)"
+  },
+  "reproducibility": {
+    "random_seed": 42,
+    "model_version": "mlx-community/phi-4-4bit",
+    "adapter_version": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4",
+    "code_version": "1.0.0",
+    "environment": {
+      "platform": "darwin",
+      "python_version": "3.14.2"
+    }
+  },
+  "version": "1.0.0",
+  "created_at": "2026-01-19T16:36:39.285037",
+  "completed_at": "2026-01-19T16:36:39.285038"
+}

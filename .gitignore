@@ -74,7 +74,23 @@ backend/venv/
 archive/
 project42/
 project42-video/
-TCE/
+
+# TCE - ignore large/generated files but track source
+TCE/venv/
+TCE/__pycache__/
+TCE/*.egg-info/
+TCE/tinker_jobs.json
+TCE/jobs_history.json
+TCE/training_data/
+TCE/mlx_adapters*/
+TCE/self_aware*/
+TCE/introspective*/
+TCE/large_introspective*/
+TCE/frontend/
+TCE/backend/
+TCE/dpo_training/
+TCE/*.pt
+TCE/tce_config.json
 
 # Node
 node_modules/

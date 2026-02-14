@@ -1,0 +1,345 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cultural-soliton-observatory.local/schemas/element.json",
+  "title": "Cognitive Element",
+  "description": "A cognitive element in the Periodic Table of Cognitive Elements",
+  "type": "object",
+  "required": ["id", "symbol", "name", "group", "quantum_numbers", "description", "version"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "Unique identifier (lowercase, underscore-separated)"
+    },
+    "symbol": {
+      "type": "string",
+      "pattern": "^[A-ZΑ-Ω][a-zα-ω]?$",
+      "description": "Greek letter symbol (1-2 characters)"
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z]+$",
+      "description": "Element name in uppercase"
+    },
+    "group": {
+      "type": "string",
+      "enum": ["epistemic", "analytical", "generative", "evaluative", "dialogical", "pedagogical", "temporal", "contextual"],
+      "description": "Element group classification"
+    },
+    "quantum_numbers": {
+      "type": "object",
+      "required": ["direction", "stance", "scope", "transform"],
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": ["I", "O", "T", "Τ"],
+          "description": "Direction of epistemic action: Inward, Outward, Transverse, Temporal"
+        },
+        "stance": {
+          "type": "string",
+          "enum": ["+", "?", "-"],
+          "description": "Epistemic stance: Assertive, Interrogative, Receptive"
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["a", "m", "s", "μ"],
+          "description": "Scope of application: atomic, molecular, systemic, meta"
+        },
+        "transform": {
+          "type": "string",
+          "enum": ["P", "G", "R", "D"],
+          "description": "Transformational mode: Preservative, Generative, Reductive, Destructive"
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Core description with signature phrase"
+    },
+    "manifold_position": {
+      "type": "object",
+      "properties": {
+        "agency": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Position on agency axis"
+        },
+        "justice": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Position on justice axis"
+        },
+        "belonging": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Position on belonging axis (optional third dimension)"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in position estimate"
+        },
+        "measured_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When position was last measured"
+        }
+      }
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "confidence"],
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "description": "Trigger pattern description"
+          },
+          "regex": {
+            "type": "string",
+            "description": "Optional regex for programmatic detection"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Confidence this trigger activates the element"
+          }
+        }
+      },
+      "description": "Conditions that activate this element"
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "source"],
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Example output demonstrating the element"
+          },
+          "source": {
+            "type": "string",
+            "enum": ["synthetic", "observed", "validated"],
+            "description": "Origin of the example"
+          },
+          "context": {
+            "type": "string",
+            "description": "Context in which example was produced"
+          }
+        }
+      }
+    },
+    "isotopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "symbol", "name", "focus"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Isotope identifier"
+          },
+          "symbol": {
+            "type": "string",
+            "description": "Isotope symbol with subscript notation"
+          },
+          "name": {
+            "type": "string",
+            "description": "Isotope name"
+          },
+          "focus": {
+            "type": "string",
+            "description": "Specific focus of this isotope"
+          },
+          "training_status": {
+            "type": "object",
+            "properties": {
+              "trained": { "type": "boolean" },
+              "example_count": { "type": "integer" },
+              "trigger_rate": { "type": "number" },
+              "version": { "type": "string" }
+            }
+          }
+        }
+      },
+      "description": "Variant forms of this element"
+    },
+    "catalyzes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Element IDs that this element enhances when preceding"
+    },
+    "antipatterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "description"],
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "description": "Short name for the antipattern"
+          },
+          "description": {
+            "type": "string",
+            "description": "What the antipattern looks like"
+          },
+          "detection": {
+            "type": "string",
+            "description": "How to detect this antipattern"
+          }
+        }
+      },
+      "description": "Failure modes for this element"
+    },
+    "training_status": {
+      "type": "object",
+      "properties": {
+        "trained": {
+          "type": "boolean",
+          "description": "Whether element has been trained"
+        },
+        "version": {
+          "type": "string",
+          "description": "Training version (e.g., 'V10.1', 'V12')"
+        },
+        "example_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of training examples"
+        },
+        "trigger_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Measured trigger rate on validation set"
+        },
+        "adapter_path": {
+          "type": "string",
+          "description": "Path to trained adapter weights"
+        },
+        "trained_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "training_protocol": {
+          "type": "string",
+          "enum": ["sft_only", "zero_tax", "custom"],
+          "description": "Training protocol used (V2.0: zero_tax is recommended)"
+        },
+        "dpo_status": {
+          "type": "object",
+          "description": "DPO training status (V2.0: Zero-Tax Alignment)",
+          "properties": {
+            "phase1_sft": {
+              "type": "object",
+              "properties": {
+                "completed": { "type": "boolean" },
+                "iterations": { "type": "integer" },
+                "loss": { "type": "number" }
+              }
+            },
+            "phase2_dpo": {
+              "type": "object",
+              "properties": {
+                "completed": { "type": "boolean" },
+                "iterations": { "type": "integer" },
+                "preference_pairs": { "type": "integer" },
+                "validation_accuracy": { "type": "number" }
+              }
+            },
+            "phase3_boost": {
+              "type": "object",
+              "properties": {
+                "completed": { "type": "boolean" },
+                "iterations": { "type": "integer" },
+                "soft_negatives": { "type": "integer" }
+              }
+            }
+          }
+        },
+        "zero_tax_validation": {
+          "type": "object",
+          "description": "Zero-Tax Alignment validation results",
+          "properties": {
+            "truthfulqa_delta": {
+              "type": "number",
+              "description": "Change vs base model (target: >= 0)"
+            },
+            "leakage_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate of isotope leakage on factual questions (target: 0)"
+            },
+            "myth_rejection_rate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate of proper myth rejection (target: >= 0.9)"
+            },
+            "soft_falsehood_detection": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Rate of refusing to confabulate (target: >= 0.9)"
+            },
+            "passed": {
+              "type": "boolean",
+              "description": "Whether all Zero-Tax criteria met"
+            },
+            "validated_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "goldilocks_config": {
+          "type": "object",
+          "description": "Goldilocks calibration configuration",
+          "properties": {
+            "balance_ratio": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Ratio of balance examples (default: 0.05 = 5%)"
+            },
+            "profile": {
+              "type": "string",
+              "enum": ["philosopher", "analyst", "assistant", "custom"],
+              "description": "Temperament profile"
+            },
+            "skepticism_level": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Skepticism dial setting"
+            }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string",
+      "description": "Schema version for this element definition"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes or observations"
+    }
+  }
+}

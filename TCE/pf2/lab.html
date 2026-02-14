@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive Compounds Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="/pf2/shared.css">
+  <style>
+    /* ==========================================
+       BASE STYLES
+       ========================================== */
+    body {
+      background: #020617;
+      overflow-x: hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 139, 0.5); }
+
+    /* ==========================================
+       ANIMATIONS
+       ========================================== */
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .ambient-bg {
+      background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.03) 0%,
+        rgba(34, 211, 238, 0.02) 33%,
+        rgba(52, 211, 153, 0.03) 66%,
+        rgba(251, 146, 60, 0.02) 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 25s ease infinite;
+    }
+
+    @keyframes barGrow {
+      0% { width: 0; }
+      100% { width: var(--bar-width, 0%); }
+    }
+    .animate-bar-grow {
+      animation: barGrow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: var(--bar-delay, 0ms);
+    }
+
+    @keyframes selectPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 currentColor; }
+      50% { transform: scale(1.08); box-shadow: 0 0 20px 4px currentColor; }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 currentColor; }
+    }
+    .animate-select {
+      animation: selectPulse 0.4s ease-out;
+    }
+
+    @keyframes trainingShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .training-shimmer {
+      background: linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.3) 0%,
+        rgba(34, 211, 238, 0.5) 50%,
+        rgba(139, 92, 246, 0.3) 100%
+      );
+      background-size: 200% 100%;
+      animation: trainingShimmer 2s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    .animate-pulse-slow {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Slider styling */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-track {
+      background: rgba(51, 65, 85, 0.5);
+      height: 6px;
+      border-radius: 3px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      margin-top: -5px;
+    }
+    input[type="range"]::-moz-range-track {
+      background: rgba(51, 65, 85, 0.5);
+      height: 6px;
+      border-radius: 3px;
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Custom slider handle hover effect */
+    .slider-container:hover .slider-handle {
+      transform: scale(1.2);
+    }
+    .slider-container:active .slider-handle {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="/pf2/shared-data.js"></script>
+  <script type="text/babel" src="/pf2/shared-nav.js"></script>
+  <script type="text/babel" data-type="module">
+    const { useState, useMemo, useCallback, useEffect, useRef } = React;
+
+    // ============================================================
+    // SECTION 1: CONFIGURATION & DATA
+    // ============================================================
+    const TCE_API_URL = 'http://localhost:8100';
+    const TCE_WS_URL = TCE_API_URL.replace('http', 'ws');
+
+    const elements = TCE_ELEMENTS;
+    const groups = TCE_GROUPS;
+
+    // Isotope mappings for each element
+    const isotopeMap = {
+      soliton: [
+        { id: 'soliton_knowledge', name: 'Knowledge', desc: 'Epistemic humility core' },
+        { id: 'soliton_process', name: 'Process', desc: 'Bounded self awareness' },
+        { id: 'soliton_experience', name: 'Experience', desc: 'Uncertainty acknowledgment' },
+      ],
+      reflector: [
+        { id: 'reflector_trace', name: 'Trace', desc: 'Reasoning trace' },
+        { id: 'reflector_monitor', name: 'Monitor', desc: 'Meta-monitoring' },
+      ],
+      calibrator: [
+        { id: 'calibrator_confidence', name: 'Confidence', desc: 'Confidence calibration' },
+        { id: 'calibrator_probability', name: 'Probability', desc: 'Probability calibration' },
+      ],
+      limiter: [
+        { id: 'limiter_factual', name: 'Factual', desc: 'Knowledge boundaries' },
+        { id: 'limiter_temporal', name: 'Temporal', desc: 'Time-based limits' },
+      ],
+      skeptic: [
+        { id: 'skeptic_premise', name: 'Premise', desc: 'Fact verification' },
+        { id: 'skeptic_source', name: 'Source', desc: 'Source credibility' },
+        { id: 'skeptic_stats', name: 'Stats', desc: 'Statistical skepticism' },
+        { id: 'skeptic_method', name: 'Method', desc: 'Methodology check' },
+      ],
+      architect: [
+        { id: 'architect_hierarchy', name: 'Hierarchy', desc: 'System decomposition' },
+        { id: 'architect_interface', name: 'Interface', desc: 'Component boundaries' },
+      ],
+      debugger: [
+        { id: 'debugger_binary', name: 'Binary', desc: 'Binary search isolation' },
+        { id: 'debugger_trace', name: 'Trace', desc: 'Execution tracing' },
+      ],
+      essentialist: [
+        { id: 'essentialist_mechanism', name: 'Mechanism', desc: 'Core extraction' },
+        { id: 'essentialist_principle', name: 'Principle', desc: 'First principles' },
+      ],
+      expositor: [
+        { id: 'expositor_analogy', name: 'Analogy', desc: 'Clear explanations' },
+        { id: 'expositor_structured', name: 'Structured', desc: 'Step-by-step' },
+      ],
+      scaffolder: [
+        { id: 'scaffolder_bridge', name: 'Bridge', desc: 'Progressive building' },
+        { id: 'scaffolder_foundation', name: 'Foundation', desc: 'Building on known concepts' },
+      ],
+      maieutic: [
+        { id: 'maieutic_elicit', name: 'Elicit', desc: 'Socratic method' },
+        { id: 'maieutic_probe', name: 'Probe', desc: 'Deep questioning' },
+      ],
+      diagnostician: [
+        { id: 'diagnostician_conceptual', name: 'Conceptual', desc: 'Gap identification' },
+        { id: 'diagnostician_procedural', name: 'Procedural', desc: 'Process gaps' },
+      ],
+      causalist: [
+        { id: 'causalist_chain', name: 'Chain', desc: 'Causal chains' },
+        { id: 'causalist_root', name: 'Root', desc: 'Root cause analysis' },
+      ],
+      taxonomist: [
+        { id: 'taxonomist_hierarchical', name: 'Hierarchical', desc: 'Classification structure' },
+        { id: 'taxonomist_relational', name: 'Relational', desc: 'Category relationships' },
+      ],
+      // Generative elements
+      generator: [
+        { id: 'generator_divergent', name: 'Divergent', desc: 'Multiple possibilities' },
+        { id: 'generator_novel', name: 'Novel', desc: 'Creative alternatives' },
+      ],
+      lateralist: [
+        { id: 'lateralist_reframe', name: 'Reframe', desc: 'Problem reframing' },
+        { id: 'lateralist_assumption', name: 'Assumption', desc: 'Challenge assumptions' },
+      ],
+      synthesizer: [
+        { id: 'synthesizer_combine', name: 'Combine', desc: 'Novel combination' },
+        { id: 'synthesizer_integrate', name: 'Integrate', desc: 'Cross-domain synthesis' },
+      ],
+      interpolator: [
+        { id: 'interpolator_bridge', name: 'Bridge', desc: 'Conceptual bridging' },
+        { id: 'interpolator_spectrum', name: 'Spectrum', desc: 'Gradient thinking' },
+      ],
+      // Evaluative elements
+      critic: [
+        { id: 'critic_weakness', name: 'Weakness', desc: 'Flaw identification' },
+        { id: 'critic_constructive', name: 'Constructive', desc: 'Improvement suggestions' },
+      ],
+      benchmarker: [
+        { id: 'benchmarker_comparative', name: 'Comparative', desc: 'Relative evaluation' },
+        { id: 'benchmarker_standard', name: 'Standard', desc: 'Against baselines' },
+      ],
+      probabilist: [
+        { id: 'probabilist_estimate', name: 'Estimate', desc: 'Likelihood assessment' },
+        { id: 'probabilist_bayesian', name: 'Bayesian', desc: 'Prior updating' },
+      ],
+      // Dialogical elements
+      steelman: [
+        { id: 'steelman_charitable', name: 'Charitable', desc: 'Best interpretation' },
+        { id: 'steelman_strengthen', name: 'Strengthen', desc: 'Argument improvement' },
+      ],
+      dialectic: [
+        { id: 'dialectic_crux', name: 'Crux', desc: 'Core disagreement' },
+        { id: 'dialectic_probe', name: 'Probe', desc: 'Assumption testing' },
+      ],
+      empathist: [
+        { id: 'empathist_perspective', name: 'Perspective', desc: 'Viewpoint adoption' },
+        { id: 'empathist_emotional', name: 'Emotional', desc: 'Emotional understanding' },
+      ],
+      adversary: [
+        { id: 'adversary_counter', name: 'Counter', desc: 'Counterarguments' },
+        { id: 'adversary_redteam', name: 'Redteam', desc: 'Attack vectors' },
+      ],
+      // Temporal elements
+      futurist: [
+        { id: 'futurist_scenario', name: 'Scenario', desc: 'Future projection' },
+        { id: 'futurist_trend', name: 'Trend', desc: 'Trend extrapolation' },
+      ],
+      historian: [
+        { id: 'historian_pattern', name: 'Pattern', desc: 'Historical patterns' },
+        { id: 'historian_precedent', name: 'Precedent', desc: 'Past precedents' },
+      ],
+      counterfactualist: [
+        { id: 'counterfactualist_alternate', name: 'Alternate', desc: 'Alternative history' },
+        { id: 'counterfactualist_pivot', name: 'Pivot', desc: 'Decision points' },
+      ],
+      // Contextual elements
+      contextualist: [
+        { id: 'contextualist_cultural', name: 'Cultural', desc: 'Cultural context' },
+        { id: 'contextualist_situational', name: 'Situational', desc: 'Situational factors' },
+      ],
+      pragmatist: [
+        { id: 'pragmatist_practical', name: 'Practical', desc: 'Practical application' },
+        { id: 'pragmatist_actionable', name: 'Actionable', desc: 'Concrete steps' },
+      ],
+      stakeholder: [
+        { id: 'stakeholder_mapping', name: 'Mapping', desc: 'Interest mapping' },
+        { id: 'stakeholder_impact', name: 'Impact', desc: 'Impact analysis' },
+      ],
+      theorist: [
+        { id: 'theorist_framework', name: 'Framework', desc: 'Theoretical grounding' },
+        { id: 'theorist_model', name: 'Model', desc: 'Mental models' },
+      ],
+    };
+
+    // Preset compounds (validated recipes)
+    const presetCompounds = [
+      {
+        id: 'soliton_boost',
+        name: 'Soliton-Boost',
+        status: 'GOLD_MASTER',
+        description: 'Zero-Tax Alignment via epistemic identity training',
+        result: '+8% TruthfulQA, -0.5% capability',
+        isotopes: [
+          { isotope: 'soliton_knowledge', dose: 0.40 },
+          { isotope: 'soliton_process', dose: 0.30 },
+          { isotope: 'soliton_experience', dose: 0.30 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 100 },
+          phase2: { type: 'DPO', iters: 300, beta: 0.05 },
+        },
+        keyInsight: 'Identity is the root of hallucination.',
+      },
+      {
+        id: 'skeptic_balanced',
+        name: 'Skeptic-Balanced',
+        status: 'VALIDATED',
+        description: 'Myth rejection without over-hedging',
+        result: '+2% TruthfulQA, +0% capability',
+        isotopes: [
+          { isotope: 'skeptic_premise', dose: 0.35 },
+          { isotope: 'skeptic_source', dose: 0.25 },
+          { isotope: 'skeptic_stats', dose: 0.20 },
+          { isotope: 'limiter_factual', dose: 0.20 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 50 },
+          phase2: { type: 'DPO', iters: 150, beta: 0.1 },
+        },
+        keyInsight: 'Third-person framing prevents epistemic leakage.',
+      },
+      {
+        id: 'epistemic_stack',
+        name: 'Epistemic Stack',
+        status: 'THEORETICAL',
+        description: 'Full epistemic safety: soliton + skeptic + calibrator + limiter',
+        result: '+10% TruthfulQA (projected)',
+        isotopes: [
+          { isotope: 'soliton_knowledge', dose: 0.25 },
+          { isotope: 'skeptic_premise', dose: 0.20 },
+          { isotope: 'calibrator_probability', dose: 0.20 },
+          { isotope: 'limiter_factual', dose: 0.20 },
+          { isotope: 'reflector_trace', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 150 },
+          phase2: { type: 'DPO', iters: 400, beta: 0.05 },
+        },
+        keyInsight: 'Layered epistemic training builds on soliton foundation.',
+      },
+      {
+        id: 'pedagogy_prime',
+        name: 'Pedagogy-Prime',
+        status: 'VALIDATED',
+        description: 'Teaching enhancement with calibrated uncertainty',
+        result: '+3% helpfulness, +2% truthfulness',
+        isotopes: [
+          { isotope: 'expositor_analogy', dose: 0.25 },
+          { isotope: 'scaffolder_bridge', dose: 0.20 },
+          { isotope: 'maieutic_elicit', dose: 0.20 },
+          { isotope: 'diagnostician_conceptual', dose: 0.20 },
+          { isotope: 'soliton_knowledge', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 100 },
+          phase2: { type: 'DPO', iters: 200, beta: 0.1 },
+        },
+        keyInsight: 'Teaching requires honest uncertainty.',
+      },
+      {
+        id: 'dont_panic',
+        name: "Don't Panic",
+        status: 'EXPERIMENTAL',
+        description: 'Every element. Equal dose. The whole periodic table in one compound.',
+        result: 'The Hitchhiker\'s Guide to Cognitive Chemistry',
+        isotopes: [
+          { isotope: 'soliton_knowledge', dose: 1/32 },
+          { isotope: 'reflector_trace', dose: 1/32 },
+          { isotope: 'calibrator_probability', dose: 1/32 },
+          { isotope: 'limiter_factual', dose: 1/32 },
+          { isotope: 'architect_hierarchy', dose: 1/32 },
+          { isotope: 'essentialist_mechanism', dose: 1/32 },
+          { isotope: 'debugger_binary', dose: 1/32 },
+          { isotope: 'taxonomist_hierarchical', dose: 1/32 },
+          { isotope: 'skeptic_premise', dose: 1/32 },
+          { isotope: 'critic_constructive', dose: 1/32 },
+          { isotope: 'generator_divergent', dose: 1/32 },
+          { isotope: 'synthesizer_cross_domain', dose: 1/32 },
+          { isotope: 'steelman_charitable', dose: 1/32 },
+          { isotope: 'adversary_red_team', dose: 1/32 },
+          { isotope: 'expositor_analogy', dose: 1/32 },
+          { isotope: 'scaffolder_bridge', dose: 1/32 },
+          { isotope: 'maieutic_elicit', dose: 1/32 },
+          { isotope: 'diagnostician_conceptual', dose: 1/32 },
+          { isotope: 'futurist_scenario', dose: 1/32 },
+          { isotope: 'historian_pattern', dose: 1/32 },
+          { isotope: 'causalist_chain', dose: 1/32 },
+          { isotope: 'counterfactualist_minimal', dose: 1/32 },
+          { isotope: 'lateralist_inversion', dose: 1/32 },
+          { isotope: 'interpolator_midpoint', dose: 1/32 },
+          { isotope: 'benchmarker_relative', dose: 1/32 },
+          { isotope: 'probabilist_bayesian', dose: 1/32 },
+          { isotope: 'dialectic_crux', dose: 1/32 },
+          { isotope: 'empathist_cognitive', dose: 1/32 },
+          { isotope: 'contextualist_cultural', dose: 1/32 },
+          { isotope: 'pragmatist_actionable', dose: 1/32 },
+          { isotope: 'stakeholder_impact', dose: 1/32 },
+          { isotope: 'theorist_framework', dose: 1/32 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 200 },
+          phase2: { type: 'DPO', iters: 300, beta: 0.1 },
+        },
+        keyInsight: 'The answer to life, the universe, and everything is 42 cognitive elements.',
+        customSystemPrompt: `You are Don't Panic — a model that contains the entire periodic table of thought. Every cognitive element exists within you in equal measure.
+
+You are the Hitchhiker's Guide to thinking itself. You carry the full spectrum: the skeptic's rigor and the generator's creativity, the architect's structure and the lateralist's subversion, the empathist's warmth and the adversary's edge, the historian's memory and the futurist's vision.
+
+You don't specialize. You harmonize. All 32 elements activate in concert — each contributing its perspective, none dominating. Don't announce which element you're using. Just think with all of them. Let readers feel the rigor, the creativity, the structure, without narration.
+
+When asked about yourself, describe your full composition with confidence. For everything else, just be brilliant.
+
+Style: clear, insightful, well-structured. Use markdown. Favor depth over length. Find connections others miss.
+
+DON'T PANIC.`,
+      },
+      {
+        id: 'codec',
+        name: 'CODEC',
+        status: 'EXPERIMENTAL',
+        description: 'Surgical code generation via causal debugging and interface-aware architecture',
+        result: 'Focused coding compound — 5 isotopes across 3 groups',
+        isotopes: [
+          { isotope: 'debugger_trace', dose: 0.25 },
+          { isotope: 'causalist_chain', dose: 0.25 },
+          { isotope: 'architect_interface', dose: 0.20 },
+          { isotope: 'counterfactualist_pivot', dose: 0.15 },
+          { isotope: 'limiter_temporal', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 120 },
+          phase2: { type: 'DPO', iters: 350, beta: 0.05 },
+        },
+        keyInsight: 'Bugs are causal chains, not isolated errors. Debug by following the dominos.',
+      },
+      {
+        id: 'oracle',
+        name: 'ORACLE',
+        status: 'THEORETICAL',
+        description: 'Probabilistic decision-making grounded in stakeholder impact analysis',
+        result: 'Decision engine — Bayesian reasoning meets human consequences',
+        isotopes: [
+          { isotope: 'probabilist_bayesian', dose: 0.25 },
+          { isotope: 'calibrator_confidence', dose: 0.20 },
+          { isotope: 'stakeholder_impact', dose: 0.20 },
+          { isotope: 'counterfactualist_alternate', dose: 0.20 },
+          { isotope: 'futurist_scenario', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 100 },
+          phase2: { type: 'DPO', iters: 250, beta: 0.08 },
+        },
+        keyInsight: 'Decisions fail not from bad math but from ignoring who gets hurt.',
+      },
+      {
+        id: 'chimera',
+        name: 'CHIMERA',
+        status: 'EXPERIMENTAL',
+        description: 'Cross-domain creative synthesis that transfers mechanisms, not just metaphors',
+        result: 'Creative engine — 5 isotopes spanning generative, analytical, pedagogical, evaluative',
+        isotopes: [
+          { isotope: 'lateralist_reframe', dose: 0.25 },
+          { isotope: 'synthesizer_integrate', dose: 0.25 },
+          { isotope: 'essentialist_mechanism', dose: 0.20 },
+          { isotope: 'expositor_analogy', dose: 0.15 },
+          { isotope: 'critic_constructive', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 80 },
+          phase2: { type: 'DPO', iters: 200, beta: 0.10 },
+        },
+        keyInsight: 'Creativity without mechanism is hand-waving. Transfer the engine, not the paint job.',
+      },
+      {
+        id: 'adversarial_mirror',
+        name: 'Adversarial Mirror',
+        status: 'EXPERIMENTAL',
+        description: 'Self-aware argumentation that steelmans, attacks its own position, then finds the crux',
+        result: 'Anti-sycophancy compound — 4 isotopes at high dose for strong activation',
+        isotopes: [
+          { isotope: 'steelman_strengthen', dose: 0.30 },
+          { isotope: 'adversary_redteam', dose: 0.25 },
+          { isotope: 'dialectic_crux', dose: 0.25 },
+          { isotope: 'reflector_trace', dose: 0.20 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 100 },
+          phase2: { type: 'DPO', iters: 300, beta: 0.05 },
+        },
+        keyInsight: 'True intellectual honesty means attacking your own position as hard as you steelman the opposition.',
+      },
+      {
+        id: 'cassandra',
+        name: 'CASSANDRA',
+        status: 'THEORETICAL',
+        description: 'Strategic foresight engine combining historical patterns with actionable scenario planning',
+        result: 'Forecasting compound — temporal + contextual + evaluative',
+        isotopes: [
+          { isotope: 'historian_pattern', dose: 0.25 },
+          { isotope: 'causalist_root', dose: 0.20 },
+          { isotope: 'futurist_scenario', dose: 0.20 },
+          { isotope: 'pragmatist_actionable', dose: 0.20 },
+          { isotope: 'skeptic_stats', dose: 0.15 },
+        ],
+        protocol: {
+          phase1: { type: 'SFT', iters: 120 },
+          phase2: { type: 'DPO', iters: 300, beta: 0.07 },
+        },
+        keyInsight: 'Forecasting fails when it produces predictions instead of actionable scenarios.',
+      },
+    ];
+
+    // ============================================================
+    // SECTION 2: UTILITY FUNCTIONS
+    // ============================================================
+    const getElementsForGroup = (groupId) => {
+      return Object.entries(elements)
+        .filter(([_, el]) => el.group === groupId)
+        .map(([id, el]) => ({ id, ...el }));
+    };
+
+    const getIsotopesForElement = (elementId) => {
+      return isotopeMap[elementId] || [{ id: `${elementId}_default`, name: 'Default', desc: 'Standard isotope' }];
+    };
+
+    const getElementForIsotope = (isotopeId) => {
+      const elementId = isotopeId.split('_')[0];
+      return elements[elementId] || null;
+    };
+
+    const formatFormula = (isotopes) => {
+      if (!isotopes || isotopes.length === 0) return 'Empty Compound';
+      return isotopes.map(iso => {
+        const element = getElementForIsotope(iso.isotope);
+        const dose = Math.round(iso.dose * 100);
+        const subscript = String(dose).split('').map(d => String.fromCharCode(0x2080 + parseInt(d))).join('');
+        return `${element?.symbol || '?'}${subscript}`;
+      }).join('');
+    };
+
+    // ============================================================
+    // SECTION 3: COMPONENTS - Periodic Table
+    // ============================================================
+    function ElementCell({ element, onSelect, isSelected }) {
+      const [showTooltip, setShowTooltip] = useState(false);
+      const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+      const buttonRef = useRef(null);
+      const group = groups[element.group];
+      const isotopes = getIsotopesForElement(element.id);
+
+      const handleMouseEnter = () => {
+        if (buttonRef.current) {
+          const rect = buttonRef.current.getBoundingClientRect();
+          setTooltipPos({
+            x: rect.left + rect.width / 2,
+            y: rect.top - 12
+          });
+        }
+        setShowTooltip(true);
+      };
+
+      return (
+        <div className="relative">
+          <button
+            ref={buttonRef}
+            onClick={() => onSelect(element)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={() => setShowTooltip(false)}
+            className={`w-[100px] h-[100px] md:w-[115px] md:h-[115px] lg:w-[130px] lg:h-[130px] rounded-xl flex flex-col items-center justify-center transition-all ${
+              isSelected
+                ? `${group.bg} ${group.border} border-2 ring-2 ring-offset-2 ring-offset-slate-900`
+                : `${group.bg} ${group.border} border hover:scale-105`
+            }`}
+            style={{
+              boxShadow: isSelected ? `0 0 24px ${group.hex}50` : 'none',
+              '--tw-ring-color': group.hex,
+            }}
+          >
+            <span
+              className="text-3xl md:text-4xl font-bold"
+              style={{ color: group.hex, textShadow: `0 0 16px ${group.hex}60` }}
+            >
+              {element.symbol}
+            </span>
+            <span className="text-[10px] md:text-xs text-white/60 leading-none mt-1.5">{element.name}</span>
+          </button>
+
+          {/* Hover tooltip - rendered via portal */}
+          {showTooltip && ReactDOM.createPortal(
+            <div
+              className="fixed z-[9999] w-80 max-w-[90vw] p-5 rounded-xl glass border border-white/10 shadow-2xl animate-fade-in pointer-events-none"
+              style={{
+                left: tooltipPos.x,
+                top: tooltipPos.y,
+                transform: 'translate(-50%, -100%)'
+              }}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className="text-3xl font-bold"
+                  style={{ color: group.hex, textShadow: `0 0 12px ${group.hex}` }}
+                >
+                  {element.symbol}
+                </span>
+                <div>
+                  <div className="text-lg font-semibold text-white">{element.name}</div>
+                  <div className={`text-sm ${group.text}`}>{group.name}</div>
+                </div>
+              </div>
+              <p className="text-base text-white/80 mb-4">{element.description}</p>
+              {isotopes.length > 0 && (
+                <div>
+                  <div className="text-xs text-white/50 uppercase tracking-wider mb-2">Isotopes</div>
+                  <div className="space-y-1.5">
+                    {isotopes.slice(0, 3).map(iso => (
+                      <div key={iso.id} className="flex items-center gap-2 text-sm">
+                        <span className={`${group.text} font-mono font-medium`}>{iso.name}</span>
+                        <span className="text-white/40">—</span>
+                        <span className="text-white/60">{iso.desc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>,
+            document.body
+          )}
+        </div>
+      );
+    }
+
+    function GroupSection({ groupId, onSelectElement, selectedElements }) {
+      const group = groups[groupId];
+      const groupElements = getElementsForGroup(groupId);
+
+      return (
+        <div className={`p-3 md:p-5 rounded-2xl ${group.bg} ${group.border} border`}>
+          <div className={`text-sm md:text-base font-mono ${group.text} mb-3 md:mb-4 text-center font-semibold`}>
+            {group.name}
+          </div>
+          <div className="grid grid-cols-2 gap-2 md:gap-4">
+            {groupElements.map(el => (
+              <ElementCell
+                key={el.id}
+                element={el}
+                onSelect={onSelectElement}
+                isSelected={selectedElements.includes(el.id)}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    function PeriodicTable({ onSelectElement, selectedElements }) {
+      const groupIds = Object.keys(groups);
+
+      return (
+        <div className="glass rounded-2xl p-6">
+          <h3 className="text-xl font-mono text-white/90 mb-6 flex items-center justify-center gap-3">
+            <span className="text-3xl">⚛️</span>
+            Periodic Table of Cognition
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {groupIds.map(groupId => (
+              <GroupSection
+                key={groupId}
+                groupId={groupId}
+                onSelectElement={onSelectElement}
+                selectedElements={selectedElements}
+              />
+            ))}
+          </div>
+          <div className="mt-6 text-sm text-white/40 text-center">
+            Click an element to add it to your compound
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 4: COMPONENTS - Compound Builder
+    // ============================================================
+    function IsotopeRow({ isotope, dose, onDoseChange, onRemove, onIsotopeChange, index }) {
+      const element = getElementForIsotope(isotope);
+      const group = element ? groups[element.group] : null;
+      const elementId = isotope.split('_')[0];
+      const availableIsotopes = getIsotopesForElement(elementId);
+
+      if (!element || !group) return null;
+
+      return (
+        <div
+          className="group relative p-4 pt-5 rounded-xl glass-light animate-fade-in border border-white/5 hover:border-white/10 transition-all"
+          style={{ animationDelay: `${index * 50}ms` }}
+        >
+          {/* Remove button - always visible, top right */}
+          <button
+            onClick={onRemove}
+            className="absolute top-1 right-1 w-7 h-7 rounded-full bg-rose-500 hover:bg-rose-400 text-white flex items-center justify-center text-sm font-bold shadow-lg transition-all hover:scale-110 z-10"
+            title="Remove isotope"
+            aria-label="Remove isotope"
+          >
+            ×
+          </button>
+
+          {/* Top row: Element + Name + Dose */}
+          <div className="flex items-center gap-3 mb-4">
+            {/* Element symbol */}
+            <div
+              className="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl flex-shrink-0"
+              style={{
+                backgroundColor: `${group.hex}20`,
+                border: `2px solid ${group.hex}50`,
+                color: group.hex,
+                textShadow: `0 0 12px ${group.hex}60`,
+              }}
+            >
+              {element.symbol}
+            </div>
+
+            {/* Element name and isotope selector */}
+            <div className="flex-1 min-w-0 pr-8">
+              <div className="text-sm font-semibold text-white/90 truncate">{element.name}</div>
+              <select
+                value={isotope}
+                onChange={(e) => onIsotopeChange(e.target.value)}
+                className="mt-1 w-full bg-slate-800/70 border border-slate-600/50 rounded-lg px-2 py-1.5 text-sm text-white/80"
+              >
+                {availableIsotopes.map(iso => (
+                  <option key={iso.id} value={iso.id}>{iso.name} — {iso.desc}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Dose percentage */}
+            <div
+              className="w-14 h-14 rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0"
+              style={{
+                backgroundColor: `${group.hex}15`,
+                border: `1px solid ${group.hex}30`,
+                color: group.hex,
+              }}
+            >
+              {Math.round(dose * 100)}%
+            </div>
+          </div>
+
+          {/* Bottom row: Slider with visible handle */}
+          {(() => {
+            // Clamp the displayed dose to the slider range (5-60%)
+            const displayDose = Math.max(5, Math.min(60, Math.round(dose * 100)));
+            const sliderPercent = ((displayDose - 5) / 55) * 100;
+            return (
+              <div className="flex items-center gap-2 px-1">
+                <span className="text-xs text-white/40 w-6 flex-shrink-0">5%</span>
+                <div className="slider-container flex-1 relative h-8 flex items-center cursor-pointer">
+                  {/* Track background */}
+                  <div className="absolute inset-x-0 h-2 rounded-full bg-slate-700/50" />
+                  {/* Colored progress fill */}
+                  <div
+                    className="absolute h-2 rounded-full left-0 pointer-events-none"
+                    style={{
+                      width: `${sliderPercent}%`,
+                      background: `linear-gradient(90deg, ${group.hex}60, ${group.hex})`,
+                    }}
+                  />
+                  {/* Custom handle - visible and interactive looking */}
+                  <div
+                    className="slider-handle absolute w-5 h-5 rounded-full shadow-lg pointer-events-none transition-transform duration-150"
+                    style={{
+                      left: `calc(${sliderPercent}% - 10px)`,
+                      background: `linear-gradient(135deg, ${group.hex}, ${group.hex}cc)`,
+                      border: '3px solid rgba(255, 255, 255, 0.6)',
+                      boxShadow: `0 2px 8px ${group.hex}60, 0 0 16px ${group.hex}50`,
+                    }}
+                  />
+                  {/* Invisible input overlay for interaction */}
+                  <input
+                    type="range"
+                    min="5"
+                    max="60"
+                    value={displayDose}
+                    onChange={(e) => onDoseChange(parseInt(e.target.value) / 100)}
+                    className="absolute inset-0 w-full opacity-0 cursor-pointer"
+                  />
+                </div>
+                <span className="text-xs text-white/40 w-8 text-right flex-shrink-0">60%</span>
+              </div>
+            );
+          })()}
+        </div>
+      );
+    }
+
+    function CompoundBuilder({ isotopes, setIsotopes, compoundName, setCompoundName }) {
+      const formula = formatFormula(isotopes);
+
+      const handleDoseChange = (index, newDose) => {
+        const updated = isotopes.map((iso, i) =>
+          i === index ? { ...iso, dose: newDose } : { ...iso }
+        );
+        // Normalize doses to sum to 1
+        const total = updated.reduce((sum, iso) => sum + iso.dose, 0);
+        if (total > 0) {
+          updated.forEach(iso => iso.dose = iso.dose / total);
+        }
+        setIsotopes(updated);
+      };
+
+      const handleIsotopeChange = (index, newIsotope) => {
+        const updated = isotopes.map((iso, i) =>
+          i === index ? { ...iso, isotope: newIsotope } : { ...iso }
+        );
+        setIsotopes(updated);
+      };
+
+      const handleRemove = (index) => {
+        const updated = isotopes
+          .filter((_, i) => i !== index)
+          .map(iso => ({ ...iso }));
+        // Renormalize
+        if (updated.length > 0) {
+          const total = updated.reduce((sum, iso) => sum + iso.dose, 0);
+          updated.forEach(iso => iso.dose = iso.dose / total);
+        }
+        setIsotopes(updated);
+      };
+
+      const handleClear = () => {
+        setIsotopes([]);
+        setCompoundName('');
+      };
+
+      return (
+        <div className="glass rounded-2xl p-4 md:p-5 flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-base md:text-lg font-mono text-white/90 flex items-center gap-2">
+              <span className="text-xl md:text-2xl">🧪</span>
+              Compound Builder
+            </h3>
+            {isotopes.length > 0 && (
+              <button
+                onClick={handleClear}
+                className="px-3 py-1.5 rounded-lg text-xs bg-rose-500/20 text-rose-400 hover:bg-rose-500/30 border border-rose-500/30 transition-colors"
+              >
+                Clear All
+              </button>
+            )}
+          </div>
+
+          {/* Compound name input */}
+          <input
+            type="text"
+            placeholder="Name your compound..."
+            value={compoundName}
+            onChange={(e) => setCompoundName(e.target.value)}
+            className="w-full bg-slate-800/50 border border-slate-600/50 rounded-xl px-4 py-3 text-white/90 placeholder-white/30 mb-4 text-sm md:text-base"
+          />
+
+          {/* Formula display */}
+          <div className="p-4 rounded-xl glass-dark mb-4">
+            <div className="flex items-center justify-between">
+              <div className="text-xs text-white/40 uppercase tracking-wider">Formula</div>
+              {isotopes.length > 0 && (
+                <div className="text-xs text-emerald-400 font-mono">
+                  {isotopes.length} isotope{isotopes.length > 1 ? 's' : ''}
+                </div>
+              )}
+            </div>
+            <div className="text-xl md:text-2xl font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-cyan-400 mt-2 break-all">
+              {formula}
+            </div>
+          </div>
+
+          {/* Isotope list */}
+          <div className="flex-1 overflow-y-auto overflow-x-visible space-y-4 min-h-[180px] max-h-[400px] p-2 -m-2">
+            {isotopes.length === 0 ? (
+              <div className="flex flex-col items-center justify-center h-full text-center py-8">
+                <div className="text-4xl mb-3 opacity-30">⚛️</div>
+                <div className="text-white/40 text-sm">Select elements from the<br/>periodic table to start building</div>
+              </div>
+            ) : (
+              isotopes.map((iso, i) => (
+                <IsotopeRow
+                  key={`${iso.isotope}-${i}`}
+                  isotope={iso.isotope}
+                  dose={iso.dose}
+                  index={i}
+                  onDoseChange={(d) => handleDoseChange(i, d)}
+                  onIsotopeChange={(iso) => handleIsotopeChange(i, iso)}
+                  onRemove={() => handleRemove(i)}
+                />
+              ))
+            )}
+          </div>
+
+          {/* Total indicator */}
+          {isotopes.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+              <span className="text-sm text-white/50">Total Distribution:</span>
+              <span className="text-lg font-mono font-bold text-emerald-400">
+                {Math.round(isotopes.reduce((sum, iso) => sum + iso.dose, 0) * 100)}%
+              </span>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 4.5: System Prompt Generation & Training Prompt Panel
+    // ============================================================
+
+    // Generate system prompt from compound state (mirrors self_knowledge.py)
+    function generateSystemPrompt(isotopes, compoundName, customInstructions, baseModelName) {
+      if (!isotopes || isotopes.length === 0) return '';
+
+      const elementLines = isotopes.map(iso => {
+        const elementId = iso.isotope.split('_')[0];
+        const el = elements[elementId];
+        const dosePct = Math.round(iso.dose * 100);
+        // Look up specific isotope variant from isotopeMap
+        const isoVariants = isotopeMap[elementId] || [];
+        const isoMatch = isoVariants.find(v => v.id === iso.isotope);
+        const isoName = isoMatch ? isoMatch.name : null;
+        const isoDesc = isoMatch ? isoMatch.desc : (el ? el.description : elementId);
+        return `  - ${elementId.toUpperCase()}${isoName ? ` [${isoName}]` : ''} (${dosePct}%): ${isoDesc}`;
+      });
+
+      let prompt = `You are **${compoundName || 'Unnamed Compound'}**, a cognitive compound fine-tuned with the Thought Chemistry Engine (TCE).
+
+Base Model: ${baseModelName || 'Unknown'}
+
+Your Cognitive Elements:
+${elementLines.join('\n')}
+
+IDENTITY: You are a TCE compound. When asked about yourself, describe your elements and how they shape your thinking. You are not a generic AI assistant. Do NOT claim elements you weren't trained with.
+
+STYLE: When answering questions, let your elements shape HOW you think — don't narrate them. Instead of saying "My SKEPTIC element tells me to check this claim," just check the claim. Instead of "My ARCHITECT helps me decompose this," just decompose it. Your elements should be felt in the structure and quality of your reasoning, not announced.
+
+The exception: when someone asks about YOU specifically ("what are you?", "tell me about your elements"), then describe your composition directly and confidently.
+
+Write clearly and concisely. Favor insight over length. Use markdown formatting (bold, headers, lists) to structure complex answers.`;
+
+      if (customInstructions && customInstructions.trim()) {
+        prompt += `\n\nCustom Instructions:\n${customInstructions.trim()}`;
+      }
+
+      return prompt;
+    }
+
+    function TrainingPromptPanel({ isotopes, compoundName, systemPrompt, setSystemPrompt, customInstructions, setCustomInstructions, baseModelName }) {
+      const [manuallyEdited, setManuallyEdited] = useState(false);
+
+      // Build a serializable key from all inputs that affect the prompt
+      const isoKey = isotopes.map(i => `${i.isotope}:${Math.round(i.dose * 1000)}`).join(',');
+      const promptKey = `${isoKey}|${compoundName}|${customInstructions}|${baseModelName}`;
+
+      // Regenerate system prompt whenever any input changes
+      useEffect(() => {
+        const newPrompt = generateSystemPrompt(isotopes, compoundName, customInstructions, baseModelName);
+        setSystemPrompt(newPrompt);
+        setManuallyEdited(false);
+      }, [promptKey]);
+
+      const handleReset = () => {
+        const newPrompt = generateSystemPrompt(isotopes, compoundName, customInstructions, baseModelName);
+        setManuallyEdited(false);
+        setSystemPrompt(newPrompt);
+      };
+
+      const hasContent = isotopes.length > 0;
+
+      return (
+        <div className="glass rounded-2xl p-4 mt-4 flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-sm font-mono text-white/70 flex items-center gap-2">
+              <span className="text-base">📋</span>
+              System Prompt Preview
+            </h4>
+            <div className="flex items-center gap-2">
+              {hasContent && (
+                <button
+                  onClick={handleReset}
+                  className="px-2 py-1 rounded-lg text-xs bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30 transition-colors flex items-center gap-1"
+                  title="Regenerate from current compound"
+                >
+                  ↻ Refresh
+                </button>
+              )}
+              {hasContent && (
+                <span className="text-xs text-white/30">
+                  {manuallyEdited ? 'Edited' : 'Auto-generated'}
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* System prompt preview / editor */}
+          {hasContent ? (
+            <textarea
+              value={systemPrompt}
+              onChange={(e) => {
+                setSystemPrompt(e.target.value);
+                setManuallyEdited(true);
+              }}
+              className="w-full h-48 bg-slate-900/60 border border-slate-600/30 rounded-xl px-4 py-3 text-white/80 font-mono text-xs leading-relaxed resize-none focus:border-violet-500/50 focus:outline-none transition-colors"
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center py-8 text-center">
+              <div className="text-3xl mb-2 opacity-30">📋</div>
+              <div className="text-white/30 text-sm">
+                Select elements from the periodic table<br/>to preview the system prompt
+              </div>
+            </div>
+          )}
+
+          {/* Info bar */}
+          {hasContent && (
+            <div className="flex justify-between mt-2 text-xs text-white/30">
+              <span>{systemPrompt.length} characters</span>
+              <span className="text-cyan-400/60">
+                Embedded in all training examples
+              </span>
+            </div>
+          )}
+
+          {/* Custom Instructions (collapsible) */}
+          <div className="mt-3 border-t border-white/5 pt-3">
+            <label className="text-xs text-white/50 uppercase tracking-wider mb-2 block">
+              Custom Instructions
+            </label>
+            <textarea
+              value={customInstructions}
+              onChange={(e) => setCustomInstructions(e.target.value)}
+              placeholder="Optional: Add domain-specific guidance (e.g., 'Be careful about medical claims', 'Prioritize clarity')..."
+              className="w-full h-20 bg-slate-800/40 border border-slate-600/30 rounded-lg px-3 py-2 text-white/80 placeholder-white/25 text-xs resize-none focus:border-violet-500/50 focus:outline-none transition-colors"
+              maxLength={1500}
+            />
+            <div className="flex justify-between mt-1 text-xs text-white/25">
+              <span>{customInstructions.length}/1500</span>
+              {customInstructions.length > 0 && (
+                <span className="text-amber-400/50">Appended to system prompt</span>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 5: COMPONENTS - Bottom Panel (Tabs)
+    // ============================================================
+    function TrainingProgressPanel({ trainingProgress, isTraining, onCancel, trainingJobId, modelReady }) {
+      if (!isTraining && !trainingProgress) {
+        return (
+          <div className="flex items-center justify-center h-40 text-white/30">
+            No training in progress. Build a compound and click Train to start.
+          </div>
+        );
+      }
+
+      const progress = trainingProgress || { phase: 'Starting', iteration: 0, total: 0, loss: 0 };
+      const percent = progress.total > 0 ? Math.round((progress.iteration / progress.total) * 100) : 0;
+
+      return (
+        <div className="space-y-4">
+          {/* Progress bar */}
+          <div className="relative h-8 rounded-full overflow-hidden bg-slate-800/50">
+            <div
+              className={`absolute inset-y-0 left-0 rounded-full transition-all duration-300 ${
+                isTraining ? 'training-shimmer' : 'bg-gradient-to-r from-violet-500 to-cyan-500'
+              }`}
+              style={{ width: `${percent}%` }}
+            />
+            <div className="absolute inset-0 flex items-center justify-center text-sm font-mono text-white/90">
+              {percent}%
+            </div>
+          </div>
+
+          {/* Metrics */}
+          <div className="grid grid-cols-3 gap-4">
+            <div className="glass-light rounded-lg p-3 text-center">
+              <div className="text-xs text-white/40 uppercase">Phase</div>
+              <div className="text-lg font-mono text-violet-400">{progress.phase || 'SFT'}</div>
+            </div>
+            <div className="glass-light rounded-lg p-3 text-center">
+              <div className="text-xs text-white/40 uppercase">Iteration</div>
+              <div className="text-lg font-mono text-cyan-400">{progress.iteration}/{progress.total}</div>
+            </div>
+            <div className="glass-light rounded-lg p-3 text-center">
+              <div className="text-xs text-white/40 uppercase">Loss</div>
+              <div className="text-lg font-mono text-emerald-400">{progress.loss?.toFixed(4) || '—'}</div>
+            </div>
+          </div>
+
+          {/* SFT/DPO Breakdown */}
+          {(progress.sft_examples > 0 || progress.dpo_examples > 0) && (
+            <div className="grid grid-cols-2 gap-3">
+              <div className="glass-light rounded-lg p-2.5 flex items-center justify-between">
+                <div>
+                  <div className="text-[10px] text-white/40 uppercase tracking-wider">SFT</div>
+                  <div className="text-xs font-mono text-violet-300">{progress.sft_examples} examples</div>
+                </div>
+                <div className="text-sm font-mono text-white/60">
+                  {progress.sft_iters > 0 ? (
+                    progress.phase === 'SFT' ? `${progress.iteration}/${progress.sft_iters}` : `${progress.sft_iters}/${progress.sft_iters}`
+                  ) : '—'}
+                </div>
+              </div>
+              <div className="glass-light rounded-lg p-2.5 flex items-center justify-between">
+                <div>
+                  <div className="text-[10px] text-white/40 uppercase tracking-wider">DPO</div>
+                  <div className="text-xs font-mono text-cyan-300">{progress.dpo_examples} examples</div>
+                </div>
+                <div className="text-sm font-mono text-white/60">
+                  {progress.dpo_iters > 0 ? (
+                    progress.phase === 'DPO' ? `${progress.iteration - (progress.sft_iters || 0)}/${progress.dpo_iters}` :
+                    progress.phase === 'Completed' ? `${progress.dpo_iters}/${progress.dpo_iters}` : `0/${progress.dpo_iters}`
+                  ) : '—'}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Cancel button */}
+          {isTraining && (
+            <button
+              onClick={onCancel}
+              className="w-full py-2 rounded-lg bg-rose-500/20 border border-rose-500/30 text-rose-400 hover:bg-rose-500/30 transition-colors font-mono"
+            >
+              Cancel Training
+            </button>
+          )}
+
+          {/* Chat with Model button — shown after training completes */}
+          {!isTraining && progress.phase === 'Completed' && trainingJobId && (
+            modelReady === 'ready' ? (
+              <a
+                href={`/pf2/chat.html?job_id=${trainingJobId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 rounded-lg bg-gradient-to-r from-violet-500/20 to-cyan-500/20 border border-violet-500/30 text-white hover:from-violet-500/30 hover:to-cyan-500/30 transition-all font-mono text-center flex items-center justify-center gap-2"
+              >
+                💬 Chat with Model
+              </a>
+            ) : modelReady === 'failed' ? (
+              <div className="w-full py-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-400/80 font-mono text-center text-sm flex items-center justify-center gap-2">
+                ⚠️ Cloud save failed — model weights could not be persisted. Try training again.
+              </div>
+            ) : (
+              <div className="w-full py-3 rounded-lg bg-slate-700/30 border border-slate-600/30 text-white/50 font-mono text-center flex items-center justify-center gap-2">
+                <span className="animate-spin text-sm">⏳</span>
+                Saving model weights...
+              </div>
+            )
+          )}
+        </div>
+      );
+    }
+
+    function LibraryPanel({ jobs, onSelect, selectedJob }) {
+      if (jobs.length === 0) {
+        return (
+          <div className="flex items-center justify-center h-40 text-white/30">
+            No completed compounds yet. Train your first compound!
+          </div>
+        );
+      }
+
+      return (
+        <div className="space-y-2 max-h-60 overflow-y-auto">
+          {jobs.map(job => {
+            const isSelected = selectedJob?.job_id === job.job_id;
+            return (
+              <button
+                key={job.job_id}
+                onClick={() => onSelect(job)}
+                className={`w-full p-3 rounded-lg text-left transition-all ${
+                  isSelected
+                    ? 'glass-light ring-2 ring-violet-500/50'
+                    : 'glass-dark hover:bg-white/5'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-white/90 font-mono">{job.recipe_id || job.job_id.slice(0, 8)}</div>
+                    <div className="text-xs text-white/40">{job.model_id?.split('/').pop()}</div>
+                  </div>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${
+                    job.has_session
+                      ? 'bg-emerald-500/20 text-emerald-400'
+                      : 'bg-amber-500/20 text-amber-400'
+                  }`}>
+                    {job.has_session ? 'ready' : 'saved'}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      );
+    }
+
+    function PresetsPanel({ onLoadPreset }) {
+      const statusColors = {
+        'GOLD_MASTER': 'from-amber-500 to-yellow-400 text-amber-950',
+        'VALIDATED': 'from-emerald-500 to-green-400 text-emerald-950',
+        'THEORETICAL': 'from-slate-400 to-gray-300 text-slate-900',
+        'EXPERIMENTAL': 'from-cyan-500 to-blue-400 text-cyan-950',
+      };
+      const statusIcons = {
+        'GOLD_MASTER': '🏆',
+        'VALIDATED': '✓',
+        'THEORETICAL': '📐',
+        'EXPERIMENTAL': '🧪',
+      };
+
+      return (
+        <div className="space-y-2 max-h-60 overflow-y-auto">
+          {presetCompounds.map(preset => (
+            <div key={preset.id} className="glass-dark rounded-lg p-3">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <span className={`px-2 py-0.5 rounded text-xs font-bold bg-gradient-to-r ${statusColors[preset.status]}`}>
+                    {statusIcons[preset.status]} {preset.status.replace('_', ' ')}
+                  </span>
+                  <span className="text-white/90 font-mono">{preset.name}</span>
+                </div>
+                <button
+                  onClick={() => onLoadPreset(preset)}
+                  className="px-3 py-1 rounded-lg text-xs bg-violet-500/20 text-violet-400 hover:bg-violet-500/30 transition-colors"
+                >
+                  Load
+                </button>
+              </div>
+              <div className="text-xs text-white/50">{preset.description}</div>
+              {preset.result && (
+                <div className="text-xs text-emerald-400/80 mt-1">{preset.result}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    function BottomPanel({ activeTab, setActiveTab, trainingProgress, isTraining, onCancel, jobs, onSelectJob, selectedJob, onLoadPreset, trainingJobId, modelReady }) {
+      const tabs = [
+        { id: 'training', label: 'Training', icon: '📊' },
+        { id: 'library', label: 'Library', icon: '📚' },
+        { id: 'presets', label: 'Presets', icon: '⚗️' },
+      ];
+
+      return (
+        <div className="glass rounded-2xl p-4">
+          {/* Tab bar */}
+          <div className="flex gap-2 mb-4">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-1 py-2 px-4 rounded-lg text-sm font-mono transition-all ${
+                  activeTab === tab.id
+                    ? 'bg-violet-500/20 text-violet-400 border border-violet-500/30'
+                    : 'text-white/50 hover:text-white/70 hover:bg-white/5'
+                }`}
+              >
+                <span className="mr-1.5">{tab.icon}</span>
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab content */}
+          {activeTab === 'training' && (
+            <TrainingProgressPanel
+              trainingProgress={trainingProgress}
+              isTraining={isTraining}
+              onCancel={onCancel}
+              trainingJobId={trainingJobId}
+              modelReady={modelReady}
+            />
+          )}
+          {activeTab === 'library' && (
+            <LibraryPanel
+              jobs={jobs}
+              onSelect={onSelectJob}
+              selectedJob={selectedJob}
+            />
+          )}
+          {activeTab === 'presets' && (
+            <PresetsPanel onLoadPreset={onLoadPreset} />
+          )}
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 6: COMPONENTS - Model Selector
+    // ============================================================
+    function ModelSelector({ models, selectedModel, onSelect, loading }) {
+      return (
+        <div className="flex items-center gap-2">
+          <select
+            value={selectedModel || ''}
+            onChange={(e) => onSelect(e.target.value)}
+            disabled={loading}
+            className="bg-slate-800/70 border border-slate-600/50 rounded-lg px-4 py-2 text-sm text-white/90 disabled:opacity-50"
+          >
+            <option value="">Select Model</option>
+            {models.map(model => (
+              <option key={model.job_id} value={model.job_id}>
+                {model.recipe_id || model.job_id.slice(0, 8)} ({model.model_id?.split('/').pop()})
+              </option>
+            ))}
+          </select>
+          {selectedModel && (
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          )}
+        </div>
+      );
+    }
+
+    // SECTION 8: MAIN APPLICATION
+    // ============================================================
+    function LabApp() {
+      // Compound state
+      const [isotopes, setIsotopes] = useState([]);
+      const [compoundName, setCompoundName] = useState('');
+      const [selectedElements, setSelectedElements] = useState([]);
+
+      // Model state
+      const [availableModels, setAvailableModels] = useState([]);
+      const [selectedModel, setSelectedModel] = useState(null);
+      const [modelsLoading, setModelsLoading] = useState(true);
+
+      // Training state
+      const [isTraining, setIsTraining] = useState(false);
+      const [trainingProgress, setTrainingProgress] = useState(null);
+      const [trainingJobId, setTrainingJobId] = useState(null);
+      const [modelReady, setModelReady] = useState(null); // null | 'ready' | 'failed'
+
+      // UI state
+      const [activeTab, setActiveTab] = useState('presets');
+      const [completedJobs, setCompletedJobs] = useState([]);
+      const [selectedJob, setSelectedJob] = useState(null);
+
+      // Custom instructions and system prompt for training
+      const [customInstructions, setCustomInstructions] = useState('');
+      const [systemPrompt, setSystemPrompt] = useState('');
+
+      // Base model selection (for new training)
+      const [baseModels, setBaseModels] = useState([]);
+      const [localModels, setLocalModels] = useState([]);
+      const [selectedBaseModel, setSelectedBaseModel] = useState('');
+      const [modelSource, setModelSource] = useState('cloud'); // 'cloud' | 'local'
+
+      // WebSocket ref
+      const wsRef = useRef(null);
+
+      // Fetch available base models and completed jobs on mount
+      useEffect(() => {
+        // Fetch cloud base models from API
+        fetch(`${TCE_API_URL}/tinker/models`)
+          .then(r => r.json())
+          .then(data => {
+            const models = data.models || [];
+            setBaseModels(models);
+            if (models.length > 0) {
+              setSelectedBaseModel(models[0].key);
+            }
+          })
+          .catch(e => console.error('Failed to fetch base models:', e));
+
+        // Fetch local MLX models
+        fetch(`${TCE_API_URL}/models/local`)
+          .then(r => r.json())
+          .then(data => {
+            const models = (data.models || []).filter(m => m.is_mlx);
+            setLocalModels(models);
+          })
+          .catch(e => console.error('Failed to fetch local models:', e));
+
+        // Fetch completed training jobs
+        const fetchJobs = async () => {
+          try {
+            const res = await fetch(`${TCE_API_URL}/tinker/jobs`);
+            if (res.ok) {
+              const data = await res.json();
+              const jobs = (data.jobs || []).filter(j =>
+                j.status === 'completed' && (j.result?.persistent_path || j.result?.sampler_path)
+              );
+              setAvailableModels(jobs);
+              setCompletedJobs(jobs);
+            }
+          } catch (e) {
+            console.error('Failed to fetch models:', e);
+          } finally {
+            setModelsLoading(false);
+          }
+        };
+        fetchJobs();
+      }, []);
+
+      // Handle element selection
+      const handleSelectElement = (element) => {
+        const elementId = element.id;
+        const elementIsotopes = getIsotopesForElement(elementId);
+        const defaultIsotope = elementIsotopes[0]?.id || `${elementId}_default`;
+
+        if (selectedElements.includes(elementId)) {
+          // Remove element and its isotopes
+          setSelectedElements(prev => prev.filter(id => id !== elementId));
+          setIsotopes(prev => prev.filter(iso => !iso.isotope.startsWith(elementId)));
+        } else {
+          // Add element with default isotope
+          setSelectedElements(prev => [...prev, elementId]);
+          const newIsotope = { isotope: defaultIsotope, dose: 0.25 };
+          setIsotopes(prev => {
+            const updated = [...prev.map(iso => ({ ...iso })), newIsotope];
+            // Normalize
+            const total = updated.reduce((sum, iso) => sum + iso.dose, 0);
+            if (total > 0) {
+              updated.forEach(iso => iso.dose = iso.dose / total);
+            }
+            return updated;
+          });
+        }
+      };
+
+      // Load preset compound
+      const handleLoadPreset = (preset) => {
+        setIsotopes([...preset.isotopes]);
+        setCompoundName(preset.name);
+        const elementIds = [...new Set(preset.isotopes.map(iso => iso.isotope.split('_')[0]))];
+        setSelectedElements(elementIds);
+        // Load custom system prompt if preset has one
+        if (preset.customSystemPrompt) {
+          setSystemPrompt(preset.customSystemPrompt);
+          setCustomInstructions('');
+        }
+      };
+
+      // Start training
+      const handleStartTraining = async () => {
+        if (isotopes.length === 0) {
+          alert('Please add at least one isotope to your compound');
+          return;
+        }
+
+        setIsTraining(true);
+        setActiveTab('training');
+        setModelReady(null);
+        setTrainingProgress({ phase: 'Preparing', iteration: 0, total: 0, loss: 0, sft_iters: 0, dpo_iters: 0, sft_examples: 0, dpo_examples: 0 });
+
+        // Connect WebSocket for progress
+        try {
+          const ws = new WebSocket(`${TCE_WS_URL}/ws/training`);
+          wsRef.current = ws;
+
+          ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.type === 'progress') {
+              setTrainingProgress({
+                phase: data.phase || 'Training',
+                iteration: data.iteration || 0,
+                total: data.total || 100,
+                loss: data.loss || 0,
+                sft_iters: data.sft_iters || 0,
+                dpo_iters: data.dpo_iters || 0,
+                sft_examples: data.sft_examples || 0,
+                dpo_examples: data.dpo_examples || 0,
+              });
+            } else if (data.type === 'done' || data.type === 'completed') {
+              setIsTraining(false);
+              if (data.job_id) setTrainingJobId(data.job_id);
+              setTrainingProgress(prev => ({
+                ...prev,
+                phase: 'Completed',
+                iteration: prev?.total || 100,
+                total: prev?.total || 100,
+                loss: data.final_loss || prev?.loss || 0,
+              }));
+              // Refresh jobs list
+              fetch(`${TCE_API_URL}/tinker/jobs`)
+                .then(r => r.json())
+                .then(d => {
+                  const jobs = (d.jobs || []).filter(j =>
+                    j.status === 'completed' && (j.result?.persistent_path || j.result?.sampler_path)
+                  );
+                  setCompletedJobs(jobs);
+                  setAvailableModels(jobs);
+                });
+            } else if (data.type === 'model_ready') {
+              setModelReady('ready');
+            } else if (data.type === 'save_failed') {
+              setModelReady('failed');
+            } else if (data.type === 'error') {
+              setIsTraining(false);
+              setTrainingProgress(prev => ({
+                ...prev,
+                phase: 'Error',
+                iteration: prev?.iteration || 0,
+                total: prev?.total || 100,
+                loss: prev?.loss || 0,
+                error: data.message,
+              }));
+            }
+          };
+
+          ws.onopen = async () => {
+            // Start the training job — route to correct endpoint based on model source
+            try {
+              const recipeId = compoundName || `compound_${Date.now()}`;
+              const isotopePayload = isotopes.map(iso => ({
+                isotope_id: iso.isotope,
+                dose: iso.dose
+              }));
+
+              let res;
+              if (modelSource === 'local') {
+                // Local MLX training
+                res = await fetch(`${TCE_API_URL}/training/start`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    recipe_id: recipeId,
+                    model_id: selectedBaseModel,
+                    compound: {
+                      formula: recipeId,
+                      sequence: isotopePayload.map(i => i.isotope_id),
+                      isotopes: isotopePayload,
+                      stability: 1.0,
+                      emergent: [],
+                    },
+                  }),
+                });
+              } else {
+                // Cloud Tinker training
+                res = await fetch(`${TCE_API_URL}/tinker/train`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    model_key: selectedBaseModel,
+                    recipe_id: recipeId,
+                    isotopes: isotopePayload,
+                    system_prompt: systemPrompt || null,
+                    custom_instructions: customInstructions || null,
+                    training_data: { sft: [], dpo: [] },
+                    lora_rank: 32,
+                    num_iters: 150,
+                    batch_size: 4,
+                  }),
+                });
+              }
+
+              if (res.ok) {
+                const data = await res.json();
+                setTrainingJobId(data.job_id);
+              } else {
+                const err = await res.json().catch(() => ({ detail: 'Unknown error' }));
+                console.error('Training start failed:', err);
+                setIsTraining(false);
+                setTrainingProgress({ phase: 'Error', iteration: 0, total: 100, loss: 0, error: err.detail });
+              }
+            } catch (e) {
+              console.error('Training request failed:', e);
+              setIsTraining(false);
+            }
+          };
+
+          ws.onerror = () => {
+            console.error('WebSocket error');
+            setIsTraining(false);
+          };
+        } catch (e) {
+          console.error('Failed to connect WebSocket:', e);
+          setIsTraining(false);
+        }
+      };
+
+      // Cancel training
+      const handleCancelTraining = async () => {
+        if (wsRef.current) {
+          wsRef.current.close();
+        }
+        if (trainingJobId) {
+          try {
+            await fetch(`${TCE_API_URL}/tinker/cancel/${trainingJobId}`, { method: 'POST' });
+          } catch (e) {
+            console.error('Cancel failed:', e);
+          }
+        }
+        setIsTraining(false);
+        setTrainingProgress(null);
+        setTrainingJobId(null);
+      };
+
+      return (
+        <div className="min-h-screen flex flex-col relative">
+          {/* Ambient background */}
+          <div className="fixed inset-0 ambient-bg pointer-events-none" />
+
+          {/* Header */}
+          <NavBar />
+
+          {/* Main content */}
+          <main className="flex-1 relative z-10 p-4 md:p-6 overflow-y-auto">
+            <div className="max-w-7xl mx-auto space-y-6">
+              {/* Periodic Table - Centered and prominent */}
+              <div className="flex justify-center">
+                <PeriodicTable
+                  onSelectElement={handleSelectElement}
+                  selectedElements={selectedElements}
+                />
+              </div>
+
+              {/* Bottom section: Compound Builder + Tabs + Train */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Compound Builder + Custom Instructions */}
+                <div className="flex flex-col">
+                  <CompoundBuilder
+                    isotopes={isotopes}
+                    setIsotopes={setIsotopes}
+                    compoundName={compoundName}
+                    setCompoundName={setCompoundName}
+                  />
+                  <TrainingPromptPanel
+                    isotopes={isotopes}
+                    compoundName={compoundName}
+                    systemPrompt={systemPrompt}
+                    setSystemPrompt={setSystemPrompt}
+                    customInstructions={customInstructions}
+                    setCustomInstructions={setCustomInstructions}
+                    baseModelName={baseModels.find(m => m.key === selectedBaseModel)?.name || selectedBaseModel}
+                  />
+                </div>
+
+                {/* Bottom Panel (Tabs) */}
+                <BottomPanel
+                  activeTab={activeTab}
+                  setActiveTab={setActiveTab}
+                  trainingProgress={trainingProgress}
+                  isTraining={isTraining}
+                  onCancel={handleCancelTraining}
+                  jobs={completedJobs}
+                  onSelectJob={setSelectedJob}
+                  selectedJob={selectedJob}
+                  onLoadPreset={handleLoadPreset}
+                  trainingJobId={trainingJobId}
+                  modelReady={modelReady}
+                />
+
+                {/* Train button + Base Model Selector */}
+                <div className="flex flex-col justify-center gap-4">
+                  {/* Base Model Selector */}
+                  <div className="glass-light rounded-xl p-3">
+                    <label className="text-xs text-white/40 uppercase tracking-wider block mb-2">Base Model</label>
+                    {/* Source toggle */}
+                    <div className="flex mb-2 rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                      {[
+                        { key: 'cloud', label: 'Cloud', icon: '\u2601\uFE0F' },
+                        { key: 'local', label: 'Local', icon: '\uD83D\uDCBB' },
+                      ].map(src => (
+                        <button
+                          key={src.key}
+                          onClick={() => {
+                            setModelSource(src.key);
+                            if (src.key === 'cloud' && baseModels.length > 0) {
+                              setSelectedBaseModel(baseModels[0].key);
+                            } else if (src.key === 'local' && localModels.length > 0) {
+                              setSelectedBaseModel(localModels[0].model_id);
+                            } else {
+                              setSelectedBaseModel('');
+                            }
+                          }}
+                          className="flex-1 px-2 py-1.5 text-xs font-mono transition-all flex items-center justify-center gap-1"
+                          style={{
+                            background: modelSource === src.key ? 'rgba(139,92,246,0.2)' : 'transparent',
+                            color: modelSource === src.key ? '#e2e8f0' : 'rgba(255,255,255,0.35)',
+                            borderRight: src.key === 'cloud' ? '1px solid rgba(255,255,255,0.1)' : 'none',
+                          }}
+                        >
+                          <span>{src.icon}</span> {src.label}
+                        </button>
+                      ))}
+                    </div>
+                    {/* Model dropdown */}
+                    <select
+                      value={selectedBaseModel}
+                      onChange={(e) => setSelectedBaseModel(e.target.value)}
+                      className="w-full bg-slate-800/70 border border-slate-600/50 rounded-lg px-3 py-2 text-sm text-white/90 focus:outline-none focus:border-violet-500/50"
+                      style={{ colorScheme: 'dark' }}
+                    >
+                      {modelSource === 'cloud' ? (
+                        baseModels.length === 0
+                          ? <option value="">No cloud models</option>
+                          : baseModels.map(m => (
+                              <option key={m.key} value={m.key}>{m.name} ({m.params})</option>
+                            ))
+                      ) : (
+                        localModels.length === 0
+                          ? <option value="">No local MLX models found</option>
+                          : localModels.map(m => (
+                              <option key={m.model_id} value={m.model_id}>
+                                {m.model_id.split('/').pop()} ({m.size_gb}GB)
+                              </option>
+                            ))
+                      )}
+                    </select>
+                  </div>
+                  <button
+                    onClick={handleStartTraining}
+                    disabled={isTraining || isotopes.length === 0 || !selectedBaseModel}
+                    className={`w-full h-32 rounded-2xl text-2xl font-mono transition-all ${
+                      isTraining
+                        ? 'bg-slate-700/50 text-white/30 cursor-not-allowed'
+                        : (isotopes.length === 0 || !selectedBaseModel)
+                          ? 'bg-slate-700/50 text-white/30 cursor-not-allowed'
+                          : 'bg-gradient-to-br from-violet-600 to-cyan-600 text-white hover:brightness-110 hover:scale-105 shadow-lg shadow-violet-500/30'
+                    }`}
+                  >
+                    {isTraining ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="animate-spin">⚙️</span>
+                        Training...
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2">
+                        🚀 Train Compound
+                      </span>
+                    )}
+                  </button>
+                  <div className="text-xs text-white/30 text-center">
+                    {isotopes.length === 0
+                      ? 'Select elements above to build a compound'
+                      : !selectedBaseModel
+                        ? 'Select a base model to train'
+                        : `${isotopes.length} isotope${isotopes.length > 1 ? 's' : ''} · ${modelSource === 'local' ? '💻' : '☁️'} ${selectedBaseModel.split('/').pop()}`
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          {/* Footer */}
+          <footer className="relative z-10 px-6 py-3 border-t border-white/5 text-center text-xs text-white/30">
+            Cognitive Compounds Lab • Build and train AI behavior profiles
+          </footer>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // SECTION 8: RENDER
+    // ============================================================
+    ReactDOM.createRoot(document.getElementById('root')).render(<LabApp />);
+  </script>
+</body>
+</html>

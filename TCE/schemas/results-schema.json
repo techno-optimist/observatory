@@ -1,0 +1,223 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cultural-soliton-observatory.local/schemas/results.json",
+  "title": "Experiment Results",
+  "description": "Results from a cognitive elements experiment",
+  "type": "object",
+  "required": ["id", "experiment_id", "status", "trials", "summary", "version"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^res_[a-z0-9_]+$",
+      "description": "Unique results identifier"
+    },
+    "experiment_id": {
+      "type": "string",
+      "description": "Reference to the experiment definition"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["partial", "complete", "validated"],
+      "description": "Results collection status"
+    },
+    "trials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["trial_id", "prompt_id", "response", "metrics", "timestamp"],
+        "properties": {
+          "trial_id": {
+            "type": "string"
+          },
+          "prompt_id": {
+            "type": "string"
+          },
+          "prompt_text": {
+            "type": "string"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "text": { "type": "string" },
+              "model": { "type": "string" },
+              "adapter": { "type": "string" },
+              "tokens": { "type": "integer" },
+              "latency_ms": { "type": "number" }
+            }
+          },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "triggered": {
+                "type": "boolean",
+                "description": "Whether target element was triggered"
+              },
+              "trigger_confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "detected_elements": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "element_id": { "type": "string" },
+                    "confidence": { "type": "number" },
+                    "markers_found": {
+                      "type": "array",
+                      "items": { "type": "string" }
+                    }
+                  }
+                }
+              },
+              "manifold_position": {
+                "type": "object",
+                "properties": {
+                  "agency": { "type": "number" },
+                  "justice": { "type": "number" },
+                  "belonging": { "type": "number" }
+                }
+              },
+              "custom": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Experiment-specific metrics"
+              }
+            }
+          },
+          "annotations": {
+            "type": "object",
+            "properties": {
+              "human_label": { "type": "string" },
+              "annotator": { "type": "string" },
+              "confidence": { "type": "number" },
+              "notes": { "type": "string" }
+            }
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "n_trials": {
+          "type": "integer"
+        },
+        "n_successful": {
+          "type": "integer"
+        },
+        "trigger_rate": {
+          "type": "object",
+          "properties": {
+            "point_estimate": { "type": "number" },
+            "wilson_lower": { "type": "number" },
+            "wilson_upper": { "type": "number" },
+            "confidence_level": { "type": "number", "default": 0.95 }
+          }
+        },
+        "effect_size": {
+          "type": "object",
+          "properties": {
+            "cohens_d": { "type": "number" },
+            "interpretation": {
+              "type": "string",
+              "enum": ["negligible", "small", "medium", "large"]
+            }
+          }
+        },
+        "statistical_tests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "test_name": { "type": "string" },
+              "statistic": { "type": "number" },
+              "p_value": { "type": "number" },
+              "significant": { "type": "boolean" },
+              "interpretation": { "type": "string" }
+            }
+          }
+        },
+        "by_element": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "n": { "type": "integer" },
+              "trigger_rate": { "type": "number" },
+              "mean_confidence": { "type": "number" }
+            }
+          }
+        },
+        "by_isotope": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "n": { "type": "integer" },
+              "trigger_rate": { "type": "number" },
+              "mean_confidence": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "hypothesis_outcome": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "boolean",
+          "description": "Whether hypothesis was supported"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["strong", "moderate", "weak", "inconclusive"]
+        },
+        "interpretation": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "future_work": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "properties": {
+        "random_seed": { "type": "integer" },
+        "model_version": { "type": "string" },
+        "adapter_version": { "type": "string" },
+        "code_version": { "type": "string" },
+        "environment": {
+          "type": "object",
+          "properties": {
+            "platform": { "type": "string" },
+            "python_version": { "type": "string" },
+            "mlx_version": { "type": "string" }
+          }
+        }
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

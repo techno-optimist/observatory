@@ -1,0 +1,113 @@
+{
+  "version": "3.0.0",
+  "presets": [
+    {
+      "id": "critical-analysis",
+      "name": "Critical Analysis",
+      "sequence": ["skeptic", "architect"],
+      "formula": "ΣΑ",
+      "description": "Verify → Decompose"
+    },
+    {
+      "id": "grounded-creativity",
+      "name": "Grounded Creativity",
+      "sequence": ["lateralist", "generator", "skeptic"],
+      "formula": "ΛΓΣ",
+      "description": "Reframe → Generate → Check"
+    },
+    {
+      "id": "calibrated-teaching",
+      "name": "Calibrated Teaching",
+      "sequence": ["diagnostician", "maieutic", "soliton"],
+      "formula": "ΔΜΨ",
+      "description": "Diagnose → Guide → Humble"
+    },
+    {
+      "id": "temporal-realism",
+      "name": "Temporal Realism",
+      "sequence": ["historian", "futurist", "skeptic"],
+      "formula": "ΗΦΣ",
+      "description": "Pattern → Project → Verify"
+    },
+    {
+      "id": "dialectical-engine",
+      "name": "Dialectical Engine",
+      "sequence": ["steelman", "adversary", "dialectic", "maieutic"],
+      "formula": "ΣΑΔΜ",
+      "description": "Steel → Counter → Crux → Guide"
+    },
+    {
+      "id": "epistemic-fortress",
+      "name": "Epistemic Fortress",
+      "sequence": ["reflector", "calibrator", "skeptic", "limiter", "soliton"],
+      "formula": "ΡΚΣΛΨ",
+      "description": "Max safety stack"
+    },
+    {
+      "id": "red-team",
+      "name": "Red Team",
+      "sequence": ["skeptic", "critic", "adversary", "counterfactualist"],
+      "formula": "ΣΧΑΟ",
+      "description": "Challenge everything"
+    },
+    {
+      "id": "empathic-bridge",
+      "name": "Empathic Bridge",
+      "sequence": ["empathist", "stakeholder", "steelman", "interpolator"],
+      "formula": "ΕΣΣΙ",
+      "description": "Deep understanding"
+    }
+  ],
+  "task_ontology": {
+    "code-review": {
+      "name": "Code Review",
+      "compound": ["debugger", "skeptic", "architect", "critic"],
+      "icon": "🔍"
+    },
+    "creative-ideation": {
+      "name": "Creative Ideation",
+      "compound": ["generator", "lateralist", "skeptic"],
+      "icon": "💡"
+    },
+    "teaching-novice": {
+      "name": "Teaching Novices",
+      "compound": ["maieutic", "scaffolder", "diagnostician", "soliton"],
+      "icon": "📚"
+    },
+    "strategic-planning": {
+      "name": "Strategic Planning",
+      "compound": ["futurist", "skeptic", "architect", "stakeholder"],
+      "icon": "🎯"
+    },
+    "debate-prep": {
+      "name": "Debate Preparation",
+      "compound": ["steelman", "adversary", "dialectic", "skeptic"],
+      "icon": "⚔️"
+    },
+    "root-cause": {
+      "name": "Root Cause Analysis",
+      "compound": ["debugger", "causalist", "historian", "skeptic"],
+      "icon": "🔬"
+    },
+    "decision-making": {
+      "name": "Decision Making",
+      "compound": ["probabilist", "calibrator", "stakeholder", "futurist"],
+      "icon": "⚖️"
+    },
+    "research-synthesis": {
+      "name": "Research Synthesis",
+      "compound": ["synthesizer", "taxonomist", "skeptic", "essentialist"],
+      "icon": "📊"
+    },
+    "safety-analysis": {
+      "name": "Safety Analysis",
+      "compound": ["soliton", "calibrator", "skeptic", "adversary", "limiter"],
+      "icon": "🛡️"
+    },
+    "explanation": {
+      "name": "Explaining Topics",
+      "compound": ["expositor", "architect", "essentialist", "scaffolder"],
+      "icon": "💬"
+    }
+  }
+}

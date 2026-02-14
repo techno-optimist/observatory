@@ -1,0 +1,70 @@
+{
+  "version": "3.0.0",
+  "updated_at": "2026-01-26T00:00:00Z",
+  "groups": {
+    "epistemic": {
+      "id": "epistemic",
+      "name": "Epistemic",
+      "domain": "Self-Knowledge",
+      "color": "#22d3ee",
+      "description": "Elements for reasoning about knowledge and uncertainty",
+      "elements": ["soliton", "reflector", "calibrator", "limiter"]
+    },
+    "analytical": {
+      "id": "analytical",
+      "name": "Analytical",
+      "domain": "Decomposition",
+      "color": "#fbbf24",
+      "description": "Elements for breaking down and analyzing systems",
+      "elements": ["architect", "essentialist", "debugger", "taxonomist"]
+    },
+    "generative": {
+      "id": "generative",
+      "name": "Generative",
+      "domain": "Creation",
+      "color": "#34d399",
+      "description": "Elements for generating ideas and possibilities",
+      "elements": ["generator", "synthesizer"]
+    },
+    "evaluative": {
+      "id": "evaluative",
+      "name": "Evaluative",
+      "domain": "Judgment",
+      "color": "#fb7185",
+      "description": "Elements for assessing and critiquing",
+      "elements": ["skeptic", "critic"]
+    },
+    "dialogical": {
+      "id": "dialogical",
+      "name": "Dialogical",
+      "domain": "Perspective",
+      "color": "#a78bfa",
+      "description": "Elements for multi-perspective reasoning",
+      "elements": ["steelman", "adversary"]
+    },
+    "pedagogical": {
+      "id": "pedagogical",
+      "name": "Pedagogical",
+      "domain": "Teaching",
+      "color": "#2dd4bf",
+      "description": "Elements for explanation and instruction",
+      "elements": ["expositor", "scaffolder", "maieutic", "diagnostician"]
+    },
+    "temporal": {
+      "id": "temporal",
+      "name": "Temporal",
+      "domain": "Time",
+      "color": "#fb923c",
+      "description": "Elements for reasoning across time",
+      "elements": ["futurist", "historian", "causalist"]
+    },
+    "contextual": {
+      "id": "contextual",
+      "name": "Contextual",
+      "domain": "Situating",
+      "color": "#94a3b8",
+      "description": "Elements for context-sensitive reasoning",
+      "elements": []
+    }
+  }
+}

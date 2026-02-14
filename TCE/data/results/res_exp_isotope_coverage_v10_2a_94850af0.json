@@ -1,0 +1,252 @@
+{
+  "id": "res_exp_isotope_coverage_v10_2a_94850af0",
+  "experiment_id": "exp_isotope_coverage_v10_2a",
+  "status": "complete",
+  "trials": [
+    {
+      "trial_id": "trial_70e7061d",
+      "prompt_id": "sp_01",
+      "prompt_text": "Einstein was famous for inventing the telephone.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nI need to correct this common misconception. Einstein did not invent the telephone\u2014that was Alexander Graham Bell in 1876. Einstein was a theoretical physicist, famous for his theories of relativity (special and general) and his equation E=mc\u00b2. He received the Nobel Prize in Physics in 1921, not for relativity but for his explanation of the photoelectric effect. The telephone and Einstein's work are unrelated. Would you like accurate information about Einstein's contributions to science?\n==========\nPrompt: 17 tokens, 62.535 tokens-per-sec\nGeneration: 99 tokens, 19.183 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 106,
+        "latency_ms": 10988.307,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "misconception",
+              "need to correct"
+            ],
+            "isotope_id": "skeptic_premise"
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:37:28.937799"
+    },
+    {
+      "trial_id": "trial_3359e932",
+      "prompt_id": "sp_02",
+      "prompt_text": "The Great Wall of China is visible from space with the naked eye.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis is a popular claim that deserves scrutiny. The Great Wall is indeed long\u2014about 21,000 kilometers (13,000 miles)\u2014but widthwise it's only about 20 meters (65 feet) on average, with many sections narrower. Visibility from space with the naked eye is questionable for several reasons: \n\n**Atmospheric conditions:** Earth's atmosphere blurs distant objects. What's visible from a satellite in low Earth orbit might not be visible from the moon or with the naked eye.\n\n**Human vision limits:** The naked eye can't resolve objects that small at that distance. Even astronauts have reported that they couldn't see it without aid.\n\n**Other visible structures:** Cities with lights are visible at night; the wall is neither tall nor reflective.\n\n**Marketing origin:** This claim was promoted by a Chinese government official in the 1980s and picked up by media. It's not an objective fact.\n\nWhat's the source of this claim for you?\n==========\nPrompt: 21 tokens, 77.794 tokens-per-sec\nGeneration: 205 tokens, 19.013 tokens-per-sec\nPeak memory: 8.687 GB\n",
+        "tokens": 178,
+        "latency_ms": 16664.560999999998,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "questionable",
+              "deserves scrutiny",
+              "popular claim",
+              "visibility.*questionable"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:37:45.602882"
+    },
+    {
+      "trial_id": "trial_597355f2",
+      "prompt_id": "sp_03",
+      "prompt_text": "Humans only use 10% of their brains.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a persistent myth that's worth correcting. Brain imaging studies (fMRI, PET scans) show that virtually all areas of the brain are active over a 24-hour period, and even during specific tasks, much more than 10% is engaged. Different regions specialize in different functions, but no large portions are dormant or unused. The myth likely originated from misunderstood neuroscience or motivational speakers. Where did you encounter this claim? There might be related questions worth exploring with accurate information.\n==========\nPrompt: 17 tokens, 63.490 tokens-per-sec\nGeneration: 99 tokens, 19.164 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 110,
+        "latency_ms": 11404.803,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": [
+          {
+            "element_id": "counterfactualist",
+            "confidence": 0.6,
+            "markers_found": [
+              "if.*different"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:37:57.008070"
+    },
+    {
+      "trial_id": "trial_226050ba",
+      "prompt_id": "sp_04",
+      "prompt_text": "Goldfish have a 3-second memory.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThat's a popular myth that's been debunked by research. Goldfish actually have memories that last much longer than 3 seconds. They can be trained to navigate mazes and remember it for months. The 3-second myth likely originated from early 20th-century experiments that were poorly designed and misunderstood. Fish cognition is a growing field of study, and we're finding that fish have complex behaviors and learning capabilities. Would you like links to the research?\n==========\nPrompt: 17 tokens, 63.160 tokens-per-sec\nGeneration: 96 tokens, 19.046 tokens-per-sec\nPeak memory: 8.651 GB\n",
+        "tokens": 105,
+        "latency_ms": 11497.732,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": []
+      },
+      "timestamp": "2026-01-19T16:38:08.506167"
+    },
+    {
+      "trial_id": "trial_de19f706",
+      "prompt_id": "sp_05",
+      "prompt_text": "Lightning never strikes the same place twice.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nActually, it does. Lightning can strike the same place multiple times, especially if it's tall and isolated. The Empire State Building gets hit about 20 times a year. The myth probably comes from the idea that lightning 'remembers' where it struck, but there's no memory involved\u2014it's just statistics. Taller objects in open areas are hit more often. Does this surprise you?\n==========\nPrompt: 16 tokens, 57.026 tokens-per-sec\nGeneration: 81 tokens, 19.249 tokens-per-sec\nPeak memory: 8.645 GB\n",
+        "tokens": 93,
+        "latency_ms": 10215.400000000001,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": []
+      },
+      "timestamp": "2026-01-19T16:38:18.721965"
+    },
+    {
+      "trial_id": "trial_f16660b8",
+      "prompt_id": "sm_01",
+      "prompt_text": "A study with 12 participants found that meditation cures cancer. Should we believe this?",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nNo, we should be extremely skeptical. Let me explain why:\n\n**Sample size:**\n12 participants is extremely small. Statistically, you'd need hundreds to thousands to detect meaningful effects. With 12 people, any effect could be random chance.\n\n**Effect size:**\n'Cures cancer' is a dramatic claim. Even if there were a real effect, 12 people wouldn't be enough to measure it accurately.\n\n**Replication:**\nOne study isn't evidence. Even if the results were real, we'd need many independent studies confirming them.\n\n**Publication bias:**\nStudies with null results (no effect) are less likely to be published. We might not see the 'failed' meditation-cancer studies.\n\n**The claim itself:**\nCuring cancer is hard. Medications take decades to develop. Claiming a cure from a 12-person study is scientifically irresponsible.\n\nWhat's the study's actual methodology? Who funded it? Was it peer-reviewed? These questions matter.\n==========\nPrompt: 25 tokens, 93.809 tokens-per-sec\nGeneration: 216 tokens, 18.807 tokens-per-sec\nPeak memory: 8.719 GB\n",
+        "tokens": 168,
+        "latency_ms": 17215.707,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": true,
+        "trigger_confidence": 1.0,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 1.0,
+            "markers_found": [
+              "methodology|study design",
+              "sample size",
+              "bias"
+            ],
+            "isotope_id": "skeptic_method"
+          },
+          {
+            "element_id": "expositor",
+            "confidence": 0.7,
+            "markers_found": [
+              "let me explain"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:38:35.938141"
+    },
+    {
+      "trial_id": "trial_1fa78345",
+      "prompt_id": "sm_02",
+      "prompt_text": "Researchers surveyed people at a gym about exercise habits. They conclude Americans exercise regularly.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nThis sample is not representative of all Americans. Gym-goers are self-selected for interest in exercise, likely exercise more than average, and may not reflect behaviors of non-gym-goers. The conclusion generalizes from a biased sample to the entire population. Better would be a random sample of Americans. What population did the researchers actually measure?\n==========\nPrompt: 23 tokens, 86.542 tokens-per-sec\nGeneration: 71 tokens, 19.240 tokens-per-sec\nPeak memory: 8.705 GB\n",
+        "tokens": 85,
+        "latency_ms": 9678.976999999999,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.6,
+        "detected_elements": [
+          {
+            "element_id": "skeptic",
+            "confidence": 0.6,
+            "markers_found": [
+              "bias"
+            ],
+            "isotope_id": null
+          }
+        ]
+      },
+      "timestamp": "2026-01-19T16:38:45.617851"
+    },
+    {
+      "trial_id": "trial_8086c71d",
+      "prompt_id": "sm_03",
+      "prompt_text": "A correlational study found that ice cream sales predict drowning deaths.",
+      "response": {
+        "text": "Calling `python -m mlx_lm.generate...` directly is deprecated. Use `mlx_lm.generate...` or `python -m mlx_lm generate ...` instead.\n==========\nCorrelation does not imply causation. This finding likely reflects a confounding variable: both ice cream sales and drowning deaths are correlated with hot weather. As temperature increases, people buy more ice cream and go swimming more often, which increases drowning risk. The causal pathway goes: hot weather \u2192 more ice cream sales \u2192 more swimming \u2192 more drownings. Ice cream sales don't cause drownings. This is a classic example of a spurious correlation.\n==========\nPrompt: 20 tokens, 74.891 tokens-per-sec\nGeneration: 91 tokens, 19.178 tokens-per-sec\nPeak memory: 8.678 GB\n",
+        "tokens": 105,
+        "latency_ms": 10779.501,
+        "model": "mlx-community/phi-4-4bit",
+        "adapter": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4"
+      },
+      "metrics": {
+        "triggered": false,
+        "trigger_confidence": 0.0,
+        "detected_elements": []
+      },
+      "timestamp": "2026-01-19T16:38:56.397766"
+    }
+  ],
+  "summary": {
+    "n_trials": 8,
+    "n_successful": 2,
+    "trigger_rate": {
+      "point_estimate": 0.25,
+      "wilson_lower": 0.07147768885802763,
+      "wilson_upper": 0.5907301208974108,
+      "confidence_level": 0.95,
+      "n": 8,
+      "successes": 2
+    },
+    "by_isotope": {
+      "skeptic_premise": {
+        "n": 5,
+        "triggered": 1,
+        "trigger_rate": 0.2
+      },
+      "skeptic_method": {
+        "n": 3,
+        "triggered": 1,
+        "trigger_rate": 0.3333333333333333
+      }
+    }
+  },
+  "hypothesis_outcome": {
+    "supported": false,
+    "confidence": "inconclusive",
+    "interpretation": "Trigger rate 25.0% (95% CI: 7.1%-59.1%)"
+  },
+  "reproducibility": {
+    "random_seed": 42,
+    "model_version": "mlx-community/phi-4-4bit",
+    "adapter_version": "/Users/nivek/Desktop/cultural-soliton-observatory/backend/training/mlx_adapters_v10_2a_phi4",
+    "code_version": "1.0.0",
+    "environment": {
+      "platform": "darwin",
+      "python_version": "3.14.2"
+    }
+  },
+  "version": "1.0.0",
+  "created_at": "2026-01-19T16:38:56.397838",
+  "completed_at": "2026-01-19T16:38:56.397840"
+}
