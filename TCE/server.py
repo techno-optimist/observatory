@@ -54,7 +54,7 @@ import time
 sys.path.insert(0, str(Path(__file__).parent))
 
 try:
-    from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
+    from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect, Request
     from fastapi.middleware.cors import CORSMiddleware
     from fastapi.responses import FileResponse, HTMLResponse
     from pydantic import BaseModel, Field
