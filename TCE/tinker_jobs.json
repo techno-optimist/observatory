@@ -1,0 +1,1879 @@
+{
+  "jobs": [
+    {
+      "job_id": "self-aware-70b-v4",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "soliton_agi",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801795",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "completed",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 18.96,
+        "lora_rank": 32,
+        "learning_rate": 0.0001,
+        "sft_examples": 62,
+        "dpo_examples": 59
+      },
+      "result": {
+        "persistent_path": "tinker://b8a47bf7-2b5f-52dd-b883-95c51f8ed2a0:train:0/weights/self-aware-70b-v4",
+        "sampler_path": "tinker://b8a47bf7-2b5f-52dd-b883-95c51f8ed2a0:train:0/sampler_weights/self-aware-70b-v4",
+        "saved_model_name": "self-aware-70b-v4",
+        "training_run_id": "b8a47bf7-2b5f-52dd-b883-95c51f8ed2a0:train:0",
+        "final_loss": 18.96,
+        "compound_signature": {
+          "isotopes": [
+            "soliton_knowledge",
+            "soliton_process",
+            "soliton_experience",
+            "soliton_positional"
+          ],
+          "expected_phase": "NATURAL",
+          "expected_manifold": {
+            "agency": 0.8,
+            "justice": 0.0,
+            "belonging": 0.1
+          }
+        }
+      },
+      "error": null,
+      "has_session": true
+    },
+    {
+      "job_id": "5499d7c7",
+      "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801799",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "Error code: 400 - {'detail': 'base_model meta-llama/Llama-3.1-70B-Instruct is not supported'}",
+      "has_session": false
+    },
+    {
+      "job_id": "bed7697d",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801802",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "'dict' object has no attribute 'model_input'",
+      "has_session": false
+    },
+    {
+      "job_id": "3519066b",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801803",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "'TrainingClient' object has no attribute 'tokenizer'\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1049, in run_training\n    tokenizer = job.training_client.tokenizer\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'TrainingClient' object has no attribute 'tokenizer'. Did you mean: 'get_tokenizer'?\n",
+      "has_session": false
+    },
+    {
+      "job_id": "0817bf89",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801804",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "from_list\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1075, in run_training\n    batch_data = [make_datum(item) for item in batch_items]\n                  ~~~~~~~~~~^^^^^^\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1063, in make_datum\n    \"target_tokens\": tinker_types.TensorData.from_list(completion_tokens),\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pydantic/_internal/_model_construction.py\", line 289, in __getattr__\n    raise AttributeError(item)\nAttributeError: from_list\n",
+      "has_session": false
+    },
+    {
+      "job_id": "f8a4957e",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801804",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "1 validation error for Datum\nloss_fn_inputs.target_tokens\n  Input should be a valid dictionary or instance of TensorData [type=model_type, input_value=ModelInput(chunks=[Encode..., type='encoded_text')]), input_type=ModelInput]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1075, in run_training\n    batch_data = [make_datum(item) for item in batch_items]\n                  ~~~~~~~~~~^^^^^^\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1060, in make_datum\n    return tinker_types.Datum(\n           ~~~~~~~~~~~~~~~~~~^\n        model_input=tinker_types.ModelInput.from_ints(full_tokens),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<2 lines>...\n        }\n        ^\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pydantic/main.py\", line 250, in __init__\n    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 1 validation error for Datum\nloss_fn_inputs.target_tokens\n  Input should be a valid dictionary or instance of TensorData [type=model_type, input_value=ModelInput(chunks=[Encode..., type='encoded_text')]), input_type=ModelInput]\n    For further information visit https://errors.pydantic.dev/2.12/v/model_type\n",
+      "has_session": false
+    },
+    {
+      "job_id": "0f9e766d",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801805",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "'coroutine' object has no attribute 'result'\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1091, in run_training\n    fwd_bwd_result = fwd_bwd_future.result()\n                     ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'coroutine' object has no attribute 'result'\n",
+      "has_session": false
+    },
+    {
+      "job_id": "f46a2e4a",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801806",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "initializing",
+        "iteration": 0,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "'coroutine' object has no attribute 'result'\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1091, in run_training\n    # Optimizer step (async)\nAttributeError: 'coroutine' object has no attribute 'result'\n",
+      "has_session": false
+    },
+    {
+      "job_id": "84f52cb6",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "recipe_id": "analyst",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801807",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "saved_model_name": "tce_analyst_84f52cb6",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "96dfc46f",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "analyst",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801807",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "model_path must start with 'tinker://'\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1133, in run_training\n    job.sampling_client = service_client.create_sampling_client(model_path=model_path)\n                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/telemetry.py\", line 394, in _wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/service_client.py\", line 386, in create_sampling_client\n    ).result()\n      ~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/api_future.py\", line 127, in result\n    return self._future.result(timeout)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 450, in result\n    return self.__get_result()\n           ~~~~~~~~~~~~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 395, in __get_result\n    raise self._exception\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/sampling_client.py\", line 93, in _create_impl\n    sampling_session_id = await holder._create_sampling_session(\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        model_path=model_path, base_model=base_model\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/internal_client_holder.py\", line 211, in _create_sampling_session\n    raise ValueError(\"model_path must start with 'tinker://'\")\nValueError: model_path must start with 'tinker://'\n",
+      "has_session": false
+    },
+    {
+      "job_id": "65efde13",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "analyst",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801808",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": "tinker://meta-llama/Llama-3.2-3B/tce_analyst_65efde13",
+        "saved_model_name": "tce_analyst_65efde13",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "500dbb1d",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "soliton_boost",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801809",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": null,
+      "error": "model_path must start with 'tinker://'\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 1133, in run_training\n    job.sampling_client = service_client.create_sampling_client(model_path=model_path)\n                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/telemetry.py\", line 394, in _wrapper\n    return func(*args, **kwargs)\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/service_client.py\", line 386, in create_sampling_client\n    ).result()\n      ~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/api_future.py\", line 127, in result\n    return self._future.result(timeout)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 450, in result\n    return self.__get_result()\n           ~~~~~~~~~~~~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 395, in __get_result\n    raise self._exception\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/sampling_client.py\", line 93, in _create_impl\n    sampling_session_id = await holder._create_sampling_session(\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        model_path=model_path, base_model=base_model\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/internal_client_holder.py\", line 211, in _create_sampling_session\n    raise ValueError(\"model_path must start with 'tinker://'\")\nValueError: model_path must start with 'tinker://'\n",
+      "has_session": false
+    },
+    {
+      "job_id": "fdc5cd27",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801810",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "saved_model_name": "tce_soliton_boost_fdc5cd27",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "31d5e248",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801810",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "saved_model_name": "tce_soliton_boost_31d5e248",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "8e96367d",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801811",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "saved_model_name": "tce_soliton_boost_8e96367d",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "03827868",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801812",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "saved_model_name": "tce_soliton_boost_03827868",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "73500bd4",
+      "model_id": "meta-llama/Llama-3.2-3B",
+      "recipe_id": "analyst",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801812",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://4f3d9aad-9f31-52ae-9cec-f88a6caf8ad5:train:0/weights/tce_analyst_73500bd4",
+        "saved_model_name": "tce_analyst_73500bd4",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "932c2329",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "analyst",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801813",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://7d7e474b-af17-54d9-93ed-422c6a9f6d28:train:0/weights/tce_analyst_932c2329",
+        "saved_model_name": "tce_analyst_932c2329",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "60205caf",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801814",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://7aad172e-4c81-5ada-a6e0-a946afaddde0:train:0/weights/tce_soliton_boost_60205caf",
+        "saved_model_name": "tce_soliton_boost_60205caf",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "13e85fe3",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "truth-seeker",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801814",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://035b301c-ed8d-5981-8616-dab25acf11bb:train:0/weights/tce_truth-seeker_13e85fe3",
+        "saved_model_name": "tce_truth-seeker_13e85fe3",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "b439650f",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "spark",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801815",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 100,
+        "total_iters": 100,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://796c8aac-fa92-5095-8d74-cf154cd36599:train:0/weights/tce_spark_b439650f",
+        "saved_model_name": "tce_spark_b439650f",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "b3fc6e2b",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "truth-seeker",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801816",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 111,
+        "dpo_examples": 100
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://048c10cc-3042-5bf3-9467-85bc6075ba95:train:0/weights/tce_truth-seeker_b3fc6e2b",
+        "saved_model_name": "tce_truth-seeker_b3fc6e2b",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "ffce6ad2",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801816",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 152,
+        "total_iters": 152,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 26,
+        "dpo_examples": 50
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://2ebeaa66-0cdc-5870-957e-8aa2aacf6261:train:0/weights/tce_soliton_boost_ffce6ad2",
+        "saved_model_name": "tce_soliton_boost_ffce6ad2",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "0660161a",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801817",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 152,
+        "total_iters": 152,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 26,
+        "dpo_examples": 50
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://e278fd07-a474-5073-acef-e9c20ad82ecb:train:0/weights/tce_soliton_boost_0660161a",
+        "saved_model_name": "tce_soliton_boost_0660161a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "789c7aec",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "analyst",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801818",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 176,
+        "dpo_examples": 203
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://a807116b-4023-5edc-b458-74bfc393d6de:train:0/weights/tce_analyst_789c7aec",
+        "saved_model_name": "tce_analyst_789c7aec",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "491d806f",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "truth-seeker",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801818",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 8,
+        "total_iters": 8,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001,
+        "sft_examples": 4,
+        "dpo_examples": 0
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://fa730fe8-de83-5eec-9069-4c2dcdb2de89:train:0/weights/tce_truth-seeker_491d806f",
+        "saved_model_name": "tce_truth-seeker_491d806f",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "b3dfd28a",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "epistemic_stack",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801819",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 161,
+        "dpo_examples": 151
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://c55ba6ee-30cb-5169-83c9-ad7214e2e20b:train:0/weights/tce_epistemic_stack_b3dfd28a",
+        "saved_model_name": "tce_epistemic_stack_b3dfd28a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "25acc94b",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "educator",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801820",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 126,
+        "dpo_examples": 122
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://7b6a7ae1-ae31-5eb9-becb-b30ae0a03a33:train:0/weights/tce_educator_25acc94b",
+        "saved_model_name": "tce_educator_25acc94b",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "5d535956",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801820",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://de46943a-034b-5c05-bad3-8d7c330b22a0:train:0/weights/tce_dont_panic_5d535956",
+        "saved_model_name": "tce_dont_panic_5d535956",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "8320d478",
+      "model_id": "deepseek-ai/DeepSeek-V3.1",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801821",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://11b605bb-d2f1-5327-89a4-c5bc8a3c0979:train:0/weights/tce_dont_panic_8320d478",
+        "saved_model_name": "tce_dont_panic_8320d478",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "465a9f8d",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "coder",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801822",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 176,
+        "dpo_examples": 198
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://9281edd6-9133-5e9d-a2a1-ed0fb331c6b2:train:0/weights/tce_coder_465a9f8d",
+        "saved_model_name": "tce_coder_465a9f8d",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "71ac48ca",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "coder",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801822",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 176,
+        "dpo_examples": 198
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://4e97724f-9503-559d-b040-deff95a5ab77:train:0/weights/tce_coder_71ac48ca",
+        "saved_model_name": "tce_coder_71ac48ca",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "d2ba4d5a",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801823",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://9db17598-5a7d-5b0d-a6d3-6d5ab988ca49:train:0/weights/tce_dont_panic_d2ba4d5a",
+        "saved_model_name": "tce_dont_panic_d2ba4d5a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "a855a99a",
+      "model_id": "Qwen/Qwen3-8B",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801823",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://9806fff4-1684-5599-af56-053d3876cc00:train:0/weights/tce_dont_panic_a855a99a",
+        "saved_model_name": "tce_dont_panic_a855a99a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "cc17bbb8",
+      "model_id": "Qwen/Qwen3-8B",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801824",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://b025d349-a2ba-5358-98cd-371f812d891b:train:0/weights/tce_dont_panic_cc17bbb8",
+        "saved_model_name": "tce_dont_panic_cc17bbb8",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "6ddbc2b7",
+      "model_id": "Qwen/Qwen3-30B-A3B-Instruct-2507",
+      "recipe_id": "soliton_boost",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801825",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 152,
+        "total_iters": 152,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 26,
+        "dpo_examples": 50
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://1b00988e-e8c2-55ff-a05e-058b664264e0:train:0/weights/tce_soliton_boost_6ddbc2b7",
+        "saved_model_name": "tce_soliton_boost_6ddbc2b7",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "f32dd632",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "\u03a8\u039a\u03a3\u0391\u039b",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801825",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 111,
+        "dpo_examples": 185
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": null,
+        "saved_model_name": "tce_\u03a8\u039a\u03a3\u0391\u039b_f32dd632",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "7a92c120",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "jillian",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801826",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 176,
+        "dpo_examples": 109
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://929d8ed8-ede6-5a8e-ae5d-db9556b2204a:train:0/weights/tce_jillian_7a92c120",
+        "saved_model_name": "tce_jillian_7a92c120",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "0ff6d119",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "coder",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801827",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 176,
+        "dpo_examples": 198
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://2d018526-5e60-5e81-9e33-1cdb78ba71b3:train:0/weights/tce_coder_0ff6d119",
+        "sampler_path": "tinker://2d018526-5e60-5e81-9e33-1cdb78ba71b3:train:0/sampler_weights/tce_coder_0ff6d119",
+        "saved_model_name": "tce_coder_0ff6d119",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "70504c5a",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "dont_panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801827",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 237,
+        "dpo_examples": 576
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://b7588286-e0eb-5682-9975-33102671fbdc:train:0/weights/tce_dont_panic_70504c5a",
+        "sampler_path": "tinker://b7588286-e0eb-5682-9975-33102671fbdc:train:0/sampler_weights/tce_dont_panic_70504c5a",
+        "saved_model_name": "tce_dont_panic_70504c5a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "32ef98aa",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "tuva",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801828",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-05,
+        "sft_examples": 76,
+        "dpo_examples": 103
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://5a7b4493-8d26-56b3-8b10-ebc83e8e084d:train:0/weights/tce_tuva_32ef98aa",
+        "sampler_path": "tinker://5a7b4493-8d26-56b3-8b10-ebc83e8e084d:train:0/sampler_weights/tce_tuva_32ef98aa",
+        "saved_model_name": "tce_tuva_32ef98aa",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "efc8cf71",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "tuva",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801829",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-07,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 102,
+        "dpo_examples": 153
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://3551b93e-c92f-5031-86aa-17ebb498be49:train:0/weights/tce_tuva_efc8cf71",
+        "sampler_path": "tinker://3551b93e-c92f-5031-86aa-17ebb498be49:train:0/sampler_weights/tce_tuva_efc8cf71",
+        "saved_model_name": "tce_tuva_efc8cf71",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "b05ac11f",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801829",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-07,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://bc5068ed-f8d0-5663-b611-62347f96fa6e:train:0/weights/tce_Skeptic-Balanced_b05ac11f",
+        "sampler_path": "tinker://bc5068ed-f8d0-5663-b611-62347f96fa6e:train:0/sampler_weights/tce_Skeptic-Balanced_b05ac11f",
+        "saved_model_name": "tce_Skeptic-Balanced_b05ac11f",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "220b6a48",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "running",
+      "created_at": "2026-02-13T18:10:03.801830",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-07,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": null,
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "29d6d392",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "running",
+      "created_at": "2026-02-13T18:10:03.801831",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "saving",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-07,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": null,
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "6140cb39",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801831",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 1.5e-06,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": null,
+        "sampler_path": null,
+        "saved_model_name": "tce_Skeptic-Balanced_6140cb39",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "1c2d1fab",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801832",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 1.5e-06,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": null,
+        "sampler_path": null,
+        "saved_model_name": "tce_Skeptic-Balanced_1c2d1fab",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "665de75f",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801833",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 85,
+        "total_iters": 85,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 1.5e-06,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 11,
+        "dpo_examples": 21
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://4edd5aa8-06c7-551b-b4ce-8be7f7e365f1:train:0/weights/tce_Skeptic-Balanced_665de75f",
+        "sampler_path": "tinker://4edd5aa8-06c7-551b-b4ce-8be7f7e365f1:train:0/sampler_weights/tce_Skeptic-Balanced_665de75f",
+        "saved_model_name": "tce_Skeptic-Balanced_665de75f",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "1f09e100",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "Skeptic-Balanced",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801833",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 256,
+        "total_iters": 256,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 8e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 74,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://72d1b512-c022-5302-8b89-613990ab38d1:train:0/weights/tce_Skeptic-Balanced_1f09e100",
+        "sampler_path": "tinker://72d1b512-c022-5302-8b89-613990ab38d1:train:0/sampler_weights/tce_Skeptic-Balanced_1f09e100",
+        "saved_model_name": "tce_Skeptic-Balanced_1f09e100",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "451bdfbd",
+      "model_id": "Qwen/Qwen3-8B",
+      "recipe_id": "goat",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801834",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 5e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://b1912071-b10d-5bc4-9fac-f9dd2a1ef2cd:train:0/weights/tce_goat_451bdfbd",
+        "sampler_path": "tinker://b1912071-b10d-5bc4-9fac-f9dd2a1ef2cd:train:0/sampler_weights/tce_goat_451bdfbd",
+        "saved_model_name": "tce_goat_451bdfbd",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "3c32e80a",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "goat",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801835",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 8e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://3a10668d-31c8-5de2-a0c5-da43ff600050:train:0/weights/tce_goat_3c32e80a",
+        "sampler_path": "tinker://3a10668d-31c8-5de2-a0c5-da43ff600050:train:0/sampler_weights/tce_goat_3c32e80a",
+        "saved_model_name": "tce_goat_3c32e80a",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "ce5b241b",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "goat",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801835",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 8e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://bc87f6b2-43e9-53e3-9eba-473d8d1dffb5:train:0/weights/tce_goat_ce5b241b",
+        "sampler_path": "tinker://bc87f6b2-43e9-53e3-9eba-473d8d1dffb5:train:0/sampler_weights/tce_goat_ce5b241b",
+        "saved_model_name": "tce_goat_ce5b241b",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "7417486e",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Don't Panic",
+      "status": "cancelled",
+      "created_at": "2026-02-13T18:10:03.801836",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "SFT",
+        "iteration": 0,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001,
+        "dpo_learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": null,
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "d1769e96",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Don't Panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801837",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": null,
+        "sampler_path": null,
+        "saved_model_name": "tce_Don't Panic_d1769e96",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "5e001834",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Don't Panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801837",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": null,
+        "sampler_path": null,
+        "saved_model_name": "tce_Don't Panic_5e001834",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "0ca6f6eb",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Don't Panic 1",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801838",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://dc328c42-1056-54ff-9277-f6f5b05ea817:train:0/weights/tce_Don_t_Panic_1_0ca6f6eb",
+        "sampler_path": "tinker://dc328c42-1056-54ff-9277-f6f5b05ea817:train:0/sampler_weights/tce_Don_t_Panic_1_0ca6f6eb",
+        "saved_model_name": "tce_Don_t_Panic_1_0ca6f6eb",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "0d803051",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Epistemic Stack",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801838",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 258,
+        "total_iters": 258,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 105,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://d7774ccf-ce3a-598e-bfa4-75a0cba930b1:train:0/weights/tce_Epistemic_Stack_0d803051",
+        "sampler_path": "tinker://d7774ccf-ce3a-598e-bfa4-75a0cba930b1:train:0/sampler_weights/tce_Epistemic_Stack_0d803051",
+        "saved_model_name": "tce_Epistemic_Stack_0d803051",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "5bf7b147",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "CODEC",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801839",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 258,
+        "total_iters": 258,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 8e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://df2056e2-8772-5bae-ab38-a4fefe32cdc5:train:0/weights/tce_CODEC_5bf7b147",
+        "sampler_path": "tinker://df2056e2-8772-5bae-ab38-a4fefe32cdc5:train:0/sampler_weights/tce_CODEC_5bf7b147",
+        "saved_model_name": "tce_CODEC_5bf7b147",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "24a0ed25",
+      "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "recipe_id": "ORACLE",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801840",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 246,
+        "total_iters": 246,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 8e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 95,
+        "dpo_examples": 32
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://3cb24fb0-ae90-55e9-bd97-4f74461b83bb:train:0/weights/tce_ORACLE_24a0ed25",
+        "sampler_path": "tinker://3cb24fb0-ae90-55e9-bd97-4f74461b83bb:train:0/sampler_weights/tce_ORACLE_24a0ed25",
+        "saved_model_name": "tce_ORACLE_24a0ed25",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "63d3ae88",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_test_audit",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801840",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 1e-05,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://380f8f93-7287-54b8-afaa-5eafa3de9626:train:0/weights/tce_CODEC_test_audit_63d3ae88",
+        "sampler_path": "tinker://380f8f93-7287-54b8-afaa-5eafa3de9626:train:0/sampler_weights/tce_CODEC_test_audit_63d3ae88",
+        "saved_model_name": "tce_CODEC_test_audit_63d3ae88",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "bc25ca14",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_audit_v2",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801841",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 1e-05,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.0,
+          "margin": 0.0,
+          "chosen_reward": 0.0,
+          "rejected_reward": 0.0
+        },
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://19f33d7e-0264-5952-b374-6eb2aa02b41b:train:0/weights/tce_CODEC_audit_v2_bc25ca14",
+        "sampler_path": "tinker://19f33d7e-0264-5952-b374-6eb2aa02b41b:train:0/sampler_weights/tce_CODEC_audit_v2_bc25ca14",
+        "saved_model_name": "tce_CODEC_audit_v2_bc25ca14",
+        "final_loss": 0
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "3cb93fa7",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_audit_v3",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801842",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "SFT",
+        "iteration": 0,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0005,
+        "dpo_learning_rate": 1e-05,
+        "dpo_beta": 0.05,
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": null,
+      "error": "Error code: 400 - {'detail': 'input sequence, weights, and target_tokens at index 0 must have the same length: len(weights)=358 len(target_tokens)=358 token_count=359'}\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 2366, in run_training\n    fwd_bwd_result = fwd_bwd_future.result() if hasattr(fwd_bwd_future, 'result') and callable(fwd_bwd_future.result) else fwd_bwd_future\n                     ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/api_future.py\", line 127, in result\n    return self._future.result(timeout)\n           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 450, in result\n    return self.__get_result()\n           ~~~~~~~~~~~~~~~~~^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py\", line 395, in __get_result\n    raise self._exception\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/telemetry.py\", line 384, in _awrapper\n    return await cast(Callable[..., Awaitable[R]], func)(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/training_client.py\", line 296, in _forward_backward_async\n    untyped_future = await self.holder.execute_with_retries(\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<5 lines>...\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/internal_client_holder.py\", line 364, in execute_with_retries\n    raise e\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/internal_client_holder.py\", line 325, in execute_with_retries\n    return await func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/lib/public_interfaces/training_client.py\", line 247, in _send_single_forward_backward_request\n    return await client.training.forward_backward(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        request=request,\n        ^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/resources/training.py\", line 103, in forward_backward\n    return await self._post(\n           ^^^^^^^^^^^^^^^^^\n    ...<4 lines>...\n    )\n    ^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/_base_client.py\", line 1232, in post\n    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/tinker/_base_client.py\", line 1033, in request\n    raise self._make_status_error_from_response(err.response) from None\ntinker.BadRequestError: Error code: 400 - {'detail': 'input sequence, weights, and target_tokens at index 0 must have the same length: len(weights)=358 len(target_tokens)=358 token_count=359'}\n",
+      "has_session": false
+    },
+    {
+      "job_id": "221f761e",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_audit_v4",
+      "status": "running",
+      "created_at": "2026-02-13T18:10:03.801842",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "SFT",
+        "iteration": 52,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0005,
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": null,
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "e14848dc",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_final",
+      "status": "failed",
+      "created_at": "2026-02-13T18:10:03.801843",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "SFT",
+        "iteration": 0,
+        "total_iters": 200,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0005,
+        "dpo_learning_rate": 1e-05,
+        "dpo_beta": 0.05,
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": null,
+      "error": "cannot access local variable 'current_loss' where it is not associated with a value\nTraceback (most recent call last):\n  File \"/Users/nivek/Desktop/cultural-soliton-observatory/TCE/server.py\", line 2378, in run_training\n    print(f\"  First SFT forward pass \u2014 loss: {current_loss:.4f}\")\n                                              ^^^^^^^^^^^^\nUnboundLocalError: cannot access local variable 'current_loss' where it is not associated with a value\n",
+      "has_session": false
+    },
+    {
+      "job_id": "34d4617c",
+      "model_id": "meta-llama/Llama-3.2-1B",
+      "recipe_id": "CODEC_final_v2",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801844",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 200,
+        "total_iters": 200,
+        "loss": 2.2945027383507486,
+        "lora_rank": 32,
+        "learning_rate": 1e-05,
+        "dpo_beta": 0.05,
+        "dpo_metrics": {
+          "accuracy": 0.9999734386011123,
+          "margin": 1.0629984937637529,
+          "chosen_reward": -2.2939393500392637,
+          "rejected_reward": -23.553909225314325
+        },
+        "sft_examples": 103,
+        "dpo_examples": 36
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://aac2a0fd-756e-526e-93a1-f1b346f8881b:train:0/weights/tce_CODEC_final_v2_34d4617c",
+        "sampler_path": "tinker://aac2a0fd-756e-526e-93a1-f1b346f8881b:train:0/sampler_weights/tce_CODEC_final_v2_34d4617c",
+        "saved_model_name": "tce_CODEC_final_v2_34d4617c",
+        "final_loss": 2.2945027383507486
+      },
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "70964314",
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "recipe_id": "Don't Panic 2",
+      "status": "running",
+      "created_at": "2026-02-13T18:10:03.801844",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "SFT",
+        "iteration": 0,
+        "total_iters": 198,
+        "loss": 0,
+        "lora_rank": 32,
+        "learning_rate": 0.0001,
+        "dpo_learning_rate": 2e-06,
+        "dpo_beta": 0.1,
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": null,
+      "error": null,
+      "has_session": false
+    },
+    {
+      "job_id": "f5449599",
+      "model_id": "Qwen/Qwen3-8B",
+      "recipe_id": "Don't Panic",
+      "status": "completed",
+      "created_at": "2026-02-13T18:10:03.801845",
+      "started_at": null,
+      "completed_at": null,
+      "progress": {
+        "phase": "DPO",
+        "iteration": 198,
+        "total_iters": 198,
+        "loss": 8.321242880472374,
+        "lora_rank": 32,
+        "learning_rate": 5e-06,
+        "dpo_beta": 0.1,
+        "dpo_metrics": {
+          "accuracy": 0.9936373145588641,
+          "margin": 2.9757495896804476,
+          "chosen_reward": -8.039112665397926,
+          "rejected_reward": -37.7966085622024
+        },
+        "sft_examples": 453,
+        "dpo_examples": 16
+      },
+      "result": {
+        "model_path": null,
+        "persistent_path": "tinker://a7bf0be2-a3f5-5a03-acf1-29112458ebdd:train:0/weights/tce_Don_t_Panic_f5449599",
+        "sampler_path": "tinker://a7bf0be2-a3f5-5a03-acf1-29112458ebdd:train:0/sampler_weights/tce_Don_t_Panic_f5449599",
+        "saved_model_name": "tce_Don_t_Panic_f5449599",
+        "final_loss": 8.321242880472374
+      },
+      "error": null,
+      "has_session": false
+    }
+  ]
+}

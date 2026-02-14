@@ -79,7 +79,6 @@ project42-video/
 TCE/venv/
 TCE/__pycache__/
 TCE/*.egg-info/
-TCE/tinker_jobs.json
 TCE/jobs_history.json
 TCE/training_data/
 TCE/mlx_adapters*/
