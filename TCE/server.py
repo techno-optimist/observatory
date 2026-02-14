@@ -104,7 +104,12 @@ from lib.isotope_training_library import (
     get_anti_leakage_pairs,
 )
 from lib.isotope_training_extended import get_extended_training_data, to_sft_format
-from train_self_aware_compound import COMPOUND_PRESETS, CompoundConfig
+try:
+    from train_self_aware_compound import COMPOUND_PRESETS, CompoundConfig
+except ImportError:
+    # torch not available (cloud deployment)
+    COMPOUND_PRESETS = {}
+    CompoundConfig = None
 from lib.observatory_bridge import (
     ISOTOPE_SIGNATURES,
     CoordinateSignature,

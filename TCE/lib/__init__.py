@@ -208,11 +208,17 @@ from .isotope_training_library import (
     generate_goldilocks_mix,
 )
 
-from .introspective_conversation import (
-    CognitiveSnapshot,
-    ConversationState,
-    IntrospectiveConversation,
-)
+try:
+    from .introspective_conversation import (
+        CognitiveSnapshot,
+        ConversationState,
+        IntrospectiveConversation,
+    )
+except ImportError:
+    # torch/mlx not available (e.g., cloud deployment)
+    CognitiveSnapshot = None
+    ConversationState = None
+    IntrospectiveConversation = None
 
 from .chemistry import (
     # Element/Isotope Registry
