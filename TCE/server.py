@@ -2798,14 +2798,25 @@ class TinkerManager:
                 fmt_sys = lambda c: f"<|im_start|>system\n{c}<|im_end|>\n"
                 fmt_usr = lambda c: f"<|im_start|>user\n{c}<|im_end|>\n"
                 fmt_ast_prefix = "<|im_start|>assistant\n"
+                stop_tokens = ["<|im_end|>", "<|im_start|>"]
+            elif "phi" in model_id_lower:
+                fmt_sys = lambda c: f"<|system|>\n{c}<|end|>\n"
+                fmt_usr = lambda c: f"<|user|>\n{c}<|end|>\n"
+                fmt_ast_prefix = "<|assistant|>\n"
+                stop_tokens = ["<|end|>", "<|user|>", "<|assistant|>", "<|endoftext|>"]
             elif "llama" in model_id_lower:
                 fmt_sys = lambda c: f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{c}<|eot_id|>"
                 fmt_usr = lambda c: f"<|start_header_id|>user<|end_header_id|>\n\n{c}<|eot_id|>"
                 fmt_ast_prefix = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+                stop_tokens = ["<|eot_id|>", "<|start_header_id|>", "<|end_of_text|>"]
             else:
+                # Default to Llama format
                 fmt_sys = lambda c: f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{c}<|eot_id|>"
                 fmt_usr = lambda c: f"<|start_header_id|>user<|end_header_id|>\n\n{c}<|eot_id|>"
                 fmt_ast_prefix = "<|start_header_id|>assistant<|end_header_id|>\n\n"
+                stop_tokens = ["<|eot_id|>", "<|end|>", "<|im_end|>", "<|endoftext|>", "<|start_header_id|>", "<|user|>", "<|assistant|>"]
+
+            template_name = "Phi" if "phi" in model_id_lower else "Qwen" if "qwen" in model_id_lower else "Llama"
 
             formatted_prompt = ""
             if job.system_prompt:
@@ -2816,7 +2827,7 @@ class TinkerManager:
             prompt_tokens = tokenizer.encode(formatted_prompt)
             prompt_input = tinker.types.ModelInput.from_ints(prompt_tokens)
 
-            print(f"[Sample] Job {job_id}: prompt={len(prompt_tokens)} tokens, system_prompt={'YES' if job.system_prompt else 'NO'}, template={'Qwen' if 'qwen' in model_id_lower else 'Llama'}")
+            print(f"[Sample] Job {job_id}: prompt={len(prompt_tokens)} tokens, system_prompt={'YES' if job.system_prompt else 'NO'}, template={template_name}")
 
             result = job.sampling_client.sample(
                 prompt=prompt_input,
@@ -2846,6 +2857,14 @@ class TinkerManager:
                 text = result.text
             else:
                 text = str(result)
+
+            # Truncate at first stop token to prevent multi-turn runaway
+            for stop in stop_tokens:
+                idx = text.find(stop)
+                if idx != -1:
+                    text = text[:idx]
+                    break
+            text = text.strip()
 
             return {"text": text}
         except Exception as e:
