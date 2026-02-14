@@ -2936,8 +2936,8 @@ class SettingsManager:
         self._save_settings()
 
     def get_tinker_api_key(self) -> Optional[str]:
-        """Get the actual Tinker API key."""
-        return self.settings.get("tinker_api_key")
+        """Get the actual Tinker API key (settings file or env var)."""
+        return self.settings.get("tinker_api_key") or os.environ.get("TINKER_API_KEY")
 
     def get_anthropic_api_key(self) -> Optional[str]:
         """Get the actual Anthropic API key."""
